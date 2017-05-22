@@ -1,0 +1,3 @@
+<?php
+//000000000060a:15:{s:2:"id";s:1:"1";s:6:"isopen";s:1:"0";s:7:"webname";s:12:"微云交易";s:8:"onelevel";s:2:"10";s:8:"twolevel";s:1:"1";s:6:"Pscale";s:1:"1";s:9:"begintime";N;s:7:"endtime";N;s:6:"notice";s:126:"微云交易出入金通道升级，暂时只支持支付宝出入金操作，请各会员单位做好交易商告知工作。";s:8:"isnotice";s:1:"0";s:14:"minorderamount";s:2:"10";s:14:"maxorderamount";s:4:"5000";s:13:"maxuseramount";s:5:"50000";s:12:"registsendcp";s:1:"4";s:10:"defdiancha";s:3:"100";}
+?>

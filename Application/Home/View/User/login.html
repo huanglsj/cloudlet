@@ -1,0 +1,72 @@
+<extend name="Base/common"/>
+<block name="content">
+<link rel="stylesheet" href="__CSS__/base.css">
+<link rel="stylesheet" href="__CSS__/login.css">
+<script src="__JS__/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+	var winH = $(window).height();
+	$("body").css('height',winH+'px');//这里的div，选择你的那个div
+
+    //禁止滚动条
+    $(document.body).css({
+        "overflow-x":"hidden",
+        "overflow-y":"hidden"
+    });
+    document.body.addEventListener('touchmove', function (event) {
+        event.preventDefault();
+    }, false);
+</script>
+<script src="__JS__/script.js"></script>
+<script type="text/javascript" charset="utf-8" src="__JS__/sea.js" async></script>
+<body>
+<div class="wrap">
+	<form id="reviseForm" class="i-form" method="post" action="{:U('User/login')}">
+	    <div class=" main-con">
+	        <a class="logo" href="javascript:void(0)">
+	            <img src="__IMG__/login-logo.png">
+	        </a>
+	
+	        <div class="input-con">
+	            <span style="width: 3.5em"><strong>账号:</strong></span>
+	            <input id="c-pwd" class="f-input" type="text" maxlength="20" value="<?php echo I('username'); ?>" placeholder="请输入账号" name="username">
+	        </div>
+	
+	        <div class="input-con">
+	            <span style="width: 3.5em"><strong>密码:</strong></span>
+	            <input id="n-pwd" class="f-input" type="password" maxlength="20" placeholder="请输入密码" name="password">
+	        </div>
+			<div style="color:red">
+			<span class="tips">{$errorMsg}</span>
+			</div>
+	        <!-- <a class="register-btn" href="###">登录</a> -->
+			<input type="submit" value="立即登录" class="register-btn" style="font-weight:800;">
+	        <a class="login" href="{:U('User/findpassword')}"><font color="#FFFFFF">忘记密码</font></a>
+	        <a class="login" href="{:U('User/reg')}"style="color:#FFF;">新手注册</a>
+	
+	        <div class="login-bot-font">
+	          <!--  <img src="__IMG__/font.png">-->
+	        </div>
+	    </div>
+    </form>
+	<script type="javascript">
+	$(".register-btn").submit(function(){
+	$.ajax({
+                cache: true,
+                type: "POST",
+                url:{:U('User/login')},
+                data:$('#reviseForm').serialize(),// 你的formid
+                async: false,
+                error: function(request) {
+                    alert("Connection error");
+                },
+                success: function(data) {
+                    $(".tips").html(data);
+                }
+            });
+
+	});
+	</script>
+</div>
+
+</body>
+</block>

@@ -1,0 +1,39 @@
+<extend name="Base/footer"/>
+<block name="content">
+<link rel="stylesheet" href="__CSS__/global.css">
+<link rel="stylesheet" href="__CSS__/index.css">
+<link rel="stylesheet" href="__CSS__/pwd.css">
+
+
+<body style="overflow:scroll;">
+<div class="wrap">
+  <div class="index" style="min-height: 891px;">
+    <header class="list-head">
+      <nav class="list-nav clearfix"> <a href="javascript:history.go(-1)" class="list-back"></a>
+        <h3 class="list-title">绑定账户</h3>
+      </nav>
+    </header>
+    <form class="i-form" method="post" action="{:U('User/bindinginfo')}">
+      <ul class="form-box">
+        <li class="f-line clearfix">
+          <label class="f-label">姓   名：</label>
+          <input id="c-pwd" class="f-input text" type="text" maxlength="18" placeholder="请输入姓名" name="name">
+        </li>
+        <li class="f-line clearfix">
+          <label class="f-label">微信号：</label>
+          <input id="n-pwd" class="f-input text" type="text" maxlength="18" placeholder="请输入微信号" name="wxhao">
+        </li>
+        <li class="f-line clearfix">
+          <label class="f-label">手机号：</label>
+          <input id="r-pwd" class="f-input text" type="text" maxlength="18" placeholder="请输入手机号" name="phone">
+        </li>
+      </ul>
+      <input type="submit" value="确 定" class="f-sub" id="send">
+    </form>
+  </div>
+</div>
+        
+
+</body>
+</block>
+

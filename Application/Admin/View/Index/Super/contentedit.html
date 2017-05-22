@@ -1,0 +1,40 @@
+﻿<extend name="Base/common"/>
+<block name="content">
+	<!-- this page specific styles -->
+	<link rel="stylesheet" href="__CSS__/compiled/article-add.css" type="text/css" media="screen" />
+	<link href="__CSS__/zTree/zTreeStyle.css" rel="stylesheet" />
+	<link href="__CSS__/zTree/demo.css" rel="stylesheet" />
+	<!-- scripts -->
+<script src="__JS__/jquery-latest.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>	
+<script src="__JS__/bootstrap.datepicker.js"></script>
+<script src="__JS__/theme.js"></script>
+<script src="__JS__/jquery.ztree.core-3.5.js"></script>
+<script src="__JS__/jquery.ztree.excheck-3.5.js"></script>
+    <div class="container-fluid">
+        <div id="pad-wrapper" class="form-page">
+			 <div class="row-fluid header">
+                <h3>公告编辑</h3>
+            </div>
+            <div class="row-fluid form-wrapper">
+            	<form action="{:U('Super/contentedit')}" method="post">
+                <!-- left column -->
+                <div class="span8 column">
+                    <input type="hidden" name="Id" value="{$content.Id}"/>
+					<div class="field-box">
+						<label>公告标题：</label>
+						<input class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入公告标题" data-placement="right" name="title" value="{$content.title}"/>
+					</div>
+					<div class="field-box">
+						<label>公告详情：</label>
+						<textarea class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入公告详情" data-placement="right" name="content" >{$content.content}</textarea>
+					</div>
+					<div class="field-box actions">
+                        <input type="submit" class="btn-glow primary" value="提交">
+                    </div>
+                </div>
+				</form>
+            </div>
+        </div>
+    </div>
+</block>

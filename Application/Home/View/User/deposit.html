@@ -1,0 +1,294 @@
+<extend name="Base/footer"/>
+<!DOCTYPE html>
+<html>
+<head>
+<block name="content">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="email=no">
+<title>微云交易</title>
+<link rel="stylesheet" href="__CSS__/global.css">
+
+<script language="javascript" type="text/javascript" src="__JS__/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/Js/numeric.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$(".amount.amount_select").click(function() {
+			$(".amount.amount_select").removeClass('amount_selected');
+			$(this).addClass('amount_selected');
+			if ($(this).data('amount') != 'qita') {
+				$(".amount.amount_input").val($(this).data('amount'));
+			}
+			else {
+				$(".amount.amount_input").val("");
+				$(".amount.amount_input").focus();
+			}
+		});
+		
+		$(".amount.amount_input").on("input", function() {
+			$(".amount.amount_select").removeClass('amount_selected');
+			
+            var rs = $(".amount.amount_select");
+        	var hit = false;
+        	for (var i=0; i<rs.length; i++) {
+        		if (rs[i].dataset['amount'] == this.value) {
+        			$(rs[i]).addClass('amount_selected');
+                    hit = true;
+                    break;
+        		}
+        	}
+        	
+        	if (!hit) {
+        		$(".amount.amount_select").last().addClass('amount_selected');
+        	}
+			
+		});
+		
+		$(".payway.amount_select").click(function() {
+			$(".payway.amount_select").removeClass('amount_selected');
+			$(this).addClass('amount_selected');
+			$("#payway").val($(this).data('payway'));
+		});
+
+		
+		$(".confirmBtn").click(function() {
+			var amount = $("#amount").val();
+			if (amount == "") {
+				alert("请选择或者输入入金金额！");
+				return false;
+			}else if(amount < 100){
+				alert("非常抱歉;最低充值100元起!");
+				return false;
+			}
+			var payway = $("#payway").val();
+			if (payway == "") {
+				alert("请选择入金方式！");
+				return false;
+			}
+
+	//		if (payway == "alipay") {
+	//			alert("支付宝支付通道正在维护，请选择微信支付，敬请谅解！");
+	//			return false;
+	//		}
+
+/*			if (payway == "weixin") {
+				alert("微信支付通道正在维护，请选择支付宝支付，敬请谅解！");
+				return false;
+			}*/
+			if (payway == "unionpay") {
+				alert("银联支付通道正在维护，请选择支付宝支付，敬请谅解！");
+				return false;
+			}
+
+			if (!checkAmount(amount)) {
+				alert("请输入正确的金额！");
+				return false;
+			}
+
+			document.payForm.submit();
+		});
+		
+
+		initSelection();
+	});
+	
+	function checkAmount(amount) {
+		if (!isNumeric(amount, 6, 2)) {
+			return false;
+		}
+		
+		if (amount <= 0) {
+			return false;
+		}
+		if (amount < 1) {
+			return false;
+		}
+		if (amount > 100000) {
+			return false;
+		}
+		return true;
+	}
+
+	function initSelection() {
+		$(".amount.amount_select").removeClass('amount_selected');
+		$(".payway.amount_select").removeClass('amount_selected');
+
+		var amount = $("#amount").val();
+		if (amount != "") {
+			var rs = $(".amount.amount_select");
+			var hit = false;
+			for (var i=0; i<rs.length; i++) {
+				if (rs[i].dataset['amount'] == amount) {
+					$(rs[i]).addClass('amount_selected');
+					hit = true;
+					break;
+				}
+			}
+			
+			if (!hit) {
+				$(".amount.amount_select").last().addClass('amount_selected');
+			}
+		}
+
+		var payway = $("#payway").val();
+		if (payway != "") {
+			var rs = $(".payway.amount_select");
+			var hit = false;
+			for (var i=0; i<rs.length; i++) {
+				if (rs[i].dataset['payway'] == payway) {
+					$(rs[i]).addClass('amount_selected');
+					break;
+				}
+			}
+		}
+		
+	}
+</script>
+<style>
+	.amount_selected {
+		background-color: #ff972f !important;
+		color: #eee !important;
+	}
+	.payway.amount_selected{
+		background-color: #ff972f !important;
+		/*background-color: transparent !important;*/
+	}
+	.amount_select {
+		width:27%;
+		height:30px;
+		margin: 10px 3%;
+		padding: 5px;
+		text-align: center;
+		color: black;
+		text-align: center;
+		background-color: #eee;
+		border-radius: 5px;
+		font-size:14px;
+		float:left;
+	}
+	
+	.amount_select_left {
+	}
+	
+	.amount_select_right {
+	}
+	
+	.amount_input{
+		width:27%;
+		height:30px;
+		margin: 10px 3%;
+		padding: 3px;
+		text-align: center;
+		color: black;
+		text-align: center;
+		background-color: #eee;
+		border-radius: 5px;
+		font-size:14px;
+		float:left;
+		border:1px;
+	}
+
+	.confirmBtn {
+	    clear: both;
+	    width: 100%;
+	    height:36px;
+	    background: #458b00;
+	    border: none;
+	    line-height: 36px;
+	    margin: auto;
+	    border-radius: 5px;
+		font-size: 15px;
+		font-weight:400;
+		color:#eee;
+		margin-top:40px;
+	}
+	p{
+		color:#eee;font-size:15px;margin: 10px;	
+	}
+	.clearfix:after {
+	    content: " ";
+	    display: block;
+	    height: 0;
+	    clear: both;
+	}
+</style>
+</head>
+
+<body style="overflow: auto;">
+<div>
+  <form name="payForm" method="post" action="/index.php/Home/Deposit/doDeposit.html">
+  <p>账户余额 ： <span style="color: #ff972f;">{$balance}</span>元</p>
+  <p>充值金额</p>    
+  <div class="clearfix">
+      <div data-amount="500" class="amount amount_select amount_select_left">500</div>
+      <div data-amount="1000" class="amount amount_select amount_select_right">1000</div>
+      <div data-amount="2000" class="amount amount_select amount_select_left">2000</div>
+      <div data-amount="5000" class="amount amount_select amount_select_right">5000</div>
+      <div data-amount="qita" class="amount amount_select amount_select_left">其它金额</div>
+      <input type="number" name="amount" id="amount" value="{$amount}" class="amount amount_input" maxlength="8"/>
+  </div>
+   <p>充值方式</p>
+   <div style="text-align: center;">
+	   	<img data-payway="weixin" style="height:100px;width:100px;float: initial;" class="payway amount_select amount_select_left amount_selected" src="/Public/images/weipay.png"/>
+	   <img data-payway="alipay" style="height:100px;width:100px;margin-left: 2em;float: initial;" class="payway amount_select amount_select_right" src="/Public/images/alipay.png"/>
+   </div>
+   <!--<img data-payway="alipay" style="height:100px;width:auto;padding:0;margin-left: 2em;border-radius: 5px;" class="payway amount_select amount_select_right amount_selected" src="/Public/images/zhifubao.jpg"/>-->
+     
+      <!-- <input value=""  class="payway amount_select amount_select_left"></div>
+	  <div data-payway="weixin_qrcode" class="payway amount_select amount_select_right">微信扫码</div>
+      <br>	  
+      <input value="" class="payway amount_select amount_select_left"></input>
+	 <div data-payawy="unionpay" class="payway amount_select amount_select_right">银联</div>
+	  -->
+<input type="hidden" name="payway" id="payway" value="{$payway}"/>
+  </div> 
+  <div style="text-align:center;padding: 0 20px">
+      <input type="button" value="确认支付" class="confirmBtn"/>
+  </div>
+
+  <div style="color:#ccc;margin-top:10px;margin-left:10px;line-height: 1.8em;">
+<h2 class="ue_t" style="text-align: center; margin: 30px 0px;">
+    <span style="color: rgb(238, 236, 225);">[推荐使用微信支付]</span>
+</h2>
+<p>
+    <span style="">一：</span>最低充值100元起<br/>
+</p>
+<p>
+    <span style="">二：</span>首次单笔充值达到500-5000元赠送等额的赠金
+</p>
+<p style="padding-left: 2em;">
+    （仅首次充值有效）
+</p>
+<p>
+    <span style="">三：</span>赠金提现要求
+</p>
+<p style="padding-left: 2em;">
+    交易额达到充值金额的20倍以后，可以提现赠金。
+</p>
+<p style="padding-left: 2em;">
+    例：充值5000元，赠送5000元，交易额达到10万时赠金部分可以提现。
+</p>
+<p>
+    <span style="">四：</span>获得赠金后出金（任何金额），则赠金失效。
+</p>
+<p>
+    <span style="">五：</span>获得赠金后交易使用资金优先使用充值资金。
+</p>
+<p>
+    <span style="">六：</span>赠金失效后将再无机会获得赠金。
+</p>
+<p>
+  </div>
+
+  </form>
+
+</div>
+
+</body>
+</block>
+</html>
+/block>
+</html>

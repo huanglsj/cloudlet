@@ -1,0 +1,420 @@
+<extend name="Base/common"/>
+<block name="content">
+	<!-- this page specific styles -->
+	<link rel="stylesheet" href="__CSS__/compiled/article-add.css" type="text/css" media="screen" />
+    <div class="container-fluid">
+        <div id="pad-wrapper" class="form-page">
+			 <div class="row-fluid header">
+                <h3>产品管理&nbsp;>&nbsp;修改产品</h3>
+            </div>
+            <div class="row-fluid form-wrapper">
+            	<form action="{:U('Goods/gedit')}" method="post">
+                <!-- left column -->
+                <div class="span8 column">
+                	<input type="hidden" name="pid" value="{$editgood['pid']}"/>
+					<div class="field-box">
+						<label>商品名称：</label>
+						<input class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入商品名称" data-placement="right" name="ptitle" value="{$editgood.ptitle}"/>
+					</div>
+					<div class="field-box">
+						<label>显示名称：</label>
+						<input class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入前端显示名称" data-placement="right" name="displayname" value="{$editgood.displayname}"/>
+					</div>
+					<div class="field-box">
+						<label>排序号：</label>
+						<input class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="排序号，数字越小，排的越前" data-placement="right" name="sort" value="{$editgood.sort}"/>
+					</div>
+<!--					<div class="field-box" style="display: none;">
+						<label>交易所:</label>
+						<div class="ui-select span5">
+							<select style="width:100%" name="bourse">
+									<volist name="bourses" id="vo">
+									<option <if condition='$editgood.bourse eq $key'>selected=""</if> value="{$key}">{$vo}</option>
+									</volist>
+							</select>
+						</div>
+					</div>-->
+					<div class="field-box">
+						<label>品种编码:</label>
+						<div class="span5">
+							<select style="width:100%" name="code">
+									<volist name="codes" id="vo">
+									<option <if condition='$editgood.code eq $key'>selected="selected" </if> value="{$key}">{$vo}</option>
+									</volist>
+							</select>
+						</div>
+					</div>
+<!--					<div class="field-box">
+						<label>点差矫正:</label>
+						<ul class="span6">
+							<li  style="list-style-type:none;">
+							<label>点差加</label>
+							<input class="span2" type="text" data-toggle="tooltip" data-trigger="focus" title="正数为加，负数为减" data-placement="right" name="patj" value="{$editgood.patj}"/>
+                            <button type="button" class="btn-glow primary" onclick="patupd(1)" style="margin-bottom: 10px;margin-left: 20px;">修改</button>
+							</li>
+							<li  style="list-style-type:none;">
+							<label>点差乘</label>
+							<input class="span2" type="text" data-toggle="tooltip" data-trigger="focus" title="大于1为乘，大于0小于1为除" data-placement="right" name="patx" value="{$editgood.patx}"/>
+							<button type="button" class="btn-glow primary" onclick="patupd(2)" style="margin-bottom: 10px;margin-left: 20px;">修改</button>
+							</li>
+						</ul>
+					</div>-->
+					<div class="field-box">
+						<label>交易时间：</label>
+						<div class="span8">
+						<table class='table'>
+							<thead>
+								<tr>
+									<th class="span1">
+										<span ></span>日期
+									</th>
+									<th class="span3">
+										<span ></span>开始时刻
+									</th>
+									<th class="span3">
+										<span ></span>结束时刻
+									</th>
+									<th class="span1">
+										<span ></span>操作
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr  class="first">
+									<td>
+										星期一
+									</td>
+									<td>
+										<volist name="period1" id='p1'>
+											<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易开始时间(例子：0600（凌晨6点整）)" data-placement="right" name="tstart1[]" value="{$p1.s}"/><br>
+										</volist>
+									</td>
+									<td>
+										<volist name="period1" id='p1'>
+											<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易结束时间(例子：0400（凌晨4点整）)" data-placement="right" name="tend1[]"  value="{$p1.e}"/><br>
+										</volist>
+									</td>
+									<td>
+										<span class="glyphicon glyphicon-plus peroidplus" style="color: rgb(40, 23, 34); text-shadow: none;font-size: 21px;padding:3px;"> </span>
+									</td>
+								</tr>
+								<tr  class="first">
+									<td>
+										星期二
+									</td>
+									<td>
+										<volist name="period2" id='p2'>
+											<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易开始时间(例子：0600（凌晨6点整）)" data-placement="right" name="tstart2[]" value="{$p2.s}"/>
+										</volist>
+									</td>
+									<td>
+										<volist name="period2" id='p2'>
+											<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易结束时间(例子：0400（凌晨4点整）)" data-placement="right" name="tend2[]" value="{$p2.e}"/>
+										</volist>
+									</td>
+									<td>
+										<span class="glyphicon glyphicon-plus peroidplus" style="color: rgb(40, 23, 34); text-shadow: none;font-size: 21px;padding:3px;"> </span>
+									</td>
+								</tr>
+								<tr  class="first">
+									<td>
+										星期三
+									</td>
+									<td>
+										<volist name="period3" id='p3'>
+											<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易开始时间(例子：0600（凌晨6点整）)" data-placement="right" name="tstart3[]" value="{$p3.s}"/>
+										</volist>
+									</td>
+									<td>
+										<volist name="period3" id='p3'>
+											<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易结束时间(例子：0400（凌晨4点整）)" data-placement="right" name="tend3[]" value="{$p3.e}"/>
+										</volist>
+									</td>
+									<td>
+										<span class="glyphicon glyphicon-plus peroidplus" style="color: rgb(40, 23, 34); text-shadow: none;font-size: 21px;padding:3px;"> </span>
+									</td>
+								</tr>
+								<tr  class="first">
+									<td>
+										星期四
+									</td>
+									<td>
+										<volist name="period4" id='p4'>
+											<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易开始时间(例子：0600（凌晨6点整）)" data-placement="right" name="tstart4[]" value="{$p4.s}"/>
+										</volist>
+									</td>
+									<td>
+										<volist name="period4" id='p4'>
+											<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易结束时间(例子：0400（凌晨4点整）)" data-placement="right" name="tend4[]" value="{$p4.e}"/>
+										</volist>
+									</td>
+									<td>
+										<span class="glyphicon glyphicon-plus peroidplus" style="color: rgb(40, 23, 34); text-shadow: none;font-size: 21px;padding:3px;"> </span>
+									</td>
+								</tr>
+								<tr  class="first">
+									<td>
+										星期五
+									</td>
+									<td>
+										<volist name="period5" id='p5'>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易开始时间(例子：0600（凌晨6点整）)" data-placement="right" name="tstart5[]" value="{$p5.s}"/>
+										</volist>
+									</td>
+									<td>
+										<volist name="period5" id='p5'>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易结束时间(例子：0400（凌晨4点整）)" data-placement="right" name="tend5[]" value="{$p5.e}"/>
+										</volist>
+									</td>
+									<td>
+										<span class="glyphicon glyphicon-plus peroidplus" style="color: rgb(40, 23, 34); text-shadow: none;font-size: 21px;padding:3px;"> </span>
+									</td>
+								</tr>
+								<tr  class="first">
+									<td>
+										星期六
+									</td>
+									<td>
+										<volist name="period6" id='p6'>
+											<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易开始时间(例子：0600（凌晨6点整）)" data-placement="right" name="tstart6[]" value="{$p6.s}"/>
+										</volist>
+									</td>
+									<td>
+										<volist name="period6" id='p6'>
+											<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易结束时间(例子：0400（凌晨4点整）)" data-placement="right" name="tend6[]" value="{$p6.e}"/>
+										</volist>
+									</td>
+									<td>
+										<span class="glyphicon glyphicon-plus peroidplus" style="color: rgb(40, 23, 34); text-shadow: none;font-size: 21px;padding:3px;"> </span>
+									</td>
+								</tr>
+								<tr  class="first">
+									<td>
+										星期日
+									</td>
+									<td>
+										<volist name="period7" id='p7'>
+											<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易开始时间(例子：0600（凌晨6点整）)" data-placement="right" name="tstart7[]" value="{$p7.s}"/>
+										</volist>
+									</td>
+									<td>
+										<volist name="period7" id='p7'>
+											<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易结束时间(例子：0400（凌晨4点整）)" data-placement="right" name="tend7[]" value="{$p7.e}"/>
+										</volist>
+									</td>
+									<td>
+										<span class="glyphicon glyphicon-plus peroidplus" style="color: rgb(40, 23, 34); text-shadow: none;font-size: 21px;padding:3px;"> </span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>
+					<div class="field-box">
+						<label>交易规则：</label>
+						<div class="span8">
+						<table class='table'>
+							<thead>
+								<tr>
+									<th class="span2">
+										<span ></span>档位
+									</th>
+<!--									<th class="span3">
+										<span ></span>点数
+									</th>-->
+<!--									<th class="span3">
+										<span ></span>收益率（%）
+									</th>-->
+									<th class="span3">
+										<span ></span>时间（分钟）
+									</th>
+									<th class="span3">
+										<span ></span>收益率（%）
+									</th>
+									<th class="span3">
+
+										<span ></span>手续费（%）
+
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr  class="first">
+									<td>
+										第一档
+									</td>
+<!--									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入点数" data-placement="right" name="dianshu1" value="{$rule1.dianshu}"/><br>
+									</td>-->
+<!--									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入点数受益率" data-placement="right" name="profit_dianshu_1" value="{$rule1.profit_dianshu}"/><br>
+									</td>-->
+									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入时间（分钟）" data-placement="right" name="shijian1" value="{$rule1.shijian}"/><br>
+									</td>
+									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入时间受益率" data-placement="right" name="profit_shijian_1" value="{$rule1.profit_shijian}"/><br>
+									</td>
+									<td>
+
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入手续费" data-placement="right" name="poundage_1" value="{$rule1.poundage}"/><br>
+
+									</td>
+								</tr>
+								<tr  class="first">
+									<td>
+										第二档
+									</td>
+<!--									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入点数" data-placement="right" name="dianshu2" value="{$rule2.dianshu}"/><br>
+									</td>-->
+<!--									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入点数受益率" data-placement="right" name="profit_dianshu_2" value="{$rule2.profit_dianshu}"/><br>
+									</td>-->
+									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入时间（分钟）" data-placement="right" name="shijian2" value="{$rule2.shijian}"/><br>
+									</td>
+									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入时间受益率" data-placement="right" name="profit_shijian_2" value="{$rule2.profit_shijian}"/><br>
+									</td>
+									<td>
+
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入手续费" data-placement="right" name="poundage_2" value="{$rule2.poundage}"/><br>
+
+									</td>
+								</tr>
+								<tr  class="first">
+									<td>
+										第三档
+									</td>
+<!--									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入点数" data-placement="right" name="dianshu3" value="{$rule3.dianshu}"/><br>
+									</td>-->
+<!--									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入点数受益率" data-placement="right" name="profit_dianshu_3" value="{$rule3.profit_dianshu}"/><br>
+									</td>-->
+									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入时间（分钟）" data-placement="right" name="shijian3" value="{$rule3.shijian}"/><br>
+									</td>
+									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入时间受益率" data-placement="right" name="profit_shijian_3" value="{$rule3.profit_shijian}"/><br>
+									</td>
+									<td>
+
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入手续费" data-placement="right" name="poundage_3" value="{$rule3.poundage}"/><br>
+
+									</td>
+								</tr>
+								<tr  class="first">
+									<td>
+										第四档
+									</td>
+<!--									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入点数" data-placement="right" name="dianshu4" value="{$rule4.dianshu}"/><br>
+									</td>-->
+<!--									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入点数受益率" data-placement="right" name="profit_dianshu_4" value="{$rule4.profit_dianshu}"/><br>
+									</td>-->
+									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入时间（分钟）" data-placement="right" name="shijian4" value="{$rule4.shijian}"/><br>
+									</td>
+									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入时间受益率" data-placement="right" name="profit_shijian_4" value="{$rule4.profit_shijian}"/><br>
+									</td>
+									<td>
+
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入手续费" data-placement="right" name="poundage_4" value="{$rule4.poundage}"/><br>
+
+									</td>
+								</tr>
+								<tr  class="first">
+									<td>
+										第五档
+									</td>
+<!--									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入点数" data-placement="right" name="dianshu5" value="{$rule5.dianshu}"/><br>
+									</td>-->
+<!--									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入点数受益率" data-placement="right" name="profit_dianshu_5" value="{$rule5.profit_dianshu}"/><br>
+									</td>-->
+									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入时间（分钟）" data-placement="right" name="shijian5" value="{$rule5.shijian}"/><br>
+									</td>
+									<td>
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入时间受益率" data-placement="right" name="profit_shijian_5" value="{$rule5.profit_shijian}"/><br>
+									</td>
+									<td>
+
+										<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入手续费" data-placement="right" name="poundage_5" value="{$rule5.poundage}"/><br>
+
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>	
+					<div class="field-box">
+						<label>品种交易状态:</label>
+						<div class="ui-select span5">
+							<select style="width:100%" name="status">
+									<volist name="status" id="vo">
+										<option <if condition='$editgood.status eq $key'>selected=""</if>  value="{$key}">{$vo}</option>
+									</volist>
+							</select>
+						</div>
+					</div>
+                    <div class="field-box actions">
+                    
+						<input type="submit" class="btn-glow primary" value="提交"><span>或</span><input type="reset" value="重置" class="reset">
+					</div>
+					</form>
+                </div>
+				
+                <!-- right column -->
+                <div class="span4 column pull-right">
+                   <div class="field-box"><h3>说明：</h3></div>
+				   <div class="field-box">1、显示名称为前端客户可以看到的品种名称，如：“原油”显示为“芳烃”</div>
+				   <div class="field-box">2、交易时间填写为24小时制的时分，如：开始时间0600，休市时间0400；开始时间空白时，表示当天休市</div>
+				   <div class="field-box">3、品种如果停止交易，前端将不再显示该品种</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end main container -->
+
+<!-- scripts for this page -->
+<script src="__JS__/jquery-latest.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
+<script src="__JS__/theme.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		setdashboardmenu("产品管理");
+		
+		$(".peroidplus").click(function (){
+			var parent_tr = this.parentNode.parentNode;
+			var startInput = parent_tr.children[1].children[0].cloneNode(true);
+			var endInput = parent_tr.children[2].children[0].cloneNode(true);
+			parent_tr.children[1].appendChild(startInput);
+			parent_tr.children[2].appendChild(endInput);
+		});
+	});
+
+	// 点差矫正 更新 2017-3-16 19:12:45
+    function patupd(type) {
+        var $darr={"type":type,"pid":$("[name='pid']").val(),"patj":$("[name='patj']").val(),"patx":$("[name='patx']").val()};
+        $.ajax({
+            cache: true,
+            type: "get",
+            data:$darr,
+            url: "{:U('Goods/geditbypat')}",
+            error: function() {
+                alert('服务器异常');
+            },
+            success: function(msg) {
+                alert(msg);
+            }
+        });
+    }
+</script>
+</block>

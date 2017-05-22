@@ -1,0 +1,129 @@
+<extend name="Base/common"/>
+<block name="content">
+	<!-- this page specific styles -->
+    <link rel="stylesheet" href="__CSS__/compiled/new-user.css" type="text/css" media="screen" />
+        
+    <div class="container-fluid">
+        <div id="pad-wrapper" class="new-user">
+            <div class="row-fluid header">
+                <h3>交易明细</h3>
+				<!--<a href="javascript:void(0);" onclick="preview(1)" class="btn-flat success pull-right">
+					打印订单
+				</a>-->
+            </div>
+            <div class="row-fluid form-wrapper" id="order-print">
+	            <input type="hidden" name="uid" value="{$userme['uid']}"/>
+	            <!-- left column -->
+	            <div class="span7 with-sidebar">
+	                <div class="span9 field-box uname">
+	                    <label>客户名:</label>
+	                    <label style="text-align: left;"><a href="{:U('User/updateuser',array('uid'=>$userme['uid']))}" class="name">{$uinfo.username}</a></label>
+	                    
+	                    <label>账户余额:</label>
+	                    <if condition='$acount.balance eq 0'>
+	                    	<font color="#f00" size="4">￥0.00</font>
+	                    <else/>
+	                    	<font color="#f00" size="4">￥{$acount.balance}</font>
+	                    </if>
+	                </div>
+	                <div class="span9 field-box">
+	                    <label>订单编号:</label>
+	                    {$oinfo['orderno']}
+	                </div>
+	                <div class="span9 field-box">
+	                    <label>商品:</label>
+	                   <!--  {$goods['ptitle']} -->
+	                	{$oinfo.ptitle}
+	                </div>
+	                <div class="span9 field-box">
+	                    <label>交易模式:</label>
+	                    <if condition='$oinfo.eid eq 1'>
+                        	普通模式（点数）
+                    	<else/>
+                    		速战速决（时间）
+						</if>
+	                </div>
+	                <div class="span9 field-box">
+	                    <label>方向:</label>
+	                    <if condition='$oinfo.ostyle eq 0'>
+                        	<font color="#ed0000" >买涨</font>
+                    	<else/>
+							<font color="#2fb44e" >买跌</font>
+						</if>
+	                </div>
+	               <!--  <div class="span9 field-box">
+	                    <label>价格:</label>
+	                    <font color="#f00" size="4">{$goods['uprice']}</font>元/手
+	                </div> -->
+	                <div class="span9 field-box">
+	                    <label>订单状态:</label>
+	                    <if condition='$oinfo.ostaus eq 1'>
+                        	平仓
+                    	<else/>
+							建仓
+						</if>
+	                </div>
+	                <div class="span9 field-box">
+	                    <label>入仓价格:</label>
+	                    <font color="#f00" size="3">{$oinfo.buyprice}</font>元
+	                </div>
+	                <div class="span9 field-box">
+	                    <label>入仓金额:</label>
+	                    <font color="#f00" size="5"><!-- {$oinfo['onumber']*$goods['uprice']} -->
+	                    {$oinfo.fee}</font>元
+	                </div>
+	                <div class="span9 field-box">
+	                    <label>入仓时间:</label>
+	                    {$oinfo.buytime|date='Y-m-d H:i:s',###}
+	                </div>
+	               
+	                <div class="span9 field-box">
+		                <if condition='$oinfo.eid eq 1'>
+		                	<label>止盈/止损点:</label>
+		                <else/>
+	                    	<label>周期（分）:</label>
+	                    </if>
+	                    {$oinfo.endprofit}
+	                </div>
+	                
+	                <div class="span9 field-box">
+	                    <label>平仓时间:</label>
+	                    <notempty name='oinfo.selltime'>
+	                    	{$oinfo.selltime|date='Y-m-d H:i:s',###}
+	                    </notempty>
+	                </div>
+	                <div class="span9 field-box">
+	                    <label>平仓价格:</label>
+	                    {$oinfo.sellprice}
+	                </div>
+	                <div class="span9 field-box">
+	                    <label>本单盈亏:</label>
+	                    <if condition='$oinfo.ostaus eq 1'>
+                        	<font color="#f00" size="5">{$oinfo.ploss}</font>元
+	                	<else/>
+							<span class="ploss"></span>
+						</if>
+	                </div>
+	            </div>
+			</div>
+        </div>
+    </div>
+	<input id="yprice" type="hidden" value=""/>
+    <input id="byprice" type="hidden" value=""/>
+    <input id="toprice" type="hidden" value=""/>
+    
+    <input type="hidden" value="{$goods['wave']}" name="wave" />
+    <input type="hidden" value="{$oinfo['onumber']}" name="onumber" />
+    <input type="hidden" value="{$oinfo['buyprice']}" name="buyprice" />
+    <input type="hidden" value="{$goods['cid']}" name="cid" />
+    <input type="hidden" value="{$oinfo['ostyle']}" name="ostyle" />
+	<!-- scripts -->
+    <script src="__JS__/jquery-latest.js"></script>
+    <script src="__JS__/bootstrap.min.js"></script>
+    <script src="__JS__/theme.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			setdashboardmenu("订单管理");
+		});
+	</script>	
+</block>

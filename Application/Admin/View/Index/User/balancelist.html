@@ -1,0 +1,179 @@
+<extend name="Base/common"/>
+<block name="content">
+<!-- this page specific styles -->
+<link rel="stylesheet" href="__CSS__/compiled/user-list.css" type="text/css" media="screen" />
+<link href="__CSS__/lib/bootstrap.datepicker.css" type="text/css" rel="stylesheet" />
+<style type="text/css">
+input.search {
+	background:none !important;
+}
+div.cond-label{
+	width:80px;
+	float:left;
+	padding-top:3px;
+	text-align:left;
+}
+input.error{
+	border-color:red;
+}
+</style>
+    
+<div class="container-fluid">
+  <form method="get" action="{:U('balancelist')}" name="searchForm">
+    <div id="pad-wrapper" class="users-list">
+      <div class="row-fluid header">
+          <h3>余额流水列表</h3>
+          <div class="span10 pull-right">
+              <div class="tpsearch">
+              	<div class="cond-label">操作类型</div>
+              	<select id="ostyle" class="span6" name="optype">
+                    <option value="0">全部</option>
+                    <option value="1" <php>if($optype==1)echo 'selected'</php>>充值</option>
+                    <option value="2" <php>if($optype==2)echo 'selected'</php>>提现</option>
+                    <option value="3" <php>if($optype==3)echo 'selected'</php>>建仓</option>
+                    <option value="4" <php>if($optype==4)echo 'selected'</php>>平仓</option>
+                    <option value="100" <php>if($optype==100)echo 'selected'</php>>手动修改</option>
+              	</select>
+              </div>
+              <div class="tpsearch">
+              	<div class="cond-label">所属机构编码</div>
+              	<input type="text" class="span6 search" name="compcode" value="{$compcode}"/>
+              </div>
+              <div class="tpsearch">
+              	<div class="cond-label">客户名称</div>
+              	<input type="text" class="span6 search" name="username" value="{$username}"/>
+              </div>
+          </div>
+          <div class="span10 pull-right" style="margin-top:10px;margin-bottom:10px">
+              <div class="tpsearch">
+              	<div class="cond-label">日期</div>
+              	<input type="text" class="input-large" style="margin-bottom: 0;" name="opdate" value="{$opdate}" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})">
+              </div>
+              <div class="tpsearch">
+              	<div class="cond-label">金额</div>
+              	<input type="text" class="span6 search money" name="amount1" style="width:70px" value="{$amount1}"/>~
+              	<input type="text" class="span6 search money" name="amount2" style="width:70px" value="{$amount2}"/>
+              </div>
+	          <div class="tpsearch">
+	          	<a href="javascript:void(0)" class="btn-flat info" onclick="doSearch()">开始查找</a>
+	          </div>
+          </div>
+    
+        <!-- Users table -->
+        <div class="row-fluid table">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="span2">序号</th>
+                        <th class="span2">编号</th>
+                        <th class="span2">客户</th>
+                        <th class="span2">会员编号</th>
+                        <th class="span2 sortable">代理名称</th>
+                        <th class="span2 sortable">机构名称</th>
+						<th class="span2 sortable">类型</th>
+						<th class="span2 sortable">金额</th>
+						<th class="span2 sortable">操作后余额</th>
+						<th class="span2 sortable">操作时间</th>
+						<th class="span2 sortable">操作人</th>
+                    </tr>
+                </thead>
+                <tbody id="ajaxback">
+				<volist name="balancelist" id="balance">
+                <!-- row -->
+                <tr class="first">
+                    <td>{$i}</td>
+					<td>
+					  <if condition="($balance.optype eq '1') or ($balance.optype eq '2') ">
+                        <a href="{:U('User/rechargedetail', array('id'=>$balance['opid']))}">{$balance.id}</a>
+                      <elseif condition="($balance.optype eq '3') or ($balance.optype eq '4') "/>
+                        <a href="{:U('Order/ocontent', array('oid'=>$balance['opid']))}">{$balance.id}</a>
+                      <else/>
+                        {$balance.id}
+                      </if>
+                    </td>
+                    <td>
+                        <a href="{:U('User/updateuser',array('uid'=>$balance['uid']))}">{$balance.customer}</a>
+                    </td>
+                    <td>{$balance.huiyuan_code}</td>
+                    <td>{$balance.daili_name}</td>
+                    <td>{$balance.jigou_name}</td>
+                    <td>
+                    	<if condition="$balance.optype eq '1' ">
+                        充值
+                        <elseif condition="$balance.optype eq '2' "/>
+                        提现
+                        <elseif condition="$balance.optype eq '5' "/>`
+                        提现驳回
+                        <elseif condition="$balance.optype eq '6' "/>
+                        提现失败
+                        <elseif condition="$balance.optype eq '3' "/>
+                        建仓
+                        <elseif condition="$balance.optype eq '4' "/>
+                        平仓
+                        <elseif condition="$balance.optype eq '100' "/>
+                        手动修改
+                        </if>
+                    </td>
+                    <td>{$balance.amount}</td>
+                    <td>{$balance.balance}</td>
+                    <td>{$balance.optime|date='Y-m-d H:i',###}</td>
+                    <td>
+                    	<if condition="$balance.optype eq '100' ">
+                        {$balance.opusername}
+                        <else/>
+                        -
+                        </if>
+                    </td>
+                </tr>
+                <!-- row -->
+				</volist>
+                </tbody>
+            </table>
+        </div>
+        <div class="pagination pull-right">
+            <ul>
+                {$page}
+            </ul>
+        </div>
+        <!-- end users table -->
+    </div>
+  </form>
+</div>
+
+<!-- scripts -->
+<script language="javascript" type="text/javascript" src="__JS__/My97DatePicker/WdatePicker.js"></script>
+<script src="__JS__/jquery-latest.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
+<script src="__JS__/theme.js"></script>
+<script src="__JS__/popup_layer.js"></script>
+<script src="__JS__/bootstrap.datepicker.js"></script>
+<script src="__PUBLIC__/Js/numeric.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		setdashboardmenu("客户管理");
+
+        // datepicker plugin
+        $('.datepicker').datepicker().on('changeDate', function (ev) {
+            $(this).datepicker('hide');
+        });
+	});
+	
+	function doSearch() {
+		$("input.money").removeClass("error");
+		
+		//检查金额是否正确
+		var ar = $("input.money");
+		for (var i=0; i<ar.length; i++) {
+			if (ar[i].value!="" && !isNumeric(ar[i].value, 8,2)) {
+				alert("请输入正确的金额！");
+				$(ar[i]).addClass("error");
+				$(ar[i]).focus();
+				return false;
+			}
+		}
+
+		document.searchForm.submit();
+	}
+</script>
+</block>

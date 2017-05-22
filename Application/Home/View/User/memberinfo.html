@@ -1,0 +1,380 @@
+<extend name="Base/footer"/>
+
+<block name="content">
+
+<link rel="stylesheet" href="__CSS__/global.css">
+
+<link rel="stylesheet" href="__CSS__/account.css">
+
+<link rel="stylesheet" href="__CSS__/common.css" />
+
+<style>
+
+.cha{
+
+    width: 60%;
+
+    height: 33px;
+
+    border: 1px solid #dedede;
+
+    background: #fff;
+
+    font-size: 1.1rem;
+
+    line-height: 33px;
+
+	color: #ed0000;
+
+}
+
+.f-sub{
+
+    margin-top: 5%;
+
+    display:block;
+
+    width: 60%;
+
+    border: 0;
+
+    border-radius: 5px;
+
+    background: #0d216a;
+
+    padding: .3em 0;
+
+    cursor: pointer;
+
+    font-size: 1.8rem;
+
+    text-align: center;
+
+    color: #fff;
+
+}
+
+</style>
+
+
+
+<script id="G--xyscore-load" type="text/javascript" charset="utf-8" async src="__JS__/xyscore_main.js"></script>
+
+<script type="text/javascript">
+
+		var w, h, className;
+
+		function getSrceenWH() {
+
+			w = $(window).width();
+
+			h = $(window).height();
+
+			$('#dialogBg').width(w).height(h);
+
+		}
+
+		window.onresize = function() {
+
+			getSrceenWH();
+
+		}
+
+		$(window).resize();
+
+
+
+		$(function() {
+
+
+
+			getSrceenWH();
+
+
+
+			//购买显示弹框
+
+			$('.diancha').click(
+
+					function() {
+
+						//获取选择是涨还是跌的值
+
+						className = $(this).attr('class');
+
+						$('#dialogBg').fadeIn(200);
+
+						$('#dialog').removeAttr('class').addClass(
+
+								'animated ' + className + '').fadeIn(200);
+
+
+
+					});
+
+			//关闭弹窗
+
+			$('.claseDialogBtn,#claseDialogBtn').click(function() {
+
+				$('#dialogBg').fadeOut(200, function() {
+
+					$('#dialog').addClass('bounceOutUp').fadeOut(200);
+
+				});
+
+			});
+
+			$("#conform").click(function(){
+
+				var diancha = $('#diancha').val();
+
+				$.ajax({
+
+					type : 'post',
+
+					url : "{:U('User/dxsetting')}",
+
+					data : {
+
+						"diancha" : diancha,
+
+					},
+
+					async : false,
+
+					success : function(data) {
+
+						$('#dialogBg').fadeOut(200, function() {
+
+							$('#dialog').addClass('bounceOutUp').fadeOut(200);
+
+						});
+
+					}
+
+				});
+
+			});
+
+
+
+		});
+
+	</script>
+
+
+
+<body style="overflow:scroll;">
+
+<div class="wrap">
+
+  <!-- <div class="index" style="min-height: 1114px;"> -->
+
+  <div class="index">
+
+  <div class="txss" style="margin-bottom: 10px;">
+
+      <div class="tx"><if condition="$suer.portrait eq ''"><img src="__IMG__/pic.gif"><else/><img src="{$suer.portrait}"></if></div>
+
+        <div class="gezh">
+
+          <div class="grzhx"><p class="a-d">账号：<b>{$suer.username}</b></p></div>
+
+          <div class="grzhx"><p class="a-d">余额：{$result.balance}&nbsp;元</p></div>
+
+          
+
+          <div class="cztz"><empty name='isinweixin'><a href="{:U('User/logout')}" class="acc-btn red">退出</a></empty><a href="{:U('User/deposit')}" class="acc-btn red">充值</a> <a href="{:U('User/withdraw')}" class="acc-btn blue">提现</a></div>
+
+          
+
+        </div>
+
+        <div class="clearfix"></div>
+
+    </div>
+
+    <div class="info-box clearfix"> <i class="a-3"></i>
+
+     <div class="info-detail clearfix"> <a href="{:U('User/dtrading')}" class="acc-l">持仓</a> </div>
+
+    </div>
+
+    <div class="info-box clearfix"> <i class="a-3"></i>
+
+      <div class="info-detail clearfix"> <a href="{:U('Detailed/drevenue')}" class="acc-l">收支明细</a> </div>
+
+    </div>
+
+    <div class="info-box clearfix"> <i class="a-1"></i>
+
+      <div class="info-detail clearfix"> <a href="{:U('User/experiencelist')}" class="acc-l">我的体验券</a> </div>
+
+    </div>
+
+    <div class="info-box clearfix"> <i class="a-6"></i>
+
+    <if condition="($suer.agenttype eq 0) OR ($suer.agenttype eq 1)">
+
+         <div class="info-detail clearfix"> <a href="{:U('Broker/applybroker')}" class="acc-l">申请经纪人</a> </div>
+
+    <else />
+
+         <div class="info-detail clearfix" style="display:block"> <a href="{:U('Broker/brokerinfo')}" class="acc-l">经纪人中心</a></div>
+
+    </if> 
+
+    </div>
+<!--
+    <div class="info-box clearfix"> <i class="a-5"></i>
+
+      <div class="info-detail clearfix"> <a href="{:U('User/purchase')}" class="acc-l">风险申购</a> </div>
+
+    </div>
+
+    <div class="info-box clearfix"> <i class="a-1"></i>
+
+      <div class="info-detail clearfix"> <a href="{:U('User/pcmanagement')}" class="acc-l">申购管理</a> </div>
+
+    </div>
+-->
+
+    <div class="info-box clearfix"> <i class="a-11"></i>
+
+      <div class="info-detail clearfix"> <a href="{:U('User/img',array('uid'=>$_SESSION['uid']))}" class="acc-l">分享好友</a> </div>
+
+    </div>
+
+<!--    <div class="info-box clearfix"> <i class="a-12"></i>
+
+      <div class="info-detail clearfix"> <a href="javascript:" class="acc-l diancha">默认允许偏离点差</a> </div>
+
+    </div>-->
+
+<!--	<div class="info-box clearfix"> <i class="a-12"></i>
+
+  	  <div class="info-detail clearfix"> <a href="{:U('User/ranking')}" class="acc-l">排行榜</a> </div>
+
+	</div>-->
+
+     <div class="info-box clearfix marginBox"> <i class="a-13"></i>
+
+	    <if condition="($suer.authenticationsstatus eq 0)">
+
+	         <div class="info-detail clearfix"> <a href="{:U('User/authentication')}" class="acc-l">实名认证</a> </div>
+
+	    <else />
+
+	         <div class="info-detail clearfix"> <a href="{:U('User/authenticationinfo')}" class="acc-l">实名认证</a> </div>
+
+	    </if>
+
+    </div>
+
+    <!--
+
+    <div class="info-box clearfix"> <i class="a-14"></i>
+
+      <div class="info-detail clearfix"> <a href="{:U('User/bankcard')}" class="acc-l">签约银行</a> </div>
+
+    </div>
+
+    -->
+
+    <div class="info-box clearfix"> <i class="a-0"></i>
+
+      <div class="info-detail clearfix" style="border-bottom:1px solid #4A4E59;"> <a href="{:U('User/edituser')}" class="acc-l">修改登陆密码</a> </div>
+
+    </div>
+
+	  <div class="info-box clearfix"> <i class="a-6"></i>
+
+		  <div class="info-detail clearfix" style="border-bottom:1px solid #4A4E59;"><a href="{:U('User/alipayinfo')}" class="acc-l">我的支付宝账号</a> </div>
+
+	  </div>
+
+
+      <div class="info-box clearfix"> <i class="a-2"></i>
+
+        <div class="info-detail clearfix" style="border-bottom:1px solid #4A4E59;"> <a href="{:U('User/edituserb')}" class="acc-l">修改交易密码</a> </div>
+
+      </div>
+<!--
+
+      <div class="info-box clearfix"> <i class="a-2"></i>
+
+        <div class="info-detail clearfix" style="border-bottom:1px solid #4A4E59;"> <a href="{:U('User/showdetailinfo')}" class="acc-l">账户信息</a> </div>
+-->
+
+      </div>
+
+  </div>
+
+  <div class="box">
+
+		<div id="dialogBg"></div>
+
+		<div id="dialog" class="">
+
+			<!--建仓确认
+
+			<div class="pop-box none" 
+
+				style="display: block; position: fixed; height: 250px;">
+
+				<nav class="pop-nav ">
+
+					<a href="javascript:;" class="back" id="claseDialogBtn"></a>
+
+					<div class="dialogTop">
+
+						<a href="javascript:;" class="claseDialogBtn"
+
+							style="position: absolute; right: 20px;  mz-index: 111; font-size: 1rem; width: 40px; height: 20px; text-align: center;">关闭</a>
+
+					</div>
+
+					<h3>默认允许偏离点差</h3>
+
+				</nav>
+-->
+			
+
+				<div class="b-line clearfix" align="center"  style="margin:20px 0px 5px 0px;">
+
+						<p >
+
+							<input class="cha" type="text" name="diancha" id="diancha" value="{$suer.diancha}"/>
+
+						</p>
+
+					<p>
+
+						<input type="button" class="f-sub" id="conform"  value="确 认" >
+
+					</p>
+
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+</div>
+
+<script src="__JS__/jquery-2.1.1.min.js"></script>
+
+<script src="__JS__/script.js"></script>
+
+<script type="text/javascript" charset="utf-8" src="__JS__/sea.js" async></script>
+
+
+
+</body>
+
+</block>
+
+
+

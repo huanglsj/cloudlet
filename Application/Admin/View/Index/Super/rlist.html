@@ -1,0 +1,100 @@
+<extend name="Base/common"/>
+<block name="content">
+            
+    <!-- this page specific styles -->
+    <link rel="stylesheet" href="__CSS__/compiled/article.css" type="text/css" media="screen" />
+    <div class="container-fluid">
+        <div id="pad-wrapper" class="users-list">
+            <div class="row-fluid header">
+                <h3>角色列表</h3>
+            </div>
+            <!-- Users table -->
+            <form  action="{:U('Goods/gdel')}" method="post" name="del">
+            <div class="row-fluid table">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th class="span1 sortable">编号
+                            </th>
+                            <th class="span3 sortable">
+                                <span class="line"></span>角色名
+                            </th>
+                            <th class="span3 sortable">
+                                <span class="line"></span>角色类型
+                            </th>
+                            <th class="span2 sortable">
+                                <span class="line"></span>状态
+                            </th>
+                            <th class="span2 sortable">
+                                <span class="line"></span>是否默认角色
+                            </th>
+                            <th class="span3 sortable">
+                                <span class="line"></span>备注
+                            </th>
+                            <th class="span1 sortable">
+                                <span class="line"></span>操作
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="ajaxback">
+                    <volist name="rlist" id="rl">
+                    <!-- row -->
+                    <tr class="first">
+                        <td>
+                            {$rl['id']}
+                        </td>
+                        <td>
+                            {$rl['name']}
+                        </td>
+                        <td>
+                            <if condition='$rl["rtype"] eq 1'>总公司人员角色</if>
+                            <if condition='$rl["rtype"] eq 2'>会员人员角色</if>
+                            <if condition='$rl["rtype"] eq 3'>代理人员角色</if>
+                            <if condition='$rl["rtype"] eq 4'>机构人员角色</if>
+                        </td>
+                        <td><if condition='$rl["state"] eq 1'>正常
+                                <else/>无效
+                             </if>
+                        </td>
+                        <td><if condition='$rl["isdefault"] eq 1'>是</if>
+                        </td>
+                        <td>
+                            {$rl['remarks']}
+                        </td>
+                        <td>
+                            <ul class="actions">
+                                <if condition="$_SESSION['pkey']['ROLE_EDIT'] eq '1'">
+                                    <li style="border: 0;"><a href="{:U('Super/redit',array('id'=>$rl['id']))}"><i class="table-edit"></i></a></li>
+                                </if>
+                                <if condition="$_SESSION['pkey']['ROLE_DEL'] eq '1'">
+                                    <li class="last"><a href="{:U('Super/rdel',array('id'=>$rl['id']))}" onclick="if(confirm('确定要删除吗?')){return true;}else{return false;}"><i class="table-delete"></i></a></li>
+                                </if>
+                            </ul>
+                        </td>
+                    </tr>
+                    </volist>
+                    </tbody>
+                </table>
+            </div>
+            </form>
+            <div class="pagination pull-right">
+                <ul>
+                    {$page}
+                </ul>
+            </div>
+            <!-- end users table -->
+        </div>
+    </div>
+<!-- end main container -->
+
+
+<!-- scripts -->
+<script src="__JS__/jquery-latest.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
+<script src="__JS__/theme.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+    setdashboardmenu("权限管理");
+});
+</script>
+</block>

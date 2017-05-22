@@ -1,0 +1,103 @@
+<extend name="Base/common"/>
+<block name="content">
+<link rel="stylesheet" href="__CSS__/compiled/new-user.css" type="text/css" media="screen" />  
+<style>
+	.new-user .form-wrapper input[type="text"]{border: 1px solid #D0D0D0;}
+</style>
+   <div class="container-fluid">
+            <div id="pad-wrapper" class="new-user">
+                <div class="row-fluid header">
+                    <h3>会员单位&nbsp;>&nbsp添加会员单位</h3>
+                </div>
+
+                <div class="row-fluid form-wrapper">
+                    <form action="/index.php/Admin/Menber/madd.html" method="post" class="new_user_form">
+                    <!-- left column -->
+                    <div class="span6 with-sidebar">
+                        <div class="span9 field-box">
+                            <label>公司名称:</label>
+                            <input class="span8" type="text" name="comname" value="{$memeber.comname}" data-toggle="tooltip" data-trigger="focus" title="请输入公司名称" data-placement="right" />
+                        </div>
+                        <div class="span9 field-box">
+                            <label>负责人名:</label>
+                            <input class="span8" type="text" name="managername" value="{$memeber.managername}" data-toggle="tooltip" data-trigger="focus" title="请输入负责人名" data-placement="right" />
+                        </div>
+                        <div class="span9 field-box">
+                            <label>身份证号:</label>
+                            <input class="span8" type="text" name="manageridcard" value="{$memeber.manageridcard}" data-toggle="tooltip" data-trigger="focus" title="请输入负责人身份证号" data-placement="right" />
+                        </div>
+                        <div class="span9 field-box">
+                            <label>负责人电话:</label>
+                            <input class="span4" type="text" name="managerphone" value="{$memeber.managerphone}" data-toggle="tooltip" data-trigger="focus" title="请输入负责人电话" data-placement="right" />
+                        </div>
+                         <div class="span9 field-box">
+                            <label>负责人地址:</label>
+                            <input class="span8" type="text" name="manageraddress" value="{$memeber.manageraddress}" data-toggle="tooltip" data-trigger="focus" title="请输入负责人地址" data-placement="right" />
+                        </div>
+                       	<div class="span9 field-box">
+                            <label>公司资质:</label>
+                            <input class="span8" type="text" name="comqua" value="{$memeber.comqua}" data-toggle="tooltip" data-trigger="focus" title="请输入公司资质" data-placement="right" />
+                        </div>
+                        <div class="span9 field-box">
+                            <label>授权期限:</label>
+                            <input class="span4 datepicker" type="text" name="termtime" value="{$memeber.termtime}" data-toggle="tooltip" data-trigger="focus" title="请输入授权期限" data-placement="right" />
+                        </div>
+            			<div class="span9 field-box">
+                            <label>合同信息:</label>
+                            <textarea class="span9" rows='5' name="contractinfo" value="{$memeber.contractinfo}" data-toggle="tooltip" data-trigger="focus" title="请输入合同信息" data-placement="right"></textarea>
+                        </div>
+                        <div class="span9 field-box">
+                            <label>管理费比例(%):</label>
+                            <input class="span2" type="text" name="managefeerate" value="{$memeber.managefeerate}" data-toggle="tooltip" data-trigger="focus" title="请输入管理费比例" data-placement="right" />
+                        </div>
+                        <div class="span9 field-box">
+                            <label>保证金(元):</label>
+                            <input class="span4" type="text" value="{$memeber.cashdeposit}" name="cashdeposit" data-toggle="tooltip" data-trigger="focus" title="请输入保证金" data-placement="right" />
+                        </div>
+                        <div class="span9 field-box">
+                            <label>会员权益(元):</label>
+                            <input class="span4" type="text" value="{$memeber.equity}" name="equity" data-toggle="tooltip" data-trigger="focus" title="请输入会员权益" data-placement="right"  readonly="true"/>
+                        </div>
+                        <div class="span9 field-box">
+                            <label>开户行:</label>
+                            <input class="span8" type="text" value="{$memeber.bankname}" name="bankname" data-toggle="tooltip" data-trigger="focus" title="请输入开户行" data-placement="right" />
+                        </div>
+                        <div class="span9 field-box">
+                            <label>开户行支行:</label>
+                            <input class="span8" type="text" value="{$memeber.bankbranch}" name="bankbranch" data-toggle="tooltip" data-trigger="focus" title="请输入开户行支行" data-placement="right" />
+                        </div>
+                        <div class="span9 field-box">
+                            <label>银行账号:</label>
+                            <input class="span8" type="text" value="{$memeber.banknum}" name="banknum" data-toggle="tooltip" data-trigger="focus" title="请输入银行账号" data-placement="right"  />
+                        </div>
+                        <div class="span9 field-box">
+                            <label>开户人名:</label>
+                            <input class="span8" type="text" value="{$memeber.bankusername}" name="bankusername" data-toggle="tooltip" data-trigger="focus" title="请输入开户人名" data-placement="right"  />
+                        </div>
+                        <div class="span8 field-box actions" style="padding-bottom: 20px;">
+                            <input type="submit" class="btn-glow primary" value="添加" />
+                        </div>
+                    </div>
+					</form>
+                </div>
+            </div>
+        </div>
+	<!-- scripts -->
+    <script src="__JS__/jquery-latest.js"></script>
+    <script src="__JS__/bootstrap.min.js"></script>
+    <script src="__JS__/theme.js"></script>
+    <script src="__JS__/bootstrap.datepicker.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+			setdashboardmenu("会员管理");
+			
+			$('.datepicker').datepicker().on('changeDate', function (ev) {
+	            $(this).datepicker('hide');
+	        });
+			
+			$("[name=cashdeposit]").blur(function(){
+				$("[name=equity]").val($("[name=cashdeposit]").val());
+			});
+		});		
+	</script>
+</block>

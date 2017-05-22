@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="email=no">
+<title>k线传奇微财富</title>
+<meta name="keywords" content="k线传奇微财富" />
+<meta name="description" content="k线传奇微财富">
+
+<link href="__ROOT__/newpublic/css/style_head.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="__CSS__/cd.css" />
+<link rel="stylesheet" type="text/css" href="__CSS__/icons.css" />
+<script language="javascript" type="text/javascript" src="__JS__/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="__JS__/cd.js"></script>
+
+<link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+<link rel="stylesheet" href="__CSS__/mobile-angular-ui-hover.min.css" />
+<link rel="stylesheet" href="__CSS__/mobile-angular-ui-base.min.css" />
+<link rel="stylesheet" href="__CSS__/swiper.min.css" />
+<link rel="stylesheet" href="__CSS__/app.css" />
+    <script src="__JS__/angular.min.js"></script>
+    <script src="__JS__/angular-route.min.js"></script>
+    <script src="__JS__/mobile-angular-ui.min.js"></script>
+    <script src="__JS__/mobile-angular-ui.gestures.min.js"></script>
+    <script src="__JS__/swiper.min.js"></script>
+    <script src="__JS__/all.js"></script>
+    <script src="__JS__/jquery.js"></script>
+
+
+<script>
+$(document).ready(function(){
+
+	$(".top_nav > ol > a > li").click(function(){
+       if(!$(this).hasClass("show_nav")){
+		 $(".top_nav > ol > a > li").removeClass("stay_nav");
+		 $(this).addClass("show_nav");
+	    }
+	  })
+	  
+	})
+
+
+
+
+</script>
+
+<style>
+.btn-navbar-bottom-text{font-size:1.2rem;}
+</style>
+</head>
+<body>
+<!--顶部开始-->
+<div class="top_div">
+     <!-- <div class="cdan_div"><img src="__IMG__/cdan.png" width="35" height="32"/></div>-->
+    <div class="mid_div">
+     <div class="top_nav" >
+       <a href="{:U('User/memberinfo')}"><img src="__ROOT__/newpublic/images/img_02 (2).png"></a>
+       <div class="content_right">
+          <p>可用余额：{$price.balance}　元</p>
+          <ul>
+            <li><a href="{:U('User/memberinfo')}">个人中心</a></li>
+            <li><a href="{:U('User/recharge')}">账户充值</a></li>
+            <li><a href="{:U('User/recharge')}">出金提现</a></li>
+          </ul>
+        </div>
+      <ol>
+ <!--       <a href="{:U('Index/Index')}"><li>油</li></a>-->
+        <a href="{:U('Index/hsi')}"><li>恒指</li></a>
+ <!--       <a href="{:U('Index/myzs')}"><li>美指</li></a>-->
+        <a href="{:U('Index/liqing')}"><li>沥青</li></a>
+        <a href="{:U('Index/yin')}"><li>银</li></a>
+        <a href="{:U('Index/bite')}"><li >比特币</li></a>
+    </ol>
+</div>	
+</div>
+  
+<!-- <div style="float:right;"><h1>返回</h1></div> -->
+  </div>
+<div class="dbjjDiv"></div>
+
+<!--顶部结束-->
+
+
+
+<div class="main" style="margin-top:90px;margin-bottom:80px;"> 
+
+       <block name="content">
+       
+       
+       </block>
+ </div>
+ 
+ 
+ 
+ 
+ 
+<!-- <div class="bottom_div">
+     <ul>
+       <a href="{:U('Index/Index')}"><li class="home">首页</li></a>
+       <a href="{:U('Detailed/dtrading')}"><li class="trans">交易历史</li></a>
+       <a href="{:U('Detailed/drevenue')}"><li class="state">收支明细</li></a>
+       <a href="{:U('User/memberinfo')}"><li class="my">我的</li></a>
+     </ul>
+</div> -->
+        <div class="navbar navbar-app navbar-absolute-bottom" style="position:fixed;bottom:0px;">
+            <div class="btn-group justified">
+                <a href="{:U('Index/Index')}" class="btn btn-default btn-navbar" style="height:54px;line-height:54px;"><i class="fa home fa-2x" style="width:32px;height:32px;background:url(/weipan/newpublic/images/home.png);"></i><div class="btn-navbar-bottom-text">行情</div></a>
+                <a href="{:U('User/dtrading')}" class="btn btn-default btn-navbar" style="height:54px;"><i class="fa trans fa-2x" style="width:32px;height:32px;background:url(/weipan/newpublic/images/trans.png);"></i><div class="btn-navbar-bottom-text">持仓</div></a>
+                <a href="{:U('User/memberinfo')}" class="btn btn-default btn-navbar" style="height:54px;"><i class="fa my fa-2x" style="width:32px;height:32px;background:url(/weipan/newpublic/images/my.png);"></i><div class="btn-navbar-bottom-text">我的</div></a>
+                <a href="{:U('User/img')}" class="btn btn-default btn-navbar" style="height:54px;"><i class="fa more fa-2x" style="width:32px;height:32px;background:url(/weipan/newpublic/images/more.png);"></i><div class="btn-navbar-bottom-text">更多</div></a>
+
+            </div>
+        </div> 
+   
+
+</body>
+</html>

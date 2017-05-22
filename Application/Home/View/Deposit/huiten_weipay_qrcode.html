@@ -1,0 +1,68 @@
+<extend name="Base/footer"/>
+<html>
+<head>
+<block name="content">
+    <meta charset="utf-8">
+    <title>扫码支付</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+    <style>
+        html, body {
+            -webkit-touch-callout: none;
+            touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            tap-highlight-color: transparent;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 300;
+            font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+        }
+
+        body {
+            background: #10162c
+        }
+        p{
+            text-align: center;
+            color: #fff;
+        }
+
+		.closeBtn {
+		    clear: both;
+		    width: 90%;
+		    background: #0d216a;
+		    border: none;
+		    line-height: 40px;
+		    margin: 14px auto;
+		    border-radius: 10px;
+			font-size: 20px;
+			font-weight:700;
+			color:#eee;
+			margin-top:40px;
+		}
+    </style>
+	<script>
+		function doClose() {
+			location.href="{:U('Index/index')}";
+		}
+	</script>
+</head>
+<body>
+<div style="margin-top:20px">
+    <p>欢迎使用微信支付</p>
+  <img class="p1" src="/Extend/phpqrcode/index.php?d={$url}&l=2&m=2&s=6" style="margin-top:10px"/>
+  <p>长按二维码 进行充值</p><br/>
+  <p>有问题请联系在线客服</p>
+  <input type="button" value="返回首页" onclick="doClose();" class="closeBtn"/>
+</div>
+
+</body>
+</block>
+</html>

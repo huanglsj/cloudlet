@@ -1,0 +1,139 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>支付提示</title>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+    <style>
+        *, :before, :after {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+        }
+
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+            margin: 0;
+            padding: 0
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        fieldset, img {
+            border: 0
+        }
+
+        li {
+            list-style: none
+        }
+
+        caption, th {
+            text-align: left
+        }
+
+        q:before, q:after {
+            content: ""
+        }
+
+        html, body {
+            -webkit-touch-callout: none;
+            touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            tap-highlight-color: transparent;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 300;
+            font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+        }
+
+        body {
+            background: #10162c
+        }
+
+        .weixin-tip {
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            width: 265px;
+            padding: 55px 0 0;
+            text-align: left;
+            background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFoAAACICAMAAABQgAwUAAAAMFBMVEUAAADY2NjY2NjY2NjY2NjY2NjY2NjY2NjX19fY2NjY2NjY2NjY2NjY2NjY2NjY2Njr/TvvAAAAD3RSTlMAxy89c9CdTRyG7lvcD7FzqbJAAAACFklEQVR42uWYy4rkMBAErZdlPdzx/3+7LAw0tH0Y2orDsnnyKQlSVaWytoc6xrEpigFoinUAIBnWABAE5woW9o6GPbGwI1jYGSzsgoV9goU9wMLe0bA7FnYCC7uBhV2wsE+wsAdY2AENGyzsBBZ2Q8MuWNgH94pLbgELO6Bhg4VdwcJuaNgTCzuChZ3Bwg5o2GBhV7CwdzTsjoUdwcLOYGEXLOwTLOwBFvaOht2xsBNY2I1f6lhaenvhrfpkAblab+k9b/OD0iuX2F9/x8D+7ZL2pmpbuj+6o3Vg//oWmPU9p65VkXL6+oIJ8S738nwj62Pb1lvHACH+fBs7sG59U3yrVD3rce3GVcp8qGkPAGTprQUYy6xfaE8i82b6S7/pfZnzdYQIHeOXdfYKpHoFcmrvWlM8RW+CDO8JMWoNM/+FeyB4UfMpL48g5qG1Iqc29YI3mqq2knXvEJu2onJoQy9ok4mkQZf/GjqitUvQyqN6SU8NOvOhHq25xNCWj6LFQdLiyKuaZWpxBC2OrFVHxdryElbQsVtBx6KN0qAd4a71yo610uxa2b0s5xg052I5p26d4MCqusZFwzrAnqQhSogSMnkNcr+GUS3kEKWS62NJFlNCToWLZpWMe14RReGqdjz2PfNECbkGbrQ/Nj5q5y7j8/HRTW5UhvHfA7Mdzitji8rfWsgX3gVZ91eO22odKed6LLf9A/sRnc74RV7lAAAAAElFTkSuQmCC) no-repeat right top;
+            background-size: 45px 68px
+        }
+		.closeBtn {
+		    clear: both;
+		    width: 50%;
+		    background: #0d216a;
+		    border: none;
+		    line-height: 40px;
+		    margin: 14px auto;
+		    border-radius: 10px;
+			font-size: 15px;
+			font-weight:700;
+			color:#eee;
+			float:bottom;
+			margin-top:250px;
+			display:none;
+		}
+    </style>
+	<script>
+    	function doPay() {
+    		//document.payForm.action = "http://" + location.host + "/Extend/alipay/wappay/pay.php";
+    		document.payForm.action = "/Extend/alipay/wappay/pay.php";
+    		document.payForm.submit();
+    	}
+    	
+    	function onLoad() {
+            var ua = navigator.userAgent.toLowerCase();
+            if (ua.indexOf('micromessenger') != -1) {
+            	//微信环境
+            	document.querySelector("#weixinTip").style.display = 'block';
+            	document.querySelector("#closeBtn").style.display = 'block';
+            }
+            else {
+            	//非微信环境
+            	doPay();
+            }
+    	}
+
+		function doClose() {
+			location.href="{:U('Index/index')}";
+		}
+	</script>
+</head>
+<body onLoad="onLoad()">
+<form name="payForm" method="post" action="" target="_self" style="display:none">
+    <input type="hidden" name="orderNo" value="{$orderNo}"/>
+    <input type="hidden" name="amount" value="{$amount}"/>
+    <input type="hidden" name="notifyURL" value="{$notifyURL}"/>
+    <input type="hidden" name="returnURL" value="{$returnURL}"/>
+</form>
+
+<div class="J-weixin-tip weixin-tip" id="weixinTip" style="display:none">
+    <div class="weixin-tip-content" style="color:#eee;font-weight:700">
+        请点击右上角菜单，<br>
+		选择【在浏览器中打开】,<br/>
+        以完成支付<br>
+		<font style="font-size:12px;font-weight:400;color:#bbb">
+		<br>
+		因为微信屏蔽支付宝，<br>
+		无法在微信中使用支付宝
+		</font>
+    </div>
+</div>
+<form>
+<input type="button" value='关闭' class='closeBtn' id="closeBtn" onclick="doClose();"/>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,281 @@
+<extend name="Base/common"/>
+<block name="content">
+<!-- this page specific styles -->
+<link rel="stylesheet" href="__CSS__/compiled/index.css" type="text/css" media="screen" />
+    <style>
+        .label-cc{background-color: red!important;}
+        .table-products .table tr.first td{padding: 3px;}
+    </style>
+<div class="container-fluid">
+
+    <!-- upper main stats -->
+    <div id="main-stats">
+        <div class="row-fluid stats-row">
+            <div class="span3 stat">
+                <div class="data">
+                    入金总额：<span class="number">￥{$inTotalMoney}</span>
+                </div>
+                <!--<span class="date">今日</span>-->
+            </div>
+            <div class="span3 stat">
+                <div class="data">
+                    剩余总额：<span class="number">￥{$outTotalMoney}</span>
+                </div>
+                <!--<span class="date">今日</span>-->
+            </div>
+            <div class="span2 stat">
+                <div class="data">
+                    <span class="number">{$userCount}</span>
+                    用户
+                </div>
+                <span class="date">截止 <?php echo date('Y-m-d H:i:s'); ?></span>
+            </div>
+            <div class="span2 stat">
+                <div class="data">
+                    <span class="number">{$orderCount}</span>
+                    订单
+                </div>
+                <span class="date">最近7天</span>
+            </div>
+            <div class="span2 stat last">
+                <div class="data">
+                    <span class="number">￥{$total}</span>
+                    总交易
+                </div>
+                <span class="date">最近30天</span>
+            </div>
+
+        </div>
+    </div>
+    <!-- end upper main stats -->
+
+    <div id="pad-wrapper">
+
+        <!-- statistics chart built with jQuery Flot -->
+        <!--<div class="row-fluid chart">
+            <h4>
+                统计<small>Statistics</small>
+                 <div class="btn-group pull-right">
+                    <button class="glow left">今天</button>
+                    <button class="glow middle active">本月</button>
+                    <button class="glow right">今年</button>
+                </div>
+            </h4>
+            <div class="span12">
+                <div id="statsChart"></div>
+            </div>
+        </div>-->
+        <!-- end statistics chart -->
+        <!-- table sample -->
+        <!-- the script for the toggle all checkboxes from header is located in js/theme.js -->
+        <div class="table-products" style="padding-top: 0;">
+            <div class="row-fluid head">
+                <div class="span12">
+                    <!--<h4>最新交易记录 <small>Orders</small> 控制比例 {$control} %  当前控制 {$nowcontrol} % </h4>-->
+                </div>
+            </div>
+            <div class="row-fluid">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                                <th class="span3 sortable">
+                                    订单编号
+                                </th>
+								<th class="span3 sortable">
+                                    <span class="line"></span>用户
+                                </th>
+                                <th class="span3 sortable">
+                                    <span class="line"></span>姓名
+                                </th>
+                                <th class="span3 sortable">
+                                    <span class="line"></span>订单时间
+                                </th>
+                                <th class="span4 sortable">
+                                    <span class="line"></span>产品信息
+                                </th>
+
+                                <th class="span2 sortable">
+                                    <span class="line"></span>入仓价
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>平仓价
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>交易类型
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>交易点数
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>类型
+                                </th>
+								<th class="span2 sortable">
+                                    <span class="line"></span>订单状态
+                                </th>
+								<!-- <th class="span3 sortable">
+                                    <span class="line"></span>获取佣金
+                                </th> -->
+								<th class="span3 sortable">
+                                    <span class="line"></span>订单总金额
+                                </th>
+                                <th class="span3 sortable">
+                                    <span class="line"></span>盈亏金额
+                                </th>
+                            </tr>
+                    </thead>
+                    <tbody>
+                    <!-- row -->
+                    <volist name="orders" id="vo">
+                        <tr class="first">
+							<td>
+                                {$vo.orderno}
+                            </td>
+                            <td>
+                                <a href="{:U('User/updateuser',array('uid'=>$vo['uid']))}" class="name">{$vo.username}</a>
+                            </td>
+                            <td>{$vo.realname}</td>
+                            <td>
+                                {$vo.buytime|date='Y-m-d H:i:s',###}
+                            </td>
+
+                            <td>
+								<a href="{:U('Goods/gedit',array('pid'=>$vo['pid']))}">{$vo.ptitle}</a>
+                            </td>
+                            <td>{$vo.buyprice}</td>
+                            <td>{$vo.sellprice}</td>
+                            <if condition="$vo['eid'] eq 1">
+                                <td style="width: 100px;color: #6666CC;">点数</td>
+                                <else />
+                                <td style="width: 100px;color: #FF6666;">时间</td>
+                            </if>
+                            <td>{$vo.endprofit}</td>
+							<td>
+								<if condition='$vo.ostyle eq 1'>
+                                <span class="label label-success">买跌</span></span>
+                            	<else/>
+								<span class="label label-cc">买涨</span></span>
+								</if>
+                            </td>
+
+                            <td>
+                            	<if condition='$vo.ostaus eq 1'>
+                                <span class="label label-info">平仓</span></span>
+                            	<else/>
+								<span class="label">建仓</span></span>
+								</if>
+                            </td>
+							<!-- <td>
+                                <font color="#f00" size="3">￥10.13<font>
+                            </td> -->
+							<td>
+                                <font color="#f00" size="4">￥{$vo['fee']}<font>
+                            </td>
+                            <td style="width: 100px;{$vo['ploss']>0?'color:blue':'color:red'};">{$vo.ploss}</td>
+                        </tr>
+                    </volist>
+                    </tbody>
+                </table>
+            </div>
+            <!--<div class="pagination">
+              <ul>
+                <li><a href="#">&#8249;</a></li>
+                <li><a class="active" href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">&#8250;</a></li>
+              </ul>
+            </div>-->
+            <div>今日已有<font color="#f00" size="4">{$orderDay}</font>个<a href="{:U('Order/olist')}">订单</a>达成交易
+                <div style="margin-right:15px;display: inline-block;height: 26px;line-height: 26px;" class="pull-right">每页显示:
+                    <select style="margin:0;width: 60px;height: 24px;" onchange="spsize(this.value)">
+                        <option {$psize=='5'?'selected':''}>5</option>
+                        <option {$psize=='10'?'selected':''}>10</option>
+                        <option {$psize=='20'?'selected':''}>20</option>
+                        <option {$psize=='50'?'selected':''}>50</option>
+                        <option {$psize=='100'?'selected':''}>100</option>
+                        <option {$psize=='200'?'selected':''}>200</option>
+                    </select>&nbsp;条记录
+                </div>
+            </div>
+            <script>
+                function spsize(psize) {
+                    var url=window.location.href;
+                    window.location.href=url.split('?')[0]+"?psize="+psize;
+                }
+            </script>
+        </div>
+        <!-- end table sample -->
+
+        <!-- table sample -->
+        <!-- the script for the toggle all checkboxes from header is located in js/theme.js -->
+        <div class="table-products section" style="margin-top: 20px;">
+            <div class="row-fluid head">
+                <div class="span12">
+                    <h4>产品<small>Products</small></h4>
+                </div>
+            </div>
+
+            <div class="row-fluid">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th class="span2">
+                               	 产品名称
+                            </th>
+                            <th class="span2">
+                                <span class="line"></span>现价
+                            </th>
+                            <th class="span2">
+                                <span class="line"></span>最高
+                            </th>
+                            <th class="span2">
+                                <span class="line"></span>最低
+                            </th>
+                            <th class="span2">
+                                <span class="line"></span>今开
+                            </th>
+                            <th class="span2">
+                                <span class="line"></span>昨收
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+						<volist name="plist" id="pl"> <!-- row -->
+						<tr class="first">
+							<td>{$pl['displayname']}</td>
+							<td>{$pl['ask']}</td>
+							<td>{$pl['high']}</td>
+							<td>{$pl['low']}</td>
+							<td>{$pl['open']}</td>
+							<td>{$pl['close']}</td>
+						</tr>
+						</volist>
+					</tbody>
+                </table>
+            </div>
+            <div class="pagination">
+              <!--<ul>
+                <li><a href="#">&#8249;</a></li>
+                <li><a class="active" href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">&#8250;</a></li>
+              </ul>-->
+            </div>
+            <div></div>
+        </div>
+        <!-- end table sample -->
+    </div>
+</div>
+<!-- scripts -->
+    <script src="__JS__/jquery-latest.js"></script>
+    <script src="__JS__/bootstrap.min.js"></script>
+    <script src="__JS__/theme.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+			setdashboardmenu("系统首页");
+		});
+	</script>
+</block>

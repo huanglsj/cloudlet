@@ -1,0 +1,134 @@
+<extend name="Base/common"/>
+<block name="content">
+<style type="text/css">
+	.col-md-6{ width:100%;}
+	.form-horizontal { width:500px;}
+</style>
+	<div class="main sidebar-minified">
+		<div class="row">
+			    <div class="col-md-8">
+			        <div class="panel panel-default">
+			            <div class="panel-heading">
+			                <h2><i class="fa fa-indent red"></i><strong>
+							个人信息
+			                </strong></h2>
+			            </div>
+			            <form action="{:U('My/personinfo')}" method="post" enctype="multipart/form-data" class="form-horizontal">
+						<div class="panel-body">
+				                <input type="hidden" name="cid" id="cid" value="{$companyinfo.cid}">
+				                
+				                <div class="form-group">
+									<label class="col-md-3 control-label" for="text-input">账号</label>
+									<div class="col-md-9">
+										<input type="text" id="username" value="{$user.username}" name="username" class="form-control" readonly="true">
+									</div>	
+								</div>
+								<div class="form-group">
+				                    <label class="col-md-3 control-label" for="text-input">实体名</label>
+				                    <div class="col-md-9">
+				                    	<input type="text" id="comname" value="{$companyinfo.comname}" name="comname" class="form-control" readonly="true">
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="text-input">负责人姓名</label>
+				                    <div class="col-md-9">
+				                    	<input type="text" id="managername" value="{$companyinfo.managername}" name="managername" class="form-control">
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="text-input">负责人手机</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="managerphone" value="{$companyinfo.managerphone}" name="managerphone" class="form-control" >
+				                    </div>
+				                </div>
+				                <if condition="$user.type eq 2">
+					                <div class="form-group">
+					                    <label class="col-md-3 control-label" for="text-input">剩余权益</label>
+					                    <div class="col-md-9">
+					                        <input type="text" id="equity" value="{$companyinfo.equity}" name="equity" class="form-control" readonly="true">
+					                    </div>
+					                </div>
+				                </if>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="text-input">上级实体名</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="comname" value="{$parentdeptinfo.name}" name="comname" class="form-control" readonly="true">
+				                    </div>
+				                </div>
+				                <notempty name='parentcompanyinfo'>
+					                <div class="form-group">
+					                    <label class="col-md-3 control-label" for="text-input">上级负责人</label>
+					                    <div class="col-md-9">
+					                        <input type="text" id="managername" value="{$parentcompanyinfo.managername}" name="managername" class="form-control" readonly="true">
+					                    </div>
+					                </div>
+					                <div class="form-group">
+					                    <label class="col-md-3 control-label" for="text-input">上级联系电话</label>
+					                    <div class="col-md-9">
+					                        <input type="text" id="managerphone" value="{$parentcompanyinfo.managerphone}" name="managerphone" class="form-control" readonly="true">
+					                    </div>
+					                </div>
+				                </notempty>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="text-input">邀请码</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="" value="{$deptinfo.invite_code}" name="invite_code" class="form-control" readonly="true">
+				                      
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="text-input">邀请二维码</label>
+				                    <div class="col-md-9">
+				                        <img alt="二维码" src="http://qr.liantu.com/api.php?w=150&text={:C("DOMAIN")}/index.php/home/user/reg.html?invitecode={$deptinfo.invite_code}">
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="password-input">开户行</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="" value="{$companyinfo.bankname}"  name="bankname" class="form-control" readonly="true">
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="password-input">开户行支行</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="" value="{$companyinfo.bankbranch}"  name="bankbranch" class="form-control" readonly="true">
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="password-input">银行账号</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="" value="{$companyinfo.banknum}"  name="banknum" class="form-control" readonly="true">
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="password-input">开户人名</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="" value="{$companyinfo.bankusername}"  name="bankusername" class="form-control" readonly="true">
+				                    </div>
+				                </div>
+								<if condition="$_SESSION['ctype'] eq 2">
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="password-input">支付宝帐号</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="" value="{$aliuser.aliusername}"  name="aliusername" class="form-control">
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="password-input">支付宝真实姓名</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="" value="{$aliuser.alirealname}"  name="alirealname" class="form-control">
+				                    </div>
+				                </div>
+								</if>
+						</div>
+						<div class="panel-footer">
+		                    <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> 提交</button>
+		                    <a onclick="window.history.go(-1)"><button type="reset" class="btn btn-sm btn-success"><i class="fa fa-ban"></i> 返回</button></a>
+	                        </div>	
+		                </form>
+			        </div>	
+			    </div>
+			</div>
+	</div>
+	<script src="__JS__/jquery-2.1.1.min.js"></script>
+</block>

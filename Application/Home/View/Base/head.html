@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="email=no">
+<title>微云交易</title>
+<meta name="keywords" content="交易" />
+<meta name="description" content="微云交易，轻松获得高收益---全国领先的交易平台">
+
+<link href="__ROOT__/newpublic/css/style_head.css" rel="stylesheet"
+	type="text/css">
+<link rel="stylesheet" type="text/css" href="__CSS__/cd.css" />
+<link rel="stylesheet" type="text/css" href="__CSS__/icons.css" />
+<script language="javascript" type="text/javascript"
+	src="__JS__/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="__JS__/cd.js"></script>
+<script language="javascript" type="text/javascript" src="__JS__/reconnecting-websocket.min.js"></script>
+<script language="javascript" type="text/javascript" src="__JS__/common.js"></script>
+<link rel="shortcut icon" href="/favicon.png" type="image/x-icon" />
+<!-- <link rel="stylesheet" href="__CSS__/mobile-angular-ui-hover.min.css" /> -->
+<link rel="stylesheet" href="__CSS__/mobile-angular-ui-base.min.css" />
+<!-- <link rel="stylesheet" href="__CSS__/swiper.min.css" /> -->
+<link rel="stylesheet" href="__CSS__/account.css">
+<link rel="stylesheet" href="__CSS__/app.css" />
+<script>
+$(document).ready(function(){
+
+	$(".top_nav > ol > a > li").click(function(){
+       if(!$(this).hasClass("show_nav")){
+		 $(".top_nav > ol > a > li").removeClass("stay_nav");
+		 $(this).addClass("show_nav");
+	    }
+	  })
+	  
+	})
+</script>
+
+<style>
+.btn-navbar-bottom-text {
+	font-size: 1.2rem;
+	padding: 5px 0;
+}
+</style>
+</head>
+<body>
+	<!--顶部开始-->
+	<div class="top_div">
+		<!-- <div class="cdan_div"><img src="__IMG__/cdan.png" width="35" height="32"/></div>-->
+		<div class="mid_div">
+			<div class="top_nav txss">
+				<a href="{:U('User/memberinfo')}"><div class="tx">
+						<if condition="$user.portrait eq ''"> <img
+							src="__IMG__/pic.gif" style="width:90%; height:90%;"> <else /> <img
+							src="{$user.portrait}" style="width:90%; height:90%;"></if>
+					</div></a>
+				<div class="content_right">
+				<!--
+					<p style="margin-top:5px">总权益：{$price.balance|sprintf="%.2f",### } &nbsp;&nbsp;&nbsp;&nbsp;
+					可用：{$price['balance']-$price['frozen']|sprintf="%.2f",###}</p>
+				-->
+					<p style="margin-top:15px"><span style="color:#EAEAEB;">账户余额：</span>{$price.balance|sprintf="%.2f",### } 元</p>
+					<ul style="padding-top:10px">
+						<li><a href="{:U('User/memberinfo')}">个人中心</a></li>
+						<li><a href="{:U('User/deposit')}">充值</a></li>
+						<li><a href="{:U('User/withdraw?type=1')}">提现</a></li>
+					</ul>
+				</div>
+				<ol>
+					<volist name='goods' id='gd'> 
+						<a href="{:U('Index/trade',array('pid'=>$gd['pid']))}"><li>{$gd.displayname}</li></a>
+					</volist>
+				</ol>
+			</div>
+		</div>
+	</div>
+	<div class="dbjjDiv"></div>
+
+	<!--顶部结束-->
+
+
+
+	<div class="main" style="margin-top: 90px; margin-bottom: 80px;">
+
+		<block name="content"> </block>
+	</div>
+
+
+
+
+
+	<!-- <div class="bottom_div">
+     <ul>
+       <a href="{:U('Index/Index')}"><li class="home">首页</li></a>
+       <a href="{:U('Detailed/dtrading')}"><li class="trans">交易历史</li></a>
+       <a href="{:U('Detailed/drevenue')}"><li class="state">收支明细</li></a>
+       <a href="{:U('User/memberinfo')}"><li class="my">我的</li></a>
+     </ul>
+</div> -->
+	<div class="navbar navbar-app navbar-absolute-bottom"
+		style="position: fixed; bottom: 0px;">
+		<div class="btn-group justified">
+			<a href="{:U('Index/Index')}" class="btn btn-default btn-navbar"><div
+					class="bottom_ico" style="background: url(__IMG__/home.png) no-repeat 100% 100%;background-size:90% 90%;"></div>
+				<div class="btn-navbar-bottom-text">行情</div>
+			</a>
+			<a href="{:U('User/dtrading')} " class="btn btn-default btn-navbar"><div
+					class="bottom_ico" style="background: url(__IMG__/trans.png) no-repeat 100% 100%;background-size:90% 90%;"></div>
+				<div class="btn-navbar-bottom-text">订单</div>
+			</a>
+			<a href="{:U('User/showdetailinfo')}" class="btn btn-default btn-navbar"><div class="bottom_ico"  style=" background:url(__IMG__/a-4.png) no-repeat 100% 100%;background-size:90%;"></div><div class="btn-navbar-bottom-text">在线客服</div></a>
+			<a href="{:U('User/memberinfo')}" class="btn btn-default btn-navbar"><div
+					class="bottom_ico" style="background: url(__IMG__/my.png) no-repeat 100% 100%;background-size:90% 90%;"></div>
+				<div class="btn-navbar-bottom-text">我的</div>
+			</a>
+
+		</div>
+	</div>
+
+	<!--详情弹窗(全局)-->
+	<style>
+		#comalterdesu{
+			display: none;
+			position: fixed;
+			z-index: 666;
+			right: 0;
+			bottom: 50px;
+			width: 100%;
+			max-width: 640px;
+			height: 290px;
+			background: #272727;
+		}
+		#comalterdesu>.topp>h6{
+			margin: 0;
+			background: #272727;
+			line-height: 40px;
+			font-size: 1.2rem;
+			color: #FFF;
+			text-align: center;
+		}
+		#comalterdesu>.topp>a>img{
+			padding: 10px;
+			float: right;
+			margin-top: -40px;
+			margin-right: 10px;
+		}
+
+		#comalterdesu>ul{
+			width: 84%;
+			margin: 0 auto;
+			overflow: hidden;
+			padding-bottom: 20px;
+		}
+		#comalterdesu>ul>li{
+			text-align: left;
+			font-size: 1.2rem;
+			line-height: 26px;
+		}
+
+		#comalterdesu > ul li {
+			color: #fff;
+		}
+		#comalterdesu > ul > li span {
+			margin-left: 20px;
+		}
+	</style>
+	<div id="comalterdesu">
+		<div class="topp">
+			<h6>交易详情</h6>
+			<a href="javascript:;" onclick="jQuery('#comalterdesu').hide()"><img src="__ROOT__/newpublic/images/gb.png"></a>
+		</div>
+		<ul>
+			<li><span id="xqtitle2"  class="left"></span><span id="xqfx2"></span><span class="right" id="xqorderno2"></span></li>
+			<li><span class="left">投资金额</span><span class="right" id="xqfee2">投资金额</span></li>
+			<li><span class="left">模式</span><span class="right" id="xqmoshi2">模式</span></li>
+			<li><span id="profittitle" class="left">周期(分)</span><span class="right" id="xqendprofit2">周期</span></li>
+			<li><span class="left">建仓价</span><span class="right" id="xqbuyprice2">建仓价</span></li>
+			<li><span class="left">建仓时间</span><span class="right" id="xqbuytime2">建仓时间</span></li>
+			<li><span class="left">平仓价</span><span class="right" id="xqsellprice2">平仓价</span></li>
+			<li><span class="left">平仓时间</span><span class="right" id="xqselltime2">平仓时间</span></li>
+			<li><span class="left">实际盈亏</span><span class="right" id="xqploss2" style="font-weight:bold">实际盈亏</span></li>
+		</ul>
+	</div>
+
+	<script>
+        // 显示详情弹窗(全局)
+        function showdetaildesu(oid) {
+            $('#comalterdesu').show();
+            $.ajax({
+                type: "POST",
+                url: "{:U('User/jyxqcx')}",
+                data: {
+                    oid: oid
+                },
+                dataType: 'json',
+                success: function(data) {
+                    //alert(data.ptitle);
+                    $('#xqtitle2').html(data.ptitle);
+                    if (data.ostyle == 0) {
+                        var fx = "买涨";
+                        $('#xqfx2').css('background', 'red');
+                    } else if (data.ostyle == 1) {
+                        var fx = "买跌";
+                        $('#xqfx2').css('background', 'green');
+                    }
+                    if (data.ploss > 0) {
+                        $('#xqploss2').css('color', 'red');
+                    } else if (data.ploss < 0) {
+                        $('#xqploss2').css('color', 'green');
+                    }
+                    if (data.eid == '1') {
+                        $('#xqmoshi2').html("限时竞购");
+                        $('#profittitle2').html("限时竞购");
+                    } else {
+                        $('#xqmoshi2').html("限时竞购");
+                        $('#profittitle2').html("限时竞购");
+                    }
+                    $('#xqfx2').html(fx);
+                    $('#xqorderno2').html(data.orderno);
+                    $('#xqfee2').html(data.fee);
+                    $('#xqendprofit2').html(data.endprofit);
+                    $('#xqbuyprice2').html(data.buyprice);
+                    $('#xqbuytime2').html(data.buytime);
+                    $('#xqsellprice2').html(data.sellprice);
+                    $('#xqselltime2').html(data.selltime);
+                    $('#xqploss2').html(data.ploss);
+                }
+            });
+        }
+
+        function queryCloseState2(oid){
+            $.ajax({
+                cache: true,
+                type: "get",
+                url: appendUrl2("{:U('Detailed/checkOrderIs')}","/oid/"+oid),
+                error: function(request) {
+                    layer.msg('服务器异常', {icon: 2});
+                },
+                success: function(data) {
+                    if (data[0].ostaus==1) {
+//                        console.log("打开"+oid);
+                        showdetaildesu(oid);
+                    }else {
+//                        console.log("关闭"+oid);
+                        setTimeout(function(){queryCloseState2(oid);}, 3 * 1000 );
+                    }
+                }
+            });
+        }
+
+        function appendUrl2(origin,appender){
+            //如果结尾是.html，则取出后再添加
+            origin = origin.substring(0,origin.length - 5);
+            return origin + encodeURI(appender) + ".html";
+        }
+        if (typeof isDtradingP=="undefined") {
+            $.ajax({
+                cache: true,
+                type: "get",
+                url: "{:U('Detailed/newOrder')}",
+                error: function(request) {
+                    layer.msg('服务器异常', {icon: 2});
+                },
+                success: function(data) {
+                    if (data) {
+                        for(var i=0;i<data.length;i++){
+                            queryCloseState2(data[i].oid);
+                        }
+                    }
+                }
+            });
+        }
+	</script>
+	<!--详情弹窗(全局)-->
+</body>
+</html>

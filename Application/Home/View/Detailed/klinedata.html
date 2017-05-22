@@ -1,0 +1,77 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">  
+<html xmlns="http://www.w3.org/1999/xhtml" style="font-size: 20px;">
+<head>
+	<title>K线图</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="chrome=1" />  
+	<style type="text/css">
+		body{background: #1A1A1A;}
+		ol, ul {
+		    list-style: none;
+		}
+		a {
+		    text-decoration: none;
+		}
+		.ul_four{ width: auto;margin: 0 auto; }
+		.ul_four li a {
+		    color: #CCC;
+		    font-size: 16px;
+		    margin-bottom: 50px;
+		    width: 16%;
+		    display: inline-block;
+		    float: left;
+		    line-height: 50px;
+		    text-align: center;
+		    margin-top: 14px;
+		}
+		.radius_left {
+		    border-top-left-radius: 10px;
+		    border-bottom-left-radius: 10px;
+		    border-left: 2px #4A4E59 double;
+		    border-top: 2px #4A4E59 double;
+		    border-bottom: 2px #4A4E59 double;
+		}
+		.ul_four .shows {
+		    background: #282A31;
+		}
+		.middle {
+		    border-top: 2px #4A4E59 double;
+		    border-bottom: 2px #4A4E59 double;
+		}
+		.radius_right {
+		    border-top-right-radius: 10px;
+		    border-bottom-right-radius: 10px;
+		    border-top: 2px #4A4E59 double;
+		    border-bottom: 2px #4A4E59 double;
+		}
+		.clearfix:after {
+		    content: " ";
+		    display: block;
+		    height: 0;
+		    clear: both;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">		
+		<!--K线图-->
+		<div id="myKChart" style="height:200px;width: auto; margin:0 auto;"></div>
+		<ul class="ul_four clearfix" style="padding: 0;">
+	        <li><a class="radius_left" href="javascript:void(0)" data-type="area" data-interval="0" data-rows="120">分时</a></li>
+	        <li id="kChartControl"><a class="middle" href="javascript:void(0)" data-type="candlestick" data-interval="1" data-rows="30">1分</a></li>
+	        <li><a class="middle" href="javascript:void(0)" data-type="candlestick" data-interval="5" data-rows="30">5分</a></li>
+	        <li><a class="middle" href="javascript:void(0)" data-type="candlestick" data-interval="15" data-rows="30">15分</a></li>	
+	        <li><a class="middle" href="javascript:void(0)" data-type="candlestick" data-interval="30" data-rows="30">30分</a></li>
+	        <li><a class="radius_right" href="javascript:void(0)" data-type="candlestick" data-interval="60" data-rows="30">60分</a></li>
+	    </ul>
+	</div>
+	<script type="text/javascript" src="__JS__/jquery.min.js"></script>
+	<script type="text/javascript" src="__JS__/echarts-all-3.js"></script>
+	<script type="text/javascript" src="__JS__/kchart.js"></script>
+	<script type="text/javascript">
+		ChartControl.initUrl = "{:U('Detailed/getKchartData',array('pid'=>$_REQUEST['pid']))}"; //初始化页面的Base URL 参数不用带
+		ChartControl.realTimeUrl = "{:U('Detailed/getNewData',array('pid'=>$_REQUEST['pid']))}"; //实时获取数据的URL
+		ChartControl.init();
+	</script>
+</body>
+</html>

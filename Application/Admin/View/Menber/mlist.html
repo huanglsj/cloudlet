@@ -1,0 +1,136 @@
+<extend name="Base/common"/>
+<block name="content">
+<!-- this page specific styles -->
+<link rel="stylesheet" href="__CSS__/compiled/user-list.css" type="text/css" media="screen">
+<div class="container-fluid">
+            <div id="pad-wrapper" class="users-list">
+                <div class="row-fluid header">
+                    <h3  class="span12 pull-left">会员单位列表</h3>
+                    <div class="span12 pull-left">
+	                    <div class="tpsearch span3">
+	                    	会员名：<input type="text" placeholder="请输入会员名称" name="comname" id="comname"/>
+	                    </div>
+	                    <div class="tpsearch span3">
+	                    	会员编号：<input type="text"  placeholder="请输入会员编号" name="ccode" id="ccode"/>
+	                    </div>
+	                    <div class="tpsearch span3">
+	                    	负责人名：<input type="text"  placeholder="负责人名" name="managername" id="managername">
+	                    </div>
+	                    <div class="tpsearch span3">
+	                    	手机号：<input type="text"  placeholder="负责人手机号" name="managerphone" id="managerphone">
+	                    </div>
+	                </div>
+	                <div class="span12 pull-right" style="margin-top: 20px;">
+                    	<a href="javascript:void(0)" class="btn-flat info" id="search_begin">开始查找</a>
+                    </div>
+                </div>
+                
+                <!-- Users table -->
+                <div class="row-fluid table">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="span1 sortable">
+                                	<span class="line"></span>序号
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>会员名
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>会员编号
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>负责人名
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>手机号
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>剩余权益
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>邀请码
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>状态
+                                </th>
+                                <th class="span1 sortable">
+                                    <span class="line"></span>操作
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="ajaxback">
+                        <volist name="ulist" id="ult">
+                        <tr class="first">
+                            <td>
+                                {$ult['cid']}
+                            </td>
+                            <td>
+                            	{$ult['comname']}                                
+                            </td>
+                            <td>
+                                {$ult['ccode']}
+                            </td>
+                            <td>
+                                {$ult['managername']}
+                            </td>
+                            <td>
+                            	{$ult['managerphone']}
+                            </td>
+                            <td>
+                                {$ult['equity']}
+                            </td>
+                            <td>
+                                {$ult['invcode']}
+                            </td>
+                            <td>
+                            	<switch name="ult.isdelete">
+	                            	<case value='N'>有效</case>
+	                            	<case value='C'>冻结</case>
+                            	</switch>
+                            </td>
+                            <td>
+                            	<ul class="actions">
+                            	    <if condition="$_SESSION['pkey']['MENBER_EDIT'] eq '1'">
+                                        <li><a href="{:U('Menber/mupdate',array('cid'=>$ult['cid']))}"><i class="table-edit"></i></a></li>
+                                    </if>
+                                    <if condition="$_SESSION['pkey']['MENBER_EQUTY_EDIT'] eq '1'">
+                                        <li><a href="{:U('Menber/updateequity',array('cid'=>$ult['cid']))}"><i class="table-settings"></i></a></li>
+                                    </if>
+                                    <if condition="$_SESSION['pkey']['MENBER_DEL'] eq '1'">
+                                        <li class="last"><a href="{:U('Menber/userdel',array('cid'=>$ult['cid']))}" onclick="if(confirm('确定要删除吗?请谨慎操作！')){return true;}else{return false;}"><i class="table-delete"></i></a></li>
+                                    </if>
+                                </ul>
+                            </td>
+                        </tr>
+                        </volist>                        
+                        </tbody>
+                    </table>
+                    
+                </div>
+                <div class="pagination pull-right">
+                    <ul>
+                        {$page}
+                    </ul>
+                </div>
+                <!-- end users table -->
+            </div>
+        </div>
+<!-- scripts -->
+<script src="__JS__/jquery-latest.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
+<script src="__JS__/theme.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		setdashboardmenu("会员管理");
+	});
+	
+	function n2e(obj){
+		if(obj == null){
+			return "";
+		} else {
+			return obj;
+		}
+	}
+</script>
+</block>

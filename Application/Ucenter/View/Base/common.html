@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>微云交易（代理商会员管理）</title>		
+		
+		<!-- Import google fonts - Heading first/ text second -->
+        <!--<link rel='stylesheet' type='text/css' href='http://fonts.useso.com/css?family=Open+Sans:400,700|Droid+Sans:400,700' />-->
+        <!--[if lt IE 9]>
+<link href="http://fonts.useso.com/css?family=Open+Sans:400" rel="stylesheet" type="text/css" />
+<link href="http://fonts.useso.com/css?family=Open+Sans:700" rel="stylesheet" type="text/css" />
+<link href="http://fonts.useso.com/css?family=Droid+Sans:400" rel="stylesheet" type="text/css" />
+<link href="http://fonts.useso.com/css?family=Droid+Sans:700" rel="stylesheet" type="text/css" />
+<![endif]-->
+
+		<!-- Fav and touch icons -->
+		<link rel="shortcut icon" href="assets/ico/favicon.ico" type="image/x-icon" />    
+
+	    <!-- Css files -->
+	    <link href="__CSS__/bootstrap.min.css" rel="stylesheet">		
+		<link href="__CSS__/jquery.mmenu.css" rel="stylesheet">		
+		<link href="__CSS__/font-awesome.min.css" rel="stylesheet">
+		<link href="__CSS__/climacons-font.css" rel="stylesheet">
+		    
+	    <link href="__CSS__/style.min.css" rel="stylesheet">
+		<link href="__CSS__/add-ons.min.css" rel="stylesheet">		
+		<link type="text/css" rel="stylesheet" href="__CSS__/calendar.css" >
+		<script type="text/javascript" src="__JS__/calendar.js" ></script>  
+		<script type="text/javascript" src="__JS__/calendar-zh.js" ></script>
+		<script type="text/javascript" src="__JS__/calendar-setup.js"></script>
+	    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	    <!--[if lt IE 9]>
+			<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+			<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	    <![endif]-->
+	    <!-- start: JavaScript-->
+	<!--[if !IE]>-->
+
+			<script src="__JS__/jquery-2.1.1.min.js"></script>
+
+	<!--<![endif]-->
+
+	<!--[if IE]>
+	
+		<script src="__JS__/jquery-1.11.1.min.js"></script>
+	
+	<![endif]-->
+
+	<!--[if !IE]>-->
+
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='__JS__/jquery-2.1.1.min.js'>"+"<"+"/script>");
+		</script>
+
+	<!--<![endif]-->
+
+	<!--[if IE]>
+	
+		<script type="text/javascript">
+	 	window.jQuery || document.write("<script src='__JS__/jquery-1.11.1.min.js'>"+"<"+"/script>");
+		</script>
+		
+	<![endif]-->
+	<script src="__JS__/jquery-migrate-1.2.1.min.js"></script>
+	<script src="__JS__/bootstrap.min.js"></script>	
+	
+	
+	<!-- page scripts -->
+	
+	<!--[if lte IE 8]>
+		<script language="javascript" type="text/javascript" src="assets/plugins/excanvas/excanvas.min.js"></script>
+	<![endif]-->
+	
+	
+	<!-- theme scripts -->
+	<script src="__JS__/SmoothScroll.js"></script>
+	<script src="__JS__/jquery.mmenu.min.js"></script>
+	<script src="__JS__/core.min.js"></script>
+	
+	
+	<script src="__PUBLIC__/Js/layer/layer.js"></script>
+
+	<!-- inline scripts related to this page -->
+	
+	
+	<!-- end: JavaScript-->
+	<script src="__JS__/ucenter.js"></script>
+	</head>
+</head>
+
+<body>
+	<!-- start: Header -->
+	<div class="navbar" role="navigation">
+	
+		<div class="container-fluid">		
+			
+			<ul class="nav navbar-nav navbar-actions navbar-left">
+				<li class="visible-md visible-lg"><a href="" id="main-menu-toggle"><i class="fa fa-th-large"></i></a></li>
+				<li class="visible-xs visible-sm"><a href="" id="sidebar-menu"><i class="fa fa-navicon"></i></a></li>
+			</ul>
+			<ul class="nav navbar-nav navbar-actions navbar-left">
+				<span >{$_SESSION['deptinfo']['name']}</span>			
+			</ul>
+			<!-- <form class="navbar-form navbar-left">
+				<button type="submit" class="fa fa-search"></button>
+				<input type="text" class="form-control" placeholder="Search..."></a>
+			</form> -->
+			<!-- <div class="copyrights">Collect from <a href="http://www.cssmoban.com/" >免费模板</a></div> -->
+	        <ul class="nav navbar-nav navbar-right">
+				<li class="dropdown visible-md visible-lg">
+	        		<a href="{:U('My/personinfo')}" class="dropdown-toggle">
+	        		<if condition="$_SESSION['portrait'] eq ''">
+	        		<img src="__IMG__/contact-img.png" class="img-circle avatar hidden-phone">
+	        		<else/>
+	        		<img src="{$_SESSION['portrait']}" class="img-circle avatar hidden-phone"></if> {$_SESSION['username']}</a>
+	        		<!-- <ul class="dropdown-menu">
+						<li class="dropdown-menu-header">
+							<strong>Account</strong>
+						</li>						
+						<li><a href="page-profile.html"><i class="fa fa-user"></i> Profile</a></li>
+						<li><a href="page-login.html"><i class="fa fa-wrench"></i> Settings</a></li>
+						<li><a href="page-invoice.html"><i class="fa fa-usd"></i> Payments <span class="label label-default">10</span></a></li>
+						<li><a href="gallery.html"><i class="fa fa-file"></i> File <span class="label label-primary">27</span></a></li>
+						<li class="divider"></li>						
+						<li><a href="index.html"><i class="fa fa-sign-out"></i> Logout</a></li>	
+	        		</ul> -->
+	      		</li>
+				<li><a href="{:U('Account/signinout')}"><i class="fa fa-power-off"></i></a></li>
+			</ul>
+			
+		</div>
+		
+	</div>
+	<!-- end: Header -->
+	
+	<div class="container-fluid content">
+	
+		<div class="row">
+				
+			<!-- start: Main Menu -->
+			<div class="sidebar ">
+								
+				<div class="sidebar-collapse">
+					<div class="sidebar-header">
+                        <span><img  style="width:100px" class="text-logo" src="__IMG__/logo.png"></span>
+                    </div>										
+					<div class="sidebar-menu">						
+						<ul class="nav nav-sidebar">
+							<li><a href="{:U('Index/index')}"><i class="fa fa-laptop"></i><span class="text">系统首页</span></a></li>
+							<if condition="$_SESSION['pkey']['ACCOUNT_MA'] eq '1'">
+							<li>
+								<a href="#"><i class="fa fa-file-text"></i><span class="text"> 开户管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+									<if condition="$_SESSION['pkey']['AGENT_LIST'] eq '1'">
+									<li><a href="{:U('Account/agentlist',array('type'=>'daili'))}"><i class="fa fa-plus-square"></i><span class="text"> 代理列表</span></a></li>
+									<li><a href="{:U('Account/agentlist',array('type'=>'jigou'))}"><i class="fa fa-plus-square-o"></i><span class="text"> 机构列表</span></a></li>
+									</if>
+									<if condition="$_SESSION['pkey']['AGENT_ADD'] eq '1'">
+									<li><a href="{:U('Account/agentadd')}"><i class="fa fa-space-shuttle"></i><span class="text"> 开户</span></a></li>
+									</if>
+									
+								</ul>	
+							</li>
+							</if>
+							<if condition="$_SESSION['pkey']['TRADE_MA'] eq '1'">
+							<li>
+								<a href="#"><i class="fa fa-list-alt"></i><span class="text"> 交易管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+								    <if condition="$_SESSION['pkey']['TRADE_LIST'] eq '1'">
+									   <li><a href="{:U('Trade/tradelist',array('ostaus'=>0))}"><i class="fa fa-exchange"></i><span class="text"> 持仓订单</span></a></li>
+									   <li><a href="{:U('Trade/tradelist',array('ostaus'=>1))}"><i class="fa fa-indent"></i><span class="text"> 平仓订单</span></a></li>
+									</if>
+								</ul>
+							</li>
+							</if>
+							<if condition="$_SESSION['pkey']['CUSTOMER_MA'] eq '1'">
+							<li>
+								<a href="#"><i class="fa fa-users"></i><span class="text"> 客户管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+								    <if condition="$_SESSION['pkey']['CUSTOMER_LIST'] eq '1'">
+									   <li><a href="{:U('Customer/customerlist')}"><i class="fa fa-list-ul"></i><span class="text"> 客户列表</span></a></li>
+									</if>
+									<if condition="$_SESSION['pkey']['CUSTOMER_ADD'] eq '1'">
+									   <li><a href="{:U('Customer/customeradd')}"><i class="fa fa-user"></i><span class="text"> 添加客户</span></a></li>
+									</if>
+								</ul>
+							</li>
+							</if>
+							<if condition="$_SESSION['pkey']['REPORT'] eq '1'">
+							<li>
+								<a href="#"><i class="fa fa-cubes"></i><span class="text"> 报表管理</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+								    <if condition="$_SESSION['pkey']['REPORT_EXPORT'] eq '1'">
+									   <li><a href="{:U('UTongji/tongji')}"><i class="fa fa-file-excel-o"></i><span class="text"> 导出报表</span></a></li>
+									</if>
+								</ul>
+							</li>
+							</if>
+							<if condition="$_SESSION['pkey']['MY_MA'] eq '1'">
+							<li>
+								<a href="#"><i class="fa fa-briefcase"></i><span class="text"> 用户中心</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+								    <if condition="$_SESSION['pkey']['DEPOSIT'] eq '1'">
+									   <li><a href="{:U('My/deposit')}"><i class="fa fa-yen"></i><span class="text"> 账户充值</span></a></li>
+									</if>
+									<if condition="$_SESSION['pkey']['WITHDRAW'] eq '1'">
+									   <li><a href="{:U('My/withdraw')}"><i class="fa fa-trophy"></i><span class="text"> 账户提现</span></a></li>
+									</if>
+									<if condition="$_SESSION['pkey']['EQUITYLIST'] eq '1' and $_SESSION['ctype'] eq 2">
+									   <li><a href="{:U('My/equitylist')}"><i class="fa fa-tint"></i><span class="text"> 权益流水</span></a></li>
+									</if>
+									<if condition="$_SESSION['pkey']['PERSONINFO'] eq '1'">
+									   <li><a href="{:U('My/personinfo')}"><i class="fa fa-info"></i><span class="text"> 基本信息</span></a></li>
+									</if>
+									<if condition="$_SESSION['pkey']['UPDATEPWD'] eq '1'">
+									   <li><a href="{:U('My/updatepwd')}"><i class="fa fa-gears (alias)"></i><span class="text"> 修改密码</span></a></li>
+									</if>
+								</ul>
+							</li>
+							</if>
+							<!--
+							<if condition="$_SESSION['pkey']['RETLOG_MA'] eq '1'">
+							<li>
+								<a href="#"><i class="fa fa-briefcase"></i><span class="text"> 返佣记录</span> <span class="fa fa-angle-down pull-right"></span></a>
+								<ul class="nav sub">
+								    <if condition="$_SESSION['pkey']['RETURNLOG_LIST'] eq '1'">
+									   <li><a href="{:U('Retlog/returnloglist')}"><i class="fa fa-align-left"></i><span class="text"> 返佣记录</span></a></li>
+									</if>
+								</ul>
+							</li>
+							</if>
+							 -->
+						</ul>
+					</div>					
+				</div>
+				<div class="sidebar-footer">
+					<a href="http://www.www.euamote.me">
+					<span>Copyright &copy;2017 weiyun</span></a>
+				</div>	
+				
+			</div>
+			<!-- end: Main Menu -->
+		
+		<!-- start: Content -->
+			<block name="content">
+
+			</block>
+		<!-- end: Content -->
+		<br><br><br>
+	</div><!--/container-->
+	
+	<div class="clearfix"></div>
+</body>
+</html>

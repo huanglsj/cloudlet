@@ -1,0 +1,83 @@
+<extend name="Base/common"/>
+<block name="content">
+<link rel="stylesheet" href="__CSS__/compiled/new-user.css" type="text/css" media="screen" />  
+<style>
+	.new-user .form-wrapper input[type="text"]{border: 1px solid #D0D0D0;}
+</style>
+   <div class="container-fluid">
+            <div id="pad-wrapper" class="new-user">
+                <div class="row-fluid header">
+                    <h3>会员管理&nbsp;>&nbsp修改会员权益</h3>
+                </div>
+
+                <div class="row-fluid form-wrapper">
+                    <form action="{:U(Menber/updateequity)}" method="post" class="new_user_form" onsubmit="return subform();">
+                    <!-- left column -->
+                    <div class="span6 with-sidebar">
+                    	<input class="span4" type="hidden" name="cid" id="cid" value="{$memeber.cid}"/>
+                        <div class="span9 field-box">
+                            <label>公司名称:</label>
+                            <input class="span8" type="text" name="comname" value="{$memeber.comname}" data-toggle="tooltip" data-trigger="focus" title="请输入公司名称" data-placement="right" readonly="true"/>
+                        </div>
+                        <div class="span9 field-box">
+                            <label>负责人名:</label>
+                            <input class="span8" type="text" name="managername" value="{$memeber.managername}" data-toggle="tooltip" data-trigger="focus" title="请输入负责人名" data-placement="right" readonly="true"/>
+                        </div>
+                        <div class="span9 field-box">
+                            <label>负责人电话:</label>
+                            <input class="span4" type="text" name="managerphone" value="{$memeber.managerphone}" data-toggle="tooltip" data-trigger="focus" title="请输入负责人电话" data-placement="right" readonly="true"/>
+                        </div>
+                        <div class="span9 field-box">
+                            <label>保证金(元):</label>
+                            <input class="span4" type="text" value="{$memeber.cashdeposit}" name="cashdeposit" data-toggle="tooltip" data-trigger="focus" title="请输入保证金" data-placement="right" readonly="true"/>
+                        </div>
+                        <div class="span9 field-box">
+                            <label>会员权益(元):</label>
+                            <input class="span4" type="text" value="{$memeber.equity}" name="equity" data-toggle="tooltip" data-trigger="focus" title="请输入会员权益" data-placement="right"  readonly="true"/>
+                        </div>
+                        <div class="span9 field-box">
+                            <label>增减金额(元):</label>
+                            <input class="span4" type="text" value="" name="updateequity" data-toggle="tooltip" data-trigger="focus" title="请输入要增减的会员权益（负数为减）" data-placement="right"/>
+                        </div>
+                        <div class="span8 field-box actions" style="padding-bottom: 20px;">
+                            <input type="submit" class="btn-glow primary" value="修改" />
+                        </div>
+                    </div>
+					</form>
+                </div>
+            </div>
+        </div>
+	<!-- scripts -->
+    <script src="__JS__/jquery-latest.js"></script>
+    <script src="__JS__/bootstrap.min.js"></script>
+    <script src="__JS__/bootstrap.datepicker.js"></script>
+    <script src="__JS__/theme.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+			setdashboardmenu("会员管理");
+			$('.datepicker').datepicker().on('changeDate', function (ev) {
+	            $(this).datepicker('hide');
+	        });
+			
+			$('#resetpw').click(function(){
+				var cid = $('#cid').val();
+				$.ajax({  
+		            type: "post",  
+		            url: "{:U('Menber/resetpw')}",
+		            data:"cid="+cid,  
+		            async:false,  
+		            success: function(data) { 
+		            	if(data){
+		            		alert('新密码已经发送至会员负责人手机，请注意查看！');
+		            	}else{
+		            		alert('密码修改出错，请重新操作！');
+		            	}
+		            },  
+		            error: function(data) {  
+		            	alert('error' + data);
+		            }  
+		        });
+			});
+		});
+	</script>
+</block>

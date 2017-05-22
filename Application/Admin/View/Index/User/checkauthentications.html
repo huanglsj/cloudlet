@@ -1,0 +1,254 @@
+<extend name="Base/common"/>
+<block name="content">
+<!-- this page specific styles -->
+<link rel="stylesheet" href="__CSS__/compiled/user-list.css" type="text/css" media="screen">
+<div class="container-fluid text-center" >
+            <div id="pad-wrapper" class="users-list">
+                <div class="row-fluid header">
+                    <h3>实名认证申请列表</h3>
+                    <!-- 
+                    <form id="searchfm" method="post" action="{:U('User/ulist')}">
+	                    <div class="span8 pull-right">
+		                    <div class="tpsearch span3">
+		                    	客户账号：<input type="text" placeholder="请输入客户账号" value="<?php echo I('username'); ?>" name="username" id="username"/>
+		                    </div>
+		                    <div class="tpsearch span3">
+		                    	客户昵称：<input type="text"  placeholder="请输入客户昵称" value="<?php echo I('nickname'); ?>" name="nickname" id="nickname"/>
+		                    </div>
+		                    <div class="tpsearch span3">
+		                    	客户手机：<input type="text"  placeholder="请输入客户手机" value="<?php echo I('utel'); ?>" name="utel" id="utel">
+		                    </div>
+		                </div>
+		                <div class="span10 pull-right" style="margin-top: 10px;">
+	                    	<a href="javascript:void(0)" onclick="$('#searchfm').submit();" class="btn-flat info" id="search_begin">开始查找</a>
+	                    </div>
+                    </form> -->
+                </div>
+                <!-- Users table -->
+                <div class="row-fluid table">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="span1 sortable">
+                                    编号
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>客户识别码
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>客户昵称
+                                </th>
+                                <th class="span1 sortable">
+                                    <span class="line"></span>真实姓名
+                                </th>
+                                <th class="span1 sortable">
+                                    <span class="line"></span>身份证号
+                                </th>
+                                <th class="span1 sortable">
+                                    <span class="line"></span>电话
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>正面照
+                                </th>
+                                 <th class="span2 sortable">
+                                    <span class="line"></span>背面照
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>持证照
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>申请时间
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>申请状态
+                                </th>
+                                <th class="span1 sortable">
+                                    <span class="line"></span>操作
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="ajaxback">
+                        <volist name="list" id="ult" key="k">
+                        <!-- row -->
+                        <tr class="first">
+                            <td>
+                                {$k}
+                            </td>
+                            <td>
+                                {$ult['username']}
+                            </td>
+                            <td>
+                               <if condition="$ult['nickname'] eq ''">
+                                暂无昵称
+                                <else/>
+                                     {$ult['nickname']}
+                                </if>
+                            </td>
+                            <td>
+                                {$ult['realname']}
+                            </td>
+                            <td>
+                                {$ult['IDnumber']}
+                            </td>
+                            <td>
+                                {$ult['mobile']}
+                            </td>
+                            <td>
+                            	<if condition="$ult['IDcardfront'] eq ''">
+                                <else/>
+                                  <img src="__UPPIC__{$ult['IDcardfront']}" class="img-thumbnail avatar hidden-phone" 
+                                        onmouseover="this.style.cursor='pointer';this.style.cursor='hand'" onmouseout="this.style.cursor='default'"
+                                        onclick="javascript:showimage('__UPPIC__{$ult['IDcardfront']}');"
+                                  />
+                                </if>
+                            </td>
+                            <td>
+                                <if condition="$ult['IDcardback'] eq ''">
+                                <else/>
+                                  <img src="__UPPIC__{$ult['IDcardback']}" class="img-thumbnail avatar hidden-phone" 
+                                        onmouseover="this.style.cursor='pointer';this.style.cursor='hand'" onmouseout="this.style.cursor='default'"
+                                        onclick="javascript:showimage('__UPPIC__{$ult['IDcardback']}');"
+                                  />
+                                </if>
+                            </td>
+                            <td>
+                                <if condition="$ult['IDcardhandheld'] eq ''">
+                                <else/>
+                                  <img src="__UPPIC__{$ult['IDcardhandheld']}" class="img-thumbnail avatar hidden-phone" 
+                                        onmouseover="this.style.cursor='pointer';this.style.cursor='hand'" onmouseout="this.style.cursor='default'"
+                                        onclick="javascript:showimage('__UPPIC__{$ult['IDcardhandheld']}');"
+                                  />
+                                </if>
+                            </td>
+                            <td>
+                                {$ult['applytime']|date='Y-m-d',###}
+                            </td>
+                            <td>
+                                <if condition="$ult['status'] eq '1'">申请中</if>
+                                <if condition="$ult['status'] eq '2'">已通过</if>
+                                <if condition="$ult['status'] eq '3'"><span id="reasonshow" rel="popover" data-content="拒绝原因：{$ult['ngreason']}" data-trigger="hover" data-placement="left">已拒绝</span></if>
+                            </td>
+                            <td>
+                                <if condition="$ult['status'] eq '1'">
+                            	<ul class="actions">
+                            	    <if condition="$_SESSION['pkey']['USER_AUTHEN_YES'] eq '1'">
+                                        <li><a href="{:U('User/editauthentications')}?uid={$ult['uid']}&msgFlg=checkok&status=2&useruid={$ult['useruid']}" onclick="if(confirm('确定要通过吗?')){return true;}else{return false;}">通过</a></li>
+                                    </if>
+                                    <if condition="$_SESSION['pkey']['USER_AUTHEN_NG'] eq '1'">
+                                        <li class="last">
+                                        <!-- <a href="{:U('User/editauthentications')}?uid={$ult['uid']}&status=3&useruid={$useruid}" onclick="if(confirm('确定要拒绝吗?')){return true;}else{return false;}">拒绝</a> -->
+                                         <a  data-toggle="modal" data-target="#reasonModal" data-backdrop="static" onclick="showreasonmodal({$ult['uid']})">拒绝</a>
+                                         </li>
+                                    </if>
+                                </ul>
+                                </if>
+                            </td>
+                        </tr>
+                        </volist>                        
+                        </tbody>
+                    </table>
+        
+                </div>
+                <div class="pagination pull-right">
+                    <ul>
+                        {$page}
+                    </ul>
+                </div>
+                <!-- end users table -->
+            </div>
+
+	<div class="modal fade text-center modal2class"  id="imgModal">
+		<div class="modal-content">
+			<div class="modal-header" style="border: 0px">
+				<button data-dismiss="modal" class="close" type="button">
+					<span>&times;</span>
+				</button>
+			</div>
+			<div class="modal-body modalbodyclass" style="border: 0px">
+				<img id="imgInModalID" src="" class="carousel-inner img-responsive img-rounded">
+			</div>
+		</div>
+	</div>
+	<!-- 模态声明，show 表示显示-->
+<!-- 窗口声明-->
+<div class="modal modalclass" id="reasonModal">
+        <!-- 内容声明-->
+        <div class="modal-content">
+            <!-- 头部-->
+            <div class="modal-header">
+                <!-- <button type="button" class="close" data-dismiss="modal">
+                    <span>&times;</span>
+                </button> -->
+                <h4 class="modal-title" style="text-align: left;">拒绝原因</h4>
+            </div>
+            <!-- 主体-->
+            <div class="modal-body">
+                <textarea rows="3" cols="150" value="" id="ngreason" style="width: 99%;height:99%;padding: 0px"></textarea>
+            </div>
+            <!-- 注脚-->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary" onclick="doNG()">确定</button>
+                <button type="button" class="btn btn-default" onclick="closeModal()">取消</button>
+            </div>
+        </div>
+</div>
+</div>
+
+<!-- scripts -->
+<script src="__JS__/jquery-latest.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
+<script src="__JS__/theme.js"></script>
+<script type="text/javascript">
+    var nguid = "";
+	//显示大图    
+   function showimage(source)
+     {
+         //$("#imgModal").find("#img_show").html("<image src='"+source+"' class='carousel-inner img-responsive img-rounded' />");
+         var imgObj = $("#imgModal").find("#imgInModalID");
+         $(imgObj).attr("src",source);
+         $("#imgModal").modal();
+     }
+	
+	$(document).ready(function(){
+		setdashboardmenu("客户管理");
+		$("#reasonshow").popover();
+	})
+	
+	function doNG(){
+		var reason = $("#ngreason").val();
+		if(reason == ""){
+			alert('请输入拒绝理由！');
+			return false;
+		}
+		window.location.href = "{:U('User/editauthentications')}?uid=" + nguid + "&status=3&useruid={$useruid}&ngreason="+reason;
+	}
+	
+	function showreasonmodal(uid){
+		nguid = uid;
+	}
+
+	function closeModal(){
+	    $('#reasonModal').modal("hide");
+	    $("#ngreason").val("");
+	}
+</script>
+<style type="text/css">
+.modalclass {
+  overflow: hidden;
+  width: 600px;
+  height: 223px;
+	top: 25%;
+}
+
+.modal2class {
+  overflow: hidden;
+  width: 600px;
+  height: 518px;
+}
+
+.modalbodyclass{
+	min-height: 500px;
+	max-height: 500px;
+}
+</style>
+</block>

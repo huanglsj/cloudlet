@@ -1,0 +1,143 @@
+<extend name="Base/common"/>
+<block name="content">
+	<!-- this page specific styles -->
+	<link rel="stylesheet" href="__CSS__/compiled/article-add.css" type="text/css" media="screen" />
+    <div class="container-fluid">
+        <div id="pad-wrapper" class="form-page">
+			 <div class="row-fluid header">
+                <h3>管理员&nbsp;>&nbsp;修改管理员</h3>
+            </div>
+            <div class="row-fluid form-wrapper">
+            	<form action="{:U('Super/sedit')}" method="post">
+                <!-- left column -->
+                <div class="span8 column">
+                	<input type="hidden" name="uid" value="{$ult['id']}"/>
+                	<input type="hidden" name="sledittype" id="sledittype" value="1"/>
+                	<div class="field-box">
+						<label>修改类型：</label>
+						<input class="span1" type="radio" name='edittype' value='1' checked="checked"/>修改基本信息
+						<input class="span1" type="radio" name='edittype' value='2' />修改密码
+					</div>
+					<div class="field-box">
+						<label>管理员帐号：</label>
+						<input class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入管理员帐号" data-placement="right" name="username" value="{$ult['username']}" readonly="true"/>
+					</div>
+					<div class="field-box otherinfo">
+						<label>管理员姓名：</label>
+						<input class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入管理员姓名" data-placement="right" value="{$ult['displayname']}" name="displayname"/>
+					</div>
+					<div class="field-box otherinfo" >
+						<label>管理员电话：</label>
+						<input class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入管理员电话" data-placement="right" name="tel" value="{$ult['tel']}"/>
+					</div>
+					<div class="field-box password">
+						<label>原密码：</label>
+						<input class="span8 oldpwd" type="password" data-toggle="tooltip" data-trigger="focus" title="请输入原密码" data-placement="right" name="oldpwd" value=""/>
+					</div>
+					<div class="field-box password">
+						<label>新密码：</label>
+						<input class="span8 upwd" type="password" data-toggle="tooltip" data-trigger="focus" title="请输入6-20位字母数字组合的密码" data-placement="right" name="upwd" value=""/>
+					</div>
+					<div class="field-box password">
+						<label>密码确认：</label>
+						<input class="span8 upwdqr" type="password" data-toggle="tooltip" data-trigger="focus" title="请输入确认密码" data-placement="right" name="qrpwd" value=""/>
+					</div>
+                    <div class="field-box actions">
+						<input type="submit" class="btn-glow primary" id="superSub" value="提交">
+						<input type="button" class="btn-glow primary" id='resetpw' value="重置密码" />
+					</div>
+                </div>
+				</form>
+                <!-- right column -->
+                <div class="span4 column pull-right">
+                   <div class="field-box"><h3>说明：</h3></div>
+				   <div class="field-box">请按按需修改管理员信息！</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end main container -->
+
+
+<!-- scripts -->
+<script src="__JS__/jquery-latest.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
+<script src="__JS__/theme.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		setdashboardmenu("系统管理员");
+		var edittype = $("[name='edittype']").val();
+		if($('#sledittype').val() == '1'){
+			$('.otherinfo').css('display','block');
+			$('.password').css('display','none');
+		}else{
+			$('.password').css('display','block');
+			$('.otherinfo').css('display','none');
+		}
+	});
+	
+	$("#superSub").click(function(){
+		var oldpwd = $(".oldpwd").val();
+		var upwd = $(".upwd").val();
+		var upwdqr = $(".qrpwd").val();
+		var edittype = $("[name='edittype']").val();
+		if(edittype == '2'){
+			if(oldpwd == ""){
+				$(".oldpwd").focus();
+				$(".oldpwd").attr("data-original-title","新密码不能为空");
+				return false;
+			}else if(upwd == ""){
+				$(".upwd").focus();
+				$(".upwd").attr("data-original-title","新密码不能为空");
+				return false;
+			}
+			else if(upwdqr == ""){
+				$(".qrpwd").focus();
+				$(".qrpwd").attr("data-original-title","请输入确认密码");
+				return false;
+			}
+			else if(upwd!=upwdqr){
+				$(".upwdqr").focus();
+				$(".upwdqr").attr("data-original-title","两次输入密码不同");
+				return false;
+			}
+			var reg = /^[A-Za-z0-9]{8,20}$/;
+			if(!reg.test(upwd)){
+				$(".upwd").focus();
+				$(".upwd").attr("data-original-title","密码不符合规则，请重新输入！");
+			}
+		}
+		return true;
+	})
+	$('[name=edittype]').change(function(){
+		if(this.value == '1'){
+			$('.password').css('display','none');
+			$('.otherinfo').css('display','block');
+		}else{
+			$('.otherinfo').css('display','none');
+			$('.password').css('display','block');
+		}
+		$('#sledittype').val(this.value);
+	});
+	$('#resetpw').click(function(){
+				var username = $('[name=username]').val();
+				$.ajax({  
+		            type: "post",  
+		            url: "{:U('Super/resetpw')}",
+		            data:"username="+username,  
+		            async:false,  
+		            success: function(data) { 
+		            	if(data){
+		            		alert('新密码已经发送至管理员手机，请注意查看！');
+		            	}else{
+		            		alert('密码修改出错，请重新操作！');
+		            	}
+		            },  
+		            error: function(data) {  
+		            	alert('error' + data);
+		            }  
+		        });
+			});
+</script>
+</block>

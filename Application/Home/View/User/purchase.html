@@ -1,0 +1,68 @@
+<extend name="Base/footer"/>
+<block name="content">
+<link rel="stylesheet" href="__CSS__/global.css">
+<link rel="stylesheet" href="__CSS__/index.css">
+<link rel="stylesheet" href="__CSS__/pwd.css">
+
+<body style="overflow:scroll;">
+<?php
+if (@$_GET['fee']&&$_GET['orderid']) {
+  $noid=$_GET['orderid'];
+  $fee=$_GET['fee']/10;
+}
+ ?>
+<div class="wrap">
+  <div class="index" style="min-height: 891px;">
+    <header class="list-head">
+      <nav class="list-nav clearfix"> <a href="javascript:history.go(-1)" class="list-back"></a>
+        <h3 class="list-title">风险申购</h3>
+      </nav>
+    </header>
+    <form id="reviseForm" class="i-form" method="post" action="{:U('User/purchase')}">
+      <ul class="form-box">
+        <li class="f-line clearfix">
+          <label class="f-label">申购订单</label>
+          <input id="order" class="f-input text" type="text" placeholder="请输入需申购订单号" name="pcnumber" oninput="showpay()" onpropertychange="showpay()" onfocus="showpay()" value="{$noid}">
+        </li>
+        <li class="f-line clearfix">
+          <label class="f-label">需付金额</label>
+          <input id="paymoney" class="f-input text" type="text" name="pcfee" value="{$fee}">
+          <span style="line-height:40px;">元</span>
+        </li>
+        <li class="f-line clearfix">
+          <label class="f-label">请扫描二维码支付</label>
+          <img src="__ROOT__/newpublic/images/erweima.jpg" alt="">
+        </li>
+        <li class="f-line clearfix">
+          <label class="f-label">支付订单号</label>
+          <input id="n-pwd" class="f-input text" type="text" name="payno">
+        </li>
+        
+      </ul>
+      <input type="submit" value="确定" class="f-sub" id="send">
+    </form>
+  </div>
+</div>
+<script>
+  function showpay(){
+    var order=$('#order').val();
+    $.ajax({
+      type:'post',
+      url:"queryfee",
+      dataType:'json',
+      data:{'order':order},
+      success:function(data){
+        if (data==0) {
+          var string="请输入订单号";
+        }else{
+          $('#paymoney').attr('value',data);
+        }
+      }
+
+    });
+  }
+</script>
+
+</body>
+</block>
+       

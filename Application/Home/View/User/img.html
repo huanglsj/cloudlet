@@ -1,0 +1,43 @@
+<extend name="Base/footer"/>
+<block name="content">
+<link rel="stylesheet" href="__CSS__/global.css">
+<link rel="stylesheet" href="__CSS__/index.css">
+<link rel="stylesheet" href="__CSS__/pwd.css">
+
+
+    
+<body style="overflow:scroll;-webkit-overflow-scrolling: touch;">
+<div class="content wrap">
+      <br/>
+<p class="yh_all" style="text-align: center;"><span style="border: 1px solid rgb(0, 0, 0); color: rgb(238, 236, 225);">分享个人二维码</span><p>
+<!--
+<p><input  id='link' type="text" value="{$myurl}" class="st"/>&nbsp;&nbsp;<button class="tjrz" id="cop" onclick="copy();">复制推广链接</button></p>
+注释这行是防止微信封链接-->
+<p class="form_sfrz"><img style="display: inline-block;margin: 20px 0;" alt="二维码" src="http://www.xcsoft.cn/public/qrcode?text=http://{$url_encode}&size=4&level=L&padding=2&logo=">
+<br><button class="tjrz2">分享此二维码,邀请好友一起来赚钱！</button><br>
+</div>
+<style>
+.yh_all{ font-size:16px; font-weight:bold; border:none; color:#fff;}
+.zl_table{ border-radius:5px; background:#fff; }
+.zl_table tr{ height:42px; line-height:42px;}
+.st{ width:60%; height:32px; padding-left: 2px;margin-left : 5px;line-height:32px; border:none; border:1px #d5d5d5 solid; border-radius:3px; }
+.tjrz{ background:none; border:none; padding:6px 2px; background:#464A55; border-radius:2px; color:#fff; font-size:14px; margin-top:12px;width:25%;}
+.tjrz2{ background:none; border:none; padding:10px 15px; background:#464A55; border-radius:2px; color:#fff; font-size:14px; margin: 10px 20px 20px 20px;}
+.form_sfrz{ background:#383838; border:1px #383838 solid; border-radius:5px; width:100%; font-size:15px; text-align:center;margin-top:20px;}
+
+</style>
+
+<script type="text/javascript"> 
+    function copy(){ 
+        var content=$('#link');//对象是多行文本框contents 
+        content.select(); //选择对象 
+        document.execCommand("Copy"); //执行浏览器复制命令
+        $('#cop').html('已复制');
+    } 
+</script> 
+
+
+        
+
+</body>
+</block>

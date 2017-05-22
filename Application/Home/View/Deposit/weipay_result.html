@@ -1,0 +1,124 @@
+<extend name="Base/footer"/>
+<html>
+<head>
+<block name="content">
+    <meta charset="utf-8">
+    <if condition="$result eq 1">
+      <title>支付成功</title>
+    <elseif condition="$result eq 2"/>
+      <title>支付失败</title>
+    <elseif condition="$result eq 3"/>
+      <title>支付中</title>
+    <else/>
+      <title>无效订单</title>
+    </if>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="format-detection" content="email=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=0"/>
+    <style>
+        *, :before, :after {
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
+        }
+
+        body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+            margin: 0;
+            padding: 0
+        }
+
+        table {
+            border-collapse: collapse;
+            border-spacing: 0
+        }
+
+        fieldset, img {
+            border: 0
+        }
+
+        li {
+            list-style: none
+        }
+
+        caption, th {
+            text-align: left
+        }
+
+        q:before, q:after {
+            content: ""
+        }
+
+        html, body {
+            -webkit-touch-callout: none;
+            touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+            tap-highlight-color: transparent;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-size: 15px;
+            font-weight: 300;
+            font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif
+        }
+
+        body {
+            background: #10162c
+        }
+
+		.closeBtn {
+		    clear: both;
+		    width: 90%;
+		    background: #0d216a;
+		    border: none;
+		    line-height: 40px;
+		    margin: 14px auto;
+		    border-radius: 10px;
+			font-size: 20px;
+			font-weight:400;
+			color:#eee;
+			float:bottom;
+			margin-top:20px;
+		}
+    </style>
+	<script>
+		function doClose() {
+			location.href="{:U('Index/index')}";
+		}
+	</script>
+</head>
+<body>
+  
+  <div class="success-tip" id="successTip" style="margin-top:30px">
+   <if condition="$result eq 1">
+	  <img src="__ROOT__/Public/images/success.png" style="height:40px;width:40px;vertical-align:middle;"/>
+	  <span style="font-size:24px;color:#eee;vertical-align:middle;">
+            支付成功！
+	  <span>
+<script>window.setTimeout("window.location='http://nxvx.net/'",3000); </script>
+   <elseif condition="$result eq 2"/>
+	  <img src="__ROOT__/Public/images/fail.png" style="height:40px;width:40px;vertical-align:middle;"/>
+	  <span style="font-size:24px;color:#eee;vertical-align:middle;">
+            支付失败！
+	  <span>
+   <elseif condition="$result eq 3"/>
+	  <img src="__ROOT__/Public/images/question.jpg" style="height:40px;width:40px;vertical-align:middle;"/>
+	  <span style="font-size:24px;color:#eee;vertical-align:middle;">
+            微信正在处理支付...
+	  <span>
+   <else/>
+	  <img src="__ROOT__/Public/images/fail.png" style="height:40px;width:40px;vertical-align:middle;"/>
+	  <span style="font-size:24px;color:#eee;vertical-align:middle;">
+            无效订单！
+	  <span>  
+   </if>  
+  <br>
+  <img src="/Public/Home/images/banner.png" style="width:90%;margin-top:20px"/> 
+  <input type="button" value='返回首页' class='closeBtn' id="closeBtn" onclick="doClose();"/>
+  <br>
+</div>
+</body>
+</block>
+</html>

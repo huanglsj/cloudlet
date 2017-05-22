@@ -1,0 +1,63 @@
+<extend name="Base/common"/>
+<block name="content">
+<link rel="stylesheet" href="__CSS__/compiled/new-user.css" type="text/css" media="screen" />  
+<style>
+	.new-user .form-wrapper input[type="text"]{border: 1px solid #D0D0D0;}
+</style>
+   <div class="container-fluid">
+            <div id="pad-wrapper" class="new-user">
+                <div class="row-fluid header">
+                    <h3>系统设置&nbsp;>&nbsp<if condition="$info[id]">编辑<else />添加</if>风控</h3>
+                </div>
+
+                <div class="row-fluid form-wrapper">
+                    <form action="{:U()}" method="post" class="new_user_form">
+                    <!-- left column -->
+                    <div class="span6 with-sidebar">
+                        <div class="span9 field-box">
+                            <label>风控名称:</label>
+                            <input class="span8" type="text" name="name" value="{$info.name}" data-toggle="tooltip" data-trigger="focus" title="请输入风控名称" data-placement="right" />
+                        </div>
+                        <div class="span9 field-box">
+                            <label>干预区间:</label>
+                            <input class="span4" type="text" name="price_min" value="{$info.price_min}" data-toggle="tooltip" data-trigger="focus" title="请输入最小价格" data-placement="right" /> 元 - <input class="span4" type="text" name="price_max" value="{$info.price_max}" data-toggle="tooltip" data-trigger="focus" title="请输入最大价格" data-placement="right" /> 元
+                        </div>
+                        <div class="span9 field-box">
+                            <label>获胜比率:</label>
+                            <input class="span2" type="text" name="win_rate" value="{$info.win_rate}" data-toggle="tooltip" data-trigger="focus" title="请输入获胜比率" data-placement="right" /> %
+                        </div>
+                        <div class="span9 field-box">
+                            <label>状态:</label>
+                            <select  name="status">
+                                <option <if condition='$info.status eq "1"'> selected </if> value="1">开启</option>
+                                <option <if condition='$info.status eq "2"'> selected </if> value="2">关闭</option>
+                            </select>
+                        </div>
+                        <div class="span8 field-box actions" style="padding-bottom: 20px;">
+                            <input type="hidden" name="id" value="{$info.id|default=''}">
+                            <input type="submit" class="btn-glow primary" value="提交" />
+                        </div>
+                    </div>
+					</form>
+                </div>
+            </div>
+        </div>
+	<!-- scripts -->
+    <script src="__JS__/jquery-latest.js"></script>
+    <script src="__JS__/bootstrap.min.js"></script>
+    <script src="__JS__/theme.js"></script>
+    <script src="__JS__/bootstrap.datepicker.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+			setdashboardmenu("系统设置");
+			
+			$('.datepicker').datepicker().on('changeDate', function (ev) {
+	            $(this).datepicker('hide');
+	        });
+			
+			$("[name=cashdeposit]").blur(function(){
+				$("[name=equity]").val($("[name=cashdeposit]").val());
+			});
+		});		
+	</script>
+</block>

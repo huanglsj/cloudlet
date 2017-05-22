@@ -1,0 +1,242 @@
+::-webkit-input-placeholder {
+
+  color: rgba(255, 255, 255, 0.5); }
+
+
+
+:-moz-placeholder {
+
+  color: rgba(255, 255, 255, 0.5); }
+
+
+
+::-moz-placeholder {
+
+  color: rgba(255, 255, 255, 0.5); }
+
+
+
+:-ms-input-placeholder {
+
+  color: rgba(255, 255, 255, 0.5); }
+
+
+
+
+
+body {
+
+  /*background-color: #191A1F; */
+
+  background: url('/Public/images/daf12824d2d1bb3c5d0d5269f5bc6469.jpg') no-repeat #000f22;
+
+  background-size: 100% 100%;
+
+  /*padding-top:10%;*/
+
+  /*padding-bottom:20%;*/
+
+}
+
+  body .wrap .main-con {
+
+    height: 100%;
+
+    padding-top: 20px;
+
+    padding-left: 7.568%;
+
+    padding-right: 7.568%; }
+
+    body .wrap .main-con .logo {
+
+      display: block;
+
+      /*width: 28.985%;*/
+
+      width: 65.985%;
+
+      margin: 0 auto;
+
+      padding-bottom: 30px; }
+
+      body .wrap .main-con .logo img {
+
+        width: 100%; }
+
+    body .wrap .main-con .input-con {
+
+      width:90%;
+
+      border-bottom: 1px solid #444;
+
+      margin-top: 16px;
+
+      padding-bottom: 4px;
+
+      padding-left: 6px; }
+
+      body .wrap .main-con .input-con span {
+
+        display: inline-block;
+
+        /*color: #ffffff;*/
+
+	color: #333;
+
+        font-size: 14px;
+
+        font-family: "Hiragino Sans GB";
+
+        font-weight:;
+
+        width: 40%; }
+
+      body .wrap .main-con .input-con input {
+
+        border: none;
+
+      	outline:none;
+
+        background-color: transparent;
+
+        font-size: 14px;
+
+        /*color: rgba(255, 255, 255, 0.5);*/
+
+	color:green;
+
+        width: 50%; }
+
+    body .wrap .main-con .code {
+
+      position: relative; }
+
+      body .wrap .main-con .code input {
+
+        width: 40%; }
+
+      body .wrap .main-con .code #get-code {
+
+        float: right;
+
+        background-color: #464A55;
+
+        font-size: 12px;
+
+        color: rgba(255, 255, 255, 0.5);
+
+        padding: 2px 6px;
+
+        -webkit-border-radius: 4px;
+
+        -moz-border-radius: 4px;
+
+        border-radius: 4px; }
+
+    body .wrap .main-con .read {
+
+      font-size: 12px;
+
+      color: #000;
+
+      padding-top: 14px; }
+
+      body .wrap .main-con .read .ok {
+
+        width: 5%;
+
+        vertical-align: middle; }
+
+      body .wrap .main-con .read .fir {
+
+        padding-left: 2%;
+
+        color: #000; }
+
+    body .wrap .main-con .register-btn {
+
+      display: block;
+
+      width: 100%;
+
+      height: 36px;
+
+      line-height: 36px;
+
+      background-color: #458b00;
+
+      color: #ffffff;
+
+      -webkit-border-radius: 30px;
+
+      -moz-border-radius: 30px;
+
+      border-radius: 5px;
+
+      text-align: center;
+
+      margin-top: 24px; 
+
+	  border:none;}
+
+    body .wrap .main-con .login {
+
+      float: right;
+
+      display: block;
+
+      padding-right: 4%;
+
+      padding-top: 14px;
+
+      /*color: rgba(255, 255, 255, 0.5);*/
+
+      color:blue
+
+ }
+
+    body .wrap .main-con .bot-font {
+
+      width: 34.985%;
+
+      margin: 0 auto;
+
+      padding-top: 90px; }
+
+      body .wrap .main-con .bot-font img {
+
+        width: 100%;
+
+        bottom: 10px; }
+
+    body .wrap .main-con .login-bot-font {
+
+      width: 34.985%;
+
+      margin: 0 auto;
+
+      /*padding-top: 250px;*/
+
+      padding-top:150px;
+
+      padding-bottom:70px;
+
+ }
+
+      body .wrap .main-con .login-bot-font img {
+
+        width: 100%;
+
+        bottom: 10px; }
+
+      div.jypt_div{
+
+		display:none;  	
+
+      }
+
+
+
+/*# sourceMappingURL=login.css.map */
+

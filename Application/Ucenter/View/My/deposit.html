@@ -1,0 +1,107 @@
+<extend name="Base/common"/>
+<block name="content">
+<style type="text/css">
+	.col-md-6{ width:100%;}
+	.form-horizontal { width:500px;}
+</style>
+<script>
+function deposit() {
+	$("#btnSubmit").attr("disabled", "disabled");
+
+	$payway = $("#payway").val();
+	if ($payway == "unionpay") {
+		document.depositForm.action = "{:U('Deposit/doDeposit')}";
+		document.depositForm.submit();
+		return true;
+	}
+
+	$.ajax({
+		url:"{:U('Deposit/doDeposit')}",
+		type:"post",
+		data:{amount:$("#amount").val(), payway:$("#payway").val()},
+		dataType:'json',
+		success:function(data) {
+			//alert(JSON.stringify(data));
+			if (data.success == 1) {
+				if ($("#payway").val() == 'weixin') {
+					$("#qrcode_title").text("请用微信扫描下方二维码完成支付");
+				}
+				else if ($("#payway").val() == 'alipay') {
+					$("#qrcode_title").text("请用支付宝扫描下方二维码完成支付");
+				}
+				$("#qrcode_img")[0].src = "/Extend/phpqrcode/index.php?d="+data.url+"&l=2&m=2&s=6";
+				//显示二维码的图片
+				layer.open({
+					type: 1,
+					title: "支付宝扫码支付",
+					resize:false,
+					skin: 'layui-layer-rim', //加上边框
+					area: ['400px', '400px'], //宽高
+					content:$("#aaaa").html(),
+					success:function(index, layero) {
+					},
+					btn:["关闭"],
+				});
+				$("#btnSubmit").removeAttr("disabled");
+			}
+			else {
+				layer.alert("系统繁忙");
+				$("#btnSubmit").removeAttr("disabled");
+			}
+		},
+		error:function(data) {
+		    layer.alert("系统繁忙");
+			$("#btnSubmit").removeAttr("disabled");
+			//alert(JSON.stringify(data));
+		}
+	});
+
+	return false;
+}
+</script>
+   <div class="panel panel-default col-md-6" id="aaaa" style="display:none">
+	 <div style="text-align:center">
+		<h4><strong><span id="qrcode_title"></span></strong></h4>
+		<img id="qrcode_img" src=""/>
+     </div>
+   </div>
+
+	<div class="main sidebar-minified">
+		<div class="row">
+			<div class="col-md-6">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h2><i class="fa fa-indent red"></i><strong>账户充值</strong></h2>
+					</div>
+						<form action="" method="post" enctype="multipart/form-data" class="form-horizontal" name="depositForm">
+						<div class="panel-body">
+							 <input type="hidden" name="uid" value="{$user.uid}">
+							 <input type="hidden" name="mid" value="{$user.mid}">
+							<div class="form-group">
+								<label class="col-md-3 control-label" for="text-input">金额</label>
+								<div class="col-md-9">
+								  <input type="text" class="form-control" id="amount" name="amount">
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-md-3 control-label" for="email-input">入金通道</label>
+								<div class="col-md-9">
+								  <select class="form-control" id="payway" name="payway">
+								   <!--<option value="weixin">微信</option>-->
+								   <option value="alipay">支付宝</option>
+								   <!--<option value="unionpay">银联</option>-->
+								  </select>
+								</div>
+							</div>
+						</div>
+						<div class="panel-footer">
+							<button class="btn btn-sm btn-success" type="button" id="btnSubmit" onclick="return deposit();"><i class="fa fa-dot-circle-o"></i> 提交</button>
+							<a onclick="window.history.go(-1)"><button type="reset" class="btn btn-sm btn-danger"><i class="fa fa-ban"></i> 返回</button></a>
+						</div>
+					 </form>	
+				</div>	
+			</div>
+		 </div>
+	</div>
+
+</block>

@@ -1,0 +1,243 @@
+<extend name="Base/footer"/>
+<!DOCTYPE html>
+<html>
+<head>
+<block name="content">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="email=no">
+<title>微云交易</title>
+<link rel="stylesheet" href="__CSS__/global.css">
+<link rel="stylesheet" href="__CSS__/inout.css">
+<script language="javascript" type="text/javascript" src="__JS__/jquery.min.js"></script>
+<script language="javascript" type="text/javascript" src="__PUBLIC__/Js/numeric.js"></script>
+
+<script>
+	$(document).ready(function() {
+		$(".j_select_money").click(function() {
+			
+			if($(this).hasClass('activeLi')){
+				$(this).removeClass('activeLi');
+				$("#amount").val("");
+				$("#amount").focus();
+			}else{
+				$(this).siblings().removeClass('activeLi');
+				$(this).addClass('activeLi');
+				$("#amount").val($(this).attr("data-amount"));
+			}
+		});
+		
+		$("#amount").on("input", function() {
+			$(".j_select_money").removeClass('activeLi');			
+		});
+		
+		/* $(".payway.amount_select").click(function() {
+			$(".payway.amount_select").removeClass('amount_selected');
+			$(this).addClass('amount_selected');
+			$("#payway").val($(this).data('payway'));
+		}); */
+
+		
+		$(".addKind .j_charge").click(function() {
+			var amount = $("#amount").val();
+			if (amount == "") {
+				alert("请选择或者输入入金金额！");
+				return false;
+			}
+			$("#payway").val($(this).attr("data-payway"));
+			/* if (payway == "") {
+				alert("请选择入金方式！");
+				return false;
+			} */
+
+			if (!checkAmount(amount)) {
+				alert("请输入正确的金额！");
+				return false;
+			}
+
+			document.payForm.submit();
+		});
+		//initSelection();
+	});
+	
+	function checkAmount(amount) {
+		if (!isNumeric(amount, 6, 2)) {
+			return false;
+		}
+		
+		if (amount <= 0) {
+			return false;
+		}
+		if (amount < 100) {
+			//return false;
+		}
+		if (amount > 100000) {
+			return false;
+		}
+		return true;
+	}
+
+	function initSelection() {
+		$(".j_select_money").removeClass('activeLi');
+		var amount = $("#amount").val();
+		if (amount != "") {
+			var rs = $(".amount.amount_select");
+			var hit = false;
+			for (var i=0; i<rs.length; i++) {
+				if (rs[i].dataset['amount'] == amount) {
+					$(rs[i]).addClass('amount_selected');
+					hit = true;
+					break;
+				}
+			}
+			
+			if (!hit) {
+				$(".amount.amount_select").last().addClass('amount_selected');
+			}
+		}
+
+		var payway = $("#payway").val();
+		if (payway != "") {
+			var rs = $(".payway.amount_select");
+			var hit = false;
+			for (var i=0; i<rs.length; i++) {
+				if (rs[i].dataset['payway'] == payway) {
+					$(rs[i]).addClass('amount_selected');
+					break;
+				}
+			}
+		}
+		
+	}
+</script>
+</head>
+
+<body>
+<!-- <div>
+  <form name="payForm" method="post" action="/index.php/Home/Deposit/doDeposit.html">
+  <p style="color:#eee;font-size:15px;font-weight:400">
+  账户余额：{$balance}元<br>
+  </p>
+  <p  style="color:#eee;font-size:15px;margin-bottom:0px;margin-top:5px;font-weight:400">
+      入金金额（最小100，最大100000）
+  </p>    
+  <div style="height:90px">
+      <div data-amount="100" class="amount amount_select amount_select_left">100</div>
+      <div data-amount="500" class="amount amount_select amount_select_right">500</div>
+      <br>
+      <div data-amount="1000" class="amount amount_select amount_select_left">1000</div>
+      <div data-amount="5000" class="amount amount_select amount_select_right">5000</div>
+      <br>
+      <div data-amount="qita" class="amount amount_select amount_select_left">其他</div>
+      <input type="number" name="amount" id="amount" value="{$amount}" class="amount amount_input" maxlength="8"/>
+  </div>
+   <br>
+   <div style="height:110px">
+   <p style="color:#eee;font-size:15px;margin-top:20px;font-weight:400;">
+      入金方式
+   </p>
+      <div data-payway="weixin" class="payway amount_select amount_select_left">微信</div>
+      <div data-payway="weixin_qrcode" class="payway amount_select amount_select_right">微信扫码</div>
+      <br>
+      <div data-payway="alipay" class="payway amount_select amount_select_left">支付宝</div>
+      <div data-payway="unionpay" class="payway amount_select amount_select_right">银联</div>
+      <input type="hidden" name="payway" id="payway" value="{$payway}"/>
+  </div> 
+  <div style="text-align:center">
+      <input type="button" value="确定" class="confirmBtn"/>
+  </div>
+  </form>
+
+</div> -->
+
+  <header>
+    <a href="index.html"><i></i></a>
+    <h1>账户充值</h1>
+  </header>
+  <form name="payForm" method="post" action="/index.php/Home/Deposit/doDeposit.html">
+  <div class="pagewrap">
+    <section class="section_add section_tic">
+      <div class="add_main">   
+        <div><img src="__IMG__/user.png" class="j_picsrc"> <span id="j_nick"></span></div>   
+        <p>可用资产：<i class="j_balance">{$balance}</i>元</p>
+      </div>
+      <!-- <div class="add-moneycard j_card_info" v-for="(index, val) in cards" v-show="!index" v-on:click="selectCard(index)" data-bindid="{{val.bindid}}">
+        <div class="add-moneycard-list">
+          <span>持 卡 人：</span>
+          <s class="j_card_name" v-text="val.name"></s>
+        </div>
+        <div class="add-moneycard-list">
+          <span>银 行 卡：</span>
+          <s class="j_card_bank" v-text="val.bank"></s>
+        </div>
+        <div class="add-moneycard-list">
+          <span>银行卡号：</span>
+          <s class="j_card_num">**** **** **** **** <span v-text="val.cardEnd4"></span></s>
+        </div>
+      </div> -->
+      <!-- <div class="drop-down j_btn_morebank" data-show="0">
+        <img src="__IMG__/d_down.png">
+      </div> -->
+      <div class="faceValue"> 
+        <div>
+          <span>充值金额（最小100，最大100000）:</span>
+          <ul id="choiceFaceValue"> 
+            <!-- <li data-amount="10" class="activeLi j_select_money" data-money="10">10元</li> -->
+            <li class="j_select_money" data-amount="100">100元</li>
+            <li class="j_select_money" data-amount="500">500元</li>
+            <li class="j_select_money" data-amount="1000">1000元</li>
+            <li class="j_select_money" data-amount="2000">2000元</li>
+            <li class="j_select_money" data-amount="5000">5000元</li>
+          </ul>
+        </div>
+        <div> 
+          <span>其 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;他:</span>
+          <input class="amount_input" type="text" name="amount" placeholder="最小充值金额100元" id="amount" value="">
+        </div>        
+      </div>
+      <div class="addKind">
+        <div class="j_charge" data-payway="weixin">
+          <i><img src="__IMG__/pay_wx.png"></i>
+          <span>微信支付</span>
+        </div>
+        <div class="j_charge" data-payway="weixin_qrcode">
+          <i><img src="__IMG__/pay_wsm.png"></i>
+          <span>微信扫码</span>
+        </div>
+        <!-- <div class="j_charge" data-type="4">
+          <i><img src="__IMG__/pay_jd.png"></i>
+          <span>京东支付</span>
+        </div> -->
+        <div class="j_charge" data-payway="unionpay">
+          <i><img src="__IMG__/pay_yl.png"></i>
+          <span>银联充值</span>
+        </div>
+        <div class="j_charge" data-payway="alipay">
+          <i><img src="__IMG__/pay_zfb.png"></i>
+          <span>支付宝支付</span>
+        </div>
+        <!-- <div class="j_charge" data-type="" style="display:none">
+          <i><img src="__IMG__/pay_xl.png"></i>
+          <span>新浪支付</span>
+        </div>
+        <div class="j_charge" data-type="7" style="display:none">
+          <i><img src="__IMG__/pay_xl.png"></i>
+          <span>国采支付</span>
+        </div> -->
+        <!-- <div class="j_charge" data-type="6" style="display:none">
+          <i><img src="__IMG__/pay_eco.png"></i>
+          <span>易联支付</span>
+        </div> -->        
+      </div>
+     <!--  <div class="drop-down j_btn_more">
+        <img src="__IMG__/d_down.png">
+      </div> -->
+    </section>
+  </div>
+   <input type="hidden" name="payway" id="payway" value="{$payway}"/>
+	</form>
+</body>
+</block>
+</html>

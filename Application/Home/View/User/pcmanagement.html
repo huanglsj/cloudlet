@@ -1,0 +1,90 @@
+<extend name="Base/footer"/>
+<block name="content">
+<link rel="stylesheet" href="__CSS__/global.css">
+<link rel="stylesheet" href="__CSS__/ticket.css">
+
+
+
+<script id="G--xyscore-load" type="text/javascript" charset="utf-8" async src="__JS__/xyscore_main.js"></script>
+
+<body style="overflow:scroll;">
+<div class="wrap">
+  <div class="index" >
+    <header class="list-head">
+      <nav class="list-nav clearfix"> <a href="javascript:history.go(-1)" class="list-back"></a>
+        <h3 class="list-title">申购明细</h3>
+      </nav>
+    </header>
+    <ul class="ticket-list2" style="max-height:100%">
+    <table style="width:100%;text-align:center;font-size:16px;color:#ccc;">
+    
+      <thead>
+        <td style="width:20%">申购订单</td>
+        <td style="width:20%">申购金额</td>
+        <td style="width:20%">支付订单号</td>
+        <td style="width:20%">购买时间</td>
+        <td style="width:20%">操作</td>
+      </thead>
+      <volist name="list" id="vo">
+      <tr>
+        <td style="width:20%">{$vo.pcnumber}</td>
+        <td style="width:20%">{$vo.pcfee}元</td>
+        <td style="width:20%">{$vo.payno}</td>
+        <td style="width:20%">{$vo.time|date='Y-m-d',###}</td>
+        
+        <td style="width:20%">
+        <if condition="$vo.status eq 0">
+        <a href="javascript:void(0);" id="lp{$vo.pcnumber}" onclick="return confirm('确定要申请理赔?');">申请理赔</a>       
+        </if>
+        <if condition="$vo.status eq 1">
+        <span>已申请理赔</span>
+        </if>
+        <if condition="$vo.status eq 2">
+        <span>已处理</span>
+        </if>
+        <if condition="$vo.status eq 3">
+        <span>审核未通过</span>
+        </if>
+         </td>
+      </tr>
+
+<script type="text/javascript">
+  $('#lp{$vo.pcnumber}').click(function(){
+     var lipeino={$vo.id};
+      $.ajax({
+        type:'post',
+        url:'lipeisb',
+        data:{lipeino:lipeino},
+        dataType:'json',
+        success:function(data){
+          //document.write(data);
+          if (data==1) {
+            alert('申请成功，请等待处理！');
+          }else if(data==0){
+            alert('申请失败！');
+          }
+        }
+      });
+  });
+
+</script>
+      </volist>
+    </table>
+
+    </ul>
+      <div class="pagelist">{$page}</div>
+  </div>
+
+</div>
+<style type="text/css">
+  .pagelist{ text-align:center; background:#0d216a; padding:7px 0;color:#FFF;}
+.pagelist a{ margin:0 5px; border:#6185a2 solid 1px; display:inline-block; padding:2px 6px 1px; line-height:16px; background:#fff; color:#6185a2;}
+.pagelist span{ margin:0 5px; border:#6185a2 solid 1px; display:inline-block; padding:2px 6px 1px; line-height:16px; color:#6185a2; color:#fff; background:#6185a2;}
+</style>
+<script src="__JS__/jquery-2.1.1.min.js"></script>
+<script src="__JS__/script.js"></script>
+<script src="__JS__/getJuan.js"></script>
+<script type="text/javascript" charset="utf-8" src="__JS__/sea.js" async></script>
+
+</body>
+</block>

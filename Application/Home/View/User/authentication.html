@@ -1,0 +1,296 @@
+<extend name="Base/footer"/>
+<block name="content">
+<link rel="stylesheet" href="__CSS__/global.css">
+<link rel="stylesheet" href="__CSS__/index.css">
+<link rel="stylesheet" href="__CSS__/pwd.css?20170421">
+
+<body style="overflow:scroll;">
+<div class="wrap">
+  <div class="index" style="min-height: 891px;">
+    <header class="list-head">
+      <nav class="list-nav clearfix"> <a href="javascript:history.go(-1)" class="list-back"></a>
+        <h3 class="list-title">申请实名认证</h3>
+      </nav>
+			<script type="text/javascript">
+				var countdown = 60;
+				$(document).ready(function() {
+					$("#mes").click(function() {
+						var tel = $("#mobile").val();
+						var myreg = /^(((13[0-9]{1})|(15[0-9]{1})|(18[0-9]{1}))+\d{8})$/; 
+						if (tel == '') {
+							alert("请输入手机号！");
+							return false;
+						} else if (!myreg.test(tel)) {
+							alert("手机号码格式不正确！");
+							return false;
+						}
+						settime(this);
+						$.ajax({
+							type : 'POST',
+							url : "{:U('User/smsverify11')}",
+							data : {'tel' : tel},
+							success:function(data){
+								alert(data);
+							},
+							error:function(data){
+								alert(data);
+							}
+						});
+					});
+				});
+				function settime(obj) {
+					if (countdown == 0) {
+						$(obj).removeAttr("disabled");
+						$(obj).val("获取验证码");
+						countdown = 60;
+						return;
+					} else {
+						$(obj).attr("disabled", true);
+						$(obj).val("重新发送(" + countdown + ")");
+						countdown--;
+					}
+					setTimeout(function() {
+						settime(obj)
+					}, 1000)
+				}
+			</script>
+		</header>
+    <form id="reviseForm" class="i-form" method="post" action="{:U('User/authentication')}">
+      <ul class="form-box">
+        <li class="f-line clearfix">
+          <label class="f-label">真实姓名</label>
+          <input name="uid" type="hidden" value="{$info.uid}">
+          <input id="realname" class="f-input text" type="text" maxlength="10" placeholder="请输入姓名" name="realname" value="{$info.realname}">
+        </li>
+        <li class="f-line clearfix">
+          <label class="f-label">身份证</label>
+          <input id="IDnumber" class="f-input text" type="text" maxlength="18" placeholder="请输入身份证号" name="IDnumber"  value="{$info.IDnumber}">
+        </li>
+<!--        <li class="f-line clearfix">
+          <label class="f-label">微信号</label>
+          <input id="wxnumber" class="f-input text" type="text" maxlength="18" placeholder="请输入微信号" name="wxnumber"  value="{$info.wxnumber}">
+        </li>-->
+        <li class="f-line clearfix">
+          <label class="f-label">手机号</label>
+          <input id="mobile" class="f-input text" type="text" maxlength="11" placeholder="请输入手机号" name="mobile"  value="{$info.mobile}">
+        </li>
+        <li class="f-line clearfix">
+          <label class="f-label">验证码</label>
+          <input id="n-pwd" class="f-input text" style="width: 35%;" type="text" maxlength="6" placeholder="短信验证码" name="code">
+          <input type="button" value="获取验证码" id="mes" class="f-sub2 button-1">
+          
+        </li>
+<!--        <li class="f-line clearfix">
+          <label class="f-label">身份证正面照</label>
+          <img <if condition='($info.IDcardfront neq "")'> src="__UPPIC__{$info.IDcardfront}" <else/> src=""</if> id="IDcardfrontIMG" name="IDcardfrontIMG" class="img-thumbnail avatar hidden-phone img-responsive" style="max-width: 100px;max-height: 100px" />
+          <input type="hidden" name="IDcardfrontH" value="{$info.IDcardfront}">
+          &lt;!&ndash; <input type="file" id="IDcardfront" class="f-sub2 file text fileup file_0" name="IDcardfront"> &ndash;&gt;
+          <button type="button" class="f-sub2 button-1" onclick="openUp('0')">上传图片</button>
+          
+        </li>-->
+        <li class="f-line clearfix">
+          <label class="f-label">身份证正面</label>
+          <img <if condition='($info.IDcardfront neq "")'> src="__UPPIC__{$info.IDcardback}" <else/> src=""</if> id="IDcardbackIMG" name="IDcardbackIMG" class="img-thumbnail avatar hidden-phone img-responsive" style="max-width: 100px;max-height: 100px""/>
+          <input type="hidden" name="IDcardbackH" value="{$info.IDcardback}">
+          <button type="button" class="f-sub2 button-1" onclick="openUp('1')">上传图片</button>
+        </li>
+        <li class="f-line clearfix">
+          <label class="f-label">身份证背面</label>
+          <img <if condition='($info.IDcardfront neq "")'> src="__UPPIC__{$info.IDcardhandheld}" <else/> src=""</if> id="IDcardhandheldIMG" name="IDcardhandheldIMG" class="img-thumbnail avatar hidden-phone img-responsive" style="max-width: 100px;max-height: 100px""/>
+          <input type="hidden" name="IDcardhandheldH" value="{$info.IDcardhandheld}">
+          <button type="button" class="f-sub2 button-1" onclick="openUp('2')">上传图片</button>
+        </li>
+      </ul>
+      <button class="f-sub" id="sub">提交申请</button>
+    </form>
+  </div>
+</div>
+<form id="formImg" method="post" style="display: none" enctype="multipart/form-data" action="{:U('User/UplodePic')}"
+    target="hidden_frame">
+    <input name="input-file" type="file" id="upfile" value="" />
+    <input name="submittype" type="hidden" value="">
+</form>
+<iframe style="display: none" name='hidden_frame' id="hidden_frame"></iframe> 
+</body>
+    <style type="text/css">
+        .formtips{
+            text-align:center;
+            width: 100%;
+        }
+    </style>
+    <script type="text/javascript">
+        $(function(){
+            //如果是必填的，则加红星标识.
+            //文本框失去焦点后
+            $('form :input').blur(function(){
+                var $parent = $(this).parent();
+                $parent.find(".formtips").remove();
+                //验证用户名
+                if( $(this).is('input[name="realname"]') ){
+                    if( this.value==""){
+                        var errorMsg = '请输入真实姓名.';
+                        $parent.append('<input  class="f-input formtips onError" type="text" value="'+errorMsg+'" > ');
+                    }else{
+                        $parent.append('<input class="f-input formtips onSuccess" style="display:none" type="text"  > ');
+                    }
+                }
+                
+              //验证身份证号
+                if( $(this).is('input[name="IDnumber"]') ){
+                    if( this.value==""){
+                        var errorMsg = '请输入身份证号.';
+                        $parent.append('<input  class="f-input formtips onError" type="text" value="'+errorMsg+'" > ');
+                    }else{
+                        $parent.append('<input class="f-input formtips onSuccess" style="display:none" type="text"  > ');
+                    }
+                }
+              
+              //验证微信号
+              /*  if( $(this).is('input[name="wxnumber"]') ){
+                    if( this.value==""){
+                        var errorMsg = '请输入微信号.';
+                        $parent.append('<input  class="f-input formtips onError" type="text" value="'+errorMsg+'" > ');
+                    }else{
+                        $parent.append('<input class="f-input formtips onSuccess" style="display:none" type="text"  > ');
+                    }
+                }
+                */
+                //手机号码验证
+                if( $(this).is('input[name="mobile"]') ){
+                    if( this.value=="" || ( this.value!="" && !/^1[3|4|5|8][0-9]\d{4,8}$/.test(this.value) ) ){
+                        var errorMsg = '请输入正确的手机号码.';
+                        $parent.append('<input  class="f-input formtips onError" type="text" value="'+errorMsg+'" > ');
+                    }else{
+                        $parent.append('<input class="f-input formtips onSuccess" style="display:none" type="text"  > ');
+                    }
+                }
+                
+/*                 //手机验证码验证
+                if( $(this).is('input[name="code"]') ){
+                    if( this.value=="" ){
+                        var errorMsg = '请输入手机验证码.';
+                        $parent.append('<input  class="f-input formtips onError" type="text" value="'+errorMsg+'" > ');
+                    }else{
+                        $parent.append('<input class="f-input formtips onSuccess" style="display:none" type="text"  > ');
+                    }
+                }
+
+                //正面证件照
+                if( $(this).is('input[name="IDcardfront"]') ){
+                    if( this.value=="" ){
+                        var errorMsg = '请上传身份证正面照.';
+                        $parent.append('<input  class="f-input formtips onError" type="text" value="'+errorMsg+'" > ');
+                    }else{
+                        $parent.append('<input class="f-input formtips onSuccess" style="display:none" type="text"  > ');
+                    }
+                }
+                
+              //背面证件照
+                if( $(this).is('input[name="IDcardback"]') ){
+                    if( this.value=="" ){
+                        var errorMsg = '请上传身份证背面照.';
+                        $parent.append('<input  class="f-input formtips onError" type="text" value="'+errorMsg+'" > ');
+                    }else{
+                        $parent.append('<input class="f-input formtips onSuccess" style="display:none" type="text"  > ');
+                    }
+                }
+              
+              //手持证半身照
+                if( $(this).is('input[name="IDcardhandheld"]') ){
+                    if( this.value=="" ){
+                        var errorMsg = '请上传手持证半身照.';
+                        $parent.append('<input  class="f-input formtips onError" type="text" value="'+errorMsg+'" > ');
+                    }else{
+                        $parent.append('<input class="f-input formtips onSuccess" style="display:none" type="text"  > ');
+                    }
+                }
+                 */
+            }).keyup(function(){
+                $(this).triggerHandler("blur");
+            }).focus(function(){
+                $(this).triggerHandler("blur");
+            });//end blur
+            //提交，最终验证。
+          //提交，最终验证。
+            $('#sub').click(function(){
+                $("form :input.text").trigger('blur');
+                var numError = $('form .onError').length;
+                if(numError){
+                    return false;
+                } else {
+                	// 其他验证
+                    var tel = $('input[name="mobile"]').val();
+                    var code = $('input[name="code"]').val();
+                    if(code == ""){
+                    	alert('请输入手机验证码。');
+                    	return false;
+                    }
+/*                	if($('input[name="IDcardfront"]').val() == "" && $('img[name="IDcardfrontIMG"]').attr('src') == ""){
+                		alert('请上传身份证正面照。');
+                		return false;
+                	}*/
+                	if($('input[name="IDcardback"]').val() == ""  && $('img[name="IDcardbackIMG"]').attr('src') == ""){
+                        alert('请上传身份证背面照。');
+                        return false;
+                    }
+                	if($('input[name="IDcardhandheld"]').val() == ""  && $('img[name="IDcardhandheldIMG"]').attr('src') == ""){
+                        alert('请上传手持证半身照。');
+                        return false;
+                    }
+                    
+                    //验证码验证
+                    var codeFlg = false;
+                    $.ajax({
+                       type : 'POST',
+                       url : "{:U('User/authentication')}",
+                       data : $('#reviseForm').serialize(),
+                       async : false ,
+                       success:function(data){
+				alert(data);
+                           window.location.href="{:U('Index/index')}";
+                       }
+                    });
+                  }                        return false;
+            });
+            
+			$("#upfile").change(function() {
+				if($(this).val() != ""){
+		            $("#formImg").submit();
+		            $(this).val("");
+				}
+			});
+		});
+        
+        function openUp(type){
+            $('input[name="submittype"]').val(type);
+            $('#upfile').click();
+        }
+        function callback(message,success)  
+        {  
+            if(success==false)  
+            {  
+                alert("图片上传失败："+message);
+            } else{
+               var imgPath = __UPPIC__+message;
+               if($('input[name="submittype"]').val() == '0'){
+            	   $('input[name="IDcardfrontH"]').val(message);
+            	   $('#IDcardfrontIMG').attr('src',imgPath);
+               }
+               if($('input[name="submittype"]').val() == '1'){
+            	   $('input[name="IDcardbackH"]').val(message);
+                   $('#IDcardbackIMG').attr('src',imgPath);
+               }
+               if($('input[name="submittype"]').val() == '2'){
+            	   $('input[name="IDcardhandheldH"]').val(message);
+                   $('#IDcardhandheldIMG').attr('src',imgPath);
+               }
+               $('input[name="submittype"]').val("");
+            }
+        }
+    </script>
+<style type="text/css">
+.button-1{
+	height: 46px;
+}
+</style>
+</block>

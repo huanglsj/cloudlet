@@ -1,0 +1,236 @@
+
+/*
+    #daac33 土豪
+*/
+#weipan .btn-navbar-bottom-text {
+    margin-top: -15px;
+    padding-bottom: 5px;
+    font-size: 20px;
+    line-height: 10px;
+}
+
+#weipan .btn-hq {
+    border-radius: 0;
+    padding: 0;
+    line-height: 20px;
+	background:url("../images/home.png");
+    background-size:10%;
+}
+
+#weipan .btn-hq-down {
+    color:green;
+}
+
+#weipan .btn-hq-up {
+    color:#CD0000;
+}
+
+#weipan .btn-buy-down {
+    background-color:green;
+    color:#fff;
+}
+
+#weipan .btn-buy-up {
+    background-color:#CD0000;
+    color:#fff;
+}
+
+#weipan .panel {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#weipan .panel-body {
+    padding: 0;
+}
+
+#weipan .field {
+    padding: 0 5px;
+}
+
+#weipan .field-row {
+    padding: 3px;
+}
+
+#weipan .field-label {
+    text-align: right;
+    padding: 0 5px;
+}
+
+#weipan .col {
+    padding: 0;
+}
+
+#weipan .btn-primary {
+    background-color: #daac33;
+    border-color: #daac33;
+}
+
+#weipan .btn-primary2 {
+    background-color: #CD0000;
+    border-color: #CD0000;
+    color:#FFF;
+}
+
+/*#weipan .btn-group>.btn-default.active, .btn-group>.btn-default.active:focus {
+    color: #fff;
+    background-color: #daac33;
+    border-color: #daac33;
+}*/
+
+#weipan .btn-group>.btn-default.active, .btn-group>.btn-default.active:focus {
+    color: #fff;
+    background-color: #daac33;
+    border-color: #daac33;
+}
+
+#weipan .navbar-app .btn-group>.btn-default.active {
+    color: #fff;
+    background-color: #10162c;
+    border-color: #10162c;
+}
+
+#weipan .navbar-app .btn-group>.btn-default.active:focus {
+    color: #daac33;
+    background-color: #F7F7F7;
+    border-color: #F7F7F7;
+}
+
+#weipan .navbar-app .btn-navbar, .navbar-app .btn {
+    color: #eaeaea;
+	background:#282A31;
+}
+
+#weipan .navbar-app .btn-navbar:hover, .navbar-app .btn:hover {
+    /*color: #daac33;*/
+}
+
+/*#weipan .panel-primary {
+    border-color: #daac33;
+}*/
+
+/*#weipan .panel-primary>.panel-heading {
+    color: #fff;
+    background-color: #daac33;
+    border-color: #daac33;
+}*/
+
+#weipan .panel {
+    border: none; 
+    -webkit-box-shadow:none;
+    box-shadow: none;
+}
+
+#weipan .panel-heading {
+    padding: 8px 0 8px 42px;
+    background-image: url('../img/ico1.png');
+    background-repeat:no-repeat;
+    background-size: 37px;
+    font-size: 18px;
+    color:#daac33;
+}
+
+/*#weipan .list-group-item {
+    border-top: 1px solid #ddd
+}*/
+
+#weipan .list-group-item.active, .list-group-item.active:focus {
+    color: #fff;
+    background-color: #daac33;
+    border-color: #daac33;
+}
+
+#weipan .form-control:focus {
+    border-color: #daac33;
+}
+
+#weipan .scrollable-content {
+    overflow-x:hidden;
+}
+
+#weipan .modal-help {
+    padding: 10px 0;
+}
+
+#weipan .modal-help .table>tbody>tr>td {
+    padding: 2px 2px;
+}
+
+.swiper-container {
+    padding: 3px;
+    width: 100%;
+}
+
+.swiper-slide {
+    text-align: center;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 100px;
+}
+
+.swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #daac33;
+}
+
+
+.swiper-slide .x {
+    border: solid 1px #000000;
+    width: 29px;
+    height: 29px;
+    position: relative;
+    background-color: transparent;
+}
+
+.swiper-slide .x:before {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-bottom: 29px solid #fff;
+    border-left: 19px solid transparent;
+    content: "";
+}
+
+.swiper-slide .x:after {
+    position: absolute;
+    left: 1px;
+    right: 0;
+    top: 0px;
+    bottom: 0;
+    border-bottom: 29px solid #000000;
+    border-left: 19px solid transparent;
+    content: "";
+}
+
+.swiper-slide .x1 {
+    border: solid 1px #CD0000;
+    width: 29px;
+    height: 29px;
+    position: relative;
+    background-color: transparent;
+}
+
+.swiper-slide .x1:before {
+    position: absolute;
+    top: 0px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-bottom: 29px solid #fff;
+    border-left: 19px solid transparent;
+    content: "";
+}
+
+.swiper-slide .x1:after {
+    position: absolute;
+    left: 1px;
+    right: 0;
+    top: 0px;
+    bottom: 0;
+    border-bottom: 29px solid #CD0000;
+    border-left: 19px solid transparent;
+    content: "";
+}

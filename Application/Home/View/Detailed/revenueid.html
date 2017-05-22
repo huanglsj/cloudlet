@@ -1,0 +1,33 @@
+<extend name="Base/common"/>
+<block name="content">
+<link rel="stylesheet" href="__CSS__/global.css">
+<link rel="stylesheet" href="__CSS__/index.css">
+<script id="G--xyscore-load" type="text/javascript" charset="utf-8" async="" src="__JS__/xyscore_main.js"></script>
+
+<div class="wrap">
+  <div class="index" style="min-height: 1782px; height: 1752px;">
+    <header class="list-head">
+      <nav class="list-nav clearfix"> <a href="javascript:history.go(-1)" class="list-back"></a>
+        <h3 class="list-title">订单详情</h3>
+      </nav>
+    </header>
+    <div class="news-list2 clearfix">
+      <p><span class="l_l3">流水号：</span><span class="l_l">{$order.orderno}</span></p>
+      <p><span class="l_l3">类型：</span><span class="l_l"><if condition="$order[ostyle] eq 1">买跌<else />买涨</if></span></p>
+      <p><span class="l_l3">入仓价：</span><span class="l_l">{$order.buyprice}</span></p>
+      <p><span class="l_l3">平仓价：</span><span class="l_l">{$order.sellprice}</span></p>
+      <p><span class="l_l3">时间：</span><span class="l_l">{$order.buytime|date='Y-m-d H:i:s',###}</span></p>
+      <p><span class="l_l3">收支：</span>
+        <if condition="$order.ploss gt 0">
+          <span style="color: #ff7c80;">{$order.ploss}</span>
+        <else/>
+          <span class="l_l2">{$order.ploss}</span>
+        </if>
+      </p>
+    </div>
+</div>
+</div>
+<script src="__JS__/jquery-2.1.1.min.js"></script>
+<script src="__JS__/script.js"></script>
+<script type="text/javascript" charset="utf-8" src="__JS__/sea.js" async=""></script>
+</block>

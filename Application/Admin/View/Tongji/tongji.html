@@ -1,0 +1,277 @@
+<extend name="Base/common"/>
+<block name="content">
+	<!-- this page specific styles -->
+    <link rel="stylesheet" href="__CSS__/compiled/order-list.css" type="text/css" media="screen" />
+    <link href="__CSS__/lib/bootstrap.datepicker.css" type="text/css" rel="stylesheet" />
+    <link href="__CSS__/lib/select2.css" type="text/css" rel="stylesheet" />
+    <div class="container-fluid">
+        <div id="pad-wrapper" class="users-list">
+            <div class="row-fluid header">
+                <h3>统计报表</h3>
+	                <div class="span10 pull-right">
+	                    <div class="tpsearch">
+	                    	<label class="span4">报表类型：</label><select id="reporttype" class="span6" name="reporttype">
+	                    				<option value="">请选择</option>
+		                                <option value="kehuzijinliushui">资金流水</option>
+		                                <option value="kehuzijinzhuangkuang">资金状况</option>
+		                                <option value="jiaoyimingxi">交易明细</option>
+		                                <option value="jiaoyihuizong">交易汇总</option>
+		                                <option value="youhuiquan">优惠券</option>
+	                    			</select>
+	                    </div>
+	                </div>
+	                <div class="baobiao kehuzijinliushui" style="display:none">
+	               	 <form action="{:U('Tongji/exportExcel')}" method="post">
+	               	 	<input type='hidden' value=kehuzijinliushui name="reporttype">
+		                <div class="span10 pull-right" style="margin-top: 20px;">
+		                    <div class="tpsearch">
+		                    	<label class="span5">客户账号：</label><input  class="span7" type="text" name="username" id="username"/>
+		                    </div>
+		                    <div class="tpsearch">
+		                    	<label class="span5">操作类型：</label><select id="otype" class="span7" name="otype">
+		                    				<option value="">请选择</option>
+			                                <option value="1">充值</option>
+			                                <option value="2">提现</option>
+			                                <option value="3">建仓</option>
+			                                <option value="4">平仓</option>
+			                                <option value="100">手动修改</option>
+		                    			</select>
+		                    </div>
+		                    <div class="tpsearch">
+		                    	<label class="span5">下属会员单位：</label><select id="member" class="select2 span7" name="member">
+		                    				<option value="0">请选择</option>
+		                    				<volist name='subdepts' id='dept'>
+			                                	<option value="{$dept['code']}">{$dept['name']}</option>
+			                                </volist>
+		                    			</select>
+		                    </div>
+		                </div>
+		                 <div class="span10 pull-right" style="margin-top: 20px;">
+		                    <div class="tpsearch">
+		                    	<label class="span5">查询开始日期：</label><input type="text" data-date-format="yyyy-mm-dd" class="input-large datepicker span7" placeholder="请输入操作开始日期..." value='{$startTime}' name="startTime" id="odate_start"/>
+		                    </div>
+		                    <div class="tpsearch">
+		                    	<label class="span5">查询结束日期：</label><input type="text" data-date-format="yyyy-mm-dd" class="input-large datepicker span7" placeholder="请输入操作结束日期..." value='{$endTime}' name="endTime" id="odate_end"/>
+		                    </div>
+		                </div>
+		                <div class="span10 pull-right" style="margin-top: 20px;">
+		                	<input type="submit" class="btn-glow primary" value="导出报表">
+		                </div>
+		                </form>
+	                </div>
+	                <div class="baobiao kehuzijinzhuangkuang" style="display:none">
+	               	 <form action="{:U('Tongji/exportExcel')}" method="post">
+	               	 	<input type='hidden' value=kehuzijinzhuangkuang name="reporttype">
+		                <div class="span10 pull-right" style="margin-top: 20px;">
+		                    <div class="tpsearch">
+		                    	<label class="span5">客户账号：</label><input  class="span7" type="text" name="username" id="username"/>
+		                    </div>
+		                    <div class="tpsearch">
+		                    	<label class="span5">下属会员单位：</label><select id="member" class="select2 span7" name="member">
+		                    				<option value="0">请选择</option>
+		                    				<volist name='subdepts' id='dept'>
+			                                	<option value="{$dept['code']}">{$dept['name']}</option>
+			                                </volist>
+		                    			</select>
+		                    </div>
+		                </div>
+		                 <div class="span10 pull-right" style="margin-top: 20px;">
+		                    <div class="tpsearch">
+		                    	<label class="span5">查询开始日期：</label><input type="text" data-date-format="yyyy-mm-dd" class="input-large datepicker span7" placeholder="请输入操作开始日期..." value='{$startTime}' name="startTime" id="odate_start"/>
+		                    </div>
+		                    <div class="tpsearch">
+		                    	<label class="span5">查询结束日期：</label><input type="text" data-date-format="yyyy-mm-dd" class="input-large datepicker span7" placeholder="请输入操作结束日期..." value='{$endTime}' name="endTime" id="odate_end"/>
+		                    </div>
+		                </div>
+		                <div class="span10 pull-right" style="margin-top: 20px;">
+		                	<input type="submit" class="btn-glow primary" value="导出报表">
+		                </div>
+		                </form>
+	                </div>
+	                <div class="baobiao jiaoyimingxi" style="display:none">
+	                	<form action="{:U('Tongji/exportExcel')}" method="post">
+	                	<input type='hidden' value="jiaoyimingxi" name="reporttype">
+		                <div class="span10 pull-right" style="margin-top: 20px;">
+		                     <div class="tpsearch">
+		                    	<label class="span5">产品信息：</label><select id="product" class="span7" name="product">
+		                    				<option value="">请选择</option>
+		                    				<volist name='products' id='product'>
+			                                <option value="{$product.pid}">{$product.displayname}</option>
+			                                </volist>
+		                    			</select>
+		                    </div>
+		                    <div class="tpsearch">
+		                    	<label class="span5">交易模式：</label><select id="eid" class="span7" name="eid">
+		                    				<option value="">请选择</option>
+			                                <option value="1">点数</option>
+			                                <option value="2">时间</option>
+		                    			</select>
+		                    </div>
+		                     <div class="tpsearch">
+		                    	<label class="span5">盈亏状态：</label><select id="ploss" class="span7" name="ploss">
+		                    				<option value="">请选择</option>
+			                                <option value="1">盈利</option>
+			                                <option value="2">亏损</option>
+		                    			</select>
+		                    </div>
+		                </div>
+		                 <div class="span10 pull-right" style="margin-top: 20px;">
+		                 	<div class="tpsearch">
+		                    	<label class="span5">下属会员单位：</label><select id="member" class="select2 span7" name="member">
+		                    				<option value="0">请选择</option>
+		                    				<volist name='subdepts' id='dept'>
+			                                	<option value="{$dept['code']}">{$dept['name']}</option>
+			                                </volist>
+		                    			</select>
+		                    </div>
+		                    <div class="tpsearch">
+		                    	<label class="span5">结算开始日期：</label><input type="text" data-date-format="yyyy-mm-dd" class="input-large datepicker span7" placeholder="请输入操作开始日期..." value='{$startTime}' name="startTime" id="startTime"/>
+		                    </div>
+		                    <div class="tpsearch">
+		                    	<label class="span5">结算结束日期：</label><input type="text" data-date-format="yyyy-mm-dd" class="input-large datepicker span7" placeholder="请输入操作结束日期..." value='{$endTime}' name="endTime" id="endTime"/>
+		                    </div>
+		                </div>
+		                <div class="span10 pull-right" style="margin-top: 20px;">
+		                	<input type="submit" class="btn-glow primary" value="导出报表">
+		                </div>
+		                </form>
+	                </div>
+                	<div class="baobiao jiaoyihuizong" style="display:none">
+	                	<form action="{:U('Tongji/exportExcel')}" method="post">
+	                	<input type='hidden' value="jiaoyihuizong" name="reporttype">
+		                <div class="span10 pull-right" style="margin-top: 20px;">
+		                     <div class="tpsearch">
+		                    	<label class="span5">产品信息：</label><select id="product" class="span7" name="product">
+		                    				<option value="">请选择</option>
+		                    				<volist name='products' id='product'>
+			                                <option value="{$product.pid}">{$product.displayname}</option>
+			                                </volist>
+		                    			</select>
+		                    </div>
+		                    <div class="tpsearch">
+		                    	<label class="span5">交易模式：</label><select id="eid" class="span7" name="eid">
+		                    				<option value="">请选择</option>
+			                                <option value="1">点数</option>
+			                                <option value="2">时间</option>
+		                    			</select>
+		                    </div>
+		                     <div class="tpsearch">
+		                    	<label class="span5">盈亏状态：</label><select id="ploss" class="span7" name="ploss">
+		                    				<option value="">请选择</option>
+			                                <option value="1">盈利</option>
+			                                <option value="2">亏损</option>
+		                    			</select>
+		                    </div>
+		                </div>
+		                 <div class="span10 pull-right" style="margin-top: 20px;">
+		                 	<div class="tpsearch">
+		                    	<label class="span5">下属会员单位：</label><select id="member" class="select2 span7" name="member">
+		                    				<option value="0">请选择</option>
+		                    				<volist name='subdepts' id='dept'>
+			                                	<option value="{$dept['code']}">{$dept['name']}</option>
+			                                </volist>
+		                    			</select>
+		                    </div>
+		                    <div class="tpsearch">
+		                    	<label class="span5">结算开始日期：</label><input type="text" data-date-format="yyyy-mm-dd" class="input-large datepicker span7" placeholder="请输入操作开始日期..." value='{$startTime}' name="startTime" id="startTime"/>
+		                    </div>
+		                    <div class="tpsearch">
+		                    	<label class="span5">结算结束日期：</label><input type="text" data-date-format="yyyy-mm-dd" class="input-large datepicker span7" placeholder="请输入操作结束日期..." value='{$endTime}' name="endTime" id="endTime"/>
+		                    </div>
+		                </div>
+		                <div class="span10 pull-right" style="margin-top: 20px;">
+		                	<input type="submit" class="btn-glow primary" value="导出报表">
+		                </div>
+		                </form>
+	                </div>
+	                <div class="baobiao youhuiquan" style="display:none">
+	                	<form action="{:U('Tongji/exportExcel')}" method="post">
+	                	<input type='hidden' value="youhuiquan" name="reporttype">
+		                <div class="span10 pull-right" style="margin-top: 20px;">
+		                     <div class="tpsearch">
+		                    	<label class="span5">发放渠道：</label><select id=""sendtype"" class="span7" name="sendtype">
+		                    				<option value="">请选择</option>
+			                                <option value="1">注册赠送</option>
+			                                <option value="2">后台发放</option>
+		                    			</select>
+		                    </div>
+		                    <div class="tpsearch">
+		                    	<label class="span5">优惠券面额：</label><select id="eid" class="span7" name="eid">
+		                    				<option value="">请选择</option>
+		                    				<volist name='exprinfo' id='expr'>
+			                                	<option value="{$expr.eid}">有效期{$expr.limittime}天{$expr.eprice}元券</option>
+			                                </volist>
+		                    			</select>
+		                    </div>
+		                     <div class="tpsearch">
+		                    	<label class="span5">盈亏状态：</label><select id="ploss" class="span7" name="ploss">
+		                    				<option value="">请选择</option>
+			                                <option value="1">盈利</option>
+			                                <option value="2">亏损</option>
+		                    			</select>
+		                    </div>
+		                </div>
+		                 <div class="span10 pull-right" style="margin-top: 20px;">
+		                 	<div class="tpsearch">
+		                    	<label class="span5">下属会员单位：</label><select id="member" class="select2 span7" name="member">
+		                    				<option value="0">请选择</option>
+		                    				<volist name='subdepts' id='dept'>
+			                                	<option value="{$dept['code']}">{$dept['name']}</option>
+			                                </volist>
+		                    			</select>
+		                    </div>
+		                    <div class="tpsearch">
+		                    	<label class="span5">使用开始日期：</label><input type="text" data-date-format="yyyy-mm-dd" class="input-large datepicker span7" placeholder="请输入操作开始日期..." value='{$startTime}' name="startTime" id="startTime"/>
+		                    </div>
+		                    <div class="tpsearch">
+		                    	<label class="span5">使用结束日期：</label><input type="text" data-date-format="yyyy-mm-dd" class="input-large datepicker span7" placeholder="请输入操作结束日期..." value='{$endTime}' name="endTime" id="endTime"/>
+		                    </div>
+		                </div>
+		                <div class="span10 pull-right" style="margin-top: 20px;">
+		                	<input type="submit" class="btn-glow primary" value="导出报表">
+		                </div>
+		                </form>
+	                </div>
+            </div>
+        </div>
+    </div>
+<!-- scripts -->
+
+<script src="__JS__/jquery-latest.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
+<script src="__JS__/bootstrap.datepicker.js"></script>
+<script src="__JS__/theme.js"></script>
+<script src="__JS__/select2.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+    	setdashboardmenu("统计数据");
+		
+        // datepicker plugin
+        $('.datepicker').datepicker().on('changeDate', function (ev) {
+            $(this).datepicker('hide');
+        });
+        
+        $('#reporttype').change(function (){
+        	$('.baobiao').css("display","none");
+        	
+        	if(this.value=='kehuzijinliushui'){
+        		$('.kehuzijinliushui').css("display","block");
+        	}
+        	else if(this.value=='kehuzijinzhuangkuang'){
+        		$('.kehuzijinzhuangkuang').css("display","block");
+        	}else if(this.value=='jiaoyimingxi'){
+        		$('.jiaoyimingxi').css("display","block");
+        	}else if(this.value=='jiaoyihuizong'){
+        		$('.jiaoyihuizong').css("display","block");
+        	}else if(this.value=='youhuiquan'){
+        		$('.youhuiquan').css("display","block");
+        	}
+        });
+        
+        $(".select2").select2({
+            placeholder: "请选择"
+        });
+    });
+    
+</script>
+</block>

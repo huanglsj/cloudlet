@@ -1,0 +1,63 @@
+<extend name="Base/common"/>
+<block name="content">
+	<!-- this page specific styles -->
+	<link rel="stylesheet" href="__CSS__/compiled/article-add.css" type="text/css" media="screen" />
+    <div class="container-fluid">
+        <div id="pad-wrapper" class="form-page">
+			 <div class="row-fluid header">
+                <h3>添加角色</h3>
+            </div>
+            <div class="row-fluid form-wrapper">
+            	<form action="{:U('Super/radd')}" method="post">
+                <!-- left column -->
+                <div class="span8 column">
+					<div class="field-box">
+						<label>角色名称：</label>
+						<input class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入角色名称" data-placement="right" id="rname" name="rname"/>
+					</div>
+					<div class="field-box">
+                        <label>角色类型：</label>
+                        <div class="ui-select span5">
+                            <select style="width:95%" name="rtype">
+                                <option value="1">总公司人员角色</option>
+                                <option value="2">会员人员角色</option>
+                                <option value="3">代理人员角色</option>
+                                <option value="4">机构人员角色</option>
+                            </select>
+                        </div> <span>&nbsp;&nbsp;&nbsp;(创建后不可修改)</span>
+                    </div>
+					<div class="field-box">
+						<label>备注：</label>
+						<input class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入备注信息" data-placement="right" name="remarks"/>
+					</div>
+					<div class="field-box actions">
+                        <input type="button" class="btn-glow primary" onclick="dosubmit(this.form)" value="提交">
+                    </div>
+                </div>
+				</form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end main container -->
+
+
+<!-- scripts -->
+<script src="__JS__/jquery-latest.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
+<script src="__JS__/theme.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		setdashboardmenu("权限管理");
+	});
+	
+	function dosubmit(obj){
+		var rname = $("#rname").val();
+		if(rname == ""){
+			alert("请输入角色名称！");
+			return false;
+		}
+		$(obj).submit();
+	}
+</script>
+</block>

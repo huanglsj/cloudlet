@@ -1,0 +1,197 @@
+<extend name="Base/common"/>
+<block name="content">
+<link rel="stylesheet" href="__CSS__/compiled/new-user.css" type="text/css" media="screen" />  
+   <div class="container-fluid">
+            <div id="pad-wrapper" class="new-user">
+                <div class="row-fluid header">
+                    <h3>客户管理&nbsp;>&nbsp修改用户</h3>
+                </div>
+
+                <div class="row-fluid form-wrapper">
+                    <form action="/index.php/Admin/User/updateuser" method="post" class="new_user_form">
+                    <input type="hidden" name="uid" id="uid" value="{$userme['uid']}"/>
+                    <!-- left column -->
+                    <div class="span6 with-sidebar">
+                        <div class="span9 field-box uname">
+                            <label>客户名:</label>
+                            <input class="span3" type="text" name="username" value="{$userme['username']}" readonly="true"/>
+                        </div>
+                        <div class="span9 field-box">
+                            <label>客户状态:</label>
+                            <switch name='userme.ustatus'>
+                            	<case value='1'>
+                            		<input class="span2" type="text" name="otype" value="开户" readonly="true"/>
+                            		<span>客户实名认证通过后自动激活</span>
+                            	</case>
+                            	<case value='2'>
+                            		<input class="span2" type="text" name="otype" value="激活" readonly="true"/>
+                                	<input type="button" class="btn-glow primary" onclick="changeustatus(this)" value="冻结" />
+                            	</case>
+                            	<case value='3'>
+                            		<input class="span2" type="text" name="otype" value="冻结" readonly="true"/>
+                                	<input type="button" class="btn-glow primary" onclick="changeustatus(this)" value="激活" />
+                            	</case>
+                            </switch>
+                        </div>
+                        <div class="span9 field-box">
+                            <label>真实姓名:</label>
+                            <input class="span2" type="text" name="mname" value="{$userme['mname']}" />
+                        </div>
+                       
+                        <!--<div class="span12 field-box">
+                            <label>邮箱:</label>
+                            <input class="span9" type="text" value="anjilinazhuli@canvas.com" />
+                        </div>-->
+                        <div class="span9 field-box">
+                            <label>电话:</label>
+                            <input class="span8" type="text" name="utel" value="{$userme['utel']}" />
+                        </div>
+                        <div class="span9 field-box">
+                            <label>所属会员单位:</label>
+                            <select name="companyid">
+                                <foreach name="companyList" item="vo">
+                                    <option value="{$vo.cid}" <if condition="$vo[cid] eq $userme[companyid]">selected="selected"</if>>{$vo.comname}</option>
+                                </foreach>
+                            </select>
+
+                        </div>
+                        <if condition='userme.dept_type gt 2'>
+	                        <div class="span9 field-box">
+	                            <label>所属代理:</label>
+	                            {$userme.daili_name}
+	                        </div>
+                        </if>
+                        <if condition='userme.dept_type gt 3'>
+	                        <div class="span9 field-box">
+	                            <label>所属机构:</label>
+	                            {$userme.daili_name}
+	                        </div>
+                        </if>
+                        <div class="span9 field-box">
+                            <label>账户余额:</label>
+                            <input class="span2" type="text" name="balance" value="{$account['balance']==''?'0':$account['balance']}" />元&nbsp;修改冲正
+                            <input type="hidden" name="oldBalance" value="{$account.balance}"/>
+                        </div>
+                        <div class="span9 field-box">
+                            <label>注册时间:</label>
+                            <input class="span8" type="text" name="utime" value="{$userme.utime|date='Y-m-d H:m',###}" readonly="true"/>
+                        </div>
+                        <div class="span9 field-box">
+                            <label>身份证号码:</label>
+                            <input class="span8" type="text" name="brokerid" value="{$userme['brokerid']}" />
+                        </div>
+                        <div class="span9 field-box">
+                            <label>银行卡开户行:</label>
+                            <input class="span8" type="text" name="branch" value="{$userme['branch']}"/>
+                        </div>
+                        <div class="span9 field-box">
+                            <label>持卡人:</label>
+                            <input class="span8" type="text" name="busername" value="{$userme['busername']}"/>
+                        </div>
+                        <div class="span9 field-box">
+                            <label>账号:</label>
+                            <input class="span8" type="text" name="banknumber" value="{$userme['banknumber']}"/>
+                        </div>
+<!--                        <div class="span9 field-box">
+                            <label>验证码:</label>
+                            <input class="span6" type="text" name="vcode" value=""/> <input type="button" id="btn" class="btn-glow primary" value="免费获取验证码" />
+                        </div>-->
+
+                        <div class="span8 field-box actions" style="padding-bottom: 20px;">
+                            <input type="submit" class="btn-glow primary" value="修改" />
+                            <input type="button" class="btn-glow primary" id="resetpwd" value="重置密码" />
+                        </div>
+                    </div>
+					</form>
+                </div>
+            </div>
+        </div>
+	<!-- scripts -->
+    <script src="__JS__/jquery-latest.js"></script>
+    <script src="__JS__/bootstrap.min.js"></script>
+    <script src="__JS__/theme.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+			setdashboardmenu("客户管理");
+			
+			$('#resetpwd').click(function(){
+				var uid = $('#uid').val();
+				$.ajax({  
+		            type: "post",  
+		            url: "{:U('User/resetpw')}",
+		            data:"uid="+uid,  
+		            async:false,  
+		            success: function(data) { 
+		            	if(data){
+		            		alert('新密码已经发送至会员负责人手机，请注意查看！');
+		            	}else{
+		            		alert('密码修改出错，请重新操作！');
+		            	}
+		            },  
+		            error: function(data) {  
+		            	alert('error' + data);
+		            }  
+		        });
+			});
+		});
+        function changeustatus(obj){
+        	var uid = $("input[name=uid]").val();
+        	var ustatus = "";
+        	if($(obj).val() == "冻结"){
+        		ustatus = "3";
+        	} else {
+        		ustatus = "2";
+        	}
+            $.ajax({
+                type : 'POST',
+                url : "{:U('User/changeustatus')}",
+                data : {'uid' : uid,'ustatus' : ustatus},
+                async : false ,
+                success:function(data){
+                    if(data == "success"){
+                    	if(ustatus == "1"){
+                    		$(obj).prev().val("冻结");
+                    		$(obj).val("解冻");
+                    		alert("客户的状态变成冻结状态");
+                    	} else {
+                    		$(obj).prev().val("激活");
+                            $(obj).val("冻结");
+                            alert("客户的状态变成激活状态");
+                    	}
+                    } else {
+                    	alert(data);
+                    }
+                }
+             });
+        }
+    </script>
+
+    <!-- 此段必须要引入 -->
+    <script type="text/javascript">
+        var wait=60;
+        function time(o) {
+            if (wait == 0) {
+                o.removeAttribute("disabled");
+                o.value="免费获取验证码";
+                wait = 60;
+            } else {
+                o.setAttribute("disabled", true);
+                o.value="重新发送(" + wait + ")";
+                wait--;
+                setTimeout(function() {
+                        time(o)
+                    },
+                    1000)
+            }
+        }
+
+        function sendsms(){
+            $.post("{:U('User/sendAdminCode')}", function(data,status){
+                alert('发送成功');
+            });
+
+        }
+        document.getElementById("btn").onclick=function(){time(this);sendsms();}
+    </script>
+    <!-- 引入结束 -->
+</block>

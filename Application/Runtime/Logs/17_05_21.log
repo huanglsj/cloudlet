@@ -1,0 +1,2329 @@
+[ 2017-05-21T21:46:01+08:00 ] 42.199.54.155 /
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000264s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000335s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000018s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000062s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.002975s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003005s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000150s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000309s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000336s ]
+
+[ 2017-05-21T21:46:03+08:00 ] 42.199.54.155 /index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000251s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000332s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+SQL: SHOW COLUMNS FROM `wp_product_lastprice` [ RunTime:0.000408s ]
+ERR: 1146:Table 'wpdemo.wp_product_lastprice' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wp_product_lastprice`
+SQL: SELECT wp_product_lastprice.pid as pid,wp_product_lastprice.code as code,`displayname`,`ask`,`eidtime`,`tradeperiod` FROM `wp_product_lastprice` INNER JOIN wp_productinfo on wp_product_lastprice.pid=wp_productinfo.pid and wp_productinfo.status=1  ORDER BY wp_productinfo.sort asc  [ RunTime:0.000127s ]
+ERR: 1146:Table 'wpdemo.wp_product_lastprice' doesn't exist
+ [ SQL语句 ] : SELECT wp_product_lastprice.pid as pid,wp_product_lastprice.code as code,`displayname`,`ask`,`eidtime`,`tradeperiod` FROM `wp_product_lastprice` INNER JOIN wp_productinfo on wp_product_lastprice.pid=wp_productinfo.pid and wp_productinfo.status=1  ORDER BY wp_productinfo.sort asc 
+NOTIC: [8] Undefined index: uid /www/wwwroot/wpdemo/Application/Home/Controller/IndexController.class.php 第 154 行.
+SQL: SHOW COLUMNS FROM `wp_order` [ RunTime:0.000249s ]
+ERR: 1146:Table 'wpdemo.wp_order' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wp_order`
+SQL: SELECT * FROM `wp_order` INNER JOIN wp_product_lastprice on wp_order.pid=wp_product_lastprice.pid  WHERE ( wp_order.uid= and ostaus=0 )  [ RunTime:0.000088s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and ostaus=0 )' at line 1
+ [ SQL语句 ] : SELECT * FROM `wp_order` INNER JOIN wp_product_lastprice on wp_order.pid=wp_product_lastprice.pid  WHERE ( wp_order.uid= and ostaus=0 ) 
+SQL: SHOW COLUMNS FROM `wp_newsinfo` [ RunTime:0.000268s ]
+ERR: 1146:Table 'wpdemo.wp_newsinfo' doesn't exist
+ [ SQL语句 ] : SHOW COLUMNS FROM `wp_newsinfo`
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=1 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000123s ]
+ERR: 1146:Table 'wpdemo.wp_newsinfo' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `wp_newsinfo` WHERE ( ncategory=1 ) ORDER BY nid desc LIMIT 3  
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=2 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000101s ]
+ERR: 1146:Table 'wpdemo.wp_newsinfo' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `wp_newsinfo` WHERE ( ncategory=2 ) ORDER BY nid desc LIMIT 3  
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=3 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000091s ]
+ERR: 1146:Table 'wpdemo.wp_newsinfo' doesn't exist
+ [ SQL语句 ] : SELECT * FROM `wp_newsinfo` WHERE ( ncategory=3 ) ORDER BY nid desc LIMIT 3  
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/wpdemo/Application/Home/Controller/IndexController.class.php 第 30 行.
+SQL: SHOW COLUMNS FROM `wp_content` [ RunTime:0.000336s ]
+SQL: SELECT * FROM `wp_content`  [ RunTime:0.000171s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000170s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+NOTIC: [8] Undefined index: checkpw /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 83 行.
+NOTIC: [8] Undefined index: husername /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 113 行.
+NOTIC: [8] Undefined variable: user /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 475 行.
+NOTIC: [8] Undefined variable: price /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 482 行.
+NOTIC: [8] Undefined variable: price /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 482 行.
+NOTIC: [8] Undefined variable: price /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 482 行.
+NOTIC: [8] Undefined variable: price /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 484 行.
+NOTIC: [8] Undefined variable: user /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 692 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.011743s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011781s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000146s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000179s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000352s ]
+
+[ 2017-05-21T21:55:46+08:00 ] 42.199.54.155 /index.php/Home/Index/updateriskread.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000248s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000329s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000018s ]
+
+[ 2017-05-21T21:55:46+08:00 ] 42.199.54.155 /index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000286s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000387s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000021s ]
+SQL: SHOW COLUMNS FROM `wp_keyaccess` [ RunTime:0.000536s ]
+SQL: SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000448s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000066s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000138s ]
+NOTIC: [8] Undefined variable: errorMsg /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/5c9ee6d19cd41add49f97afe3aef0b25.php 第 56 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.006065s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.006108s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000229s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000282s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000512s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000571s ]
+
+[ 2017-05-21T21:55:47+08:00 ] 42.199.54.155 /index.php/Home/User/deposit.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000252s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000340s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000023s ]
+
+[ 2017-05-21T21:55:47+08:00 ] 42.199.54.155 /index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000036s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000356s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000021s ]
+SQL: SHOW COLUMNS FROM `wp_keyaccess` [ RunTime:0.000592s ]
+SQL: SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000478s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000042s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000083s ]
+NOTIC: [8] Undefined variable: errorMsg /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/5c9ee6d19cd41add49f97afe3aef0b25.php 第 56 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003875s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003903s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000150s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000345s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000377s ]
+
+[ 2017-05-21T21:55:58+08:00 ] 42.199.54.155 /index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000255s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000327s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000021s ]
+SQL: SHOW COLUMNS FROM `wp_keyaccess` [ RunTime:0.000551s ]
+SQL: SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000423s ]
+SQL: SELECT `uid`,`username`,`upwd`,`utime` FROM `wp_userinfo` WHERE ( `username` = 'quan' ) AND ( `ustatus` <> 0 ) LIMIT 1   [ RunTime:0.000213s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_keyaccess` WHERE ( `outid` = 145 ) AND ( `key` = 1 ) AND ( `country_id` = 'CN' ) AND ( `city_id` = '440100' ) AND ( `result` = 1 ) LIMIT 1   [ RunTime:0.000711s ]
+SQL: INSERT INTO `wp_keyaccess` (`key`,`result`,`outid`,`ip`,`country`,`country_id`,`area`,`area_id`,`region`,`region_id`,`city`,`city_id`,`county`,`county_id`,`isp`,`isp_id`,`accesstime`,`risk`) VALUES (1,2,145,'42.199.54.155','中国','CN','华南','800000','广东省','440000','广州市','440100','','-1','鹏博士','1000143',1495374958,0) [ RunTime:0.000179s ]
+NOTIC: [8] Undefined index: warringMsg /www/wwwroot/wpdemo/Application/Home/Controller/UserController.class.php 第 93 行.
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000077s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003978s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004015s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000138s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000164s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000365s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000395s ]
+
+[ 2017-05-21T21:56:02+08:00 ] 42.199.54.155 /index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000423s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000479s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000552s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000021s ]
+SQL: SHOW COLUMNS FROM `wp_keyaccess` [ RunTime:0.000545s ]
+SQL: SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000444s ]
+SQL: SELECT `uid`,`username`,`upwd`,`utime` FROM `wp_userinfo` WHERE ( `username` = 'quan' ) AND ( `ustatus` <> 0 ) LIMIT 1   [ RunTime:0.000107s ]
+SQL: UPDATE `wp_userinfo` SET `lastlog`=1495374962 WHERE ( uid=145 ) [ RunTime:0.000193s ]
+SQL: select nextval('TOKEN') as seq [ RunTime:0.000120s ]
+ERR: 1305:FUNCTION wpdemo.nextval does not exist
+ [ SQL语句 ] : select nextval('TOKEN') as seq
+SQL: SHOW COLUMNS FROM `wp_logintoken` [ RunTime:0.000307s ]
+SQL: SELECT * FROM `wp_logintoken` WHERE ( `username` = 'quan' ) LIMIT 1   [ RunTime:0.000164s ]
+SQL: UPDATE `wp_logintoken` SET `token`='980f47b8ee84a28c31ca6ff6cf957e8ecb4d9809876c3820ea2faaa8eef0acf8',`logintime`=1495374962 WHERE ( `username` = 'quan' ) [ RunTime:0.000280s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_keyaccess` WHERE ( `outid` = 145 ) AND ( `key` = 1 ) AND ( `country_id` = 'CN' ) AND ( `city_id` = '440100' ) AND ( `result` = 1 ) LIMIT 1   [ RunTime:0.000727s ]
+NOTIC: [2] unlink(./Application/Runtime/Temp/d0004b3de62b9cdd44944d1cb81f3d46.php): No such file or directory /www/wwwroot/wpdemo/ThinkPHP/Library/Think/Cache/Driver/File.class.php 第 157 行.
+SQL: SHOW COLUMNS FROM `wp_logininfo` [ RunTime:0.000465s ]
+SQL: SELECT * FROM `wp_logininfo` WHERE ( `username` = 'quan' ) LIMIT 1   [ RunTime:0.000204s ]
+SQL: UPDATE `wp_logininfo` SET `token`='4lgumbjhbjkar9snu7gg892275',`loginTime`=1495374962,`loginStatus`=1 WHERE ( `username` = 'quan' ) [ RunTime:0.000369s ]
+SQL: INSERT INTO `wp_keyaccess` (`key`,`result`,`outid`,`ip`,`country`,`country_id`,`area`,`area_id`,`region`,`region_id`,`city`,`city_id`,`county`,`county_id`,`isp`,`isp_id`,`accesstime`,`risk`) VALUES (1,1,145,'42.199.54.155','中国','CN','华南','800000','广东省','440000','广州市','440100','','-1','鹏博士','1000143',1495374962,0) [ RunTime:0.000177s ]
+
+[ 2017-05-21T21:56:02+08:00 ] 42.199.54.155 /index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000260s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000020s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000302s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000338s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000021s ]
+SQL: SHOW COLUMNS FROM `wp_accountinfo` [ RunTime:0.000558s ]
+SQL: SELECT * FROM `wp_accountinfo` WHERE ( uid=145 ) LIMIT 1   [ RunTime:0.000246s ]
+SQL: SHOW COLUMNS FROM `wp_product_lastprice` [ RunTime:0.000402s ]
+SQL: SELECT wp_product_lastprice.pid as pid,wp_product_lastprice.code as code,`displayname`,`ask`,`eidtime`,`tradeperiod` FROM `wp_product_lastprice` INNER JOIN wp_productinfo on wp_product_lastprice.pid=wp_productinfo.pid and wp_productinfo.status=1  ORDER BY wp_productinfo.sort asc  [ RunTime:0.000293s ]
+SQL: SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000416s ]
+SQL: SELECT * FROM `wp_userinfo` WHERE ( uid=145 ) LIMIT 1   [ RunTime:0.000230s ]
+SQL: SELECT * FROM `wp_accountinfo` WHERE ( uid=145 ) LIMIT 1   [ RunTime:0.000094s ]
+SQL: SHOW COLUMNS FROM `wp_experienceinfo` [ RunTime:0.000326s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_experienceinfo` INNER JOIN wp_experience on wp_experienceinfo.eid=wp_experience.eid  WHERE ( wp_experienceinfo.uid=145 and 1495374962 < wp_experienceinfo.endtime and wp_experienceinfo.getstyle=0 ) LIMIT 1   [ RunTime:0.000388s ]
+SQL: SHOW COLUMNS FROM `wp_order` [ RunTime:0.000657s ]
+SQL: SELECT * FROM `wp_order` INNER JOIN wp_product_lastprice on wp_order.pid=wp_product_lastprice.pid  WHERE ( wp_order.uid=145 and ostaus=0 )  [ RunTime:0.001814s ]
+SQL: SHOW COLUMNS FROM `wp_newsinfo` [ RunTime:0.002199s ]
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=1 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000179s ]
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=2 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000166s ]
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=3 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000146s ]
+SQL: SHOW COLUMNS FROM `wp_webconfig` [ RunTime:0.000395s ]
+SQL: SELECT * FROM `wp_webconfig` LIMIT 1   [ RunTime:0.000165s ]
+SQL: SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.000345s ]
+SQL: SELECT * FROM `wp_productinfo` WHERE ( pid=35 ) LIMIT 1   [ RunTime:0.000180s ]
+SQL: SHOW COLUMNS FROM `wp_workcalendar` [ RunTime:0.000395s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=35 and fulldate=1495296000 ) LIMIT 1   [ RunTime:0.000443s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=35 and fulldate=1495209600 ) LIMIT 1   [ RunTime:0.000396s ]
+SQL: SELECT * FROM `wp_productinfo` WHERE ( pid=37 ) LIMIT 1   [ RunTime:0.000163s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=37 and fulldate=1495296000 ) LIMIT 1   [ RunTime:0.000547s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=37 and fulldate=1495209600 ) LIMIT 1   [ RunTime:0.000609s ]
+SQL: SELECT * FROM `wp_productinfo` WHERE ( pid=38 ) LIMIT 1   [ RunTime:0.000219s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=38 and fulldate=1495296000 ) LIMIT 1   [ RunTime:0.000573s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=38 and fulldate=1495209600 ) LIMIT 1   [ RunTime:0.000567s ]
+SQL: SHOW COLUMNS FROM `wp_content` [ RunTime:0.000372s ]
+SQL: SELECT * FROM `wp_content`  [ RunTime:0.000077s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000167s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000220s ]
+NOTIC: [8] Undefined index: checkpw /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 83 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.012313s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012344s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000212s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000245s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000371s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000403s ]
+
+[ 2017-05-21T21:56:03+08:00 ] 42.199.54.155 /index.php/Home/Detailed/newOrder.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000278s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000293s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000324s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000017s ]
+SQL: SHOW COLUMNS FROM `wp_accountinfo` [ RunTime:0.000437s ]
+SQL: SELECT * FROM `wp_accountinfo` WHERE ( uid=145 ) LIMIT 1   [ RunTime:0.000105s ]
+SQL: SHOW COLUMNS FROM `wp_order` [ RunTime:0.000375s ]
+SQL: SELECT `oid` FROM `wp_order` WHERE ( uid=145 and ostaus=0 )  [ RunTime:0.000999s ]
+
+[ 2017-05-21T21:57:01+08:00 ] 42.199.54.155 /index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000252s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000019s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000294s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000330s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000021s ]
+SQL: SHOW COLUMNS FROM `wp_accountinfo` [ RunTime:0.000474s ]
+SQL: SELECT * FROM `wp_accountinfo` WHERE ( uid=145 ) LIMIT 1   [ RunTime:0.000091s ]
+SQL: SHOW COLUMNS FROM `wp_product_lastprice` [ RunTime:0.000343s ]
+SQL: SELECT wp_product_lastprice.pid as pid,wp_product_lastprice.code as code,`displayname`,`ask`,`eidtime`,`tradeperiod` FROM `wp_product_lastprice` INNER JOIN wp_productinfo on wp_product_lastprice.pid=wp_productinfo.pid and wp_productinfo.status=1  ORDER BY wp_productinfo.sort asc  [ RunTime:0.000096s ]
+SQL: SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000408s ]
+SQL: SELECT * FROM `wp_userinfo` WHERE ( uid=145 ) LIMIT 1   [ RunTime:0.000084s ]
+SQL: SELECT * FROM `wp_accountinfo` WHERE ( uid=145 ) LIMIT 1   [ RunTime:0.000067s ]
+SQL: SHOW COLUMNS FROM `wp_experienceinfo` [ RunTime:0.000277s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_experienceinfo` INNER JOIN wp_experience on wp_experienceinfo.eid=wp_experience.eid  WHERE ( wp_experienceinfo.uid=145 and 1495375021 < wp_experienceinfo.endtime and wp_experienceinfo.getstyle=0 ) LIMIT 1   [ RunTime:0.000286s ]
+SQL: SHOW COLUMNS FROM `wp_order` [ RunTime:0.000360s ]
+SQL: SELECT * FROM `wp_order` INNER JOIN wp_product_lastprice on wp_order.pid=wp_product_lastprice.pid  WHERE ( wp_order.uid=145 and ostaus=0 )  [ RunTime:0.000097s ]
+SQL: SHOW COLUMNS FROM `wp_newsinfo` [ RunTime:0.000285s ]
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=1 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000071s ]
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=2 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000065s ]
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=3 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000064s ]
+SQL: SHOW COLUMNS FROM `wp_webconfig` [ RunTime:0.000330s ]
+SQL: SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.000329s ]
+SQL: SHOW COLUMNS FROM `wp_workcalendar` [ RunTime:0.000335s ]
+SQL: SHOW COLUMNS FROM `wp_content` [ RunTime:0.000272s ]
+SQL: SELECT * FROM `wp_content`  [ RunTime:0.000075s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000147s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000187s ]
+NOTIC: [8] Undefined index: checkpw /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 83 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010723s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010771s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000151s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000310s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000339s ]
+
+[ 2017-05-21T21:57:02+08:00 ] 42.199.54.155 /index.php/Home/Detailed/newOrder.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000287s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000318s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000362s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000018s ]
+SQL: SHOW COLUMNS FROM `wp_accountinfo` [ RunTime:0.000490s ]
+SQL: SELECT * FROM `wp_accountinfo` WHERE ( uid=145 ) LIMIT 1   [ RunTime:0.000098s ]
+SQL: SHOW COLUMNS FROM `wp_order` [ RunTime:0.000400s ]
+SQL: SELECT `oid` FROM `wp_order` WHERE ( uid=145 and ostaus=0 )  [ RunTime:0.000081s ]
+
+[ 2017-05-21T21:57:21+08:00 ] 101.226.33.227 /
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000261s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000386s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000432s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000019s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000019s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000037s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003276s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003315s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000154s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000348s ]
+
+[ 2017-05-21T21:57:31+08:00 ] 180.153.214.178 /
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000350s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000352s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000396s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000022s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000062s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003258s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003294s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000152s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000185s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000321s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000349s ]
+
+[ 2017-05-21T21:57:32+08:00 ] 101.226.125.100 /
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000288s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000326s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000018s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000062s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003115s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003145s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000119s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000144s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000332s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000369s ]
+
+[ 2017-05-21T22:00:32+08:00 ] 121.33.21.167 /
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000273s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000352s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000019s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000063s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003122s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003161s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000154s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000368s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000397s ]
+
+[ 2017-05-21T22:00:34+08:00 ] 121.33.21.167 /index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000307s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000361s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000021s ]
+SQL: SHOW COLUMNS FROM `wp_product_lastprice` [ RunTime:0.000613s ]
+SQL: SELECT wp_product_lastprice.pid as pid,wp_product_lastprice.code as code,`displayname`,`ask`,`eidtime`,`tradeperiod` FROM `wp_product_lastprice` INNER JOIN wp_productinfo on wp_product_lastprice.pid=wp_productinfo.pid and wp_productinfo.status=1  ORDER BY wp_productinfo.sort asc  [ RunTime:0.000138s ]
+NOTIC: [8] Undefined index: uid /www/wwwroot/wpdemo/Application/Home/Controller/IndexController.class.php 第 154 行.
+SQL: SHOW COLUMNS FROM `wp_order` [ RunTime:0.000486s ]
+SQL: SELECT * FROM `wp_order` INNER JOIN wp_product_lastprice on wp_order.pid=wp_product_lastprice.pid  WHERE ( wp_order.uid= and ostaus=0 )  [ RunTime:0.000132s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and ostaus=0 )' at line 1
+ [ SQL语句 ] : SELECT * FROM `wp_order` INNER JOIN wp_product_lastprice on wp_order.pid=wp_product_lastprice.pid  WHERE ( wp_order.uid= and ostaus=0 ) 
+SQL: SHOW COLUMNS FROM `wp_newsinfo` [ RunTime:0.000327s ]
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=1 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000096s ]
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=2 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000100s ]
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=3 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000092s ]
+SQL: SHOW COLUMNS FROM `wp_webconfig` [ RunTime:0.000413s ]
+SQL: SELECT * FROM `wp_webconfig` LIMIT 1   [ RunTime:0.000113s ]
+SQL: SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.000377s ]
+SQL: SELECT * FROM `wp_productinfo` WHERE ( pid=35 ) LIMIT 1   [ RunTime:0.000119s ]
+SQL: SHOW COLUMNS FROM `wp_workcalendar` [ RunTime:0.000476s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=35 and fulldate=1495296000 ) LIMIT 1   [ RunTime:0.000107s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=35 and fulldate=1495209600 ) LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT * FROM `wp_productinfo` WHERE ( pid=37 ) LIMIT 1   [ RunTime:0.000113s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=37 and fulldate=1495296000 ) LIMIT 1   [ RunTime:0.000130s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=37 and fulldate=1495209600 ) LIMIT 1   [ RunTime:0.000099s ]
+SQL: SELECT * FROM `wp_productinfo` WHERE ( pid=38 ) LIMIT 1   [ RunTime:0.000114s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=38 and fulldate=1495296000 ) LIMIT 1   [ RunTime:0.000106s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=38 and fulldate=1495209600 ) LIMIT 1   [ RunTime:0.000105s ]
+SQL: SHOW COLUMNS FROM `wp_content` [ RunTime:0.000397s ]
+SQL: SELECT * FROM `wp_content`  [ RunTime:0.000098s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000185s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000238s ]
+NOTIC: [8] Undefined index: checkpw /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 83 行.
+NOTIC: [8] Undefined index: husername /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 113 行.
+NOTIC: [8] Undefined variable: user /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 475 行.
+NOTIC: [8] Undefined variable: price /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 482 行.
+NOTIC: [8] Undefined variable: price /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 482 行.
+NOTIC: [8] Undefined variable: price /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 482 行.
+NOTIC: [8] Undefined variable: price /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 484 行.
+NOTIC: [8] Undefined variable: user /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 692 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.012972s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013013s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000142s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000170s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000430s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000475s ]
+
+[ 2017-05-21T22:00:56+08:00 ] 121.33.21.167 /
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000246s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000019s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000028s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000062s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.002950s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.002980s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000126s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000154s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000325s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000353s ]
+
+[ 2017-05-21T22:00:58+08:00 ] 121.33.21.167 /index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000300s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000019s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000333s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000376s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000022s ]
+SQL: SHOW COLUMNS FROM `wp_product_lastprice` [ RunTime:0.000513s ]
+SQL: SELECT wp_product_lastprice.pid as pid,wp_product_lastprice.code as code,`displayname`,`ask`,`eidtime`,`tradeperiod` FROM `wp_product_lastprice` INNER JOIN wp_productinfo on wp_product_lastprice.pid=wp_productinfo.pid and wp_productinfo.status=1  ORDER BY wp_productinfo.sort asc  [ RunTime:0.000106s ]
+NOTIC: [8] Undefined index: uid /www/wwwroot/wpdemo/Application/Home/Controller/IndexController.class.php 第 154 行.
+SQL: SHOW COLUMNS FROM `wp_order` [ RunTime:0.000410s ]
+SQL: SELECT * FROM `wp_order` INNER JOIN wp_product_lastprice on wp_order.pid=wp_product_lastprice.pid  WHERE ( wp_order.uid= and ostaus=0 )  [ RunTime:0.000097s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and ostaus=0 )' at line 1
+ [ SQL语句 ] : SELECT * FROM `wp_order` INNER JOIN wp_product_lastprice on wp_order.pid=wp_product_lastprice.pid  WHERE ( wp_order.uid= and ostaus=0 ) 
+SQL: SHOW COLUMNS FROM `wp_newsinfo` [ RunTime:0.000278s ]
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=1 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000069s ]
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=2 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000081s ]
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=3 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000074s ]
+SQL: SHOW COLUMNS FROM `wp_webconfig` [ RunTime:0.000306s ]
+SQL: SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.000328s ]
+SQL: SHOW COLUMNS FROM `wp_workcalendar` [ RunTime:0.000307s ]
+SQL: SHOW COLUMNS FROM `wp_content` [ RunTime:0.000282s ]
+SQL: SELECT * FROM `wp_content`  [ RunTime:0.000086s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000010s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000147s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000186s ]
+NOTIC: [8] Undefined index: checkpw /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 83 行.
+NOTIC: [8] Undefined index: husername /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 113 行.
+NOTIC: [8] Undefined variable: user /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 475 行.
+NOTIC: [8] Undefined variable: price /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 482 行.
+NOTIC: [8] Undefined variable: price /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 482 行.
+NOTIC: [8] Undefined variable: price /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 482 行.
+NOTIC: [8] Undefined variable: price /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 484 行.
+NOTIC: [8] Undefined variable: user /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 692 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.010812s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.010842s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000151s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000318s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000346s ]
+
+[ 2017-05-21T22:01:02+08:00 ] 121.33.21.167 /index.php/admin
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000296s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000364s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000410s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000023s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000045s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000098s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.004587s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004620s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000151s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000327s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000356s ]
+
+[ 2017-05-21T22:01:12+08:00 ] 121.33.21.167 /index.php/Admin/User/signin.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000244s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000335s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000021s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000428s ]
+SQL: SHOW COLUMNS FROM `wp_keyaccess` [ RunTime:0.000381s ]
+SQL: SELECT `id`,`password`,`username`,`createtime`,`type`,`isadmin`,`state`,`portrait`,`tel`,`deptid` FROM `wp_systemuser` WHERE ( `username` = 'wpadmin' ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000217s ]
+SQL: SHOW COLUMNS FROM `wp_department` [ RunTime:0.000385s ]
+SQL: SELECT * FROM `wp_department` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000181s ]
+SQL: SHOW COLUMNS FROM `wp_userrole` [ RunTime:0.000304s ]
+SQL: SELECT wp_rolepermission.permission as pkey FROM `wp_userrole` left JOIN wp_rolepermission on wp_userrole.rid = wp_rolepermission.roleid left JOIN wp_role on wp_userrole.rid = wp_role.id  WHERE ( `uid` = '3' ) AND ( `type` = '1' ) AND ( `state` = 1 ) AND (  (`permission` IS NOT NULL)  )  [ RunTime:0.000358s ]
+NOTIC: [8] Undefined variable: checkedslip /www/wwwroot/wpdemo/Application/Admin/Controller/UserController.class.php 第 109 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_keyaccess` WHERE ( `outid` = 3 ) AND ( `key` = 2 ) AND ( `country_id` = 'CN' ) AND ( `city_id` = '440100' ) AND ( `result` = 1 ) LIMIT 1   [ RunTime:0.000586s ]
+SQL: INSERT INTO `wp_keyaccess` (`key`,`result`,`outid`,`ip`,`country`,`country_id`,`area`,`area_id`,`region`,`region_id`,`city`,`city_id`,`county`,`county_id`,`isp`,`isp_id`,`accesstime`,`risk`,`remark`) VALUES (2,0,3,'121.33.21.167','中国','CN','华南','800000','广东省','440000','广州市','440100','','-1','电信','100017',1495375272,1,'异地登录') [ RunTime:0.000202s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000065s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003532s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003573s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000140s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000171s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000357s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000390s ]
+
+[ 2017-05-21T22:01:13+08:00 ] 121.33.21.167 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000349s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000021s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000387s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000427s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000023s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002394s ]
+SQL: SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000586s ]
+SQL: SHOW COLUMNS FROM `wp_order` [ RunTime:0.000409s ]
+SQL: SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.000406s ]
+SQL: SHOW COLUMNS FROM `wp_accountinfo` [ RunTime:0.000353s ]
+SQL: SHOW COLUMNS FROM `wp_companyinfo` [ RunTime:0.000414s ]
+SQL: SELECT `control` FROM `wp_companyinfo` WHERE ( ccode='001' ) LIMIT 1   [ RunTime:0.000233s ]
+SQL: SELECT SUM(fee) AS tp_sum FROM `wp_order` WHERE (  FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d') ) LIMIT 1   [ RunTime:0.002547s ]
+SQL: SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE ( FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d') ) LIMIT 1   [ RunTime:0.002331s ]
+SQL: select sum(amount) as total from wp_balance where optype in (1,100) [ RunTime:0.001036s ]
+SQL: select sum(balance) as total from wp_accountinfo [ RunTime:0.000205s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_userinfo` LIMIT 1   [ RunTime:0.000110s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE ( date_format(from_UNIXTIME(selltime),'%Y-%m-%d')>='2017-05-21' ) LIMIT 1   [ RunTime:0.002311s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE ( date_format(from_UNIXTIME(selltime),'%Y-%m-%d')>='2017-05-14' ) LIMIT 1   [ RunTime:0.002369s ]
+SQL: SELECT * FROM `wp_order` WHERE ( date_format(from_UNIXTIME(selltime),'%Y-%m-%d')>='2017-04-21' )  [ RunTime:0.010095s ]
+NOTIC: [8] Undefined variable: total /www/wwwroot/wpdemo/Application/Admin/Controller/IndexController.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000575s ]
+SQL: SELECT u.uid as uid,u.username as username,o.buytime as buytime,o.pid as pid,o.ptitle as ptitle,o.onumber as onumber,o.ostyle as ostyle,o.eid as eid,o.endprofit as endprofit,o.ploss as ploss,o.buyprice as buyprice,o.sellprice as sellprice,o.ostaus as ostaus,'desu' as realname,o.fee as fee,o.orderno as orderno FROM wp_userinfo u,wp_order o WHERE ( u.uid=o.uid ) ORDER BY o.oid desc LIMIT 10   [ RunTime:0.000277s ]
+SQL: SHOW COLUMNS FROM `wp_authenticationinfo` [ RunTime:0.000362s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=775 ) LIMIT 1   [ RunTime:0.000162s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=775 ) LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=775 ) LIMIT 1   [ RunTime:0.000064s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=775 ) LIMIT 1   [ RunTime:0.000062s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=771 ) LIMIT 1   [ RunTime:0.000154s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000139s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000063s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000064s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000061s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000060s ]
+SQL: SHOW COLUMNS FROM `wp_product_lastprice` [ RunTime:0.000346s ]
+SQL: SELECT * FROM `wp_product_lastprice` ORDER BY pid desc  [ RunTime:0.000167s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000151s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.016701s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016736s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000138s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000165s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000338s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000378s ]
+
+[ 2017-05-21T22:02:47+08:00 ] 121.33.21.167 /index.php/Admin/Super/mrlist/type/1.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000275s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000398s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000019s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002238s ]
+SQL: SHOW COLUMNS FROM `wp_companyinfo` [ RunTime:0.000624s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000389s ]
+SQL: SHOW COLUMNS FROM `wp_userrole` [ RunTime:0.000292s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_systemuser` WHERE ( `type` = '1' ) LIMIT 1   [ RunTime:0.000186s ]
+SQL: SELECT * FROM `wp_systemuser` WHERE ( `type` = '1' ) ORDER BY createtime desc LIMIT 0,20   [ RunTime:0.000192s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=weiyun ) LIMIT 1   [ RunTime:0.000167s ]
+ERR: 1054:Unknown column 'weiyun' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `wp_companyinfo` WHERE ( ccode=weiyun ) LIMIT 1  
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=160 )  [ RunTime:0.000190s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=004 ) LIMIT 1   [ RunTime:0.000186s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=159 )  [ RunTime:0.000171s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=201705 ) LIMIT 1   [ RunTime:0.000231s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=137 )  [ RunTime:0.000173s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=wp ) LIMIT 1   [ RunTime:0.000160s ]
+ERR: 1054:Unknown column 'wp' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `wp_companyinfo` WHERE ( ccode=wp ) LIMIT 1  
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=3 )  [ RunTime:0.000220s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000031s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000175s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000228s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.017307s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.017341s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000153s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000188s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000400s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000432s ]
+
+[ 2017-05-21T22:02:51+08:00 ] 121.33.21.167 /index.php/Admin/Super/mredit/uid/3/username/wpadmin/type/1.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000388s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000424s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002198s ]
+SQL: SHOW COLUMNS FROM `wp_role` [ RunTime:0.000530s ]
+SQL: SHOW COLUMNS FROM `wp_userrole` [ RunTime:0.000352s ]
+SQL: SELECT * FROM `wp_role` WHERE ( rtype=1 )  [ RunTime:0.000214s ]
+SQL: SELECT * FROM `wp_userrole` WHERE ( uid=3 )  [ RunTime:0.000156s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000113s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000152s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.012817s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012852s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000124s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000151s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000339s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000368s ]
+
+[ 2017-05-21T22:02:58+08:00 ] 121.33.21.167 /index.php/Admin/Super/mrlist/type/99.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000267s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000308s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000341s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000019s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002215s ]
+SQL: SHOW COLUMNS FROM `wp_companyinfo` [ RunTime:0.000678s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000376s ]
+SQL: SHOW COLUMNS FROM `wp_userrole` [ RunTime:0.000322s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_systemuser` WHERE ( `type` IN ('2','3','4') ) LIMIT 1   [ RunTime:0.000321s ]
+SQL: SELECT * FROM `wp_systemuser` WHERE ( `type` IN ('2','3','4') ) ORDER BY createtime desc LIMIT 0,20   [ RunTime:0.000250s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=004007 ) LIMIT 1   [ RunTime:0.000249s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=158 )  [ RunTime:0.000217s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=22 ) LIMIT 1   [ RunTime:0.000215s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=157 )  [ RunTime:0.000173s ]
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/wpdemo/Application/Admin/Controller/SuperController.class.php 第 743 行.
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=22 ) LIMIT 1   [ RunTime:0.000107s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=156 )  [ RunTime:0.000160s ]
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/wpdemo/Application/Admin/Controller/SuperController.class.php 第 743 行.
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=004006 ) LIMIT 1   [ RunTime:0.000219s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=155 )  [ RunTime:0.000156s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode= 004005 ) LIMIT 1   [ RunTime:0.000193s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=154 )  [ RunTime:0.000202s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=004004 ) LIMIT 1   [ RunTime:0.000224s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=153 )  [ RunTime:0.000208s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=004003 ) LIMIT 1   [ RunTime:0.000173s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=152 )  [ RunTime:0.000166s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=004002 ) LIMIT 1   [ RunTime:0.000172s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=151 )  [ RunTime:0.000170s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=004001  ) LIMIT 1   [ RunTime:0.000193s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=150 )  [ RunTime:0.000143s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=004 ) LIMIT 1   [ RunTime:0.000083s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=149 )  [ RunTime:0.000184s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=003006 ) LIMIT 1   [ RunTime:0.000173s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=148 )  [ RunTime:0.000143s ]
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/wpdemo/Application/Admin/Controller/SuperController.class.php 第 743 行.
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode= 003005 ) LIMIT 1   [ RunTime:0.000173s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=147 )  [ RunTime:0.000147s ]
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/wpdemo/Application/Admin/Controller/SuperController.class.php 第 743 行.
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=003004 ) LIMIT 1   [ RunTime:0.000217s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=146 )  [ RunTime:0.000190s ]
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/wpdemo/Application/Admin/Controller/SuperController.class.php 第 743 行.
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=003003 ) LIMIT 1   [ RunTime:0.000194s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=145 )  [ RunTime:0.000215s ]
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/wpdemo/Application/Admin/Controller/SuperController.class.php 第 743 行.
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=003002 ) LIMIT 1   [ RunTime:0.000199s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=144 )  [ RunTime:0.000161s ]
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/wpdemo/Application/Admin/Controller/SuperController.class.php 第 743 行.
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=003001  ) LIMIT 1   [ RunTime:0.000182s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=143 )  [ RunTime:0.000163s ]
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/wpdemo/Application/Admin/Controller/SuperController.class.php 第 743 行.
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=123456 ) LIMIT 1   [ RunTime:0.000203s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=138 )  [ RunTime:0.000201s ]
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/wpdemo/Application/Admin/Controller/SuperController.class.php 第 743 行.
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=002 ) LIMIT 1   [ RunTime:0.000204s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=136 )  [ RunTime:0.000151s ]
+NOTIC: [2] Invalid argument supplied for foreach() /www/wwwroot/wpdemo/Application/Admin/Controller/SuperController.class.php 第 743 行.
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=003 ) LIMIT 1   [ RunTime:0.000169s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=135 )  [ RunTime:0.000190s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000021s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000142s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000191s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.016332s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.016371s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000138s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000167s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000353s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000383s ]
+
+[ 2017-05-21T22:02:59+08:00 ] 121.33.21.167 /index.php/Admin/Super/rlist.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000263s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000292s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000326s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000019s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002092s ]
+SQL: SHOW COLUMNS FROM `wp_role` [ RunTime:0.000438s ]
+SQL: SELECT wp_role.id as id,wp_role.name as name,wp_role.rtype as rtype,wp_role.state as state,wp_role.remarks as remarks,wp_department.name as dname,wp_role.isdefault as isdefault FROM `wp_role` left JOIN wp_department on wp_role.deptid=wp_department.id  ORDER BY rtype, id  [ RunTime:0.000243s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000207s ]
+NOTIC: [8] Undefined variable: page /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/48987661ef5b53c9b50a24a39b958889.php 第 436 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.015676s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015707s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000150s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000180s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000362s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000401s ]
+
+[ 2017-05-21T22:03:00+08:00 ] 121.33.21.167 /index.php/Admin/Super/radd.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000261s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000355s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000389s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000019s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002105s ]
+SQL: SHOW COLUMNS FROM `wp_role` [ RunTime:0.000497s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000154s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000198s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.012273s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.012308s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000132s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000159s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000016s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000358s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000401s ]
+
+[ 2017-05-21T22:03:01+08:00 ] 121.33.21.167 /index.php/Admin/Super/mrlist/type/1.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000281s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000025s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000485s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000539s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000028s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.003723s ]
+SQL: SHOW COLUMNS FROM `wp_companyinfo` [ RunTime:0.000818s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000499s ]
+SQL: SHOW COLUMNS FROM `wp_userrole` [ RunTime:0.000421s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_systemuser` WHERE ( `type` = '1' ) LIMIT 1   [ RunTime:0.000098s ]
+SQL: SELECT * FROM `wp_systemuser` WHERE ( `type` = '1' ) ORDER BY createtime desc LIMIT 0,20   [ RunTime:0.000123s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=weiyun ) LIMIT 1   [ RunTime:0.000204s ]
+ERR: 1054:Unknown column 'weiyun' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `wp_companyinfo` WHERE ( ccode=weiyun ) LIMIT 1  
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=160 )  [ RunTime:0.000089s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=004 ) LIMIT 1   [ RunTime:0.000108s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=159 )  [ RunTime:0.000085s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=201705 ) LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=137 )  [ RunTime:0.000080s ]
+SQL: SELECT * FROM `wp_companyinfo` WHERE ( ccode=wp ) LIMIT 1   [ RunTime:0.000142s ]
+ERR: 1054:Unknown column 'wp' in 'where clause'
+ [ SQL语句 ] : SELECT * FROM `wp_companyinfo` WHERE ( ccode=wp ) LIMIT 1  
+SQL: SELECT wp_role.name as name FROM `wp_userrole` left JOIN wp_role on wp_role.id = wp_userrole.rid  WHERE ( wp_userrole.uid=3 )  [ RunTime:0.000085s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000143s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000227s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.015250s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015288s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000138s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000168s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000345s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000391s ]
+
+[ 2017-05-21T22:03:04+08:00 ] 121.33.21.167 /index.php/Admin/Super/mredit/uid/3/username/wpadmin/type/1.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000318s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000298s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000332s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000019s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002132s ]
+SQL: SHOW COLUMNS FROM `wp_role` [ RunTime:0.000472s ]
+SQL: SHOW COLUMNS FROM `wp_userrole` [ RunTime:0.000312s ]
+SQL: SELECT * FROM `wp_role` WHERE ( rtype=1 )  [ RunTime:0.000114s ]
+SQL: SELECT * FROM `wp_userrole` WHERE ( uid=3 )  [ RunTime:0.000095s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000107s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000147s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.013939s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013985s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000131s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000160s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000019s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000334s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000374s ]
+
+[ 2017-05-21T22:03:13+08:00 ] 121.33.21.167 /index.php/Admin/Super/slist.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000306s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000365s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000021s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002208s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000540s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_systemuser` WHERE ( `type` = 1 ) AND ( `state` <> 2 ) LIMIT 1   [ RunTime:0.000210s ]
+NOTIC: [8] Undefined variable: row /www/wwwroot/wpdemo/Application/Admin/Controller/SuperController.class.php 第 23 行.
+SQL: SELECT * FROM `wp_systemuser` WHERE ( `type` = 1 ) AND ( `state` <> 2 ) ORDER BY id desc LIMIT 0,20   [ RunTime:0.000241s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000169s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000209s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.014586s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014621s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000151s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000189s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000341s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000371s ]
+
+[ 2017-05-21T22:03:18+08:00 ] 121.33.21.167 /index.php/Admin/Super/sdel/uid/137.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000259s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000316s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000367s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000520s ]
+SQL: SELECT * FROM `wp_systemuser` WHERE ( id=137 ) LIMIT 1   [ RunTime:0.000222s ]
+SQL: UPDATE `wp_systemuser` SET `state`=2 WHERE ( id=137 ) [ RunTime:0.000259s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000025s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003411s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003445s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000121s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000149s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000338s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000372s ]
+
+[ 2017-05-21T22:03:19+08:00 ] 121.33.21.167 /index.php/Admin/Super/slist.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000326s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000024s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002179s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000582s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_systemuser` WHERE ( `type` = 1 ) AND ( `state` <> 2 ) LIMIT 1   [ RunTime:0.000233s ]
+NOTIC: [8] Undefined variable: row /www/wwwroot/wpdemo/Application/Admin/Controller/SuperController.class.php 第 23 行.
+SQL: SELECT * FROM `wp_systemuser` WHERE ( `type` = 1 ) AND ( `state` <> 2 ) ORDER BY id desc LIMIT 0,20   [ RunTime:0.000252s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000146s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000206s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.015269s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015308s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000151s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000186s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000327s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000357s ]
+
+[ 2017-05-21T22:03:28+08:00 ] 121.33.21.167 /index.php/Admin/Super/sdel/uid/159.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000262s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000320s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000354s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000019s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000495s ]
+SQL: SELECT * FROM `wp_systemuser` WHERE ( id=159 ) LIMIT 1   [ RunTime:0.000224s ]
+SQL: UPDATE `wp_systemuser` SET `state`=2 WHERE ( id=159 ) [ RunTime:0.000213s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000024s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003538s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003577s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000126s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000153s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000324s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000355s ]
+
+[ 2017-05-21T22:03:29+08:00 ] 121.33.21.167 /index.php/Admin/Super/slist.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000291s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000346s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000380s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002140s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000517s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_systemuser` WHERE ( `type` = 1 ) AND ( `state` <> 2 ) LIMIT 1   [ RunTime:0.000207s ]
+NOTIC: [8] Undefined variable: row /www/wwwroot/wpdemo/Application/Admin/Controller/SuperController.class.php 第 23 行.
+SQL: SELECT * FROM `wp_systemuser` WHERE ( `type` = 1 ) AND ( `state` <> 2 ) ORDER BY id desc LIMIT 0,20   [ RunTime:0.000211s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000169s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000210s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.013825s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013860s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000137s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000165s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000352s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000383s ]
+
+[ 2017-05-21T22:03:31+08:00 ] 121.33.21.167 /index.php/Admin/Super/sedit/uid/3.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000276s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000291s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000324s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002126s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000533s ]
+SQL: SELECT * FROM `wp_systemuser` WHERE ( id=3 ) LIMIT 1   [ RunTime:0.000251s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000020s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000173s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000215s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.013002s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.013039s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000143s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000170s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000010s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000352s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000380s ]
+
+[ 2017-05-21T22:03:45+08:00 ] 121.33.21.167 /index.php/Admin/Super/sedit.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000308s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000407s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000455s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002506s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000531s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000017s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000070s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003442s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003477s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000119s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000145s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000009s ]
+
+[ 2017-05-21T22:04:01+08:00 ] 121.33.21.167 /index.php/Admin/Super/sedit.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000444s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000028s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000481s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000540s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.003925s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000744s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000034s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000089s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003905s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003941s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000130s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000158s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000009s ]
+
+[ 2017-05-21T22:04:17+08:00 ] 121.33.21.167 /index.php/Admin/Super/sedit.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000265s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000312s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000348s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002249s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000468s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000027s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000068s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003400s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003436s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000136s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000008s ]
+
+[ 2017-05-21T22:04:35+08:00 ] 121.33.21.167 /index.php/Admin/Super/sedit.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000276s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000330s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000366s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000019s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002198s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000519s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000019s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000026s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000071s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003887s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003932s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000172s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000208s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000010s ]
+
+[ 2017-05-21T22:04:49+08:00 ] 121.33.21.167 /index.php/Admin/Super/sedit.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000254s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000336s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002202s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000545s ]
+SQL: SELECT * FROM `wp_systemuser` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000224s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000029s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000074s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003456s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003498s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000125s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000167s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000009s ]
+
+[ 2017-05-21T22:05:10+08:00 ] 121.33.21.167 /index.php/Admin/Super/sedit.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000255s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000340s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000019s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002244s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000553s ]
+SQL: SELECT * FROM `wp_systemuser` WHERE ( `id` = 3 ) LIMIT 1   [ RunTime:0.000111s ]
+SQL: UPDATE `wp_systemuser` SET `password`='4488baa8b5ac60a15a9a5c1c1b8fe4df',`updatetime`=1495375510,`updateuserid`=3 WHERE ( `id` = 3 ) [ RunTime:0.000215s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000027s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003653s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003694s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000144s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000171s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000366s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000400s ]
+
+[ 2017-05-21T22:05:11+08:00 ] 121.33.21.167 /index.php/Admin/Super/slist.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000273s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000328s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000369s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002235s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000539s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_systemuser` WHERE ( `type` = 1 ) AND ( `state` <> 2 ) LIMIT 1   [ RunTime:0.000213s ]
+NOTIC: [8] Undefined variable: row /www/wwwroot/wpdemo/Application/Admin/Controller/SuperController.class.php 第 23 行.
+SQL: SELECT * FROM `wp_systemuser` WHERE ( `type` = 1 ) AND ( `state` <> 2 ) ORDER BY id desc LIMIT 0,20   [ RunTime:0.000226s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000172s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000218s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.014226s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014264s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000139s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000167s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000352s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000398s ]
+
+[ 2017-05-21T22:05:13+08:00 ] 121.33.21.167 /index.php/Admin/User/signinout.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000357s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000026s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000422s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000474s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000028s ]
+
+[ 2017-05-21T22:05:15+08:00 ] 121.33.21.167 /index.php/Admin/User/signin.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000257s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000309s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000344s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000022s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000044s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000084s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.004027s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.004061s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000133s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000161s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000009s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000383s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000413s ]
+
+[ 2017-05-21T22:05:21+08:00 ] 121.33.21.167 /index.php/Admin/User/signin.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000259s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000321s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000357s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000023s ]
+SQL: SHOW COLUMNS FROM `wp_systemuser` [ RunTime:0.000431s ]
+SQL: SHOW COLUMNS FROM `wp_keyaccess` [ RunTime:0.000401s ]
+SQL: SELECT `id`,`password`,`username`,`createtime`,`type`,`isadmin`,`state`,`portrait`,`tel`,`deptid` FROM `wp_systemuser` WHERE ( `username` = 'wpadmin' ) AND ( `state` = 1 ) LIMIT 1   [ RunTime:0.000207s ]
+SQL: SHOW COLUMNS FROM `wp_department` [ RunTime:0.000366s ]
+SQL: SELECT * FROM `wp_department` WHERE ( id=1 ) LIMIT 1   [ RunTime:0.000105s ]
+SQL: SHOW COLUMNS FROM `wp_userrole` [ RunTime:0.000305s ]
+SQL: SELECT wp_rolepermission.permission as pkey FROM `wp_userrole` left JOIN wp_rolepermission on wp_userrole.rid = wp_rolepermission.roleid left JOIN wp_role on wp_userrole.rid = wp_role.id  WHERE ( `uid` = '3' ) AND ( `type` = '1' ) AND ( `state` = 1 ) AND (  (`permission` IS NOT NULL)  )  [ RunTime:0.000138s ]
+NOTIC: [8] Undefined variable: checkedslip /www/wwwroot/wpdemo/Application/Admin/Controller/UserController.class.php 第 109 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_keyaccess` WHERE ( `outid` = 3 ) AND ( `key` = 2 ) AND ( `country_id` = 'CN' ) AND ( `city_id` = '440100' ) AND ( `result` = 1 ) LIMIT 1   [ RunTime:0.000678s ]
+SQL: INSERT INTO `wp_keyaccess` (`key`,`result`,`outid`,`ip`,`country`,`country_id`,`area`,`area_id`,`region`,`region_id`,`city`,`city_id`,`county`,`county_id`,`isp`,`isp_id`,`accesstime`,`risk`,`remark`) VALUES (2,0,3,'121.33.21.167','中国','CN','华南','800000','广东省','440000','广州市','440100','','-1','电信','100017',1495375521,1,'异地登录') [ RunTime:0.000186s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000019s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000072s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003765s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003803s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000126s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000152s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000365s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000425s ]
+
+[ 2017-05-21T22:05:22+08:00 ] 121.33.21.167 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000016s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000295s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000329s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002098s ]
+SQL: SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000645s ]
+SQL: SHOW COLUMNS FROM `wp_order` [ RunTime:0.000410s ]
+SQL: SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.000410s ]
+SQL: SHOW COLUMNS FROM `wp_accountinfo` [ RunTime:0.000362s ]
+SQL: SHOW COLUMNS FROM `wp_companyinfo` [ RunTime:0.000407s ]
+SQL: SELECT `control` FROM `wp_companyinfo` WHERE ( ccode='001' ) LIMIT 1   [ RunTime:0.000115s ]
+SQL: SELECT SUM(fee) AS tp_sum FROM `wp_order` WHERE (  FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d') ) LIMIT 1   [ RunTime:0.002819s ]
+SQL: SELECT SUM(ploss) AS tp_sum FROM `wp_order` WHERE ( FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d') ) LIMIT 1   [ RunTime:0.002399s ]
+SQL: select sum(amount) as total from wp_balance where optype in (1,100) [ RunTime:0.000101s ]
+SQL: select sum(balance) as total from wp_accountinfo [ RunTime:0.000089s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_userinfo` LIMIT 1   [ RunTime:0.000089s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE ( date_format(from_UNIXTIME(selltime),'%Y-%m-%d')>='2017-05-21' ) LIMIT 1   [ RunTime:0.000091s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` WHERE ( date_format(from_UNIXTIME(selltime),'%Y-%m-%d')>='2017-05-14' ) LIMIT 1   [ RunTime:0.000104s ]
+SQL: SELECT * FROM `wp_order` WHERE ( date_format(from_UNIXTIME(selltime),'%Y-%m-%d')>='2017-04-21' )  [ RunTime:0.003939s ]
+NOTIC: [8] Undefined variable: total /www/wwwroot/wpdemo/Application/Admin/Controller/IndexController.class.php 第 46 行.
+SQL: SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000814s ]
+SQL: SELECT u.uid as uid,u.username as username,o.buytime as buytime,o.pid as pid,o.ptitle as ptitle,o.onumber as onumber,o.ostyle as ostyle,o.eid as eid,o.endprofit as endprofit,o.ploss as ploss,o.buyprice as buyprice,o.sellprice as sellprice,o.ostaus as ostaus,'desu' as realname,o.fee as fee,o.orderno as orderno FROM wp_userinfo u,wp_order o WHERE ( u.uid=o.uid ) ORDER BY o.oid desc LIMIT 10   [ RunTime:0.000128s ]
+SQL: SHOW COLUMNS FROM `wp_authenticationinfo` [ RunTime:0.000427s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=775 ) LIMIT 1   [ RunTime:0.000156s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=775 ) LIMIT 1   [ RunTime:0.000116s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=775 ) LIMIT 1   [ RunTime:0.000078s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=775 ) LIMIT 1   [ RunTime:0.000070s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=771 ) LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000090s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000091s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000079s ]
+SQL: SHOW COLUMNS FROM `wp_product_lastprice` [ RunTime:0.000371s ]
+SQL: SELECT * FROM `wp_product_lastprice` ORDER BY pid desc  [ RunTime:0.000092s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000122s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.018342s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018379s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000139s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000168s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000683s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000772s ]
+
+[ 2017-05-21T22:05:42+08:00 ] 121.33.21.167 /index.php/Admin/Goods/glist.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000282s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000359s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002213s ]
+SQL: SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.000535s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_productinfo` LIMIT 1   [ RunTime:0.000209s ]
+NOTIC: [8] Undefined variable: row /www/wwwroot/wpdemo/Application/Admin/Controller/GoodsController.class.php 第 123 行.
+SQL: SELECT * FROM `wp_productinfo` INNER JOIN wp_product_lastprice on wp_productinfo.pid=wp_product_lastprice.pid  ORDER BY wp_productinfo.sort asc  [ RunTime:0.000486s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000140s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000184s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.014979s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015015s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000139s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000167s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000361s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000393s ]
+
+[ 2017-05-21T22:05:43+08:00 ] 121.33.21.167 /index.php/Admin/Super/calendar.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000249s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000303s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000351s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000021s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002220s ]
+SQL: SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.000600s ]
+SQL: SELECT * FROM `wp_productinfo`  [ RunTime:0.000258s ]
+SQL: SHOW COLUMNS FROM `wp_workcalendar` [ RunTime:0.000331s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( `year` = '2017' ) AND ( `productpid` = '35' ) ORDER BY month, day  [ RunTime:0.001652s ]
+NOTIC: [8] Undefined offset: 365 /www/wwwroot/wpdemo/Application/Admin/Controller/SuperController.class.php 第 489 行.
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000131s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000177s ]
+NOTIC: [8] Use of undefined constant Super - assumed 'Super' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 432 行.
+NOTIC: [8] Use of undefined constant calendar - assumed 'calendar' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 432 行.
+NOTIC: [2] Division by zero /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 432 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [2] Illegal string offset 'day' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Uninitialized string offset: 0 /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 468 行.
+NOTIC: [8] Undefined variable: msg /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/58762058142c52c460de545638994895.php 第 491 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.024634s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.024670s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000160s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000198s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000013s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000372s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000406s ]
+
+[ 2017-05-21T22:05:48+08:00 ] 121.33.21.167 /index.php/Admin/Order/olist/ostaus/0/init/1.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000280s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000308s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000341s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000034s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002092s ]
+SQL: SHOW COLUMNS FROM `wp_order` [ RunTime:0.000541s ]
+SQL: SHOW COLUMNS FROM `wp_department` [ RunTime:0.000373s ]
+SQL: SELECT DISTINCT  `ptitle` FROM `wp_order`  [ RunTime:0.004321s ]
+SQL: SHOW COLUMNS FROM ( [ RunTime:0.000084s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM (
+SQL: SELECT COUNT(*) AS tp_count FROM ( SELECT FROM_UNIXTIME(wp_order.selltime,'%Y-%m-%d %H:%i:%s') as sltd,wp_order.selltime,wp_userinfo.username as username,'desu' as realname,wp_order.ptitle as ptitle,wp_order.endprofit as endprofit,count(wp_order.oid) as odrcount,'desu' AS profitcount,'desu' AS losscount,'desu' AS flatcount,'desu' AS winnpro,sum(wp_order.fee) as feesum,sum(wp_order.fee) as tfeesum,sum(wp_order.ploss) as plosssum,sum(case when wp_order.ploss > 0 then wp_order.ploss else 0 end) AS profit,sum(case when wp_order.ploss < 0 then wp_order.ploss else 0 end) AS loss,sum(wp_order.managefee) as managefeesum,'0.00' as commissionsum,wp_department.jigou_name AS dmjig,wp_department.daili_name AS dmjinj,wp_department.huiyuan_code AS dmhuiy,'desu' AS dmshic,wp_order.eid as eid,wp_order.ostyle as ostyle,wp_order.endloss as endloss,wp_order.ucode as ucode,wp_order.orderno as orderno,wp_order.poundage as poundage,wp_userinfo.uid as uid FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid left JOIN wp_department on wp_department.code = wp_order.ucode left JOIN wp_authenticationinfo on wp_authenticationinfo.useruid = wp_userinfo.uid  WHERE ( wp_order.ostaus=0 and FROM_UNIXTIME(wp_order.buytime,'%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(),'%Y-%m-%d') ) GROUP BY username,wp_order.ptitle,wp_order.eid,wp_order.endprofit,wp_order.endloss,sltd  ) ocount LIMIT 1   [ RunTime:0.001336s ]
+SQL: SELECT FROM_UNIXTIME(wp_order.selltime,'%Y-%m-%d %H:%i:%s') as sltd,wp_order.selltime,wp_userinfo.username as username,'desu' as realname,wp_order.ptitle as ptitle,wp_order.endprofit as endprofit,count(wp_order.oid) as odrcount,'desu' AS profitcount,'desu' AS losscount,'desu' AS flatcount,'desu' AS winnpro,sum(wp_order.fee) as feesum,sum(wp_order.fee) as tfeesum,sum(wp_order.ploss) as plosssum,sum(case when wp_order.ploss > 0 then wp_order.ploss else 0 end) AS profit,sum(case when wp_order.ploss < 0 then wp_order.ploss else 0 end) AS loss,sum(wp_order.managefee) as managefeesum,'0.00' as commissionsum,wp_department.jigou_name AS dmjig,wp_department.daili_name AS dmjinj,wp_department.huiyuan_code AS dmhuiy,'desu' AS dmshic,wp_order.eid as eid,wp_order.ostyle as ostyle,wp_order.endloss as endloss,wp_order.ucode as ucode,wp_order.orderno as orderno,wp_order.poundage as poundage,wp_userinfo.uid as uid FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid left JOIN wp_department on wp_department.code = wp_order.ucode left JOIN wp_authenticationinfo on wp_authenticationinfo.useruid = wp_userinfo.uid  WHERE ( wp_order.ostaus=0 and FROM_UNIXTIME(wp_order.buytime, '%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d') ) GROUP BY username,wp_order.ptitle,wp_order.eid, wp_order.endprofit, wp_order.endloss, sltd ORDER BY realname asc, sltd desc, wp_order.oid LIMIT 0,10   [ RunTime:0.001284s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000019s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000156s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000194s ]
+NOTIC: [8] Undefined variable: orderno /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 378 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 382 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 384 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 385 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 386 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 387 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 388 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 389 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 390 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 391 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 392 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 393 行.
+NOTIC: [8] Undefined variable: username /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 398 行.
+NOTIC: [8] Undefined variable: realname /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 402 行.
+NOTIC: [8] Undefined variable: ptitle /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 411 行.
+NOTIC: [8] Undefined variable: ptitle /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 411 行.
+NOTIC: [8] Undefined variable: ptitle /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 411 行.
+NOTIC: [8] Undefined variable: endprofit /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 416 行.
+NOTIC: [8] Undefined variable: dmjig /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 420 行.
+NOTIC: [8] Undefined variable: dmdail /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 426 行.
+NOTIC: [8] Undefined variable: dmhuiy /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 430 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.019015s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019043s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000156s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000345s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000385s ]
+
+[ 2017-05-21T22:05:49+08:00 ] 121.33.21.167 /index.php/Admin/Order/olist/ostaus/1/init/1.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000248s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000345s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000381s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002102s ]
+SQL: SHOW COLUMNS FROM `wp_order` [ RunTime:0.000584s ]
+SQL: SHOW COLUMNS FROM `wp_department` [ RunTime:0.000403s ]
+SQL: SELECT DISTINCT  `ptitle` FROM `wp_order`  [ RunTime:0.000093s ]
+SQL: SHOW COLUMNS FROM ( [ RunTime:0.000084s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM (
+SQL: SELECT COUNT(*) AS tp_count FROM ( SELECT FROM_UNIXTIME(wp_order.selltime,'%Y-%m-%d %H:%i:%s') as sltd,wp_order.selltime,wp_userinfo.username as username,'desu' as realname,wp_order.ptitle as ptitle,wp_order.endprofit as endprofit,count(wp_order.oid) as odrcount,'desu' AS profitcount,'desu' AS losscount,'desu' AS flatcount,'desu' AS winnpro,sum(wp_order.fee) as feesum,sum(wp_order.fee) as tfeesum,sum(wp_order.ploss) as plosssum,sum(case when wp_order.ploss > 0 then wp_order.ploss else 0 end) AS profit,sum(case when wp_order.ploss < 0 then wp_order.ploss else 0 end) AS loss,sum(wp_order.managefee) as managefeesum,'0.00' as commissionsum,wp_department.jigou_name AS dmjig,wp_department.daili_name AS dmjinj,wp_department.huiyuan_code AS dmhuiy,'desu' AS dmshic,wp_order.eid as eid,wp_order.ostyle as ostyle,wp_order.endloss as endloss,wp_order.ucode as ucode,wp_order.orderno as orderno,wp_order.poundage as poundage,wp_userinfo.uid as uid FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid left JOIN wp_department on wp_department.code = wp_order.ucode left JOIN wp_authenticationinfo on wp_authenticationinfo.useruid = wp_userinfo.uid  WHERE ( wp_order.ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.selltime,'%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(),'%Y-%m-%d') ) GROUP BY username,wp_order.ptitle,wp_order.eid,wp_order.endprofit,wp_order.endloss,sltd  ) ocount LIMIT 1   [ RunTime:0.004235s ]
+SQL: SELECT FROM_UNIXTIME(wp_order.selltime,'%Y-%m-%d %H:%i:%s') as sltd,wp_order.selltime,wp_userinfo.username as username,'desu' as realname,wp_order.ptitle as ptitle,wp_order.endprofit as endprofit,count(wp_order.oid) as odrcount,'desu' AS profitcount,'desu' AS losscount,'desu' AS flatcount,'desu' AS winnpro,sum(wp_order.fee) as feesum,sum(wp_order.fee) as tfeesum,sum(wp_order.ploss) as plosssum,sum(case when wp_order.ploss > 0 then wp_order.ploss else 0 end) AS profit,sum(case when wp_order.ploss < 0 then wp_order.ploss else 0 end) AS loss,sum(wp_order.managefee) as managefeesum,'0.00' as commissionsum,wp_department.jigou_name AS dmjig,wp_department.daili_name AS dmjinj,wp_department.huiyuan_code AS dmhuiy,'desu' AS dmshic,wp_order.eid as eid,wp_order.ostyle as ostyle,wp_order.endloss as endloss,wp_order.ucode as ucode,wp_order.orderno as orderno,wp_order.poundage as poundage,wp_userinfo.uid as uid FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid left JOIN wp_department on wp_department.code = wp_order.ucode left JOIN wp_authenticationinfo on wp_authenticationinfo.useruid = wp_userinfo.uid  WHERE ( wp_order.ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.selltime, '%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d') ) GROUP BY username,wp_order.ptitle,wp_order.eid, wp_order.endprofit, wp_order.endloss, sltd ORDER BY realname asc, sltd desc, wp_order.oid LIMIT 0,10   [ RunTime:0.004070s ]
+SQL: SHOW COLUMNS FROM `wp_authenticationinfo` [ RunTime:0.000361s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=775 ) LIMIT 1   [ RunTime:0.000083s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:21:05' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.001088s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:21:05' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.001067s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:21:05' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000972s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:21:05' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.001101s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000216s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=775 ) LIMIT 1   [ RunTime:0.000077s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:18:43' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.001008s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:18:43' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.001026s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:18:43' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.001013s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:18:43' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000982s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000082s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=775 ) LIMIT 1   [ RunTime:0.000080s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:11:21' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.001065s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:11:21' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.001004s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:11:21' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000990s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:11:21' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000956s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000075s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=775 ) LIMIT 1   [ RunTime:0.000076s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:08:52' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.001018s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:08:52' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.000990s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:08:52' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000942s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:08:52' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.001019s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000080s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=771 ) LIMIT 1   [ RunTime:0.000071s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 20:24:24' and wp_userinfo.username='wx100731o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.000988s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 20:24:24' and wp_userinfo.username='wx100731o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.001026s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 20:24:24' and wp_userinfo.username='wx100731o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.001004s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 20:24:24' and wp_userinfo.username='wx100731o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000949s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000082s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 12:49:42' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.001026s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 12:49:42' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.001021s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 12:49:42' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.001012s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 12:49:42' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000958s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000078s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000077s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:31:34' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.001001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:31:34' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.001088s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:31:34' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.001030s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:31:34' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.001084s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000082s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000067s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:31:28' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.001018s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:31:28' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.001006s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:31:28' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.001053s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:31:28' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.001010s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000083s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000068s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:18:15' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.001111s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:18:15' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.001031s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:18:15' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000999s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:18:15' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000992s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000084s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:12:02' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.001034s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:12:02' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.001017s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:12:02' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.001003s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:12:02' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.001023s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000094s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000014s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000128s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000175s ]
+NOTIC: [8] Undefined variable: orderno /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 378 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 382 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 384 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 385 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 386 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 387 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 388 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 389 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 390 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 391 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 392 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 393 行.
+NOTIC: [8] Undefined variable: username /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 398 行.
+NOTIC: [8] Undefined variable: realname /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 402 行.
+NOTIC: [8] Undefined variable: ptitle /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 411 行.
+NOTIC: [8] Undefined variable: ptitle /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 411 行.
+NOTIC: [8] Undefined variable: ptitle /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 411 行.
+NOTIC: [8] Undefined variable: endprofit /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 416 行.
+NOTIC: [8] Undefined variable: dmjig /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 420 行.
+NOTIC: [8] Undefined variable: dmdail /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 426 行.
+NOTIC: [8] Undefined variable: dmhuiy /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 430 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant feesum - assumed 'feesum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant poundage - assumed 'poundage' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.019807s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019837s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000139s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000166s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000374s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000413s ]
+
+[ 2017-05-21T22:07:11+08:00 ] 121.33.21.167 /index.php/Admin/Tongji/tongji.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000251s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000025s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000290s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000325s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000019s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002010s ]
+SQL: SHOW COLUMNS FROM `wp_department` [ RunTime:0.000526s ]
+SQL: SELECT `id`,`code`,`name` FROM `wp_department` WHERE ( (`code` LIKE '___') AND (`code` <> '000')  )  [ RunTime:0.000200s ]
+SQL: SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.000386s ]
+SQL: SELECT wp_productinfo.pid as pid,`displayname` FROM `wp_productinfo` INNER JOIN wp_product_lastprice on wp_productinfo.pid=wp_product_lastprice.pid  WHERE ( wp_productinfo.status=1 )  [ RunTime:0.000240s ]
+SQL: SHOW COLUMNS FROM `wp_experience` [ RunTime:0.000281s ]
+SQL: SELECT * FROM `wp_experience`  [ RunTime:0.000117s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000013s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000208s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000260s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.019222s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019282s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000139s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000167s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000020s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000339s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000373s ]
+
+[ 2017-05-21T22:07:12+08:00 ] 121.33.21.167 /index.php/Admin/Tongji/loginlist.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000270s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000307s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000341s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002039s ]
+SQL: SHOW COLUMNS FROM `wp_keyaccess` [ RunTime:0.000550s ]
+NOTIC: [8] Undefined variable: time /www/wwwroot/wpdemo/Application/Admin/Controller/TongjiController.class.php 第 823 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_keyaccess` WHERE ( `key` = 1 ) LIMIT 1   [ RunTime:0.000530s ]
+NOTIC: [8] Use of undefined constant left - assumed 'left' /www/wwwroot/wpdemo/Application/Admin/Controller/TongjiController.class.php 第 842 行.
+SQL: SELECT wp_keyaccess.*,wp_userinfo.username as username FROM `wp_keyaccess` left JOIN wp_userinfo on wp_userinfo.uid=wp_keyaccess.outid  WHERE ( `key` = 1 ) ORDER BY accesstime desc LIMIT 0,20   [ RunTime:0.000710s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000021s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000148s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000190s ]
+NOTIC: [8] Undefined variable: ostaus /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/5a009507504c071cf8ae9d8a686465ce.php 第 373 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.015403s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015436s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000167s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000202s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000328s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000367s ]
+
+[ 2017-05-21T22:07:16+08:00 ] 121.33.21.167 /index.php/Admin/Order/olist/ostaus/0/init/1.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000303s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000337s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000380s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002230s ]
+SQL: SHOW COLUMNS FROM `wp_order` [ RunTime:0.000607s ]
+SQL: SHOW COLUMNS FROM `wp_department` [ RunTime:0.000377s ]
+SQL: SELECT DISTINCT  `ptitle` FROM `wp_order`  [ RunTime:0.000084s ]
+SQL: SHOW COLUMNS FROM ( [ RunTime:0.000077s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM (
+SQL: SELECT COUNT(*) AS tp_count FROM ( SELECT FROM_UNIXTIME(wp_order.selltime,'%Y-%m-%d %H:%i:%s') as sltd,wp_order.selltime,wp_userinfo.username as username,'desu' as realname,wp_order.ptitle as ptitle,wp_order.endprofit as endprofit,count(wp_order.oid) as odrcount,'desu' AS profitcount,'desu' AS losscount,'desu' AS flatcount,'desu' AS winnpro,sum(wp_order.fee) as feesum,sum(wp_order.fee) as tfeesum,sum(wp_order.ploss) as plosssum,sum(case when wp_order.ploss > 0 then wp_order.ploss else 0 end) AS profit,sum(case when wp_order.ploss < 0 then wp_order.ploss else 0 end) AS loss,sum(wp_order.managefee) as managefeesum,'0.00' as commissionsum,wp_department.jigou_name AS dmjig,wp_department.daili_name AS dmjinj,wp_department.huiyuan_code AS dmhuiy,'desu' AS dmshic,wp_order.eid as eid,wp_order.ostyle as ostyle,wp_order.endloss as endloss,wp_order.ucode as ucode,wp_order.orderno as orderno,wp_order.poundage as poundage,wp_userinfo.uid as uid FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid left JOIN wp_department on wp_department.code = wp_order.ucode left JOIN wp_authenticationinfo on wp_authenticationinfo.useruid = wp_userinfo.uid  WHERE ( wp_order.ostaus=0 and FROM_UNIXTIME(wp_order.buytime,'%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(),'%Y-%m-%d') ) GROUP BY username,wp_order.ptitle,wp_order.eid,wp_order.endprofit,wp_order.endloss,sltd  ) ocount LIMIT 1   [ RunTime:0.001495s ]
+SQL: SELECT FROM_UNIXTIME(wp_order.selltime,'%Y-%m-%d %H:%i:%s') as sltd,wp_order.selltime,wp_userinfo.username as username,'desu' as realname,wp_order.ptitle as ptitle,wp_order.endprofit as endprofit,count(wp_order.oid) as odrcount,'desu' AS profitcount,'desu' AS losscount,'desu' AS flatcount,'desu' AS winnpro,sum(wp_order.fee) as feesum,sum(wp_order.fee) as tfeesum,sum(wp_order.ploss) as plosssum,sum(case when wp_order.ploss > 0 then wp_order.ploss else 0 end) AS profit,sum(case when wp_order.ploss < 0 then wp_order.ploss else 0 end) AS loss,sum(wp_order.managefee) as managefeesum,'0.00' as commissionsum,wp_department.jigou_name AS dmjig,wp_department.daili_name AS dmjinj,wp_department.huiyuan_code AS dmhuiy,'desu' AS dmshic,wp_order.eid as eid,wp_order.ostyle as ostyle,wp_order.endloss as endloss,wp_order.ucode as ucode,wp_order.orderno as orderno,wp_order.poundage as poundage,wp_userinfo.uid as uid FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid left JOIN wp_department on wp_department.code = wp_order.ucode left JOIN wp_authenticationinfo on wp_authenticationinfo.useruid = wp_userinfo.uid  WHERE ( wp_order.ostaus=0 and FROM_UNIXTIME(wp_order.buytime, '%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d') ) GROUP BY username,wp_order.ptitle,wp_order.eid, wp_order.endprofit, wp_order.endloss, sltd ORDER BY realname asc, sltd desc, wp_order.oid LIMIT 0,10   [ RunTime:0.001215s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000165s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000209s ]
+NOTIC: [8] Undefined variable: orderno /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 378 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 382 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 384 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 385 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 386 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 387 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 388 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 389 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 390 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 391 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 392 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 393 行.
+NOTIC: [8] Undefined variable: username /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 398 行.
+NOTIC: [8] Undefined variable: realname /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 402 行.
+NOTIC: [8] Undefined variable: ptitle /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 411 行.
+NOTIC: [8] Undefined variable: ptitle /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 411 行.
+NOTIC: [8] Undefined variable: ptitle /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 411 行.
+NOTIC: [8] Undefined variable: endprofit /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 416 行.
+NOTIC: [8] Undefined variable: dmjig /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 420 行.
+NOTIC: [8] Undefined variable: dmdail /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 426 行.
+NOTIC: [8] Undefined variable: dmhuiy /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 430 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.019215s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.019252s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000134s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000181s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000350s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000390s ]
+
+[ 2017-05-21T22:07:18+08:00 ] 121.33.21.167 /index.php/Admin/Order/olist/ostaus/1/init/1.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000269s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000299s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000333s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002106s ]
+SQL: SHOW COLUMNS FROM `wp_order` [ RunTime:0.000586s ]
+SQL: SHOW COLUMNS FROM `wp_department` [ RunTime:0.000384s ]
+SQL: SELECT DISTINCT  `ptitle` FROM `wp_order`  [ RunTime:0.000101s ]
+SQL: SHOW COLUMNS FROM ( [ RunTime:0.000084s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '(' at line 1
+ [ SQL语句 ] : SHOW COLUMNS FROM (
+SQL: SELECT COUNT(*) AS tp_count FROM ( SELECT FROM_UNIXTIME(wp_order.selltime,'%Y-%m-%d %H:%i:%s') as sltd,wp_order.selltime,wp_userinfo.username as username,'desu' as realname,wp_order.ptitle as ptitle,wp_order.endprofit as endprofit,count(wp_order.oid) as odrcount,'desu' AS profitcount,'desu' AS losscount,'desu' AS flatcount,'desu' AS winnpro,sum(wp_order.fee) as feesum,sum(wp_order.fee) as tfeesum,sum(wp_order.ploss) as plosssum,sum(case when wp_order.ploss > 0 then wp_order.ploss else 0 end) AS profit,sum(case when wp_order.ploss < 0 then wp_order.ploss else 0 end) AS loss,sum(wp_order.managefee) as managefeesum,'0.00' as commissionsum,wp_department.jigou_name AS dmjig,wp_department.daili_name AS dmjinj,wp_department.huiyuan_code AS dmhuiy,'desu' AS dmshic,wp_order.eid as eid,wp_order.ostyle as ostyle,wp_order.endloss as endloss,wp_order.ucode as ucode,wp_order.orderno as orderno,wp_order.poundage as poundage,wp_userinfo.uid as uid FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid left JOIN wp_department on wp_department.code = wp_order.ucode left JOIN wp_authenticationinfo on wp_authenticationinfo.useruid = wp_userinfo.uid  WHERE ( wp_order.ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.selltime,'%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(),'%Y-%m-%d') ) GROUP BY username,wp_order.ptitle,wp_order.eid,wp_order.endprofit,wp_order.endloss,sltd  ) ocount LIMIT 1   [ RunTime:0.004108s ]
+SQL: SELECT FROM_UNIXTIME(wp_order.selltime,'%Y-%m-%d %H:%i:%s') as sltd,wp_order.selltime,wp_userinfo.username as username,'desu' as realname,wp_order.ptitle as ptitle,wp_order.endprofit as endprofit,count(wp_order.oid) as odrcount,'desu' AS profitcount,'desu' AS losscount,'desu' AS flatcount,'desu' AS winnpro,sum(wp_order.fee) as feesum,sum(wp_order.fee) as tfeesum,sum(wp_order.ploss) as plosssum,sum(case when wp_order.ploss > 0 then wp_order.ploss else 0 end) AS profit,sum(case when wp_order.ploss < 0 then wp_order.ploss else 0 end) AS loss,sum(wp_order.managefee) as managefeesum,'0.00' as commissionsum,wp_department.jigou_name AS dmjig,wp_department.daili_name AS dmjinj,wp_department.huiyuan_code AS dmhuiy,'desu' AS dmshic,wp_order.eid as eid,wp_order.ostyle as ostyle,wp_order.endloss as endloss,wp_order.ucode as ucode,wp_order.orderno as orderno,wp_order.poundage as poundage,wp_userinfo.uid as uid FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid left JOIN wp_department on wp_department.code = wp_order.ucode left JOIN wp_authenticationinfo on wp_authenticationinfo.useruid = wp_userinfo.uid  WHERE ( wp_order.ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.selltime, '%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d') ) GROUP BY username,wp_order.ptitle,wp_order.eid, wp_order.endprofit, wp_order.endloss, sltd ORDER BY realname asc, sltd desc, wp_order.oid LIMIT 0,10   [ RunTime:0.003855s ]
+SQL: SHOW COLUMNS FROM `wp_authenticationinfo` [ RunTime:0.000357s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=775 ) LIMIT 1   [ RunTime:0.000084s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:21:05' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.000077s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:21:05' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.000084s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:21:05' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000083s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:21:05' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000089s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000078s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=775 ) LIMIT 1   [ RunTime:0.000067s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:18:43' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:18:43' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.000090s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:18:43' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000071s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:18:43' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000071s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000078s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=775 ) LIMIT 1   [ RunTime:0.000064s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:11:21' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.000106s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:11:21' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.000079s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:11:21' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:11:21' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000133s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000120s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=775 ) LIMIT 1   [ RunTime:0.000095s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:08:52' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.000081s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:08:52' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.000081s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:08:52' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000097s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 21:08:52' and wp_userinfo.username='wx100735o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000103s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000101s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=771 ) LIMIT 1   [ RunTime:0.000086s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 20:24:24' and wp_userinfo.username='wx100731o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.000079s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 20:24:24' and wp_userinfo.username='wx100731o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.000102s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 20:24:24' and wp_userinfo.username='wx100731o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000090s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 20:24:24' and wp_userinfo.username='wx100731o' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000075s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000079s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 12:49:42' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.000093s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 12:49:42' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.000070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 12:49:42' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000074s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 12:49:42' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000069s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000094s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000068s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:31:34' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.000070s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:31:34' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.000074s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:31:34' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000070s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:31:34' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000077s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000100s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000098s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:31:28' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.000091s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:31:28' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.000089s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:31:28' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000077s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:31:28' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000069s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000072s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:18:15' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.000074s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:18:15' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.000099s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:18:15' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000088s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:18:15' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000075s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000073s ]
+SQL: SELECT `realname` FROM `wp_authenticationinfo` WHERE ( useruid=758 ) LIMIT 1   [ RunTime:0.000072s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:12:02' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss>0 ) LIMIT 1   [ RunTime:0.000073s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:12:02' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss<0 ) LIMIT 1   [ RunTime:0.000067s ]
+SQL: SELECT COUNT(*) AS tp_count FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:12:02' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000080s ]
+SQL: SELECT sum(fee) as tfeesum FROM `wp_order` left JOIN wp_userinfo on wp_userinfo.uid = wp_order.uid  WHERE ( ostaus=1 and wp_order.settlementdate<>'' and FROM_UNIXTIME(wp_order.settlementdate, '%Y-%m-%d')='2017-05-21 11:12:02' and wp_userinfo.username='wx100718M' and wp_order.ptitle='比特币BTC' and wp_order.eid='2' and wp_order.endprofit='1.00' and wp_order.endloss='90' and wp_order.ploss=0 ) LIMIT 1   [ RunTime:0.000071s ]
+SQL: SELECT `name` FROM `wp_department` WHERE ( code=000 ) LIMIT 1   [ RunTime:0.000080s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000015s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000126s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000168s ]
+NOTIC: [8] Undefined variable: orderno /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 378 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 382 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 384 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 385 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 386 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 387 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 388 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 389 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 390 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 391 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 392 行.
+NOTIC: [8] Undefined variable: history /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 393 行.
+NOTIC: [8] Undefined variable: username /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 398 行.
+NOTIC: [8] Undefined variable: realname /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 402 行.
+NOTIC: [8] Undefined variable: ptitle /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 411 行.
+NOTIC: [8] Undefined variable: ptitle /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 411 行.
+NOTIC: [8] Undefined variable: ptitle /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 411 行.
+NOTIC: [8] Undefined variable: endprofit /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 416 行.
+NOTIC: [8] Undefined variable: dmjig /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 420 行.
+NOTIC: [8] Undefined variable: dmdail /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 426 行.
+NOTIC: [8] Undefined variable: dmhuiy /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 430 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant feesum - assumed 'feesum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant poundage - assumed 'poundage' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+NOTIC: [8] Use of undefined constant plosssum - assumed 'plosssum' /www/wwwroot/wpdemo/Application/Runtime/Cache/Admin/19e470d3f63b82814bb4884d7808cf5e.php 第 530 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.018700s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.018732s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000134s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000163s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000012s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000338s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000369s ]
+
+[ 2017-05-21T22:10:51+08:00 ] 180.153.206.23 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000342s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000019s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000416s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000457s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000021s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002800s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000047s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000090s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003560s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003592s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000120s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000146s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000009s ]
+
+[ 2017-05-21T22:10:53+08:00 ] 180.153.214.189 /index.php/Admin/Index/index.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000251s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000356s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000391s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:-0.002147s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000022s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000055s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003351s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003384s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000167s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000228s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000010s ]
+
+[ 2017-05-21T23:53:24+08:00 ] 121.33.21.167 /
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000254s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000297s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000335s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000019s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000012s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000030s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000064s ]
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003032s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000130s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000157s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000319s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000347s ]
+
+[ 2017-05-21T23:53:26+08:00 ] 121.33.21.167 /index.php/Home/Index/index.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000269s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000301s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000339s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000021s ]
+SQL: SHOW COLUMNS FROM `wp_product_lastprice` [ RunTime:0.000513s ]
+SQL: SELECT wp_product_lastprice.pid as pid,wp_product_lastprice.code as code,`displayname`,`ask`,`eidtime`,`tradeperiod` FROM `wp_product_lastprice` INNER JOIN wp_productinfo on wp_product_lastprice.pid=wp_productinfo.pid and wp_productinfo.status=1  ORDER BY wp_productinfo.sort asc  [ RunTime:0.000113s ]
+NOTIC: [8] Undefined index: uid /www/wwwroot/wpdemo/Application/Home/Controller/IndexController.class.php 第 154 行.
+SQL: SHOW COLUMNS FROM `wp_order` [ RunTime:0.000374s ]
+SQL: SELECT * FROM `wp_order` INNER JOIN wp_product_lastprice on wp_order.pid=wp_product_lastprice.pid  WHERE ( wp_order.uid= and ostaus=0 )  [ RunTime:0.000124s ]
+ERR: 1064:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'and ostaus=0 )' at line 1
+ [ SQL语句 ] : SELECT * FROM `wp_order` INNER JOIN wp_product_lastprice on wp_order.pid=wp_product_lastprice.pid  WHERE ( wp_order.uid= and ostaus=0 ) 
+SQL: SHOW COLUMNS FROM `wp_newsinfo` [ RunTime:0.000346s ]
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=1 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000099s ]
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=2 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000070s ]
+SQL: SELECT * FROM `wp_newsinfo` WHERE ( ncategory=3 ) ORDER BY nid desc LIMIT 3   [ RunTime:0.000066s ]
+SQL: SHOW COLUMNS FROM `wp_webconfig` [ RunTime:0.000428s ]
+SQL: SELECT * FROM `wp_webconfig` LIMIT 1   [ RunTime:0.000095s ]
+SQL: SHOW COLUMNS FROM `wp_productinfo` [ RunTime:0.000359s ]
+SQL: SELECT * FROM `wp_productinfo` WHERE ( pid=35 ) LIMIT 1   [ RunTime:0.000087s ]
+SQL: SHOW COLUMNS FROM `wp_workcalendar` [ RunTime:0.000338s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=35 and fulldate=1495296000 ) LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=35 and fulldate=1495209600 ) LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT * FROM `wp_productinfo` WHERE ( pid=37 ) LIMIT 1   [ RunTime:0.000089s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=37 and fulldate=1495296000 ) LIMIT 1   [ RunTime:0.000081s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=37 and fulldate=1495209600 ) LIMIT 1   [ RunTime:0.000096s ]
+SQL: SELECT * FROM `wp_productinfo` WHERE ( pid=38 ) LIMIT 1   [ RunTime:0.000089s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=38 and fulldate=1495296000 ) LIMIT 1   [ RunTime:0.000085s ]
+SQL: SELECT * FROM `wp_workcalendar` WHERE ( productpid=38 and fulldate=1495209600 ) LIMIT 1   [ RunTime:0.000080s ]
+SQL: SHOW COLUMNS FROM `wp_content` [ RunTime:0.000303s ]
+SQL: SELECT * FROM `wp_content`  [ RunTime:0.000088s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000011s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000162s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000201s ]
+NOTIC: [8] Undefined index: checkpw /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 83 行.
+NOTIC: [8] Undefined index: husername /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 113 行.
+NOTIC: [8] Undefined variable: user /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 475 行.
+NOTIC: [8] Undefined variable: price /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 482 行.
+NOTIC: [8] Undefined variable: price /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 482 行.
+NOTIC: [8] Undefined variable: price /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 482 行.
+NOTIC: [8] Undefined variable: price /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 484 行.
+NOTIC: [8] Undefined variable: user /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/2a94b8bda04ff446dcedd42276fc99ee.php 第 692 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.011018s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.011049s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000129s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000166s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000011s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000313s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000342s ]
+
+[ 2017-05-21T23:53:37+08:00 ] 121.33.21.167 /index.php/Home/Index/updateriskread.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000277s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000018s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000323s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000357s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000018s ]
+
+[ 2017-05-21T23:53:37+08:00 ] 121.33.21.167 /index.php/Home/User/login.html
+INFO: [ app_init ] --START--
+INFO: [ app_init ] --END-- [ RunTime:0.000268s ]
+INFO: [ path_info ] --START--
+INFO: [ path_info ] --END-- [ RunTime:0.000017s ]
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCache [ RunTime:0.000338s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000372s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+SQL: SHOW COLUMNS FROM `wp_keyaccess` [ RunTime:0.000552s ]
+SQL: SHOW COLUMNS FROM `wp_userinfo` [ RunTime:0.000418s ]
+INFO: [ view_begin ] --START--
+INFO: [ view_begin ] --END-- [ RunTime:0.000016s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplace [ RunTime:0.000041s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000078s ]
+NOTIC: [8] Undefined variable: errorMsg /www/wwwroot/wpdemo/Application/Runtime/Cache/Home/5c9ee6d19cd41add49f97afe3aef0b25.php 第 56 行.
+INFO: Run Behavior\ParseTemplate [ RunTime:0.003846s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.003874s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCache [ RunTime:0.000123s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000151s ]
+INFO: [ view_end ] --START--
+INFO: [ view_end ] --END-- [ RunTime:0.000008s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTrace [ RunTime:0.000338s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000368s ]
+

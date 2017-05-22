@@ -1,0 +1,97 @@
+<extend name="Base/footer"/>
+<block name="content">
+<link rel="stylesheet" href="__CSS__/global.css">
+<link rel="stylesheet" href="__CSS__/account.css">
+<link rel="stylesheet" href="__CSS__/common.css" />
+<style>
+.cha{
+    width: 60%;
+    height: 33px;
+    border: 1px solid #dedede;
+    background: #fff;
+    font-size: 1.1rem;
+    line-height: 33px;
+	color: #ed0000;
+}
+.f-sub{
+    margin-top: 5%;
+    display:block;
+    width: 60%;
+    border: 0;
+    border-radius: 5px;
+    background: #0d216a;
+    padding: .3em 0;
+    cursor: pointer;
+    font-size: 1.8rem;
+    text-align: center;
+    color: #fff;
+}
+.block_list{
+	width: 25vw;
+	float:left;
+    height: 65px;
+	margin-top: 30px;
+	margin-right:20px;
+	text-align: center;
+    /*line-height: 40px;*/
+	padding-top:10px;
+	border: 1px solid;
+}
+.block_list span {
+    font-size: 1.2rem;
+    width: 100%;
+    display: block;
+    color: #fff;
+}
+</style>
+
+<script id="G--xyscore-load" type="text/javascript" charset="utf-8" async src="__JS__/xyscore_main.js"></script>
+
+<body style="overflow:scroll;">
+<div class="wrap">
+  <!-- <div class="index" style="min-height: 1114px;"> -->
+  <div class="index">
+  <div class="txss">
+      <div class="tx" style="margin-top:6px"><if condition="$suer.portrait eq ''"><img src="__IMG__/pic.gif"><else/><img src="{$suer.portrait}"></if></div>
+        <div class="gezh">
+          <div class="grzhx"><p class="a-d">账号：<b>{$suer.username}</b></p></div>
+		  <!--
+          <div class="grzhx"><p class="a-d">余额：{$result.balance}&nbsp;元</p></div>
+          
+          <div class="cztz"><empty name='isinweixin'><a href="{:U('User/logout')}" class="acc-btn red">退出</a></empty><a href="{:U('User/deposit')}" class="acc-btn red">充值</a> <a href="{:U('User/withdraw')}" class="acc-btn blue">提现</a></div>
+          -->
+		  <div class="block_list">
+		    <span style="color:#FFF;">账户余额</span>
+			<span style="color:#FFF;">{$balance}</span>
+		  </div>
+		  
+		  <div class="block_list">
+		    <span style="color:#FFF;">可用金额</span>
+			<span style="color:#FFF;">{$can_use}</span>
+		  </div>
+		  
+		  <div class="block_list">
+		    <span style="color:#FFF;">&nbsp;今日盈亏&nbsp;</span>
+			<span style="color:#FFF;">&nbsp;&nbsp;{$ploss?$ploss:'-'}&nbsp;&nbsp;</span>
+		  </div>
+		  
+		  <div class="block_list">
+		    <span style="color:#FFF;">今日交易</span>
+			<span style="color:#FFF;">&nbsp;&nbsp;{$buy_count}&nbsp;&nbsp;</span>
+		  </div>
+		  
+		  <div class="block_list">
+		    <span style="color:#FFF;">&nbsp;胜率&nbsp;</span>
+			<span style="color:#FFF;">&nbsp;&nbsp;{$w_odds}%&nbsp;&nbsp;</span>
+		  </div>
+        </div>
+        <div class="clearfix"></div>
+    </div>
+</div>
+<script src="__JS__/jquery-2.1.1.min.js"></script>
+<script src="__JS__/script.js"></script>
+<script type="text/javascript" charset="utf-8" src="__JS__/sea.js" async></script>
+
+</body>
+</block>
+

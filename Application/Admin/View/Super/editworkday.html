@@ -1,0 +1,105 @@
+<extend name="Base/common"/>
+<block name="content">
+	<!-- this page specific styles -->
+	<link rel="stylesheet" href="__CSS__/compiled/article-add.css" type="text/css" media="screen" />
+    <div class="container-fluid">
+        <div id="pad-wrapper" class="form-page">
+			 <div class="row-fluid header">
+                <h3>日历管理&nbsp;>&nbsp;修改日历</h3>
+            </div>
+            <div class="row-fluid form-wrapper">
+            	<form action="{:U('Super/editworkday')}" method="post">
+                <!-- left column -->
+                <div class="span8 column">
+                    <input type="hidden" name="uid" value="{$info['uid']}"/>
+                    <input type="hidden" name="productpid" value="{$info['productpid']}"/>
+                    <input type="hidden" name="fulldate" value="{$fulldate}"/>
+                    <div class="field-box">
+                        <label>日期：</label>
+                        <input class="span3" type="text" name="fulldateY" value="{$fulldateY}" readonly="readonly"/>
+                        <input class="span3" type="text" name="week" value="{$weekname}" readonly="readonly"/>
+                    </div>
+                    <div class="field-box">
+                        <label>状态:</label>
+                        <div class="ui-select span5">
+                            <select style="width:95%" name="isworkday">
+                                <option <if condition='$info.isworkday eq "0"'> selected </if> value="0">休市</option>
+                                <option <if condition='$info.isworkday eq "1"'> selected </if> value="1">开市</option>
+                            </select>
+                        </div>
+                    </div>
+					<div class="field-box">
+						<label>时间：</label>
+						<div class="span8">
+						<table class='table'>
+							<thead>
+								<tr>
+									<th class="span3">
+										<span ></span>开始时刻
+									</th>
+									<th class="span3">
+										<span ></span>结束时刻
+									</th>
+									<th class="span1">
+										<span ></span>操作
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr  class="first">
+									<td>
+										<volist name="period" id='p'>
+											<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易开始时间(例子：0600（凌晨6点整）)" data-placement="right" name="tstart[]" value="{$p.s}"/><br>
+										</volist>
+									</td>
+									<td>
+										<volist name="period" id='p'>
+											<input style="width:100%" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入交易结束时间(例子：0400（凌晨4点整）)" data-placement="right" name="tend[]"  value="{$p.e}"/><br>
+										</volist>
+									</td>
+									<td>
+										<span class="glyphicon glyphicon-plus peroidplus" style="color: rgb(40, 23, 34); text-shadow: none;font-size: 21px;padding:3px;"> </span>
+									</td>
+								</tr>
+							</tbody>
+						</table>
+						</div>
+					</div>	
+                    <div class="field-box actions">
+						<input type="button" class="btn-glow primary" onclick="save(this.form)" value="保存">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" class="btn-glow primary" onclick="goback()" value="返回">
+					</div>
+					</form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end main container -->
+
+<!-- scripts for this page -->
+<script src="__JS__/jquery-latest.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
+<script src="__JS__/theme.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		setdashboardmenu("产品管理");
+		
+		$(".peroidplus").click(function (){
+			var parent_tr = this.parentNode.parentNode;
+			var startInput = parent_tr.children[0].children[0].cloneNode(true);
+			var endInput = parent_tr.children[1].children[0].cloneNode(true);
+			parent_tr.children[0].appendChild(startInput);
+			parent_tr.children[1].appendChild(endInput);
+		});
+	});
+	function save(obj){
+        if (confirm("确定要保存修改吗？")) {
+        	$(obj).submit();
+        }
+	}
+	
+	function goback(){
+		window.history.back(-1);
+	}
+</script>
+</block>

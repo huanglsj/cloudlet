@@ -1,0 +1,117 @@
+<extend name="Base/common"/>
+<block name="content">
+	<!-- this page specific styles -->
+	<link rel="stylesheet" href="__CSS__/compiled/article-add.css" type="text/css" media="screen" />
+	<link href="__CSS__/zTree/zTreeStyle.css" rel="stylesheet" />
+	<link href="__CSS__/zTree/demo.css" rel="stylesheet" />
+	<!-- scripts -->
+<script src="__JS__/jquery-latest.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
+<script src="__JS__/bootstrap.datepicker.js"></script>
+<script src="__JS__/theme.js"></script>
+<script src="__JS__/jquery.ztree.core-3.5.js"></script>
+<script src="__JS__/jquery.ztree.excheck-3.5.js"></script>
+    <div class="container-fluid">
+        <div id="pad-wrapper" class="form-page">
+			 <div class="row-fluid header">
+                <h3>角色编辑</h3>
+            </div>
+            <div class="row-fluid form-wrapper">
+            	<form action="{:U('Super/redit')}" method="post">
+                <!-- left column -->
+                <div class="span8 column">
+                    <input type="hidden" name="id" value="{$info['id']}"/>
+                    <input type="hidden" name="deptid" value="{$info['deptid']}"/>
+                    <input type="hidden" name="checkedKey" value=""/>
+					<div class="field-box">
+						<label>角色名称：</label>
+						<input class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入角色名称" data-placement="right" id="rname" name="rname" value="{$info['name']}"/>
+					</div>
+					<div class="field-box">
+                        <label>角色类型:</label>
+                        <input type="hidden" name="rtype" value="{$info['rtype']}"/>
+                        <if condition='$info.rtype eq "1"'>
+                            <input class="span8" type="text" value="总公司人员角色" readonly="readonly"/>
+                        </if>
+                        <if condition='$info.rtype eq "2"'>
+                            <input class="span8" type="text" value="会员人员角色" readonly="readonly"/>
+                        </if>
+                        <if condition='$info.rtype eq "3"'>
+                            <input class="span8" type="text" value="代理人员角色" readonly="readonly"/>
+                        </if>
+                        <if condition='$info.rtype eq "4"'>
+                            <input class="span8" type="text" value="机构人员角色" readonly="readonly"/>
+                        </if>
+                    </div>
+                    <div class="field-box">
+                        <label>状态:</label>
+                        <div class="ui-select span5">
+                            <select style="width:95%" name="state">
+                                <option <if condition='$info.state eq "1"'> selected </if> value="1">正常</option>
+                                <option <if condition='$info.state eq "2"'> selected </if> value="2">无效</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="field-box">
+                        <label>设为默认角色:</label>
+                        <input type="checkbox" name="isdefault" value="1" <if condition='$info.isdefault eq "1"'>checked</if> ></input>
+                    </div>
+					<div class="field-box">
+						<label>备注：</label>
+						<input class="span8" type="text" data-toggle="tooltip" data-trigger="focus" title="请输入备注信息" data-placement="right" name="remarks" value="{$info['remarks']}"/>
+					</div>
+					<div class="field-box">
+                        <label>权限选择：</label>
+						<div class="zTreeDemoBackground left" style="padding-left: 145px">
+							<ul id="tree" class="ztree"></ul>
+						</div>
+					</div>
+                    
+					<div class="field-box actions">
+                        <input type="button" class="btn-glow primary" onclick="dosubmit(this.form)" value="提交">
+                    </div>
+                </div>
+				</form>
+            </div>
+        </div>
+    </div>
+<!-- end main container -->
+<SCRIPT type="text/javascript">
+    var setting = {
+        check: {
+            enable: true
+        },
+        data: {
+            simpleData: {
+                enable: true
+            }
+        }
+    };
+    
+    function dosubmit(obj){
+        var rname = $("#rname").val();
+        if(rname == ""){
+            alert("请输入角色名称！");
+            return false;
+        }
+        
+        var checkedKey = new Array();
+        var zTree = $.fn.zTree.getZTreeObj("tree");
+        var checkedKey = new Array();
+        $(zTree.getCheckedNodes(true)).each(function(){
+        	checkedKey.push(this.key);
+        })
+        if(checkedKey.length > 0){
+        	$("input[name=checkedKey]").val(checkedKey.toString());
+        } else {
+        	$("input[name=checkedKey]").val("");
+        }
+        $(obj).submit();
+    }
+    
+    $(document).ready(function(){
+    	setdashboardmenu("权限管理");
+        $.fn.zTree.init($("#tree"), setting, {$parray});
+    });
+</SCRIPT>
+</block>

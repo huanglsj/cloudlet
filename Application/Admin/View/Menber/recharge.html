@@ -1,0 +1,224 @@
+<extend name="Base/common"/>
+<block name="content">
+<!-- this page specific styles -->
+<link rel="stylesheet" href="__CSS__/compiled/user-list.css" type="text/css" media="screen" />
+<link href="__CSS__/lib/bootstrap.datepicker.css" type="text/css" rel="stylesheet" />
+<style type="text/css">
+input.search {
+	background:none !important;
+	width:150px !important;
+}
+select {
+	width:150px !important;
+}
+</style>
+    
+<div class="container-fluid">
+  <form method="get" action="{:U('recharge')}" name="search">
+    <div id="pad-wrapper" class="users-list">
+      <div class="row-fluid header">
+          <h3>
+		    <if condition="$optype eq 1">充值列表
+			<elseif condition="$optype eq 2"/>提现列表
+			</if>
+		  </h3>
+          <div class="span10 pull-right">
+		      <input type="hidden" name="optype" value="{$optype}"/>
+              <div class="tpsearch">
+              	会员编号
+              	<input type="text" class="span6 search" name="deptcode" value="{$deptcode}"/>
+              </div>
+              <div class="tpsearch">
+              	操作日期
+              	<input type="text" data-date-format="yyyy-mm-dd" class="input-large datepicker" style="margin-bottom: 0;" name="opdate" value="{$opdate}">
+              </div>
+              <div class="tpsearch">
+              	操作状态
+              	<select id="ostyle" class="span6" name="state">
+                    <option value="">全部</option>
+                    <option value="1" <php>if($state==1)echo 'selected'</php>>开始</option>
+                    <option value="2" <php>if($state==2)echo 'selected'</php>>成功</option>
+                    <option value="3" <php>if($state==3)echo 'selected'</php>>失败</option>
+              	</select>
+              </div>
+          </div>
+		  <if condition="$optype eq 2">
+          <div class="span10 pull-right" style="margin-top:10px">
+              <div class="tpsearch">
+              	审核状态
+              	<select id="ostyle" class="span6" name="checkstate">
+                    <option value="">全部</option>
+                    <option value="1" <php>if($checkstate==1)echo 'selected'</php>>待审核</option>
+                    <option value="2" <php>if($checkstate==2)echo 'selected'</php>>审核通过</option>
+                    <option value="3" <php>if($checkstate==3)echo 'selected'</php>>审核拒绝</option>
+                    <option value="100" <php>if($checkstate==100)echo 'selected'</php>>自动审核</option>
+              	</select>
+              </div>
+              <div class="tpsearch">
+              	审核人&nbsp;
+              	<input type="text" class="span6 search" name="checkuser" value="{$checkuser}"/>
+              </div>
+              <div class="tpsearch">
+              	审核日期
+              	<input type="text" data-date-format="yyyy-mm-dd" class="input-large datepicker" style="margin-bottom: 0;" name="checkdate" id="checkdate" value="{$checkdate}">
+              </div>
+          </div>
+		  </if>
+          <div class="span10 pull-right" style="margin-top:10px;margin-bottom:10px">
+              <div class="tpsearch">
+              	途径&nbsp;&nbsp;
+              	<select id="ostyle" class="span6" name="payway">
+                    <option value="">全部</option>
+                    <option value="weixin" <php>if($payway=='weixin')echo 'selected'</php>>微信</option>
+                    <option value="alipay" <php>if($payway=='alipay')echo 'selected'</php>>支付宝</option>
+                    <option value="unionpay" <php>if($payway=='unionpay')echo 'selected'</php>>银联</option>
+              	</select>
+              </div>
+	          <div class="tpsearch">
+	          	<a href="javascript:void(0)" class="btn-flat info" onclick="document.forms['search'].submit();">开始查找</a>
+	          </div>
+          </div>
+    
+        <!-- Users table -->
+        <div class="row-fluid table">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th class="span2">
+                            编号
+                        </th>
+                        <th class="span2">
+                            <span class="line"></span>会员编号
+                        </th>
+                        <!--<th class="span2">-->
+                            <!--<span class="line"></span>会员姓名-->
+                        <!--</th>-->
+                        <th class="span2">
+                            <span class="line"></span>时间
+                        </th>
+						<th class="span2">
+                            <span class="line"></span>状态
+                        </th>
+						<th class="span2">
+                            <span class="line"></span>途径
+                        </th>
+						<th class="span2">
+                            <span class="line"></span>金额
+                        </th>
+						<if condition="$optype eq 2">
+						<th class="span2">
+                            <span class="line"></span>手续费
+                        </th>
+                        <th class="span2">
+                            <span class="line"></span>审核状态
+                        </th>
+						<th class="span2">
+                            <span class="line"></span>审核人
+                        </th>
+						<th class="span2">
+                            <span class="line"></span>审核时间
+                        </th>
+						</if>
+                    </tr>
+                </thead>
+                <tbody id="ajaxback">
+				<volist name="rechargelist" id="relist">
+                <!-- row -->
+                <tr class="first">
+					<td>
+                        <a href="{:U('rechargedetail', array('id'=>$relist['id']))}">{$relist.id}</a>
+                    </td>
+                    <td>
+                        <a href="{:U('mupdate',array('cid'=>$relist['cid']))}">{$relist.deptcode}</a>
+                    </td>
+                    <!--<td>{$relist.realname}</td>-->
+                    <td>
+                        {$relist.begintime|date='Y-m-d H:i',###}
+                    </td>
+                    <td>
+                    	<if condition="$relist.state eq '1' ">
+                        开始
+                        <elseif condition="$relist.state eq '2' "/>
+                        成功
+                        <elseif condition="$relist.state eq '3' "/>
+                        失败
+                        </if>
+                    </td>
+                    <td>
+                    	<if condition="($relist.payway eq '1') or ($relist.payway eq '4') ">
+                        微信
+                        <elseif condition="($relist.payway eq '2') or ($relist.payway eq '6') "/>
+                        支付宝
+                        <elseif condition="$relist.payway eq '5' "/>
+                        银联
+                        </if>
+                    </td>
+                    <td>
+                        {$relist.amount}
+                    </td>
+					<if condition="$optype eq 2">
+                    <td>
+						{$relist.fee}
+                    </td>
+                    <td>
+                    	<if condition="$relist.checkstate eq '1' ">
+                        待审
+                        <elseif condition="($relist.checkstate eq '2') or ($relist.checkstate eq '100')"/>
+                        通过
+                        <elseif condition="$relist.checkstate eq '3' "/>
+                        拒绝
+                        </if>
+                    </td>
+                    <td>
+					 <if condition="$relist.checkstate neq '1' ">
+						<if condition="$relist.checkuserid eq 0">
+						系统自动
+						<else/>
+						{$relist.checkuser}
+						</if>
+					 </if>
+                    </td>
+                    <td>
+					  <if condition="$relist.checkstate neq '1' ">
+                        {$relist.checktime|date='Y-m-d H:i',###}
+					  </if>
+                    </td>
+					</if>
+                </tr>
+                <!-- row -->
+				</volist>
+                </tbody>
+            </table>
+        </div>
+		<div class="qjcz">
+		统计：（次数：<font color="#f00" size="4">{$totalcount}</font>次&nbsp;&nbsp;金额：<font color="#f00" size="4">{$totalamount}</font>元）
+		</div>
+        <div class="pagination pull-right">
+            <ul>
+                {$page}
+            </ul>
+        </div>
+        <!-- end users table -->
+    </div>
+  </form>
+</div>
+
+<!-- scripts -->
+<script src="__JS__/jquery-latest.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
+<script src="__JS__/theme.js"></script>
+<script src="__JS__/popup_layer.js"></script>
+<script src="__JS__/bootstrap.datepicker.js"></script>
+
+<script type="text/javascript">
+	$(document).ready(function(){
+		setdashboardmenu("会员管理");
+
+        // datepicker plugin
+        $('.datepicker').datepicker().on('changeDate', function (ev) {
+            $(this).datepicker('hide');
+        });
+	});
+
+</script>
+</block>

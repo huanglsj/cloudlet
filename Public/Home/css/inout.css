@@ -1,0 +1,252 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section
+{display: block; margin:0; padding:0;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+i,s,b,em,strong{list-style-type: none;text-decoration: none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+input,button,select,textarea{outline:none;background-color: transparent;}
+input::-webkit-input-placeholder{color:#c9c9c9;font-family: '微软雅黑';
+font-size:0.9rem;letter-spacing:0.1rem;
+}
+input:-webkit-autofill {
+  background-color: transparent;
+}
+/*去掉 移动端 a点击时的高亮背景色*/
+html,body{
+  -webkit-tap-highlight-color: transparent;
+  font-family: '微软雅黑';
+  -webkit-overflow-scrolling: touch;
+  overflow-x:hidden;
+}
+a{
+  text-decoration: none;
+}
+a:link,a:visited,a:hover,a:active{
+  background-color: transparent;
+  color:#2f3034 ;
+}
+.bg{
+	background:#F7F7F7;
+}
+input[type=number]::-webkit-inner-spin-button,  
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  appearance: none; 
+  margin: 0; 
+}
+@media screen and (max-width:360px){html,body,input,select{font-size:14px}}
+@media screen and (min-width:360px){html,body,input,select{font-size:15px}}
+@media screen and (min-width:400px){html,body,input,select{font-size:17.5px}}
+@media screen and (min-width:480px){html,body,input,select{font-size:21px}}
+@media screen and (min-width:640px){html,body,input,select{font-size:24px}}
+/* @media screen and (min-width:600px){html,body,input,select{font-size:26.25px}}
+@media screen and (min-width:640px){html,body,input,select{font-size:28px}} */
+/* @media screen and (min-width:799px){html,body,input,select{font-size:30px}}
+@media screen and (min-width:960px){html,body,input,select{font-size:36px}}
+@media screen and (min-width:1280px){html,body,input,select{font-size:40px}} */
+/*login 部分*/
+.pagewrap{
+  width:100%;
+  margin:0 auto;
+  overflow-x:hidden; 
+  max-width:640px;
+  overflow-y:auto;
+}
+/* login.html */
+/* 头部标题 */
+header{
+  width:100%;
+  height: 7.56vh;
+  line-height: 7.56vh;
+  /* background-color: #2F3034; */
+  box-sizing: border-box;
+}
+header>a{
+  display:inline-block;
+  margin-left:5%;
+  width:10%;
+  height: 100%;
+}
+header>a i{
+  background:url(../images/back.png) no-repeat;
+  background-size:contain;
+  display:inline-block;
+  width:1.1rem;
+  height:3vh;  
+  vertical-align: middle;
+}
+header>h1{
+  display: inline-block;
+  margin:0 auto;
+  width:30%;
+  height: 100%;  
+  color: #fff;
+  font-size: 1.2rem;
+  text-align: center;
+  margin-left: 20%;
+}
+.section{
+  padding-top: 20%;
+  height:100%;
+  margin:0 auto;
+}
+
+
+/*我的体验券样式*/
+.section_tic{
+  width:100%;
+  margin:0 auto;
+}
+
+
+/*充值页面*/
+.add_main{
+  width:100%;
+  height: 4rem;
+  /* background-color: #fff; */
+  background-color: #0d216a
+}
+.add_main>div{
+  width:50%;
+  height:100%;
+  float: left;
+  position: relative;
+}
+.add_main>div>img{
+  background:url(__IMG_/user.png) no-repeat;
+  background-size: contain;
+  position:absolute;
+  left:5%;
+  top:10%;
+  display: inline-block;
+  width:3rem;
+  height:3rem;
+  margin-right:1%;
+  float: left;
+  /*display: none;*/
+  vertical-align: middle;
+}
+.add_main>div>span{
+  display: inline-block;
+  margin-left:4.5rem;
+  height: 100%;
+  width:60%;
+  line-height: 3.8rem;
+}
+.add_main p{
+  display: inline-block;
+  width:46%;
+  height: 100%;
+  line-height: 3.8rem;
+  text-align: right;  
+  color: #fff;
+}
+.add_main i{
+  color: red;
+}
+/*充值页面的 充值金额*/
+.faceValue{
+  width:100%;
+  margin:0 auto;
+  /* background-color: #fafafa; */
+  background-color:#0d216a;
+  margin-top: 0.2rem;
+}
+.faceValue span{
+	color:#fff;
+}
+.faceValue>div{
+  width:94%;
+  margin:0 auto;
+  padding:2%;
+  border-bottom:1px solid rgba(222,222,222,0.5);
+}
+.faceValue>div:nth-child(1){
+  padding-top:0%;
+}
+.faceValue>div>ul{
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: middle;
+  width:78%;
+}
+.faceValue>div>ul>li{
+  float: left;
+  width:4rem;
+  height: 1.6rem;
+  padding-top:0.2rem;
+  margin-right: 2rem;
+  margin-top:0.4rem;
+  background-color: #F9F9F9;
+  border:0.05rem solid #ECECEC;
+  text-align: center;
+  color: #000;
+  border-radius: 3px;
+}
+.faceValue>div>ul>li:last-child,.faceValue>div>ul>li:nth-child(3){
+  margin-right:0;
+}
+.faceValue>div>ul>.activeLi{
+  color: #F0861D;
+  background: url('../images/valactiv.png') no-repeat;
+  background-size: 100% 100%;
+}
+.faceValue>div>input{
+  clear: both;
+  display: inline-block;
+  width:9rem;
+  height: 2rem;
+  border:none;
+  border:1px solid #C6C6C6;
+  text-align: center;
+  color: #fff;
+  border-radius: 3px;
+}
+/*充值渠道*/
+.addKind{
+  width:100%;
+  margin:0 auto;
+  margin-top:0.2rem;
+  background-color: #0d216a;
+}
+.drop-down{
+  width:100%;
+  height: 3rem;
+  line-height: 3rem;
+  text-align: center;
+}
+.drop-down>img{
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.2rem;
+}
+.addKind>div{
+  width:90%;
+  height: 4rem;
+  margin:0 auto;
+  border-bottom: 1px solid rgba(222,222,222,0.5);
+}
+.addKind>div>i{
+  display: inline-block;
+  width:2.2rem;
+  height: 2rem;
+  margin-top:4%;
+  vertical-align: middle;
+  margin-right: 1.5rem;
+}
+.addKind>div>i img{
+  width:100%;
+  height: 100%;
+  display: inline-block;
+}
+.addKind>div>span{
+  display: inline-block;
+  margin-top:4%;
+  vertical-align: middle;
+  color:#fff;
+}
+#chargePay{
+  display: none;
+}

@@ -1,0 +1,292 @@
+<extend name="Base/common"/>
+<block name="content">
+<div class="main sidebar-minified">
+<link rel="stylesheet" href="__CSS__/user-list.css" type="text/css" media="screen">
+<style type="text/css">
+	.datatable,.datatable th{text-align:center;}
+	select {
+		width:178px;
+		background-color:white !important;
+		height:35px;
+		color:black;
+		border-width:1px !important;
+	}
+</style>
+<script type="text/javascript">
+    $(function () {
+        $('#reporttype').change(function (){
+        	$(".baobiao").css("display","none");
+        	if(this.value=='kehuzijinliushui'){
+        		$('.kehuzijinliushui').css("display","block");
+        	}else if(this.value=='kehuzijinzhuangkuang'){
+        		$('.kehuzijinzhuangkuang').css("display","block");
+        	}else if(this.value=='jiaoyimingxi'){
+        		$('.jiaoyimingxi').css("display","block");
+        	}else if(this.value=='jiaoyihuizong'){
+        		$('.jiaoyihuizong').css("display","block");
+        	}else if(this.value=='youhuiquan'){
+        		$('.youhuiquan').css("display","block");
+        	}else{
+        	}
+        });
+    });
+    
+</script>
+<!--/row-->
+			<div class="row">		
+				<div class="col-lg-12">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h2><i class="fa fa-table red"></i><span class="break"></span><strong>选择报表类型</strong>
+								<div style="display: inline-block; margin-left: 20px">
+	                    				<label class="span4">报表类型：</label><select id="reporttype"  style="margin:5px" name="reporttype">
+	                    				<option value="">请选择</option>
+		                                <option value="kehuzijinliushui">资金流水</option>
+		                                <option value="kehuzijinzhuangkuang">资金状况</option>
+		                                <option value="jiaoyimingxi">交易明细</option>
+		                                <option value="jiaoyihuizong">交易汇总</option>
+		                                <option value="youhuiquan">优惠券</option>
+	                    			</select>
+	                    		</div>
+							</h2>
+							<div class="baobiao kehuzijinliushui" style="display:none">
+							<form  method="post" id="kehuzijinliushui" action="{:U('UTongji/exportExcel')}">
+								<input type='hidden' value="kehuzijinliushui" name="reporttype">
+								<div class="span12" style="margin:5px">
+										<table style="width:100%;margin:5px">
+											<tr style="width:100%;margin:5px">
+												<td>客户账号：</td>
+												<td><input class="span3"type="text" id="username" name="username"/></td>
+											
+												<td>操作类型：</span></td>
+												<td><select id="otype" name="otype">
+					                    				<option value="">请选择</option>
+						                                <option value="1">充值</option>
+						                                <option value="2">提现</option>
+						                                <option value="3">建仓</option>
+						                                <option value="4">平仓</option>
+						                                <option value="100">手动修改</option>
+					                    			</select></td>
+												<td>下属会员单位：</td>
+												<td>
+													<select name="member"  id="member">
+															<option value="{$mycode}">请选择</option>
+															<volist name="subdepts" id="dept">
+																<option value="{$dept.code}"/>{$dept.name}</option>
+															</volist>
+													</select>
+												</td>
+											</tr>
+											<tr>
+												<td>查询开始日期：</td>
+												<td><input type="text" id="startTime1" name="startTime" value='{$startTime}'  onclick="return showCalendar('startTime1', 'y-m-d');"  /></td>
+												<td>结算结束日期：</span></td>
+												<td><input type="text" id="endTime1" name="endTime" value='{$endTime}'  onclick="return showCalendar('endTime1', 'y-m-d');"  /></td>
+											</tr>
+										</table>
+										<a class="btn btn-success" id="cuntomerbut" onclick="$('#kehuzijinliushui').submit();">
+													<i class="fa">导出</i> 
+										</a>
+								</div>
+							</form>
+							</div>
+							<div class="baobiao kehuzijinzhuangkuang" style="display:none">
+							<form  method="post" id="kehuzijinzhuangkuang" action="{:U('UTongji/exportExcel')}">
+								<input type='hidden' value="kehuzijinzhuangkuang" name="reporttype">
+								<div class="span12" style="margin:5px">
+										<table style="width:100%;margin:5px">
+											<tr style="width:100%;margin:5px">
+												<td>客户账号：</td>
+												<td><input class="span3"type="text" id="username" name="username"/></td>
+
+												<td>下属会员单位：</td>
+												<td>
+													<select name="member"  id="member">
+															<option value="{$mycode}">请选择</option>
+															<volist name="subdepts" id="dept">
+																<option value="{$dept.code}"/>{$dept.name}</option>
+															</volist>
+													</select>
+												</td>
+											</tr>
+											<tr>
+												<td>结算开始日期：</td>
+												<td><input type="text" id="startTime2" name="startTime" value='{$startTime}'  onclick="return showCalendar('startTime2', 'y-m-d');"  /></td>
+												<td>结算结束日期：</span></td>
+												<td><input type="text" id="endTime2" name="endTime" value='{$endTime}'  onclick="return showCalendar('endTime2', 'y-m-d');"  /></td>
+											</tr>
+										</table>
+										<a class="btn btn-success" id="cuntomerbut" onclick="$('#kehuzijinzhuangkuang').submit();">
+													<i class="fa">导出</i> 
+										</a>
+								</div>
+							</form>
+							</div>
+							
+							<div class="baobiao jiaoyimingxi" style="display:none">
+							<form method="post" id="jiaoyimingxi" action="{:U('UTongji/exportExcel')}">
+								<input type='hidden' value="jiaoyimingxi" name="reporttype">
+								<div class="span12" style="margin:5px">
+										<table style="width:100%;margin:5px">
+											<tr style="width:100%;margin:5px">
+												<td>产品信息：</span></td>
+												<td>
+												<select id="product" name="product">
+				                    				<option value="">请选择</option>
+				                    				<volist name='products' id='product'>
+					                                <option value="{$product.pid}">{$product.displayname}</option>
+					                                </volist>
+				                    			</select>
+				                    			</td>
+												<td>交易模式：</td>
+												<td>
+												<select id="eid"  name="eid">
+				                    				<option value="">请选择</option>
+					                                <option value="1">点数</option>
+					                                <option value="2">时间</option>
+				                    			</select>
+				                    			</td>
+												<td>下属会员单位：</td>
+												<td>
+													<select name="member"  id="member">
+															<option value="">请选择</option>
+															<volist name="subdepts" id="dept">
+																<option value="{$dept.code}"/>{$dept.name}</option>
+															</volist>
+													</select>
+												</td>
+											</tr>
+											<tr>
+												<td>盈亏状态：</td>
+												<td>
+												<select id="ploss" name="ploss">
+				                    				<option value="">请选择</option>
+					                                <option value="1">盈利</option>
+					                                <option value="2">亏损</option>
+				                    			</select></td>
+												<td>结算开始日期：</td>
+												<td><input type="text" id="startTime3" name="startTime" value='{$startTime}'  onclick="return showCalendar('startTime3', 'y-m-d');"  /></td>
+												<td>结算结束日期：</span></td>
+												<td><input type="text" id="endTime3" name="endTime" value='{$endTime}'  onclick="return showCalendar('endTime3', 'y-m-d');"  /></td>
+											</tr>
+										</table>
+										<a class="btn btn-success" id="cuntomerbut" onclick="$('#jiaoyimingxi').submit();">
+													<i class="fa">导出</i> 
+										</a>
+								</div>
+							</form>
+							</div>
+							<div class="baobiao jiaoyihuizong" style="display:none">
+							<form method="post" id="jiaoyihuizong"  action="{:U('UTongji/exportExcel')}">
+								<input type='hidden' value="jiaoyihuizong" name="reporttype">
+								<div class="span12" style="margin:5px">
+										<table style="width:100%;margin:5px">
+											<tr style="width:100%;margin:5px">
+												<td>产品信息：</span></td>
+												<td>
+												<select id="product" name="product">
+				                    				<option value="">请选择</option>
+				                    				<volist name='products' id='product'>
+					                                <option value="{$product.pid}">{$product.displayname}</option>
+					                                </volist>
+				                    			</select>
+				                    			</td>
+												<td>交易模式：</td>
+												<td>
+												<select id="eid"  name="eid">
+				                    				<option value="">请选择</option>
+					                                <option value="1">点数</option>
+					                                <option value="2">时间</option>
+				                    			</select>
+				                    			</td>
+												<td>下属会员单位：</td>
+												<td>
+													<select name="member"  id="member">
+															<option value="">请选择</option>
+															<volist name="subdepts" id="dept">
+																<option value="{$dept.code}"/>{$dept.name}</option>
+															</volist>
+													</select>
+												</td>
+											</tr>
+											<tr>
+												<td>盈亏状态：</td>
+												<td>
+												<select id="ploss" name="ploss">
+				                    				<option value="">请选择</option>
+					                                <option value="1">盈利</option>
+					                                <option value="2">亏损</option>
+				                    			</select></td>
+												<td>结算开始日期：</td>
+												<td><input type="text" id="startTime4" name="startTime" value='{$startTime}'  onclick="return showCalendar('startTime4', 'y-m-d');"  /></td>
+												<td>结算结束日期：</span></td>
+												<td><input type="text" id="endTime4" name="endTime" value='{$endTime}'  onclick="return showCalendar('endTime4', 'y-m-d');"  /></td>
+											</tr>
+										</table>
+										<a class="btn btn-success" id="cuntomerbut"  onclick="$('#jiaoyihuizong').submit();">
+													<i class="fa">导出</i> 
+										</a>
+								</div>
+							</form>
+							</div>
+							<div class="baobiao youhuiquan" style="display:none">
+							<form method="post" id="youhuiquan"  action="{:U('UTongji/exportExcel')}">
+								<input type='hidden' value="youhuiquan" name="reporttype">
+								<div class="span12" style="margin:5px">
+										<table style="width:100%;margin:5px">
+											<tr style="width:100%;margin:5px">
+												<td>发放渠道：</span></td>
+												<td>
+												<select id="sendtype" name="sendtype" style="height:34px;width:165px">
+				                    				<option value="">请选择</option>
+					                                <option value="1">注册赠送</option>
+					                                <option value="2">后台发放</option>
+				                    			</select>
+				                    			</td>
+												<td>优惠券面额：</td>
+												<td>
+												<select id="eid" class="span7" name="eid" style="height:34px;width:165px">
+				                    				<option value="">请选择</option>
+				                    				<volist name='exprinfo' id='expr'>
+					                                	<option value="{$expr.eid}">有效期{$expr.limittime}天{$expr.eprice}元券</option>
+					                                </volist>
+				                    			</select>
+				                    			</td>
+												<td>下属会员单位：</td>
+												<td>
+													<select name="member"  id="member" style="height:34px;width:165px">
+															<option value="">请选择</option>
+															<volist name="subdepts" id="dept">
+																<option value="{$dept.code}"/>{$dept.name}</option>
+															</volist>
+													</select>
+												</td>
+											</tr>
+											<tr>
+												<td>盈亏状态：</td>
+												<td>
+												<select id="ploss" name="ploss" style="height:34px;width:165px">
+				                    				<option value="">请选择</option>
+					                                <option value="1">盈利</option>
+					                                <option value="2">亏损</option>
+				                    			</select></td>
+												<td>结算开始日期：</td>
+												<td><input type="text" id="startTime4" name="startTime" value='{$startTime}'  onclick="return showCalendar('startTime4', 'y-m-d');"  /></td>
+												<td>结算结束日期：</span></td>
+												<td><input type="text" id="endTime4" name="endTime" value='{$endTime}'  onclick="return showCalendar('endTime4', 'y-m-d');"  /></td>
+											</tr>
+										</table>
+										<a class="btn btn-success" id="cuntomerbut"  onclick="$('#youhuiquan').submit();">
+													<i class="fa">导出</i> 
+										</a>
+								</div>
+							</form>
+							</div>
+						</div>
+					</div>
+				</div><!--/col-->
+			
+			</div><!--/row-->
+   
+		</div>
+ </block>

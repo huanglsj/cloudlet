@@ -1,0 +1,143 @@
+.box{
+	position: absolute;
+    width: 100%;
+    height: auto;
+    top: 0px;
+	display:none;
+}
+.box .main-con {
+  height: auto;
+  background: url(../images/riskinfo-bg.png) no-repeat;
+  background-size: 100% 100%;
+  overflow-y: scroll;
+	min-width: 320px;
+    max-width: 640px;
+}
+.box .main-con .content {
+  padding-left: 4.83092%;
+  padding-right: 4.83092%;
+  margin-bottom: 2.19002rem;
+  color: rgba(225, 225, 225, 0.7);
+  background:none;
+	 height: auto;
+}
+.box .main-con .content h4 {
+  font-size: 18px;
+  padding-top: 0.82448rem;
+  padding-bottom: 1.59742rem;
+  text-align: center;
+}
+.box .main-con .content p {
+  font-size: 13px;
+  padding-bottom: 0.5153rem;
+	opacity:0.7;
+}
+.box .read-con {
+  position: fixed;
+  bottom: 0;
+  left:0;
+  width: 100%;
+  background-color: #003973;
+  text-align: center;
+  z-index: 10001;
+  /* min-width:320px;
+  max-width:640px; */
+}
+.box .read-con .read-btn {
+	display: block;
+    width: 96%;
+    height: 40px;
+    line-height: 40px;
+    font-size: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 0.30918rem;
+    margin-bottom: 0.30918rem;
+    border-radius: 4px;
+    border: 1px solid #005ab5;
+    font-weight: bold;
+    color: rgba(225, 225, 225, 0.8);
+    letter-spacing: 2px;
+}
+
+/* 协议弹窗 */
+.xieyicontent{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    text-align: center;
+    vertical-align: middle;
+    z-index: 1001;
+    display: none;
+}
+.order_layer_iframe1 {
+    background: #fff;
+    z-index: 999;
+    border-radius: .6rem;
+    width: 80%;
+    height: 79%;
+    max-width: 600px;
+    margin: auto;
+}
+
+.order_layer_iframe1>div{
+	height: 90%;
+}
+.order_layer_iframe1>div>div {
+	height: calc(100% - 30px);
+	overflow-y:auto;
+	margin-top:30px;
+}
+
+.clearfix:before, .clearfix:after {
+	content: '.';
+	display: block;
+	height: 0;
+	clear: both;
+	overflow: hidden;
+}
+
+.order_layer_iframe1>.container i.close {
+	width: 2.5rem;
+	height: 2.5rem;
+	position: absolute;
+	right: -0.7rem;
+	top: -0.7rem;
+	background: url(../../images/post/order_icon.png) -13.5rem -21.2rem no-repeat;
+	background-size: 20rem;
+	text-indent: -99999px;
+}
+
+.order_layer_iframe1>.container .title {
+	line-height: 2.4rem;
+	text-align: center;
+	font-size: 1.4rem;
+	font-weight: normal;
+	/* margin: 2.2rem 0 0rem */;
+	color:#0d216a;
+}
+
+.order_layer_iframe1>.container .content_qytk>p {
+	/* height: 31rem;
+	line-height: 2.4rem; */
+	overflow-y: auto;
+	padding: 0 5px 0 10px;
+	color:#0d216a;
+	font-size:14px;
+	text-align:left;
+}
+
+.order_layer_iframe1>.btn {
+	line-height: 53px;
+	height: 53px;
+	background: #464A55;
+	text-align: center;
+	text-align: center;
+	display: block;
+	color: #fff;
+	border-top: 1px solid #dad9dc;
+	font-size: 1.61797571013965rem;
+	border-radius: 0;
+}

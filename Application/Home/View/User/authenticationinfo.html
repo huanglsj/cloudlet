@@ -1,0 +1,81 @@
+<extend name="Base/footer"/>
+<!DOCTYPE html>
+<html>
+<head>
+<block name="content">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="format-detection" content="telephone=no">
+<meta name="format-detection" content="email=no">
+<title>实名认证</title>
+<link rel="stylesheet" href="__CSS__/global.css">
+<link rel="stylesheet" href="__CSS__/index.css">
+<link rel="stylesheet" href="__CSS__/pwd.css?20170421">
+
+<script id="G--xyscore-load" type="text/javascript" charset="utf-8" async src="__JS__/xyscore_main.js"></script>
+</head>
+<body style="overflow:scroll;">
+<div class="wrap">
+  <div class="index" style="min-height: 891px;">
+    <header class="list-head">
+      <nav class="list-nav clearfix"> <a href="javascript:history.go(-1)" class="list-back"></a>
+        <h3 class="list-title">实名认证信息</h3>
+      </nav>
+    </header>
+     <form class="i-form">
+        <ul class="form-box">
+            <li class="f-line clearfix">
+                <label class="f-label">真实姓名：</label>
+                <input class="f-input text" style="color:black;" type="text" name="realname" value="{$info.realname}" readonly="readonly">
+            </li>
+            <li class="f-line clearfix">
+                <label class="f-label">身份证：</label>
+                <input class="f-input text" style="color:black;" type="text" name="realname" value="{$info.IDnumber}" readonly="readonly">
+            </li>
+<!--            <li class="f-line clearfix">
+                <label class="f-label">微信号：</label>
+                <input class="f-input text" style="color:black;" type="text" name="realname" value="{$info.wxnumber}" readonly="readonly">
+            </li>-->
+            <li class="f-line clearfix">
+                <label class="f-label">手机号：</label>
+                <input class="f-input text" style="color:black;" type="text" name="realname" value="{$info.mobile}" readonly="readonly">
+            </li>
+            <li class="f-line clearfix">
+                <label class="f-label">认证状态：</label>
+                <if condition="($info.status eq 1)">
+                    <input class="f-input text" style="color:black;" type="text" name="realname" value="认证中" readonly="readonly">
+                </if>
+                <if condition="($info.status eq 2)">
+                    <input class="f-input text" style="color:black;" type="text" name="realname" value="已认证" readonly="readonly">
+                </if>
+                <if condition="($info.status eq 3)">
+                    <input class="f-input text" style="color:black;" type="text" name="realname" value="认证失败" readonly="readonly">
+                </if>
+            </li>
+            <if condition="($info.status eq 3)">
+            <li class="f-line clearfix">
+                <label class="f-label">失败原因：</label>
+                <input class="f-input text" style="color:black;" type="text" name="realname" value="{$info.ngreason}" readonly="readonly">
+            </li>
+            </if>
+      </ul>
+            <if condition="($info.status eq 1 or $info.status eq 3)">
+              <input type="button" value="重新申请" class="f-sub" onclick="rsend('{$info.uid}')">
+            </if>
+    </div>
+      </form>
+  </div>
+</div>
+<script src="__JS__/jquery-2.1.1.min.js"></script>
+<script src="__JS__/script.js"></script>
+<script src="__JS__/getHouseList.js"></script>
+<script type="text/javascript" charset="utf-8" src="__JS__/sea.js" async></script>
+<script type="text/javascript">
+function rsend(id){
+	window.location.href = "{:U('User/authentication')}?id=" + id;
+}
+</script>
+</body>
+</block>
+</html>

@@ -1,0 +1,264 @@
+<extend name="Base/common"/>
+<block name="content">
+	<!-- this page specific styles -->
+    <link rel="stylesheet" href="__CSS__/compiled/order-list.css" type="text/css" media="screen" />
+    <link href="__CSS__/lib/bootstrap.datepicker.css" type="text/css" rel="stylesheet" />
+    <link href="__CSS__/lib/select2.css" type="text/css" rel="stylesheet" />
+    <div class="container-fluid">
+        <div id="pad-wrapper" class="users-list">
+            <div class="row-fluid header">
+                <h3><if condition="I('ostaus') eq 0">持仓订单<else/>平仓订单</if></h3>
+                <form id="searchfm" method="get" action="{:U('Order/olist')}">
+                <input type="hidden" value="{$ostaus}" name="ostaus"/>
+                <div class="span10 pull-right">
+                    <div class="tpsearch">
+                    	订单编号：<input type="text" class="span6" placeholder="请输入订单编号查找..." value="<?php echo I('orderno'); ?>" name="orderno" id="orderno"/>
+                    </div>
+                    <div class="tpsearch">
+                    	订单类型：<select id="ostyle" class="span6" name="ostyle">
+                    				<option value="">默认不选</option>
+	                                <option value="0" <if condition="I('ostyle') eq '0'">selected="selected"</if>>买涨</option>
+	                                <option value="1" <if condition="I('ostyle') eq '1'">selected="selected"</if>>买跌</option>
+                    			</select>
+                    </div>
+                    <div class="tpsearch">
+                    	交易模式：<select id="eid" class="span6" name="eid">
+                    				<option value="">默认不选</option>
+	                                <option value="1" <if condition="I('eid') eq '1'">selected="selected"</if>>点数</option>
+	                                <option value="2" <if condition="I('eid') eq '2'">selected="selected"</if>>时间</option>
+                    			</select>
+                    </div>
+                    
+                   
+                </div>
+                <div class="span10 pull-right" style="margin-top: 10px;">
+                    <div class="tpsearch">
+                    	用户名称：<input type="text" class="span6" placeholder="请输入用户名称查找..." value="{$username}" name="username" id="username"/>
+                    </div>
+                     <div class="tpsearch">
+                    	开始时间：<input type="text" class="input-large datepicker" data-date-format="yyyy-mm-dd"
+						          value="{$StartTime}" style="margin-bottom: 0;" name="StartTime" id="StartTime">
+                    </div>
+                     <div class="tpsearch">
+                    	结束时间：<input type="text" class="input-large datepicker" data-date-format="yyyy-mm-dd"
+						    value="{$EndTime}" style="margin-bottom: 0;" name="EndTime" id="EndTime">
+                    </div>
+                </div>
+                
+                <div class="span10 pull-right" style="margin-top: 15px;">
+	                <div class="tpsearch">
+		                                               会员单位：
+		                    	<select name="companycd" id="companycd" style="width:160px" class="select2">
+	                                <option value="0">请选择会员单位</option>
+	                                <volist name="companys" id="cp">
+	                                    <option value="{$cp['ccode']}" <if condition="I('companycd') eq $cp['ccode']">selected="selected"</if>/>{$cp['comname']}
+	                                </volist>
+	                            </select>
+		             </div>
+	                <div class="tpsearch">
+		                                               产品：
+		                    	<select name="pid" id="pid" style="width:180px" class="select2">
+	                                <option value="x">请选择产品</option>
+	                                <volist name="prods" id="p">
+	                                    <option value="{$p['pid']}" <if condition="I('pid') eq $p['pid']">selected="selected"</if>/>{$p['displayname']}
+	                                </volist>
+	                            </select>
+		             </div>
+			         <if condition="I('ostaus') eq '1'">
+		             <div class="tpsearch">
+                    	订单盈亏：<select id="ploss" class="span6" name="ploss">
+                    				<option value="">默认不选</option>
+	                                <option value="1" <if condition="I('ploss') eq '1'">selected="selected"</if>>无亏盈</option>
+	                                <option value="2" <if condition="I('ploss') eq '2'">selected="selected"</if>>盈利</option>
+	                                <option value="3" <if condition="I('ploss') eq '3'">selected="selected"</if>>亏损</option>
+                    	</select>
+                    </div>
+                    </if>
+                </div>
+                
+                <div class="span10 pull-right" style="margin-top: 20px;">
+                	<a href="javascript:void(0)" onclick="$('#searchfm').submit();" class="btn-flat info" id="search_begin">开始查找</a>
+                </div>
+                </form>
+            </div>
+            <!-- Users table -->
+            <div class="row-fluid table">
+                <!--//这个地方动态加载-->
+                <table class="table table-hover">
+                	<thead>
+                        <tr>
+                            <th class="span2 sortable">
+                                <span class="line"></span>订单编号
+                            </th>
+							<th class="span2 sortable">
+                                <span class="line"></span>用户
+                            </th>
+                            <th class="span2 sortable">
+                                <span class="line"></span>所属会员
+                            </th>
+                            <th class="span3 sortable">
+                                <span class="line"></span>订单时间
+                            </th>
+                            <th class="span2 sortable">
+                                <span class="line"></span>产品信息
+                            </th>
+							<th class="span2 sortable">
+                                <span class="line"></span>模式
+                            </th>
+                            <th class="span1 sortable">
+                                <span class="line"></span>点数/时间
+                            </th>
+							<th class="span1 sortable">
+                                <span class="line"></span>类型
+                            </th>
+                            <th class="span1 sortable">
+                                <span class="line"></span>买价
+                            </th>
+                            <th class="span1 sortable">
+                                <span class="line"></span>卖价
+                            </th>
+                            <!--<th class="span2 sortable">
+                                <span class="line"></span>佣金
+                            </th>-->
+							<th class="span1 sortable">
+                                <span class="line"></span>金额
+                            </th>
+                            <if condition='$ostaus eq 1'>
+							<th class="span1 sortable">
+                                <span class="line"></span>盈亏
+                            </th>
+                            <th class="span1 sortable">
+                                <span class="line"></span>管理费
+                            </th>
+                            </if>
+							<th class="span2 sortable">
+                                <span class="line"></span>操作
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="ajaxback">
+                    	<volist name="orders" id="vo">
+		                    <tr class="first <if condition='$vo.ostaus eq 0'>create<else/></if>">
+								<td>
+		                            {$vo.orderno}
+		                        </td>
+		                        <td>
+		                            <a href="{:U('User/updateuser',array('uid'=>$vo['uid']))}" class="name">{$vo.username}</a>
+		                        </td>
+		                        <td>
+		                            {$vo.ucode|substr=###,0,3}
+		                        </td>
+		                        <td>
+		                           	{$vo.buytime|date='Y-m-d H:i:s',###}
+		                        </td>
+		                        <td>
+									<a href="{:U('Goods/gedit',array('pid'=>$vo['pid']))}">{$vo.ptitle}</a>
+		                        </td>
+		                        <td>
+									<if condition='$vo.eid eq 1'>
+		                            	点数
+		                            <else/>
+		                           		时间
+		                            </if>
+		                        </td>
+								<td>
+		                            {$vo.endprofit}
+		                        </td>
+	                            <td>
+	                            	<if condition='$vo.ostyle eq 1'>
+	                                <!--<span class="label label-success">买跌</span>-->
+	                                <font color="#2fb44e">买跌</font>
+	                            	<else/>
+									<!--<span class="label label-cc">买涨</span>-->
+									<font color="#ed0000">买涨</font>
+									</if>                            	
+	                            </td>
+	                            <td>
+	                            	<font color="#f00" size="3">{$vo.buyprice}</font>
+	                            </td>
+	                            <td class="sellprice">
+                            		<if condition='$vo["buyprice"] gt $vo["sellprice"]'>
+                           				<font color="#ed0000" size="3">{$vo.sellprice}</font>
+                           			<else/>
+                           				<font color="#2fb44e" size="3">{$vo.sellprice}</font>
+                            		</if>
+	                            </td>
+								<!--<td>
+	                                <if condition='$vo.ostaus eq 1'>
+	                                <font color="#f00" size="3">{$vo.commission}</font>
+	                            	<else/>
+									<span class="label">建仓中</span>
+									</if>
+	                            </td>-->
+								<td>
+	                                <font color="#f00" size="3">{$vo['fee']}</font>
+	                            </td>
+	                            <if condition='$ostaus eq 1'>
+								<td>
+	                                <if condition='$vo.ostaus eq 1'>
+	                                	<if condition="$vo['ploss'] egt 0">
+	                                		<font color="#ed0000" size="4">{$vo.ploss}</font>	
+	                                	<else/>
+	                                		<font color="#2fb44e" size="3">{$vo.ploss}</font>
+	                                	</if>
+	                            	<else/>
+									<!--<span class="label">建仓中</span>-->
+									<span class="ploss"></span>
+									</if>
+	                            </td>
+	                            <td>
+	                                <font color="#f00" size="3">{$vo['managefee']}</font>
+	                            </td>
+	                            </if>
+								<td>
+									<a href="{:U('Order/ocontent',array('oid'=>$vo['oid']))}">查看</a>
+		                        </td>
+		                        <input type="hidden" value="{$vo['buyprice']}" name="buyprice" />
+		                        <input type="hidden" value="{$vo['cid']}" name="cid" />
+		                        <input type="hidden" value="{$vo['ostyle']}" name="ostyle" />
+		                    </tr>
+						</volist>
+                	</tbody>
+                </table>
+                <input id="yprice" type="hidden" value=""/>
+           		<input id="byprice" type="hidden" value=""/>
+           		<input id="toprice" type="hidden" value=""/>
+                <div class="qjcz">
+					统计：（盈亏:<font color="#f00" size="4"><if condition="$tploss eq ''">0<else/>{$tploss}</if></font>元&nbsp;&nbsp;交易单数：<font color="#f00" size="4"><if condition="$num eq ''">0<else/>{$num}</if></font>单&nbsp;&nbsp;交易额统计：<font color="#f00" size="5"><if condition="$totals eq ''">0<else/>{$totals}</if></font>元）
+				</div>
+            </div>
+            <div class="pagination pull-right">
+                <ul>
+                    {$page}
+                </ul>
+            </div>
+            <!-- end users table -->
+        </div>
+    </div>
+    <!-- end main container -->
+<div id="loading" style="width: 100%;height: 105%;position: absolute;top: 0; z-index: 9999;display: none;">
+	<div class="load-center" style="background: #000;position: absolute;width: 60%;height: 14%;bottom: 10%;border-radius: 10px;color: #fff;text-align: center;font-size: 24px;left: 17%;padding: 1%;">
+		<img src="__IMG__/ajax-loading.jpg" alt="ajax-loading" width="40"/><br/>页面加载中...
+	</div>
+</div>
+<!-- scripts -->
+
+<script src="__JS__/jquery-latest.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
+<script src="__JS__/bootstrap.datepicker.js"></script>
+<script src="__JS__/theme.js"></script>
+<script src="__JS__/select2.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+    	setdashboardmenu("订单管理");
+        // datepicker plugin
+        $('.datepicker').datepicker().on('changeDate', function (ev) {
+            $(this).datepicker('hide');
+        });
+        
+        $(".select2").select2({
+            placeholder: "请选择会员单位"
+        });
+    });
+</script>
+</block>

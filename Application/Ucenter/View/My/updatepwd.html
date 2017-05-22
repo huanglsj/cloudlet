@@ -1,0 +1,59 @@
+<extend name="Base/common"/>
+<block name="content">
+<style type="text/css">
+	.col-md-6{ width:100%;}
+	.form-horizontal { width:500px;}
+</style>
+	<div class="main sidebar-minified">
+		<div class="row">
+			    <div class="col-md-8">
+			        <div class="panel panel-default">
+			            <div class="panel-heading">
+			                <h2><i class="fa fa-indent red"></i><strong>
+							修改密码
+			                </strong></h2>
+			            </div>
+			            <form action="{:U('My/updatepwd')}" id="pwdform" method="post" enctype="multipart/form-data" onsubmit="checkpwd();" class="form-horizontal">
+						<div class="panel-body">
+				                <input type="hidden" name="uid" id="uid" value="{$user.id}">
+				                
+				                <div class="form-group">
+									<label class="col-md-3 control-label" for="text-input">旧密码</label>
+									<div class="col-md-9">
+										<input type="password" id="oldpwd" value="" name="oldpwd" class="form-control">
+									</div>	
+								</div>
+								<div class="form-group">
+				                    <label class="col-md-3 control-label" for="text-input">新密码</label>
+				                    <div class="col-md-9">
+				                    	<input type="password" id="newpwd" value="" name="newpwd" class="form-control">
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="text-input">确认密码</label>
+				                    <div class="col-md-9">
+				                    	<input type="password" id="qrpwd" value="" name="qrpwd" class="form-control">
+				                    </div>
+				                </div>
+						</div>
+						<div class="panel-footer">
+		                    <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> 提交</button>
+		                    <a onclick="window.history.go(-1)"><button type="reset" class="btn btn-sm btn-success"><i class="fa fa-ban"></i> 返回</button></a>
+	                        </div>	
+		                </form>
+			        </div>	
+			    </div>
+			</div>
+	</div>
+	<script src="__JS__/jquery-2.1.1.min.js"></script>
+	<script >
+	function checkpwd(){
+		if($('#newpwd').val() != $('#qrpwd').val()){
+			alert("两次输入密码不一致，请重新输入！");
+			return false;
+		}else{
+			return true;
+		}
+	}
+	</script>
+</block>

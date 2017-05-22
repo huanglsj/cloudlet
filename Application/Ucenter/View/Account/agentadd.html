@@ -1,0 +1,135 @@
+<extend name="Base/common"/>
+<block name="content">
+<style type="text/css">
+	.col-md-6{ width:100%;}
+	.form-horizontal { width:500px;}
+</style>
+	<div class="main sidebar-minified">
+		<div class="row">
+			    <div class="col-md-6">
+			        <div class="panel panel-default">
+			            <div class="panel-heading">
+			                <h2><i class="fa fa-indent red"></i><strong>
+							<if condition="$user.cid neq ''">修改信息<else/>开户</if>
+			                </strong></h2>
+			            </div>
+			            <form action="{:U('Account/agentadd')}" method="post" enctype="multipart/form-data" class="form-horizontal">
+						<div class="panel-body">
+				                <input type="hidden" name="uid" id="cid" value="{$user.cid}">
+				                
+				                <div class="form-group">
+									<label class="col-md-3 control-label" for="email-input">类型</label>
+									
+									<div class="col-md-9">
+									<if condition="$user.cid eq ''">
+									  <select class="form-control" id="addtype" name="addtype">
+									   <if condition="$Think.session.deptinfo.type eq '2'"><option value="daili">代理</option></if>
+									   <option value="jigou">机构</option>
+									  </select>
+									<else/>
+										<if condition="$user.type eq 3"><span>代理</span><else/><span>机构</span></if>
+									</if>
+									</div>	
+								</div>
+								
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="text-input">用户名</label>
+				                    <div class="col-md-9">
+				                    <if condition="$user.uid neq ''">
+				                        <input type="text"  disabled="disabled"  class="form-control" value="{$user.username}">
+				                     <else/>
+				                        <input type="text"  name="username" class="form-control" value="{$user.username}">
+				                     </if>
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="email-input">手机号</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="email-input" value="{$user.managerphone}" name="managerphone" class="form-control" >
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="password-input">办公室地址</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="" value="{$user.manageraddress}" name="manageraddress" class="form-control">
+				                      
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="password-input">负责人名</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="" value="{$user.managername}"  name="managername" class="form-control">
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="password-input">负责人身份证</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="" value="{$user.manageridcard}"  name="manageridcard" class="form-control">
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="password-input">公司名称</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="" value="{$user.comname}"  name="comname" class="form-control">
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="password-input">开户行</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="" value="{$user.bankname}"  name="bankname" class="form-control">
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="password-input">开户行支行</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="" value="{$user.bankbranch}"  name="bankbranch" class="form-control">
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="password-input">银行账号</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="" value="{$user.banknum}"  name="banknum" class="form-control">
+				                    </div>
+				                </div>
+				                <div class="form-group">
+				                    <label class="col-md-3 control-label" for="password-input">开户人名</label>
+				                    <div class="col-md-9">
+				                        <input type="text" id="" value="{$user.bankusername}"  name="bankusername" class="form-control">
+				                    </div>
+				                </div>
+						</div>
+						<div class="panel-footer">
+		                    <button type="submit" class="btn btn-sm btn-success"><i class="fa fa-dot-circle-o"></i> 提交</button>
+		                    <a onclick="window.history.go(-1)"><button type="reset" class="btn btn-sm btn-success"><i class="fa fa-ban"></i> 返回</button></a>
+		                	<if condition="$user.cid neq ''"><button type="button" class="btn btn-sm btn-danger resetpwd"><i class="fa fa-dot-circle-o"></i> 重置密码</button></if>
+	                        </div>	
+		                </form>
+			        </div>	
+			    </div>
+			</div>
+	</div>
+	<script src="__JS__/jquery-2.1.1.min.js"></script>
+	<script  type="text/javascript">
+	$(document).ready(function(){
+		$('.resetpwd').click(function(){
+			var cid = $('#cid').val();
+			$.ajax({  
+	            type: "post",  
+	            url: "{:U('Ucenter/Account/resetpw')}",
+	            data:"cid="+cid,  
+	            async:false,  
+	            success: function(data) { 
+	            	if(data){
+	            		alert('新密码已经发送至会员负责人手机，请注意查看！');
+	            	}else{
+	            		alert('密码修改出错，请重新操作！');
+	            	}
+	            },  
+	            error: function(data) {  
+	            	alert('error' + data);
+	            }  
+	        });
+		});
+	});
+	</script>
+</block>

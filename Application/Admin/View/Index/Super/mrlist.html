@@ -1,0 +1,93 @@
+<extend name="Base/common"/>
+<block name="content">
+<!-- this page specific styles -->
+<link rel="stylesheet" href="__CSS__/compiled/user-list.css" type="text/css" media="screen">
+<div class="container-fluid">
+            <div id="pad-wrapper" class="users-list">
+                <div class="row-fluid header">
+                    <if condition="$type eq 1 ">
+                        <h3  class="span12 pull-left">管理员角色列表</h3>
+                    </if>
+                    <if condition="$type eq 2 ">
+                        <h3  class="span12 pull-left">会员角色列表</h3>
+                    </if>
+                </div>
+                
+                <!-- Users table -->
+                <div class="row-fluid table">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th class="span1 sortable">
+                                	<span class="line"></span>序号
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>会员名
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>公司名
+                                </th>
+                                <th class="span2 sortable">
+                                    <span class="line"></span>角色
+                                </th>
+                                <th class="span1 sortable">
+                                    <span class="line"></span>操作
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody id="ajaxback">
+                        <volist name="ulist" id="ult">
+                        <tr class="first">
+                            <td>
+                                {$ult['id']}
+                            </td>
+                            <td>
+                            	{$ult['username']}
+                            </td>
+                            <td>
+                                {$ult['cname']}
+                            </td>
+                            <td>
+                                {$ult['rname']}
+                            </td>
+                            <td>
+                            	<ul class="actions">
+                            	<if condition="$type eq 1 ">
+                            	    <if condition="$_SESSION['pkey']['SYS_EDIT'] eq '1'">
+                                        <li><a href="{:U('Super/mredit',array('uid'=>$ult['id'],'username'=>$ult['username'],'cname'=>$ult['cname'],'type'=>$ult['type']))}"><i class="table-edit"></i></a></li>
+                                    </if>
+                                </if>
+                                <if condition="$type eq 99 ">
+                                    <if condition="$_SESSION['pkey']['MR_EDIT'] eq '1'">
+                                        <li><a href="{:U('Super/mredit',array('uid'=>$ult['id'],'username'=>$ult['username'],'cname'=>$ult['cname'],'type'=>$ult['type']))}"><i class="table-edit"></i></a></li>
+                                    </if>
+                                </if>
+                                <if condition="$_SESSION['pkey']['MR_EDIT'] eq '1'">
+                                    <li class="last"><a href="{:U('Super/mrdel',array('uid'=>$ult['id'],'type'=>$ult['type']))}" onclick="if(confirm('确定要删除吗?')){return true;}else{return false;}"><i class="table-delete"></i></a></li>
+                                </if>
+                                </ul>
+                            </td>
+                        </tr>
+                        </volist>
+                        </tbody>
+                    </table>
+                    
+                </div>
+                <div class="pagination pull-right">
+                    <ul>
+                        {$page}
+                    </ul>
+                </div>
+                <!-- end users table -->
+            </div>
+        </div>
+<!-- scripts -->
+<script src="__JS__/jquery-latest.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
+<script src="__JS__/theme.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+		setdashboardmenu("权限管理");
+	});
+</script>
+</block>

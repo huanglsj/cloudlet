@@ -1,0 +1,65 @@
+@charset "UTF-8";
+/*reset*/
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "微软雅黑";
+	/*禁止iphone字体放大 */
+	-webkit-text-size-adjust: none;
+	width: 100%;
+}
+
+ul, ol {
+	list-style: none;
+}
+ol li, ul li {
+	list-style: none;
+}
+a {
+	color: #333;
+	text-decoration: none;
+}
+a img {
+	border: 0 none;
+	cursor: pointer;
+}
+
+img {
+	border: 0;
+}
+
+input {
+	 /*去除input默认样式*/
+	 -webkit-appearance: none;
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+button, input, select, textarea {
+	font: 100% serif;
+}
+/*img, input, select {
+	vertical-align: middle;
+}*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	clear: both;
+	height: 0;
+	visibility: hidden;
+}
+
+.clearfix {
+	zoom: 1;
+}
+
+.wrap{
+	min-width: 320px;
+    max-width: 640px;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+    position: relative;
+}

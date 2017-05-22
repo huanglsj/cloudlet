@@ -1,0 +1,60 @@
+<extend name="Base/common"/>
+<block name="content">
+<link rel="stylesheet" href="__CSS__/compiled/new-user.css" type="text/css" media="screen" />  
+<style>
+	.new-user .form-wrapper input[type="text"]{border: 1px solid #D0D0D0;}
+</style>
+   <div class="container-fluid">
+            <div id="pad-wrapper" class="new-user">
+                <div class="row-fluid header">
+                    <h3>会员角色编辑</h3>
+                </div>
+                <div class="row-fluid form-wrapper">
+                    <form action="/index.php/Admin/Super/mredit.html" method="post" class="new_user_form" >
+                    <!-- left column -->
+                    	<input class="span4" type="hidden" name="uid" value="{$uid}"/>
+                    	<input class="span4" type="hidden" name="type" value="{$type}"/>
+                        <div class="span9 field-box uname">
+                            <label>会员名:</label>
+                            <input class="span4" type="text" name="username" value="{$username}" readonly="true"/>
+                        </div>
+                        <div class="span9 field-box">
+                            <label>公司名称:</label>
+                            <input class="span8" type="text" name="cname" value="{$cname}" readonly="true"/>
+                        </div>
+                        <div class="span9 field-box" id="rolecheck">
+                            <label>角色选择:</label>
+                            <volist name="rlist" id="rlt">
+                                <span style="padding-left: 10px">
+                                    <input type="checkbox" class="checkedrole" name="checkedrole[]" value="{$rlt['id']}" onclick="setcheck(this)" <if condition='$rlt["checked"] eq "1"'>checked</if> >{$rlt['name']}</input>
+                                </span>
+                            </volist>
+                        </div>
+                        <div class="span8 field-box actions" style="padding-bottom: 20px;">
+                            <input type="submit" class="btn-glow primary"  value="修改" />
+                        </div>
+					</form>
+                </div>
+            </div>
+        </div>
+	<!-- scripts -->
+    <script src="__JS__/jquery-latest.js"></script>
+    <script src="__JS__/bootstrap.min.js"></script>
+    <script src="__JS__/bootstrap.datepicker.js"></script>
+    <script src="__JS__/theme.js"></script>
+    <script type="text/javascript">
+		$(document).ready(function(){
+			setdashboardmenu("权限管理");
+		});
+		function dosubmit(){
+			
+		}
+        function setcheck(obj) {
+	          if ($(obj).is(':checked')) {
+	            	   $(this).attr('checked',false);
+	          }else{
+	       	     	  $(obj).attr('checked',true);
+		}
+	      }
+	</script>
+</block>

@@ -1,0 +1,432 @@
+2017-01-02 21:30:07 pid:22705 Workerman[DataReceiver.php] start in DEBUG mode
+2017-01-02 21:30:09 pid:22705 Workerman[DataReceiver.php] Stopping ...
+2017-01-02 21:30:09 pid:22705 Workerman[DataReceiver.php] has been stopped
+2017-01-02 21:31:01 pid:22788 Workerman[DataReceiver.php] start in DEBUG mode
+2017-01-02 21:31:08 pid:22788 Workerman[DataReceiver.php] Stopping ...
+2017-01-02 21:31:08 pid:22788 Workerman[DataReceiver.php] has been stopped
+2017-01-02 21:33:11 pid:23011 Workerman[DataSaver.php] start in DEBUG mode
+2017-01-02 21:33:39 pid:23011 Workerman[DataSaver.php] Stopping ...
+2017-01-02 21:33:39 pid:23011 Workerman[DataSaver.php] has been stopped
+2017-01-02 21:34:56 pid:23163 Workerman[DataSaver.php] start in DEBUG mode
+2017-01-02 21:35:35 pid:23163 Workerman[DataSaver.php] Stopping ...
+2017-01-02 21:35:35 pid:23163 Workerman[DataSaver.php] has been stopped
+2017-01-02 21:37:42 pid:23407 Workerman[DataSaver.php] start in DEBUG mode
+2017-01-02 21:37:54 pid:23407 Workerman[DataSaver.php] Stopping ...
+2017-01-02 21:37:54 pid:23407 Workerman[DataSaver.php] has been stopped
+2017-01-02 21:38:00 pid:23437 Workerman[DataBroadcaster.php] star 
+2017-01-02 21:38:00 pid:23437 Workerman[DataBroadcaster.php] not run
+2017-01-02 21:38:02 pid:23439 Workerman[DataBroadcaster.php] start in DEBUG mode
+2017-01-02 21:38:02 pid:23440 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23441 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23440] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23441] exit with status 65280
+2017-01-02 21:38:02 pid:23444 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23445 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23444] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23445] exit with status 65280
+2017-01-02 21:38:02 pid:23448 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23449 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23448] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23449] exit with status 65280
+2017-01-02 21:38:02 pid:23452 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23453 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23453] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23452] exit with status 65280
+2017-01-02 21:38:02 pid:23456 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23457 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23456] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23457] exit with status 65280
+2017-01-02 21:38:02 pid:23460 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23461 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23460] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23461] exit with status 65280
+2017-01-02 21:38:02 pid:23464 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23464] exit with status 65280
+2017-01-02 21:38:02 pid:23465 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23465] exit with status 65280
+2017-01-02 21:38:02 pid:23468 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23468] exit with status 65280
+2017-01-02 21:38:02 pid:23469 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23469] exit with status 65280
+2017-01-02 21:38:02 pid:23472 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23473 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23472] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23473] exit with status 65280
+2017-01-02 21:38:02 pid:23476 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23477 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23476] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23477] exit with status 65280
+2017-01-02 21:38:02 pid:23480 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23481 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23480] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23481] exit with status 65280
+2017-01-02 21:38:02 pid:23484 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23485 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23484] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23485] exit with status 65280
+2017-01-02 21:38:02 pid:23488 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23488] exit with status 65280
+2017-01-02 21:38:02 pid:23489 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23489] exit with status 65280
+2017-01-02 21:38:02 pid:23492 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23492] exit with status 65280
+2017-01-02 21:38:02 pid:23494 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23496 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23494] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23496] exit with status 65280
+2017-01-02 21:38:02 pid:23498 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23500 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23498] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23500] exit with status 65280
+2017-01-02 21:38:02 pid:23502 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23504 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23502] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23504] exit with status 65280
+2017-01-02 21:38:02 pid:23506 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23507 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23506] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23507] exit with status 65280
+2017-01-02 21:38:02 pid:23511 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23510 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23511] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23510] exit with status 65280
+2017-01-02 21:38:02 pid:23514 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23515 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23514] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23515] exit with status 65280
+2017-01-02 21:38:02 pid:23518 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23519 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23518] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23519] exit with status 65280
+2017-01-02 21:38:02 pid:23522 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23523 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23523] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23522] exit with status 65280
+2017-01-02 21:38:02 pid:23526 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23527 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23526] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23527] exit with status 65280
+2017-01-02 21:38:02 pid:23530 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23531 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23531] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23530] exit with status 65280
+2017-01-02 21:38:02 pid:23534 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23535 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23534] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23535] exit with status 65280
+2017-01-02 21:38:02 pid:23539 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23538 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23538] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23539] exit with status 65280
+2017-01-02 21:38:02 pid:23543 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23542 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23542] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23543] exit with status 65280
+2017-01-02 21:38:02 pid:23546 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23547 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23546] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23547] exit with status 65280
+2017-01-02 21:38:02 pid:23550 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23550] exit with status 65280
+2017-01-02 21:38:02 pid:23552 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23552] exit with status 65280
+2017-01-02 21:38:02 pid:23554 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23555 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23554] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23555] exit with status 65280
+2017-01-02 21:38:02 pid:23558 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23559 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23558] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23559] exit with status 65280
+2017-01-02 21:38:02 pid:23562 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23563 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23562] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23563] exit with status 65280
+2017-01-02 21:38:02 pid:23566 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23567 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23566] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23567] exit with status 65280
+2017-01-02 21:38:02 pid:23570 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23571 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23570] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23571] exit with status 65280
+2017-01-02 21:38:02 pid:23574 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23575 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23574] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23575] exit with status 65280
+2017-01-02 21:38:02 pid:23578 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23578] exit with status 65280
+2017-01-02 21:38:02 pid:23579 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23579] exit with status 65280
+2017-01-02 21:38:02 pid:23582 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23582] exit with status 65280
+2017-01-02 21:38:02 pid:23583 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23583] exit with status 65280
+2017-01-02 21:38:02 pid:23586 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23588 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23586] exit with status 65280
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23588] exit with status 65280
+2017-01-02 21:38:02 pid:23590 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23590] exit with status 65280
+2017-01-02 21:38:02 pid:23591 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23591] exit with status 65280
+2017-01-02 21:38:02 pid:23594 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:02 pid:23439 worker[broadcaster:23594] exit with status 65280
+2017-01-02 21:38:02 pid:23596 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23598 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23596] exit with status 65280
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23598] exit with status 65280
+2017-01-02 21:38:03 pid:23600 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23600] exit with status 65280
+2017-01-02 21:38:03 pid:23602 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23602] exit with status 65280
+2017-01-02 21:38:03 pid:23604 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23604] exit with status 65280
+2017-01-02 21:38:03 pid:23606 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23606] exit with status 65280
+2017-01-02 21:38:03 pid:23608 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23610 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23608] exit with status 65280
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23610] exit with status 65280
+2017-01-02 21:38:03 pid:23612 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23612] exit with status 65280
+2017-01-02 21:38:03 pid:23614 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23614] exit with status 65280
+2017-01-02 21:38:03 pid:23616 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23616] exit with status 65280
+2017-01-02 21:38:03 pid:23618 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23618] exit with status 65280
+2017-01-02 21:38:03 pid:23620 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23620] exit with status 65280
+2017-01-02 21:38:03 pid:23622 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23622] exit with status 65280
+2017-01-02 21:38:03 pid:23624 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23626 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23624] exit with status 65280
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23626] exit with status 65280
+2017-01-02 21:38:03 pid:23628 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23628] exit with status 65280
+2017-01-02 21:38:03 pid:23630 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23630] exit with status 65280
+2017-01-02 21:38:03 pid:23632 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23632] exit with status 65280
+2017-01-02 21:38:03 pid:23634 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23636 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23634] exit with status 65280
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23636] exit with status 65280
+2017-01-02 21:38:03 pid:23638 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23639 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23638] exit with status 65280
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23639] exit with status 65280
+2017-01-02 21:38:03 pid:23642 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23643 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23642] exit with status 65280
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23643] exit with status 65280
+2017-01-02 21:38:03 pid:23646 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23647 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23647] exit with status 65280
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23646] exit with status 65280
+2017-01-02 21:38:03 pid:23651 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23650 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23651] exit with status 65280
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23650] exit with status 65280
+2017-01-02 21:38:03 pid:23655 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23654 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23654] exit with status 65280
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23655] exit with status 65280
+2017-01-02 21:38:03 pid:23658 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23660 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23660] exit with status 65280
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23658] exit with status 65280
+2017-01-02 21:38:03 pid:23663 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23662 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23662] exit with status 65280
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23663] exit with status 65280
+2017-01-02 21:38:03 pid:23666 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23667 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23667] exit with status 65280
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23666] exit with status 65280
+2017-01-02 21:38:03 pid:23671 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23670 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23671] exit with status 65280
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23670] exit with status 65280
+2017-01-02 21:38:03 pid:23674 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23675 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23674] exit with status 65280
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23675] exit with status 65280
+2017-01-02 21:38:03 pid:23678 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23679 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23678] exit with status 65280
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23679] exit with status 65280
+2017-01-02 21:38:03 pid:23682 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23683 WORKER EXIT UNEXPECTED E_ERROR Call to undefined method DataBroadcaster::initPriceInfo() in /mnt/cms/weipan_data2/DataBroadcaster.php on line 40
+2017-01-02 21:38:03 pid:23439 Workerman[DataBroadcaster.php] Stopping ...
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23682] exit with status 65280
+2017-01-02 21:38:03 pid:23439 worker[broadcaster:23683] exit with status 65280
+2017-01-02 21:38:03 pid:23439 Workerman[DataBroadcaster.php] has been stopped
+2017-01-02 21:39:14 pid:23774 Workerman[DataBroadcaster.php] start in DEBUG mode
+2017-01-02 21:40:29 pid:23774 Workerman[DataBroadcaster.php] Stopping ...
+2017-01-02 21:40:29 pid:23774 Workerman[DataBroadcaster.php] has been stopped
+2017-01-02 23:02:35 pid:31642 Workerman[DataSaver.php] start in DEBUG mode
+2017-01-02 23:02:48 pid:31642 Workerman[DataSaver.php] Stopping ...
+2017-01-02 23:02:48 pid:31642 Workerman[DataSaver.php] has been stopped
+2017-01-02 23:05:20 pid:31884 Workerman[DataSaver.php] start in DEBUG mode
+2017-01-02 23:12:57 pid:31884 Workerman[DataSaver.php] Stopping ...
+2017-01-02 23:12:57 pid:31884 Workerman[DataSaver.php] has been stopped
+2017-01-02 23:15:14 pid:545 Workerman[DataSaver.php] start in DEBUG mode
+2017-01-02 23:15:28 pid:545 Workerman[DataSaver.php] Stopping ...
+2017-01-02 23:15:28 pid:545 Workerman[DataSaver.php] has been stopped
+2017-01-02 23:17:51 pid:630 Workerman[DataSaver.php] start in DEBUG mode
+2017-01-02 23:18:05 pid:630 Workerman[DataSaver.php] Stopping ...
+2017-01-02 23:18:05 pid:630 Workerman[DataSaver.php] has been stopped
+2017-01-02 23:19:54 pid:696 Workerman[DataSaver.php] start in DEBUG mode
+2017-01-02 23:19:56 pid:696 Workerman[DataSaver.php] Stopping ...
+2017-01-02 23:19:57 pid:696 Workerman[DataSaver.php] has been stopped
+2017-01-02 23:21:44 pid:753 Workerman[DataSaver.php] start in DEBUG mode
+2017-01-02 23:21:49 pid:753 Workerman[DataSaver.php] Stopping ...
+2017-01-02 23:21:49 pid:753 Workerman[DataSaver.php] has been stopped
+2017-01-02 23:23:16 pid:800 Workerman[DataSaver.php] start in DEBUG mode
+2017-01-02 23:23:18 pid:800 Workerman[DataSaver.php] Stopping ...
+2017-01-02 23:23:18 pid:800 Workerman[DataSaver.php] has been stopped
+2017-01-02 23:23:36 pid:814 Workerman[DataSaver.php] start in DEBUG mode
+2017-01-02 23:23:38 pid:814 Workerman[DataSaver.php] Stopping ...
+2017-01-02 23:23:38 pid:814 Workerman[DataSaver.php] has been stopped
+2017-01-02 23:24:34 pid:848 Workerman[DataSaver.php] start in DEBUG mode
+2017-01-02 23:24:36 pid:848 Workerman[DataSaver.php] Stopping ...
+2017-01-02 23:24:36 pid:848 Workerman[DataSaver.php] has been stopped
+2017-01-02 23:25:39 pid:890 Workerman[DataSaver.php] start in DEBUG mode
+2017-01-02 23:26:12 pid:890 Workerman[DataSaver.php] Stopping ...
+2017-01-02 23:26:12 pid:890 Workerman[DataSaver.php] has been stopped
+2017-01-02 23:31:24 pid:1096 Workerman[main.php] start in DAEMON mode
+2017-01-02 23:31:32 pid:1119 Workerman[main.php] status 
+2017-01-03 07:27:02 pid:8743 Workerman[main.php] status 
+2017-01-03 09:21:22 pid:18668 Workerman[main.php] stop 
+2017-01-03 09:21:22 pid:18668 Workerman[main.php] is stoping ...
+2017-01-03 09:21:22 pid:1098 Workerman[main.php] Stopping ...
+2017-01-03 09:21:22 pid:1098 Workerman[main.php] has been stopped
+2017-01-03 09:21:22 pid:18668 Workerman[main.php] stop success
+2017-01-03 09:21:25 pid:18672 Workerman[main.php] start in DEBUG mode
+2017-01-03 09:21:28 pid:18672 Workerman[main.php] Stopping ...
+2017-01-03 09:21:28 pid:18672 Workerman[main.php] has been stopped
+2017-01-03 09:21:30 pid:18686 Workerman[main.php] start in DEBUG mode
+2017-01-03 09:21:57 pid:18686 Workerman[main.php] Stopping ...
+2017-01-03 09:21:57 pid:18686 Workerman[main.php] has been stopped
+2017-01-03 09:27:34 pid:18867 Workerman[main.php] start in DEBUG mode
+2017-01-03 09:28:34 pid:18867 Workerman[main.php] Stopping ...
+2017-01-03 09:28:34 pid:18867 Workerman[main.php] has been stopped
+2017-01-03 09:28:36 pid:18962 Workerman[main.php] start in DEBUG mode
+2017-01-03 09:30:33 pid:18962 Workerman[main.php] Stopping ...
+2017-01-03 09:30:33 pid:18962 Workerman[main.php] has been stopped
+2017-01-03 09:30:33 pid:19137 Workerman[main.php] start in DEBUG mode
+2017-01-03 09:40:52 pid:19137 Workerman[main.php] Stopping ...
+2017-01-03 09:40:52 pid:19137 Workerman[main.php] has been stopped
+2017-01-03 09:41:07 pid:20026 Workerman[main.php] start in DEBUG mode
+2017-01-03 09:41:08 pid:20027 WORKER EXIT UNEXPECTED E_ERROR Class 'Log' not found in /mnt/cms/weipan_data2/DataSaver.php on line 230
+2017-01-03 09:41:08 pid:20026 worker[saver:20027] exit with status 65280
+2017-01-03 09:41:13 pid:20026 Workerman[main.php] Stopping ...
+2017-01-03 09:41:13 pid:20026 Workerman[main.php] has been stopped
+2017-01-03 09:41:31 pid:20055 Workerman[main.php] start in DEBUG mode
+2017-01-03 09:43:59 pid:20055 Workerman[main.php] Stopping ...
+2017-01-03 09:43:59 pid:20055 Workerman[main.php] has been stopped
+2017-01-03 09:43:59 pid:20267 Workerman[main.php] start in DEBUG mode
+2017-01-03 09:47:23 pid:20267 Workerman[main.php] Stopping ...
+2017-01-03 09:47:23 pid:20267 Workerman[main.php] has been stopped
+2017-01-03 09:47:23 pid:20564 Workerman[main.php] start in DEBUG mode
+2017-01-03 09:58:52 pid:20564 Workerman[main.php] Stopping ...
+2017-01-03 09:58:52 pid:20564 Workerman[main.php] has been stopped
+2017-01-03 09:59:24 pid:21609 Workerman[main.php] start in DEBUG mode
+2017-01-03 09:59:28 pid:21609 Workerman[main.php] Stopping ...
+2017-01-03 09:59:28 pid:21609 Workerman[main.php] has been stopped
+2017-01-03 09:59:43 pid:21635 Workerman[main.php] start in DEBUG mode
+2017-01-03 10:01:45 pid:21635 Workerman[main.php] Stopping ...
+2017-01-03 10:01:45 pid:21635 Workerman[main.php] has been stopped
+2017-01-03 10:02:11 pid:21918 Workerman[main.php] start in DEBUG mode
+2017-01-03 10:18:47 pid:21918 Workerman[main.php] Stopping ...
+2017-01-03 10:18:47 pid:21918 Workerman[main.php] has been stopped
+2017-01-03 10:18:47 pid:24094 Workerman[main.php] start in DEBUG mode
+2017-01-03 10:20:50 pid:24094 Workerman[main.php] Stopping ...
+2017-01-03 10:20:51 pid:24094 Workerman[main.php] has been stopped
+2017-01-03 10:20:51 pid:24403 Workerman[main.php] start in DEBUG mode
+2017-01-03 10:49:42 pid:24403 Workerman[main.php] Stopping ...
+2017-01-03 10:49:42 pid:24403 Workerman[main.php] has been stopped
+2017-01-03 10:49:42 pid:28218 Workerman[main.php] start in DEBUG mode
+2017-01-03 10:49:43 pid:28218 Workerman[main.php] Stopping ...
+2017-01-03 10:49:43 pid:28218 Workerman[main.php] has been stopped
+2017-01-03 10:50:34 pid:28303 Workerman[main.php] start in DEBUG mode
+2017-01-03 15:35:32 pid:28303 Workerman[main.php] Stopping ...
+2017-01-03 15:35:32 pid:28303 Workerman[main.php] has been stopped
+2017-01-03 15:35:51 pid:25778 Workerman[main.php] start in DEBUG mode
+2017-01-03 15:35:55 pid:25778 Workerman[main.php] Stopping ...
+2017-01-03 15:35:55 pid:25778 Workerman[main.php] has been stopped
+2017-01-03 15:36:12 pid:25808 Workerman[main.php] start in DEBUG mode
+2017-01-04 00:53:50 pid:29014 Workerman[main.php] start in DEBUG mode
+2017-01-04 00:54:22 pid:29014 Workerman[main.php] Stopping ...
+2017-01-04 00:54:22 pid:29014 Workerman[main.php] has been stopped
+2017-01-04 00:55:12 pid:29173 Workerman[main.php] start in DEBUG mode
+2017-01-04 00:55:27 pid:29173 Workerman[main.php] Stopping ...
+2017-01-04 00:55:27 pid:29173 Workerman[main.php] has been stopped
+2017-01-04 00:56:46 pid:29385 Workerman[main.php] start in DEBUG mode
+2017-01-04 00:57:35 pid:29385 Workerman[main.php] Stopping ...
+2017-01-04 00:57:35 pid:29385 Workerman[main.php] has been stopped
+2017-01-04 00:58:35 pid:29601 Workerman[main.php] start in DEBUG mode
+2017-01-04 00:58:40 pid:29601 Workerman[main.php] Stopping ...
+2017-01-04 00:58:40 pid:29601 Workerman[main.php] has been stopped
+2017-01-04 00:59:16 pid:29683 Workerman[main.php] start in DEBUG mode
+2017-01-04 01:02:10 pid:29683 Workerman[main.php] Stopping ...
+2017-01-04 01:02:10 pid:29683 Workerman[main.php] has been stopped
+2017-01-04 01:03:03 pid:30485 Workerman[main.php] start in DEBUG mode
+2017-01-04 01:03:42 pid:30485 Workerman[main.php] Stopping ...
+2017-01-04 01:03:42 pid:30485 Workerman[main.php] has been stopped
+2017-01-04 01:03:45 pid:30644 Workerman[main.php] start in DAEMON mode
+2017-01-04 01:03:53 pid:30677 Workerman[main.php] status 
+2017-01-04 01:04:33 pid:30825 Workerman[main.php] stop 
+2017-01-04 01:04:33 pid:30825 Workerman[main.php] is stoping ...
+2017-01-04 01:04:33 pid:30646 Workerman[main.php] Stopping ...
+2017-01-04 01:04:33 pid:30646 Workerman[main.php] has been stopped
+2017-01-04 01:04:33 pid:30825 Workerman[main.php] stop success
+2017-01-04 01:04:35 pid:30832 Workerman[main.php] start in DAEMON mode
+2017-01-04 08:46:42 pid:10959 Workerman[main.php] status 
+2017-01-04 08:57:18 pid:13310 Workerman[main.php] stop 
+2017-01-04 08:57:18 pid:13310 Workerman[main.php] is stoping ...
+2017-01-04 08:57:18 pid:30834 Workerman[main.php] Stopping ...
+2017-01-04 08:57:18 pid:30834 Workerman[main.php] has been stopped
+2017-01-04 08:57:18 pid:13310 Workerman[main.php] stop success
+2017-01-04 08:57:25 pid:13325 Workerman[main.php] start in DAEMON mode
+2017-01-04 08:59:14 pid:13712 Workerman[main.php] stop 
+2017-01-04 08:59:14 pid:13712 Workerman[main.php] is stoping ...
+2017-01-04 08:59:14 pid:13327 Workerman[main.php] Stopping ...
+2017-01-04 08:59:14 pid:13327 Workerman[main.php] has been stopped
+2017-01-04 08:59:14 pid:13712 Workerman[main.php] stop success
+2017-01-04 08:59:16 pid:13719 Workerman[main.php] start in DAEMON mode
+2017-01-04 22:51:59 pid:30021 Workerman[main.php] status 
+2017-01-04 22:52:03 pid:30048 Workerman[main.php] sttop 
+2017-01-04 22:52:10 pid:30087 Workerman[main.php] restart 
+2017-01-04 22:52:10 pid:30087 Workerman[main.php] is stoping ...
+2017-01-04 22:52:10 pid:13721 Workerman[main.php] Stopping ...
+2017-01-04 22:52:10 pid:13721 Workerman[main.php] has been stopped
+2017-01-04 22:52:10 pid:30087 Workerman[main.php] stop success
+2017-01-04 22:52:14 pid:30087 Workerman[main.php] Stopping ...
+2017-01-04 22:52:14 pid:30087 Workerman[main.php] has been stopped
+2017-01-04 22:52:18 pid:30122 Workerman[main.php] start in DAEMON mode
+2017-02-02 18:48:58 pid:27970 Workerman[main.php] start in DEBUG mode
+2017-02-02 18:48:58 pid:27970 Workerman[main.php] already running
+2017-02-02 18:49:02 pid:27990 Workerman[main.php] restart 
+2017-02-02 18:49:02 pid:27990 Workerman[main.php] is stoping ...
+2017-02-02 18:49:02 pid:30124 Workerman[main.php] Stopping ...
+2017-02-02 18:49:02 pid:30124 Workerman[main.php] has been stopped
+2017-02-02 18:49:02 pid:27990 Workerman[main.php] stop success
+2017-02-02 18:49:11 pid:27990 Workerman[main.php] Stopping ...
+2017-02-02 18:49:11 pid:27990 Workerman[main.php] has been stopped
+2017-02-02 18:49:46 pid:28101 Workerman[main.php] restart 
+2017-02-02 18:49:46 pid:28101 Workerman[main.php] is stoping ...
+2017-02-02 18:49:46 pid:28101 Workerman[main.php] stop success
+2017-02-02 18:51:43 pid:28101 Workerman[main.php] Stopping ...
+2017-02-02 18:51:43 pid:28101 Workerman[main.php] has been stopped
+2017-02-02 18:51:46 pid:28678 Workerman[main.php] restart 
+2017-02-02 18:51:46 pid:28678 Workerman[main.php] is stoping ...
+2017-02-02 18:51:46 pid:28678 Workerman[main.php] stop success
+2017-02-02 18:56:41 pid:30048 Workerman[main.php] stop 
+2017-02-02 18:56:41 pid:30048 Workerman[main.php] is stoping ...
+2017-02-02 18:56:41 pid:28680 Workerman[main.php] Stopping ...
+2017-02-02 18:56:41 pid:28680 Workerman[main.php] has been stopped
+2017-02-02 18:56:41 pid:30048 Workerman[main.php] stop success

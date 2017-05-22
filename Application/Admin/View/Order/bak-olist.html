@@ -1,0 +1,335 @@
+<extend name="Base/common"/>
+<block name="content">
+	<!-- this page specific styles -->
+    <link rel="stylesheet" href="__CSS__/compiled/order-list.css" type="text/css" media="screen" />
+    <link href="__CSS__/lib/bootstrap.datepicker.css" type="text/css" rel="stylesheet" />
+    <link href="__CSS__/lib/select2.css" type="text/css" rel="stylesheet" />
+    <div class="container-fluid order-screen">
+		<button class="btn btn-link pull-right" full-screen="0" id="fullScreen" style="outline: none;">全屏</button>
+        <div id="pad-wrapper" class="users-list">
+            <div class="row-fluid header" style="margin-bottom: 30px;">
+                <h3><if condition="I('ostaus') eq 0">持仓订单<else/>平仓订单</if></h3>
+                <form id="searchfm" method="get" action="{:U('Order/olist')}">
+                <input type="hidden" value="{$ostaus}" name="ostaus"/>
+				<div class="span10 pull-right">
+					<div class="tpsearch">
+						<label for="username">订单号：</label>
+						<input type="text" value="{$orderno}" name="orderno" id="orderno" placeholder="订单号">
+					</div>
+					<div class="tpsearch">
+						<label for="history">结算日期：</label>
+						<input type="text" value="{$history}" name="history" id="history" onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})">
+<!--						<select name="history" id="history" style="width: 206px;">
+							<option value="tday" {$history=='tday'?'selected':''}>当日</option>
+							<option value="yday" {$history=='yday'?'selected':''}>昨天</option>
+							<option value="7day" {$history=='7day'?'selected':''}>7天</option>
+							<option value="30dy" {$history=='30dy'?'selected':''}>近30天</option>
+							<option value="tsmh" {$history=='tsmh'?'selected':''}>本月</option>
+							<option value="ltmh" {$history=='ltmh'?'selected':''}>上月</option>
+							<option value="qutr" {$history=='qutr'?'selected':''}>本季度</option>
+							<option value="ltqr" {$history=='ltqr'?'selected':''}>上季度</option>
+							<option value="year" {$history=='year'?'selected':''}>今年</option>
+							<option value="ltyr" {$history=='ltyr'?'selected':''}>上年</option>
+						</select>-->
+					</div>
+					<div class="tpsearch">
+						<label for="username">登录账号：</label>
+						<input type="text" value="{$username}" name="username" id="username" placeholder="登录账号">
+					</div>
+					<div class="tpsearch">
+						<label for="realname">用户姓名：</label>
+						<input type="text" value="{$realname}" name="realname" id="realname" placeholder="用户姓名">
+					</div>
+					<a href="javascript:void(0)" onclick="$('#searchfm').submit();" class="btn-flat info pull-right" id="search_begin" style="margin-top: 20px;">开始查找</a>
+				</div>
+				<div class="span10 pull-right" data-desu="0" style="display: none;">
+					<div class="tpsearch" data-desu="0">
+						<label for="ptitle">商品名称：</label>
+						<select id="ptitle" name="ptitle" style="width: 206px;">
+                            <option value="">默认</option>
+                            <volist name="ptitlelist" id="vo" style="width: 206px;">
+                                <option {$ptitle==$vo['ptitle']?'selected':''}>{$vo.ptitle}</option>
+                            </volist>
+                        </select>
+					</div>
+					<div class="tpsearch">
+						<label for="endprofit">交易点数：</label>
+						<input type="text" value="{$endprofit}" name="endprofit" id="endprofit" placeholder="交易点数">
+					</div>
+					<div class="tpsearch">
+						<label for="dmjig">机构名称：</label>
+						<input type="text" value="{$dmjig}" name="dmjig" id="dmjig" placeholder="机构名称">
+					</div>
+				</div>
+				<div class="span10 pull-right" data-desu="0" style="display: none;">
+					<div class="tpsearch">
+						<label for="dmdail">代理名称：</label>
+						<input type="text" value="{$dmdail}" name="dmdail" id="dmdail" placeholder="代理名称">
+					</div>
+					<div class="tpsearch">
+						<label for="dmdail">会员编号：</label>
+						<input type="text" value="{$dmhuiy}" name="dmhuiy" id="dmhuiy" placeholder="会员编号">
+					</div>
+				</div>
+				<input name="psize" id="psize" type="hidden" value="{$psize}"/>
+				<input name="dorder" id="dorder" type="hidden" value="{$dorder}"/>
+				<input name="omodel" id="omodel" type="hidden" value="{$omodel}"/>
+				</form>
+				<a href="javascript:void(0);" id="desumore" style="float: right;position: absolute;top: 120px;right: 50px;">更多条件>></a>
+            </div>
+			<!-- 新的表格 2017年3月12日 -->
+			<style>
+				.ordtrd>td{border-right: 1px solid #eee;}
+                .order-head{position: relative;height: 35px;background: #eee;overflow: hidden;}
+                .order-head-tab{position: absolute;top:0;left: 0;}
+				.order-tabth>td{font-weight: bold;}
+				.order-block{height:200px;overflow: auto;border: 1px solid #ccc;}
+				.order-block-tab{width: 2300px;border-bottom: 1px solid #ddd;overflow-y:auto;overflow-x:hidden;}
+				.ordtablock{width: 2300px;overflow-y:auto;overflow-x:hidden;}
+				.full-screen{position: fixed;top:0;left:0;width: 100%;height:100%;background-color: white;z-index: 6666;}
+				.orderr{margin-left:5px;font-size:12px;font-weight:400;color: #666;cursor: pointer;opacity: .1;}
+				.orderr:hover{opacity: 1;}
+			</style>
+			<div class="row-fluid">
+				<div class="order-head">
+					<table class="table order-head-tab" style="width: 2350px;margin-bottom:0;">
+						<tr class="order-tabth">
+							<td style="width: 210px;">订单号</td>
+							<td style="width: 100px;">结算日期</td>
+							<td style="width: 100px;">登录账号</td>
+							<td style="width: 100px;">用户姓名</td>
+							<td style="width: 100px;">交易类型</td>
+							<td style="width: 100px;">商品名称</td>
+							<td style="width: 100px;">交易点数</td>
+							<td style="width: 100px;">交易次数</td>
+							<td style="width: 100px;">盈次数</td>
+							<td style="width: 100px;">亏次数</td>
+							<td style="width: 100px;">平次数</td>
+							<td style="width: 100px;">胜率(%)</td>
+							<td style="width: 100px;">买卖类型</td>
+							<td style="width: 100px;">委托金额</td>
+							<td style="width: 100px;">有效委托金</td>
+							<td style="width: 100px;">盈亏金额</td>
+							<td style="width: 100px;">盈利金额</td>
+							<td style="width: 100px;">手续费</td>
+							<td style="width: 100px;">亏损金额</td>
+							<td style="width: 100px;">交易管理费</td>
+							<td style="width: 100px;">推荐费</td>
+							<td style="width: 100px;">所属机构</td>
+							<td style="width: 100px;">所属代理</td>
+							<td style="width: 100px;">所属会员</td>
+							<td style="width: 100px;">交易市场</td>
+						</tr>
+					</table>
+				</div>
+				<div class="order-block">
+					<!-- 表格主体 -->
+					<table class="table order-block-tab">
+						<volist name="orderlist" id="vo">
+							<tr class="ordtrd">
+								<td style="width: 220px;">{$vo.orderno}</td>
+								<!--结算日期-->
+								<td style="width: 100px;">{$vo.sltd}</td>
+								<!--登录账号-->
+								<td style="width: 100px;">{$vo.username}</td>
+								<!--用户姓名-->
+								<td style="width: 100px;">{$vo.realname}</td>
+								<!--资金账户编号-->
+								<if condition="$vo['eid'] eq 1">
+									<td style="width: 100px;color: #6666CC;">点数</td>
+									<else />
+									<td style="width: 100px;color: #FF6666;">时间</td>
+								</if>
+								<!--商品名称-->
+								<td style="width: 100px;">{$vo.ptitle}</td>
+								<!--交易点数-->
+								<td style="width: 100px;">{$vo.endprofit|abs}</td>
+								<!--交易次数-->
+								<td style="width: 100px;">{$vo.odrcount}</td>
+								<!--盈次数-->
+								<td style="width: 100px;">{$vo.profitcount}</td>
+								<!--亏次数-->
+								<td style="width: 100px;">{$vo.losscount}</td>
+								<!--平次数-->
+								<td style="width: 100px;">{$vo.flatcount}</td>
+								<!--胜率-->
+								<if condition="$vo['winnpro'] lt 0.4">
+									<td style="width: 100px;color: #FFCC00;">{$vo['winnpro']*100}%</td>
+									<elseif condition="$vo['winnpro'] gt 0.4 and $vo['winnpro'] lt 0.75"/>
+									<td style="width: 100px;color: #CC33CC;">{$vo['winnpro']*100}%</td>
+									<else />
+									<td style="width: 100px;color: #00CC00;">{$vo['winnpro']*100}%</td>
+								</if>
+								<!--买卖类型-->
+								<if condition="$vo['ostyle'] eq 0">
+								<td style="width: 100px;color: red;">买涨</td>
+								<else />
+								<td style="width: 100px;color: green;">买跌</td>
+								</if>
+								<!--委托金额-->
+								<td style="width: 100px;">{$vo.feesum}</td>
+								<!--有效委托金额-->
+								<td style="width: 100px;">{$vo.tfeesum}</td>
+								<!--盈亏金额-->
+								<td style="width: 100px;{$vo['plosssum']>0?'color:blue':'color:red'};">{$vo.plosssum}</td>
+								<!--盈利金额-->
+								<td style="width: 100px;">{$vo.profit}</td>
+								<!--亏损金额-->
+								<td style="width: 100px;"><if condition="$vo[plosssum] gt 0">{:round($vo[feesum] * $vo[poundage] / 100, 2)}<else />0</if></td>
+								<!--手续费-->
+								<td style="width: 100px;">{$vo.loss|abs}</td>
+								<!--交易管理费-->
+								<td style="width: 100px;">{$vo.managefeesum}</td>
+								<!--推荐费-->
+								<td style="width: 100px;">{$vo.commissionsum}</td>
+								<!--所属机构名称-->
+								<td style="width: 100px;">{$vo.dmjig}</td>
+								<!--所属代理名称-->
+								<td style="width: 100px;">{$vo.dmjinj}</td>
+								<!--所属会员编号-->
+								<td style="width: 100px;">{$vo.dmhuiy}</td>
+								<!--交易市场-->
+								<td style="width: 100px;">{$vo.dmshic}</td>
+							</tr>
+						</volist>
+						<notempty name="orderlist">
+						<tr class="ordtrd">
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>{$ototal['odrcount']}</td>
+							<td>{$ototal['profitcount']}</td>
+							<td>{$ototal['losscount']}</td>
+							<td>{$ototal['flatcount']}</td>
+							<td></td>
+							<td></td>
+							<td>{$ototal['feesum']}</td>
+							<td>{$ototal['tfeesum']}</td>
+							<td style="{$ototal['plosssum']>0?'color:blue':'color:red'};">{$ototal['plosssum']}</td>
+							<td>{$ototal['profit']}</td>
+							<td></td>
+							<td>{$ototal['loss']|abs}</td>
+							<td>{$ototal['managefeesum']}</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						</notempty>
+					</table>
+					<empty name="orderlist">
+						<div style="padding:100px 0 0;text-align: center;font-size: 32px;">没有查询到任何数据</div>
+					</empty>
+				</div>
+			</div>
+
+            <div class="pagination pull-right">
+                <ul>{$page}</ul>
+				<div style="margin-right:15px;display: inline-block;height: 26px;line-height: 26px;" class="pull-left">每页显示:
+					<select style="margin:0;width: 60px;height: 24px;" onchange="$('#psize').val(this.value);$('#searchfm').submit();">
+						<option {$psize=='5'?'selected':''}>5</option>
+						<option {$psize=='10'?'selected':''}>10</option>
+						<option {$psize=='20'?'selected':''}>20</option>
+						<option {$psize=='50'?'selected':''}>50</option>
+						<option {$psize=='100'?'selected':''}>100</option>
+						<option {$psize=='200'?'selected':''}>200</option>
+					</select>&nbsp;条记录
+				</div>
+            </div>
+            <!-- end users table -->
+        </div>
+    </div>
+    <!-- end main container -->
+<div id="loading" style="width: 100%;height: 105%;position: absolute;top: 0; z-index: 9999;display: none;">
+	<div class="load-center" style="background: #000;position: absolute;width: 60%;height: 14%;bottom: 10%;border-radius: 10px;color: #fff;text-align: center;font-size: 24px;left: 17%;padding: 1%;">
+		<img src="__IMG__/ajax-loading.jpg" alt="ajax-loading" width="40"/><br/>页面加载中...
+	</div>
+</div>
+<!-- scripts -->
+<script language="javascript" type="text/javascript" src="__JS__/My97DatePicker/WdatePicker.js"></script>
+<script src="__JS__/jquery-latest.js"></script>
+<script src="__JS__/bootstrap.min.js"></script>
+<script src="__JS__/bootstrap.datepicker.js"></script>
+<script src="__JS__/theme.js"></script>
+<script src="__JS__/select2.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $("#desumore").click(function () {
+            if ($("[data-desu]").attr("data-desu")==0) {
+                $("[data-desu]").attr("data-desu",1);
+                $("[data-desu]").css("display","block");
+                $(this).text("更多条件<<");
+            }else{
+                $("[data-desu]").attr("data-desu",0);
+                $("[data-desu]").css("display","none");
+                $(this).text("更多条件>>");
+            }
+        });
+
+    	setdashboardmenu("订单管理");
+        // datepicker plugin
+        $('.datepicker').datepicker().on('changeDate', function (ev) {
+            $(this).datepicker('hide');
+        });
+//
+//        $(".select2").select2({
+//            placeholder: "请选择会员单位"
+//        });
+		//2017-3-13
+        var $fullScreen = $('#fullScreen');
+        var $orderScreen = $('.order-screen');
+        var $bodyy=$('body');
+        // 设置表格高度
+        $(".order-block").height($(window).height()*0.6);
+        // 全屏
+        $fullScreen.click(function () {
+            var $isFull=$fullScreen.attr('full-screen');
+            if ($isFull==0) { // 开启全屏
+                $fullScreen.attr('full-screen',1);
+                $orderScreen.addClass('full-screen');
+                $fullScreen.text('取消全屏');
+                $bodyy.css('overflow','hidden');
+                $(".order-block").height($(window).height()*0.5);
+            }else if ($isFull==1) { // 取消全屏
+                $fullScreen.attr('full-screen',0);
+                $orderScreen.removeClass('full-screen');
+                $fullScreen.text('全屏');
+                $bodyy.css('overflow','inherit');
+                $(".order-block").height($(window).height()*0.6);
+            }
+        });
+
+        $('.order-block').on('scroll',function(){
+            var myOffset = {};
+            myOffset.left = $('.order-block-tab').offset().left;
+            $('.order-head-tab').offset(myOffset);
+        });
+
+        $('.ordtrd').click(function () {
+            $('.ordtrd').removeClass('info');
+            $(this).addClass('info');
+        });
+
+        var $orderr=$('.orderr');
+        $orderr.click(function () {
+            var $dorder=$orderr.attr('data-order');
+            if ($orderr.attr('data-omodel')=="asc") {
+                $orderr.text("降序");
+                $orderr.attr('data-omodel','desc');
+            }else {
+                $orderr.text("排序");
+                $orderr.attr('data-omodel','asc');
+            }
+            $("#dorder").val($dorder);
+            $("#omodel").val($orderr.attr('data-omodel'));
+            $('#searchfm').submit();
+        });
+
+    });
+</script>
+</block>

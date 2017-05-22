@@ -1,0 +1,266 @@
+<extend name="Base/common"/>
+<block name="content">
+	<!-- this page specific styles -->
+    <link rel="stylesheet" href="__CSS__/compiled/new-user.css" type="text/css" media="screen" />
+        
+    <div class="container-fluid">
+        <div id="pad-wrapper" class="new-user">
+            <div class="row-fluid header">
+                <h3>操作详情</h3>
+            </div>
+            <div class="row-fluid form-wrapper" id="order-print">
+	            <input type="hidden" name="uid" value="{$detail['uid']}"/>
+	            <input type="hidden" name="id" value="{$detail['id']}"/>
+	            <!-- left column -->
+	            <div class="span7 with-sidebar">
+	                <div class="span9 field-box uname">
+	                    <label>客户名</label>
+	                    <label style="text-align: left;"><a href="{:U('User/updateuser',array('uid'=>$detail['uid']))}" class="name">{$detail.customer}</a></label>
+	                    <label>账户余额</label>
+	                    {$detail.balance}
+	                </div>
+	                <div class="span9 field-box">
+	                    <label>订单号</label>
+	                    {$detail.orderNo}
+	                </div>
+	                <div class="span9 field-box">
+	                    <label>外部订单号</label>
+	                    {$detail.outOrderNo}
+	                </div>
+	                <div class="span9 field-box">
+	                    <label>操作时间</label>
+	                	{$detail.begintime|date='Y-m-d H:i',###}
+	                </div>
+	                <div class="span9 field-box">
+	                    <label>操作类型</label>
+                    	<if condition="$detail.optype eq '1' ">
+                        充值
+                        <elseif condition="$detail.optype eq '2' "/>
+                        提现
+                        </if>
+	                </div>
+	                <div class="span9 field-box">
+	                    <label>状态</label>
+                    	<if condition="$detail.state eq '0' ">
+                        未开始
+                        <elseif condition="$detail.state eq '1' "/>
+                        处理中
+                        <elseif condition="$detail.state eq '2' "/>
+                        成功
+                        <elseif condition="$detail.state eq '3' "/>
+                        失败
+                        </if>
+	                </div>
+	                <if condition="$detail.state eq 3">
+	                <div class="span9 field-box">
+	                    <label>失败描述</label>
+	                    {$detail.errMsg}
+	                </div>
+	                </if>
+	                <div class="span9 field-box">
+	                    <label>通道</label>
+                    	<if condition="($detail.payway eq 1) or ($detail.payway eq 4) ">
+                        微信
+                        <elseif condition="($detail.payway eq 2) or ($detail.payway eq 6) "/>
+                        支付宝
+                        <elseif condition="$detail.payway eq 5 "/>
+                        银联
+                        </if>
+	                </div>
+					<div class="span9 field-box">
+						<label>账号</label>
+						{$detail.bankCardNo}
+					</div>
+	                <div class="span9 field-box">
+	                    <label>金额</label>
+	                    {$detail.amount}元
+	                </div>
+	                <div class="span9 field-box">
+	                    <label>手续费</label>
+	                    {$detail.fee}元
+	                </div>
+	                <if condition="$detail.optype eq 2 and $detail.payway eq 5">
+	                </if>
+					<if condition="$detail.is_manual eq 1">
+						<div class="span9 field-box">
+							<label>是否人工操作</label>
+							是
+						</div>
+					</if>
+					<if condition="$detail.is_manual eq 1">
+						<div class="span9 field-box">
+							<label>备注</label>
+							{$detail.remark}
+						</div>
+					</if>
+	                <div class="span9 field-box">
+	                    <label>审核状态</label>
+                    	<if condition="$detail.checkstate eq 1 ">
+                        待审
+					<a href="javascript:void(0);" class="btn-flat success" style="margin-left:50px" onclick="manualApply();">人工操作</a>
+                    <a href="javascript:void(0);" class="btn-flat success" style="margin-left:10px" onclick="agreeApply();">同意</a>
+		            <a href="javascript:void(0);" class="btn-flat fail" onclick="rejectApply();">拒绝</a>
+                        
+                        <elseif condition="$detail.checkstate eq 2 "/>
+                        通过
+                        <elseif condition="$detail.checkstate eq 3 "/>
+                       拒绝
+                        <elseif condition="$detail.checkstate eq 100 "/>
+                       系统自动审核
+                        </if>
+	                </div>
+	                <if condition="$detail.checkstate eq 3">
+	                <div class="span9 field-box">
+	                    <label>审核拒绝原因</label>
+	                    {$detail.checkFailReason}
+	                </div>
+	                </if>
+	                <if condition="($detail.checkstate eq 2) or ($detail.checkstate eq 3)">
+	                <div class="span9 field-box">
+	                    <label>审核时间</label>
+	                    {$detail.checktime|date='Y-m-d H:i',###}
+	                </div>
+	                <div class="span9 field-box">
+	                    <label>审核人</label>
+	                    {$detail.checkuser}
+	                </div>
+	                </if>
+	            </div>
+			</div>
+        </div>
+    </div>
+	<!-- scripts -->
+    <script src="__JS__/jquery-latest.js"></script>
+    <script src="__JS__/bootstrap.min.js"></script>
+    <script src="__JS__/theme.js"></script>
+    <script src="__PUBLIC__/Js/layer/layer.js"></script>
+    
+	<script type="text/javascript">
+		$(document).ready(function(){
+			setdashboardmenu("客户管理");
+		});
+	
+		function agreeApply() {
+			layer.confirm("同意之后，钱款会立即转给客户，是否继续？", {title:"确认"}, function(index) {
+				layer.close(index);
+				//实际转账
+				$.ajax({
+					url  : "{:U('agreeWithdraw')}",
+					type : "post",
+					data : {
+						"id" : {$detail.id}
+					},
+					success : function(msg) {
+						var m;
+						if (msg === "success") {
+							m = "操作成功！";
+						}
+						else {
+							if (msg.length > 50) {
+								m = "操作失败！";
+							}
+							else {
+								m = msg;
+							}
+						}
+
+						layer.alert(m, function(index) {
+							layer.close(index);
+							window.location.reload();
+						});
+					},
+					error : function(msg) {
+						layer.alert("操作失败！")
+					}
+				});
+			});
+		}
+
+        function manualApply() {
+            layer.prompt(
+                {
+                    formType: 2,
+                    title: '请输入备注',
+                    area: ['300px', '80px'] //自定义文本域宽高
+                },
+                function(value, index, elem){
+                    layer.close(index);
+                    //实际转账
+                    $.ajax({
+                            url  : "{:U('manualWithdraw')}",
+                            type : "post",
+                            data : {
+                                "id" : {$detail.id} , "remark" : value
+                        },
+                        success : function(msg) {
+                        var m;
+                        if (msg === "success") {
+                            m = "操作成功！";
+                        }
+                        else {
+                            if (msg.length > 50) {
+                                m = "操作失败！";
+                            }
+                            else {
+                                m = msg;
+                            }
+                        }
+
+                        layer.alert(m, function(index) {
+                            layer.close(index);
+                            window.location.reload();
+                        });
+                    },
+                    error : function(msg) {
+                        layer.alert("操作失败！")
+                    }
+                });
+                }
+            );
+        }
+
+		function rejectApply() {
+			layer.prompt(
+				{
+				  formType: 2,
+				  title: '请输入拒绝原因',
+				  area: ['300px', '80px'] //自定义文本域宽高
+				}, 
+				function(value, index, elem){
+				   layer.close(index);
+					//实际转账
+					$.ajax({
+						url  : "{:U('rejectWithdraw')}",
+						type : "post",
+						data : {
+							"id" : {$detail.id},
+							"rejectReason" : value
+						},
+						success : function(msg) {
+							var m;
+							if (msg === "success") {
+								m = "操作成功！";
+							}
+							else {
+								if (msg.length > 50) {
+									m = "操作失败！";
+								}
+								else {
+									m = msg;
+								}
+							}
+
+							layer.alert(m, function(index) {
+								layer.close(index);
+								window.location.reload();
+							});
+						},
+						error : function(msg) {
+							layer.alert("操作失败！")
+						}
+					});
+				}
+			);
+		}
+	</script>	
+</block>

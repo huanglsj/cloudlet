@@ -42,11 +42,11 @@ class UserController extends Controller
             $where['username'] = I('post.username');
             $where['ustatus'] = array('neq', 0);
             $lockCheck = $keyaccess->isClientLock(I('post.username'));
-            if ($lockCheck['result']) {
-                $this->assign('errorMsg', $lockCheck['errorMsg']);
-                $this->display();
-                return;
-            }
+//            if ($lockCheck['result']) {
+//                $this->assign('errorMsg', $lockCheck['errorMsg']);
+//                $this->display();
+//                return;
+//            }
             $result = $user->where($where)->field('uid,username,upwd,utime')->find();
             if ($result) {
                 $keyaccessinfo['outid'] = $result['uid'];

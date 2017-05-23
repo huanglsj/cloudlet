@@ -239,22 +239,23 @@ class UserController extends Controller
             . $tq . 'userinfo.ucode as ucode';
         //分页
         if (I('username') <> '') {
-            $map['username'] = I('username');
+            $map['username'] = array('like', '%'.I('username').'%');
         }
         if (I('nickname') <> '') {
-            $map['nickname'] = I('nickname');
+            $map['nickname'] = array('like', '%'.I('nickname').'%');
         }
         if (I('utel') <> '') {
-            $map['utel'] = I('utel');
+            $map['utel'] = array('like', I('utel').'%');
         }
         if (I('utime') <> '') {
-            $map['utime'] = array('gt', strtotime(urldecode(I('utime'))));
+            $map['utime'] = array('elt', strtotime(urldecode(I('utime'))));
         }
         if (I('companyid') <> '0' && I('companyid') <> '') {
             $map['companyid'] = I('companyid');
+//            var_dump($map['companyid']);
         }
         if (I('authenticationsstatus') <> '') {
-            $map['authenticationsstatus'] = I('authenticationsstatus');
+            $map['authenticationsstatus'] = array('eq', I('authenticationsstatus'));
         }
         if (I('ustatus') <> '') {
             $map['ustatus'] = I('ustatus');
@@ -265,7 +266,6 @@ class UserController extends Controller
             $map['ustatus'] = I('ustatus');
         }
         $map['otype'] = 0;
-        $map['utel'] = array('neq', '');
         $count = $user->where($map)->count();
         $psize = I('psize');
         if (strlen($psize) <= 0) {
@@ -274,11 +274,11 @@ class UserController extends Controller
         $this->assign('psize', $psize);
         $page = new \Think\Page($count, $psize);
         foreach ($map as $key => $value) {
-            if ($key == 'utime') {
-                $page->parameter[$key] = urlencode(urldecode(I('utime')));
-            } else {
-                $page->parameter[$key] = urlencode($value);//此处的row是数组，为了传递查询条件
-            }
+//            if ($key == 'utime') {
+//                $page->parameter[$key] = urlencode(urldecode(I('utime')));
+//            } else {
+//                $page->parameter[$key] = urlencode($value);//此处的row是数组，为了传递查询条件
+//            }
         }
         $page->setConfig('first', '首页');
         $page->setConfig('prev', '&#8249;');
@@ -661,7 +661,6 @@ class UserController extends Controller
         }
         $this->assign("totalcount", $totalCount);
         $this->assign("totalamount", $totalAmount);
-
         $rechargelist = $model->query($dataSql, $params);
 
         foreach ($rechargelist as $k => $value) {

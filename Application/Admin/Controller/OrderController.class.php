@@ -89,7 +89,7 @@ class OrderController extends Controller
         if($history){
             $wheres .= " and FROM_UNIXTIME({$selectTimeFiled}, '%Y-%m-%d %H:%k') >= '{$history}'";
         }else{
-            $wheres .= " and FROM_UNIXTIME({$selectTimeFiled}, '%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d')";
+//            $wheres .= " and FROM_UNIXTIME({$selectTimeFiled}, '%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d')";
         }
 
         // 结算日期
@@ -167,6 +167,8 @@ class OrderController extends Controller
         if (strlen($dmhuiy) > 0) {
             $wheres .= " and {$tp}department.huiyuan_code={$dmhuiy}";
         }
+
+//        var_dump($wheres);
 
         // 要查询的字段
         $fieldarr = "FROM_UNIXTIME({$tp}order.selltime, '%Y-%m-%d %H:%i:%s') as sltd, {$tp}order.selltime" // 结算日期
@@ -248,7 +250,6 @@ class OrderController extends Controller
             ->order($orders)
             ->limit($page->firstRow . ',' . $page->listRows)
             ->select();
-
         echo "<!--";
         echo $order->getLastSql();
         echo "-->";
@@ -345,6 +346,8 @@ class OrderController extends Controller
 
         }
 
+//        var_dump($orderlist);
+//        var_dump($show);
         $this->assign('page', $show);
         $this->assign('orderlist', $orderlist);
         $this->assign('ototal', $ototal);

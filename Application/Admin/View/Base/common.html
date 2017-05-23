@@ -240,10 +240,10 @@
                     </if>
                     <!--<li><a href="{:U('Admin/User/ugroup')}">用户组设置</a></li>-->
                     <if condition="$_SESSION['pkey']['USER_DEPOSIT'] eq '1'">
-                    <li><a href="{:U('User/recharge?optype=1&opdate='.date('Y-m-d'))}">充值列表</a></li>
+                    <li><a href="{:U('User/recharge?optype=1')}">充值列表</a></li>
                     </if>
                     <if condition="$_SESSION['pkey']['USER_WITHDRAW'] eq '1'">
-                    <li><a href="{:U('User/recharge?optype=2&opdate='.date('Y-m-d'))}">提现列表</a></li>
+                    <li><a href="{:U('User/recharge?optype=2')}">提现列表</a></li>
                     </if>
                     <if condition="$_SESSION['pkey']['USER_BALANCELIST'] eq '1'">
                     <li><a href="{:U('User/balancelist')}">余额流水</a></li>

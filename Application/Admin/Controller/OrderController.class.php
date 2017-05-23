@@ -65,10 +65,10 @@ class OrderController extends Controller
         // 拼接查询条件
         $wheres = "{$tp}order.ostaus={$ostaus}";
 
-        if ($ostaus==1) {
+        if ($ostaus == 1) {
             $selectTimeFiled = "{$tp}order.selltime";
             $wheres .= " and {$tp}order.settlementdate<>''";
-        }else{
+        } else {
             $selectTimeFiled = "{$tp}order.buytime";
         }
 
@@ -86,39 +86,39 @@ class OrderController extends Controller
 
         // 结算日期
         $history = I('history');
-        if($history){
+        if ($history) {
             $wheres .= " and FROM_UNIXTIME({$selectTimeFiled}, '%Y-%m-%d %H:%k') >= '{$history}'";
-        }else{
+        } else {
 //            $wheres .= " and FROM_UNIXTIME({$selectTimeFiled}, '%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d')";
         }
 
         // 结算日期
-/*        $history = I('history');
-        if ($init == 1) {
-            $history = "tday";
-        }
-        if ($history == "yday") { // 昨天
-            $wheres .= " and to_days(FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d'))-to_days(FROM_UNIXTIME({$tp}order.settlementdate, '%Y-%m-%d')) = 1";
-        } elseif ($history == "7day") { // 近7天
-            $wheres .= " and date_sub(curdate(),interval 7 day)<=FROM_UNIXTIME({$tp}order.settlementdate, '%Y-%m-%d')";
-        } elseif ($history == "30dy") { // 近30天
-            $wheres .= " and date_sub(curdate(),interval 30 day)<=FROM_UNIXTIME({$tp}order.settlementdate, '%Y-%m-%d')";
-        } elseif ($history == "tsmh") { // 本月
-            $wheres .= " and FROM_UNIXTIME({$tp}order.settlementdate, '%Y%m')=date_format(curdate(),'%Y%m')";
-        } elseif ($history == "ltmh") { // 上月
-            $wheres .= " and date_format(now(),'%Y%m')-FROM_UNIXTIME({$tp}order.settlementdate, '%Y%m')=1";
-        } elseif ($history == "qutr") { // 本季度
-            $wheres .= " and QUARTER(FROM_UNIXTIME({$tp}order.settlementdate, '%Y-%m-%d'))=QUARTER(FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d'))";
-        } elseif ($history == "ltqr") { // 上季度
-            $wheres .= " and QUARTER(FROM_UNIXTIME({$tp}order.settlementdate, '%Y-%m-%d'))=QUARTER(DATE_SUB(FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d'),interval 1 QUARTER))";
-        } elseif ($history == "year") { // 今年
-            $wheres .= " and YEAR(FROM_UNIXTIME({$tp}order.settlementdate, '%Y-%m-%d')) = YEAR(NOW())";
-        } elseif ($history == "ltyr") { // 上年
-            $wheres .= " and YEAR(FROM_UNIXTIME({$tp}order.settlementdate, '%Y-%m-%d')) = year(date_sub(now(),interval 1 year))";
-        } else {
+        /*        $history = I('history');
+                if ($init == 1) {
+                    $history = "tday";
+                }
+                if ($history == "yday") { // 昨天
+                    $wheres .= " and to_days(FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d'))-to_days(FROM_UNIXTIME({$tp}order.settlementdate, '%Y-%m-%d')) = 1";
+                } elseif ($history == "7day") { // 近7天
+                    $wheres .= " and date_sub(curdate(),interval 7 day)<=FROM_UNIXTIME({$tp}order.settlementdate, '%Y-%m-%d')";
+                } elseif ($history == "30dy") { // 近30天
+                    $wheres .= " and date_sub(curdate(),interval 30 day)<=FROM_UNIXTIME({$tp}order.settlementdate, '%Y-%m-%d')";
+                } elseif ($history == "tsmh") { // 本月
+                    $wheres .= " and FROM_UNIXTIME({$tp}order.settlementdate, '%Y%m')=date_format(curdate(),'%Y%m')";
+                } elseif ($history == "ltmh") { // 上月
+                    $wheres .= " and date_format(now(),'%Y%m')-FROM_UNIXTIME({$tp}order.settlementdate, '%Y%m')=1";
+                } elseif ($history == "qutr") { // 本季度
+                    $wheres .= " and QUARTER(FROM_UNIXTIME({$tp}order.settlementdate, '%Y-%m-%d'))=QUARTER(FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d'))";
+                } elseif ($history == "ltqr") { // 上季度
+                    $wheres .= " and QUARTER(FROM_UNIXTIME({$tp}order.settlementdate, '%Y-%m-%d'))=QUARTER(DATE_SUB(FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d'),interval 1 QUARTER))";
+                } elseif ($history == "year") { // 今年
+                    $wheres .= " and YEAR(FROM_UNIXTIME({$tp}order.settlementdate, '%Y-%m-%d')) = YEAR(NOW())";
+                } elseif ($history == "ltyr") { // 上年
+                    $wheres .= " and YEAR(FROM_UNIXTIME({$tp}order.settlementdate, '%Y-%m-%d')) = year(date_sub(now(),interval 1 year))";
+                } else {
 
-            $wheres .= " and FROM_UNIXTIME({$selectTimeFiled}, '%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d')";
-        }*/
+                    $wheres .= " and FROM_UNIXTIME({$selectTimeFiled}, '%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d')";
+                }*/
 
         // 订单号
         $orderno = I('orderno');
@@ -177,10 +177,10 @@ class OrderController extends Controller
             . ",{$tp}order.ptitle as ptitle" // 商品名称
             . ",{$tp}order.endprofit as endprofit" // 交易点数
             . ",count({$tp}order.oid) as odrcount" // 交易次数
-            . ",'desu' AS profitcount" // 盈次数(假的)
-            . ",'desu' AS losscount" // 亏次数(假的)
-            . ",'desu' AS flatcount" // 亏次数(假的)
-            . ",'desu' AS winnpro" // 胜率(假的)
+//            . ",'desu' AS profitcount" // 盈次数(假的)
+//            . ",'desu' AS losscount" // 亏次数(假的)
+//            . ",'desu' AS flatcount" // 亏次数(假的)
+//            . ",'desu' AS winnpro" // 胜率(假的)
             . ",sum({$tp}order.fee) as feesum" // 委托金额
             . ",sum({$tp}order.fee) as tfeesum" // 有效委托金额
             . ",sum({$tp}order.ploss) as plosssum" // 盈亏金额
@@ -226,15 +226,26 @@ class OrderController extends Controller
         $page->setConfig('theme', '%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% ');
         $show = $page->show();
 
-
-        $orders="realname asc, sltd desc, {$tp}order.oid";
+        $sltdSort = I('sltdSort');
+        $profitSort = I('profitSort');
+        $lossSort = I('lossSort');
+        $sltdSortWay = I('sltdSortWay');
+        $profitSortWay = I('profitSortWay');
+        $lossSortWay = I('lossSortWay');
+//        $orders = "realname asc, sltd desc, {$tp}order.oid";
+//        $orders = "sltd desc";
+        if($sltdSort || $profitSort || $lossSort){
+            $orders = $sltdSort.' '.$sltdSortWay.','.$profitSort.' '.$profitSortWay.','.$lossSort.' '.$lossSortWay;
+        }else{
+            $orders = "realname asc, sltd desc, {$tp}order.oid";
+        }
         $dorder = I('dorder');
         $omodel = I('omodel');
         if (strlen($omodel) <= 0) {
             $omodel = "asc";
         }
-        if (strlen($dorder) > 0&&strlen($omodel) > 0) {
-            $orders="{$dorder} {$omodel}";
+        if (strlen($dorder) > 0 && strlen($omodel) > 0) {
+            $orders = "{$dorder} {$omodel}";
         }
         $this->assign('dorder', $dorder);
         $this->assign('omodel', $omodel);
@@ -283,31 +294,31 @@ class OrderController extends Controller
                 ->where("useruid=" . $orderlist[$i]['uid'])
                 ->find()['realname'];
             // 盈次数
-            $orderlist[$i]['profitcount'] = $order
-                ->join("{$tp}userinfo on {$tp}userinfo.uid = {$tp}order.uid", 'left')
-                ->where($wherec . " and {$tp}order.ploss>0")
-                ->count();
+//            $orderlist[$i]['profitcount'] = $order
+//                ->join("{$tp}userinfo on {$tp}userinfo.uid = {$tp}order.uid", 'left')
+//                ->where($wherec . " and {$tp}order.ploss>0")
+//                ->count();
             // 亏次数
-            $orderlist[$i]['losscount'] = $order
-                ->join("{$tp}userinfo on {$tp}userinfo.uid = {$tp}order.uid", 'left')
-                ->where($wherec . " and {$tp}order.ploss<0"
-                )->count();
+//            $orderlist[$i]['losscount'] = $order
+//                ->join("{$tp}userinfo on {$tp}userinfo.uid = {$tp}order.uid", 'left')
+//                ->where($wherec . " and {$tp}order.ploss<0"
+//                )->count();
             // 平次数
-            $orderlist[$i]['flatcount'] = $order
-                ->join("{$tp}userinfo on {$tp}userinfo.uid = {$tp}order.uid", 'left')
-                ->where($wherec . " and {$tp}order.ploss=0"
-                )->count();
+//            $orderlist[$i]['flatcount'] = $order
+//                ->join("{$tp}userinfo on {$tp}userinfo.uid = {$tp}order.uid", 'left')
+//                ->where($wherec . " and {$tp}order.ploss=0"
+//                )->count();
             // 计算胜率(%)
-            $orderlist[$i]['winnpro'] = sprintf("%.2f", $orderlist[$i]['profitcount'] / ($orderlist[$i]['odrcount'] - $orderlist[$i]['flatcount']));
+           // $orderlist[$i]['winnpro'] = sprintf("%.2f", $orderlist[$i]['profitcount'] / ($orderlist[$i]['odrcount'] - $orderlist[$i]['flatcount']));
             // 推荐费
 //            $orderlist[$i]['commissionsum'] *= 0.125;
             // 委托金额
 //            $orderlist[$i]['feesum'] -= $orderlist[$i]['commissionsum'];
             // 有效委托金额
-            $feesumnr=$orderlist[$i]['feesum'] - $order
+            $feesumnr = $orderlist[$i]['feesum'] - $order
                     ->field("sum(fee) as tfeesum")
                     ->join("{$tp}userinfo on {$tp}userinfo.uid = {$tp}order.uid", 'left')
-                    ->where($wherec." and {$tp}order.ploss=0")->find()['tfeesum'];
+                    ->where($wherec . " and {$tp}order.ploss=0")->find()['tfeesum'];
             $feesumnr == null ? 0 : $feesumnr;
             $orderlist[$i]['tfeesum'] = $feesumnr;
 
@@ -317,7 +328,7 @@ class OrderController extends Controller
             }
 
             // 交易市场
-	$tmp=$department
+            $tmp = $department
                 ->field("name")
                 ->where("code=000")
                 ->find();
@@ -326,11 +337,11 @@ class OrderController extends Controller
             // 交易次数(总和)
             $ototal['odrcount'] += $orderlist[$i]['odrcount'];
             // 盈次数(总和)
-            $ototal['profitcount'] += $orderlist[$i]['profitcount'];
+           // $ototal['profitcount'] += $orderlist[$i]['profitcount'];
             // 亏次数(总和)
-            $ototal['losscount'] += $orderlist[$i]['losscount'];
+           // $ototal['losscount'] += $orderlist[$i]['losscount'];
             // 平次数(总和)
-            $ototal['flatcount'] += $orderlist[$i]['flatcount'];
+            //$ototal['flatcount'] += $orderlist[$i]['flatcount'];
             // 委托金额(总和)
             $ototal['feesum'] += $orderlist[$i]['feesum'];
             // 有效委托金额(总和)

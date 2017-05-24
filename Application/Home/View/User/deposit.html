@@ -78,10 +78,10 @@
 				alert("微信支付通道正在维护，请选择支付宝支付，敬请谅解！");
 				return false;
 			}*/
-			if (payway == "unionpay") {
-				alert("银联支付通道正在维护，请选择支付宝支付，敬请谅解！");
-				return false;
-			}
+//			if (payway == "unionpay") {
+//				alert("银联支付通道正在维护，请选择支付宝支付，敬请谅解！");
+//				return false;
+//			}
 
 			if (!checkAmount(amount)) {
 				alert("请输入正确的金额！");
@@ -234,8 +234,8 @@
    <div style="text-align: center;">
 	   	<img data-payway="weixin" style="height:100px;width:100px;float: initial;" class="payway amount_select amount_select_left amount_selected" src="/Public/images/weipay.png"/>
 	   <img data-payway="alipay" style="height:100px;width:100px;margin-left: 2em;float: initial;" class="payway amount_select amount_select_right" src="/Public/images/alipay.png"/>
-	   <img data-payway="qq" style="height:100px;width:100px;float: initial;" class="payway amount_select amount_select_left" src="/Public/images/qq.png"/>
-	   <img data-payway="yinlian" style="height:100px;width:100px;margin-left: 2em;float: initial;" class="payway amount_select amount_select_right" src="/Public/images/yinlian.png"/>
+	   <img data-payway="qqzf" style="height:100px;width:100px;float: initial;" class="payway amount_select amount_select_left" src="/Public/images/qq.png"/>
+	   <img data-payway="unionpay" style="height:100px;width:100px;margin-left: 2em;float: initial;" class="payway amount_select amount_select_right" src="/Public/images/yinlian.png"/>
    </div>
    <!--<img data-payway="alipay" style="height:100px;width:auto;padding:0;margin-left: 2em;border-radius: 5px;" class="payway amount_select amount_select_right amount_selected" src="/Public/images/zhifubao.jpg"/>-->
      

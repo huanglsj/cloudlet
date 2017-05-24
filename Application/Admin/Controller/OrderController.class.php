@@ -67,7 +67,7 @@ class OrderController extends Controller
 
         if ($ostaus == 1) {
             $selectTimeFiled = "{$tp}order.selltime";
-            $wheres .= " and {$tp}order.settlementdate<>''";
+//            $wheres .= " and {$tp}order.settlementdate<>''";
         } else {
             $selectTimeFiled = "{$tp}order.buytime";
         }
@@ -226,18 +226,22 @@ class OrderController extends Controller
         $page->setConfig('theme', '%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% ');
         $show = $page->show();
 
-        $sltdSort = I('sltdSort');
-        $profitSort = I('profitSort');
-        $lossSort = I('lossSort');
-        $sltdSortWay = I('sltdSortWay');
-        $profitSortWay = I('profitSortWay');
-        $lossSortWay = I('lossSortWay');
-//        $orders = "realname asc, sltd desc, {$tp}order.oid";
-//        $orders = "sltd desc";
-        if($sltdSort || $profitSort || $lossSort){
-            $orders = $sltdSort.' '.$sltdSortWay.','.$profitSort.' '.$profitSortWay.','.$lossSort.' '.$lossSortWay;
-        }else{
-            $orders = "realname asc, sltd desc, {$tp}order.oid";
+        $listSort = I('sort');
+        $listWay = I('way');
+        if ($listSort) {
+            switch ($listSort) {
+                case 'sltd':
+                    $orders = "sltd " . $listWay;
+                    break;
+                case 'profit':
+                    $orders = "sum(case when {$tp}order.ploss > 0 then {$tp}order.ploss else 0 end) " . $listWay;
+                    break;
+                case 'plosssum':
+                    $orders = "sum({$tp}order.ploss) " . $listWay;
+                    break;
+            }
+        } else {
+            $orders = "sltd desc";
         }
         $dorder = I('dorder');
         $omodel = I('omodel');
@@ -277,6 +281,8 @@ class OrderController extends Controller
             'profit' => 0,
             'loss' => 0,
             'managefeesum' => 0,
+            'poundage' => 0,
+            'commissionsum' => 0
         );
 
         for ($i = 0; $i < count($orderlist); $i++) {
@@ -309,7 +315,7 @@ class OrderController extends Controller
 //                ->where($wherec . " and {$tp}order.ploss=0"
 //                )->count();
             // 计算胜率(%)
-           // $orderlist[$i]['winnpro'] = sprintf("%.2f", $orderlist[$i]['profitcount'] / ($orderlist[$i]['odrcount'] - $orderlist[$i]['flatcount']));
+            // $orderlist[$i]['winnpro'] = sprintf("%.2f", $orderlist[$i]['profitcount'] / ($orderlist[$i]['odrcount'] - $orderlist[$i]['flatcount']));
             // 推荐费
 //            $orderlist[$i]['commissionsum'] *= 0.125;
             // 委托金额
@@ -337,9 +343,9 @@ class OrderController extends Controller
             // 交易次数(总和)
             $ototal['odrcount'] += $orderlist[$i]['odrcount'];
             // 盈次数(总和)
-           // $ototal['profitcount'] += $orderlist[$i]['profitcount'];
+            // $ototal['profitcount'] += $orderlist[$i]['profitcount'];
             // 亏次数(总和)
-           // $ototal['losscount'] += $orderlist[$i]['losscount'];
+            // $ototal['losscount'] += $orderlist[$i]['losscount'];
             // 平次数(总和)
             //$ototal['flatcount'] += $orderlist[$i]['flatcount'];
             // 委托金额(总和)
@@ -354,6 +360,15 @@ class OrderController extends Controller
             $ototal['loss'] += $orderlist[$i]['loss'];
             // 交易管理费(总和)
             $ototal['managefeesum'] += $orderlist[$i]['managefeesum'];
+            //手续费总和
+
+//            var_dump($orderlist[$i]['poundage']);
+            if ($orderlist[$i]['plosssum'] > 0) {
+                $ototal['poundage'] += round($orderlist[$i]['feesum'] * $orderlist[$i]['poundage'] / 100, 2);
+            } else {
+                $ototal['poundage'] += 0;
+            }
+            $ototal['commissionsum'] += $orderlist[$i]['commissionsum'];
 
         }
 

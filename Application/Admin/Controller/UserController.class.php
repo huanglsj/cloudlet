@@ -286,31 +286,47 @@ class UserController extends Controller
         $page->setConfig('last', '尾页');
         $page->setConfig('theme', '%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% ');
         $show = $page->show();
+
+        //排序
+        if(I("sort")){
+            $mySort = 'accountinfo.'.I("sort").' '.I("way");
+        }else{
+            $mySort = 'accountinfo.balance desc';
+        }
+
         //查询用户和账户信息
         $ulist = $user->Distinct(true)
             ->join($tq . 'accountinfo on ' . $tq . 'userinfo.uid=' . $tq . 'accountinfo.uid', 'left')
             ->join($tq . 'authenticationinfo on ' . $tq . 'userinfo.uid=' . $tq . 'authenticationinfo.useruid', 'left')
-            ->where($map)->field($field)->order($tq . 'userinfo.uid desc')
+            ->where($map)->field($field)->order($tq . $mySort)
             ->limit($page->firstRow . ',' . $page->listRows)->select();
 
         $cmap['isdelete'] = array('neq', 'Y');
         $cmap['type'] = 2;
         $companys = M('companyinfo')->where($cmap)->field('cid,ccode,comname')->select();
         //循环用户id，获取该用户的所有订单数
+        $ototal = array();
         foreach ($ulist as $k => $v) {
             $department = M('department')->where("code={$ulist[$k]['ucode']}")->field('code,huiyuan_name,jigou_name,daili_name,huiyuan_code')->select()[0];
+            $ototal['balance'] += $ulist[$k]['balance'];
             $ulist[$k]['balance'] = number_format($ulist[$k]['balance'], 2);
             $ulist[$k]['dmjig'] = $department['jigou_name'];
             $ulist[$k]['dmjinj'] = $department['daili_name'];
             $ulist[$k]['dmhuiy'] = $department['huiyuan_code'];
             $ulist[$k]['dmname'] = $department['huiyuan_name'];
             $ulist[$k]['orderSum'] = M('Order')->where(array('uid'=>$v['uid'], 'ostaus'=>1, 'ploss'=>array('neq',0)))->sum('fee');
+            $ototal['orderSum'] += $ulist[$k]['orderSum'];
             $ulist[$k]['orderSum'] = number_format($ulist[$k]['orderSum'], 2);
         }
+
+        $this->assign('ototal', $ototal);
+
 
         $this->assign('page', $show);
         $this->assign('ulist', $ulist);
         $this->assign('companys', $companys);
+
+
 
         //统计
         //用户数量

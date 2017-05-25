@@ -113,7 +113,7 @@ class DetailedController extends CommonController {
         $count =M('order')->where(array('uid'=>$uid))->count();
         $pagecount = 5;
         $page = new \Think\Page($count , $pagecount);
-        //$page->parameter = $row; //此处的row是数组，为了传递查询条件
+//        $page->parameter = array('type','as'); //此处的row是数组，为了传递查询条件
         $page->setConfig('first','首页');
         $page->setConfig('prev','上一页');
         $page->setConfig('next','下一页');
@@ -125,20 +125,20 @@ class DetailedController extends CommonController {
         $this->assign('list',$list);
         $this->assign('page',$show);
 
-//        $payCount =M('pay')->where(array('uid'=>$uid))->count();
-//        $payPageCount = 5;
-//        $payPage = new \Think\Page($payCount , $payPageCount);
-//        //$page->parameter = $row; //此处的row是数组，为了传递查询条件
-//        $payPage->setConfig('first','首页');
-//        $payPage->setConfig('prev','上一页');
-//        $payPage->setConfig('next','下一页');
-//        $payPage->setConfig('last','尾页');
-//        $payPage->setConfig('theme','%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END%  第 '.I('p',1).' 页/共 %TOTAL_PAGE% 页 ( '.$payPageCount.' 条/页 共 %TOTAL_ROW% 条)');
-//        $payShow = $payPage->show();
-        //$list = M('order')->where('uid='.$uid)->order('jtime desc' )->limit($page->firstRow.','.$page->listRows)->select();
-        $payList = M('pay')->where(array('uid'=>$uid))->order('payReqTime desc' )->select();
+        $payCount =M('pay')->where(array('uid'=>$uid))->count();
+        $payPageCount = 5;
+        $payPage = new \Think\Page($payCount , $payPageCount);
+//        $payPage::p = 'page'; //此处的row是数组，为了传递查询条件
+        $payPage->setConfig('first','首页');
+        $payPage->setConfig('prev','上一页');
+        $payPage->setConfig('next','下一页');
+        $payPage->setConfig('last','尾页');
+        $payPage->setConfig('theme','%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END%  第 '.I('p',1).' 页/共 %TOTAL_PAGE% 页 ( '.$payPageCount.' 条/页 共 %TOTAL_ROW% 条)');
+        $payShow = $payPage->show();
+        $payList = M('pay')->where('uid='.$uid)->order('beginTime desc' )->limit($payPage->firstRow.','.$payPage->listRows)->select();
+//        $payList = M('pay')->where(array('uid'=>$uid))->order('payReqTime desc' )->select();
         $this->assign('payList',$payList);
-//        $this->assign('payShow',$payShow);
+        $this->assign('payShow',$payShow);
 
 
         $this->display();

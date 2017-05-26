@@ -85,12 +85,30 @@ class OrderController extends Controller
         $this->assign("psize", $psize);
 
         // 结算日期
-        $history = I('history');
-        if ($history) {
-            $wheres .= " and FROM_UNIXTIME({$selectTimeFiled}, '%Y-%m-%d %H:%k') >= '{$history}'";
-        } else {
-//            $wheres .= " and FROM_UNIXTIME({$selectTimeFiled}, '%Y-%m-%d') = FROM_UNIXTIME(unix_timestamp(), '%Y-%m-%d')";
+//        $startHistory = I('startHistory');
+//        $endHistory = I('endHistory');
+        $startHistory = str_replace('_', ' ', I('startHistory'));
+        $endHistory = str_replace('_', ' ', I('endHistory'));
+        if ($startHistory && !$endHistory) {
+            $wheres .= " and FROM_UNIXTIME({$selectTimeFiled}, '%Y-%m-%d %H:%k') <= '{$startHistory}'";
         }
+
+        if (!$startHistory && $endHistory) {
+
+            $wheres .= " and FROM_UNIXTIME({$selectTimeFiled}, '%Y-%m-%d %H:%k') <= '{$endHistory}'";
+        }
+
+        if ($startHistory && $endHistory) {
+            if(strtotime($startHistory)>strtotime($endHistory)){
+                die("<script>alert('开始结算时间不能大于结束结算时间！');history.back(-1);</script>");
+            }else{
+                $wheres .= " and '{$startHistory}' <= FROM_UNIXTIME({$selectTimeFiled}, '%Y-%m-%d %H:%k')";
+                $wheres .= " and '{$endHistory}' >= FROM_UNIXTIME({$selectTimeFiled}, '%Y-%m-%d %H:%k')";
+            }
+
+        }
+
+//        var_dump($wheres);
 
         // 结算日期
         /*        $history = I('history');

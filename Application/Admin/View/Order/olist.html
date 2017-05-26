@@ -22,9 +22,9 @@
                             <input type="text" value="{$orderno}" name="orderno" id="orderno" placeholder="订单号">
                         </div>
                         <div class="tpsearch">
-                            <label for="history">结算日期：</label>
-                            <input type="text" value="{$history}" name="history" id="history"
-                                   onclick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm'})">
+                            <label for="history">开始结算日期：</label>
+                            <input type="text" value="<?php echo urldecode(I('startHistory'))?>" name="startHistory" id="history"
+                                   onclick="WdatePicker({dateFmt:'yyyy-MM-dd_HH:mm'})">
                             <!--						<select name="history" id="history" style="width: 206px;">
                                                         <option value="tday" {$history=='tday'?'selected':''}>当日</option>
                                                         <option value="yday" {$history=='yday'?'selected':''}>昨天</option>
@@ -37,6 +37,11 @@
                                                         <option value="year" {$history=='year'?'selected':''}>今年</option>
                                                         <option value="ltyr" {$history=='ltyr'?'selected':''}>上年</option>
                                                     </select>-->
+                        </div>
+                        <div class="tpsearch">
+                            <label for="endHistory">结束结算日期：</label>
+                            <input type="text" value="<?php echo urldecode(I('endHistory'))?>" name="endHistory" id="endHistory"
+                                   onclick="WdatePicker({dateFmt:'yyyy-MM-dd_HH:mm'})">
                         </div>
                         <div class="tpsearch">
                             <label for="username">登录账号：</label>
@@ -525,5 +530,12 @@
                 $("#sltdSort").find(".icon-arrow-down").addClass("active");
                 $("#sltdSort").find(".icon-arrow-up").removeClass("active");
         }
+
+        $(".submenu li").click(function () {
+            window.localStorage.setItem("listWay",'desc');
+            window.localStorage.setItem("listSort",'sltd');
+            $("#sltdSort").find(".icon-arrow-down").addClass("active");
+            $("#sltdSort").find(".icon-arrow-up").removeClass("active");
+        });
     </script>
 </block>

@@ -247,8 +247,23 @@ class UserController extends Controller
         if (I('utel') <> '') {
             $map['utel'] = array('like', I('utel').'%');
         }
-        if (I('utime') <> '') {
+        if (I('utime') <> '' && !I('utimeEnd')) {
             $map['utime'] = array('elt', strtotime(urldecode(I('utime'))));
+        }
+
+        if (!I('utime') <> '' && I('utimeEnd')) {
+            $map['utime'] = array('elt', strtotime(urldecode(I('utimeEnd'))));
+        }
+
+//        var_dump(strtotime(urldecode(I('utime'))));
+//        var_dump(strtotime(urldecode(I('utimeEnd'))));
+        if (I('utime') <> '' && I('utimeEnd')) {
+            if(strtotime(I('utime'))>strtotime( I('utimeEnd'))) {
+                die("<script>alert('开始创建时间不能大于结束创建时间！');history.back(-1);</script>");
+            }else{
+                $map['utime'] = array(array('elt', strtotime(urldecode(I('utimeEnd')))),array('egt', strtotime(urldecode(I('utime')))));
+           }
+
         }
         if (I('companyid') <> '0' && I('companyid') <> '') {
             $map['companyid'] = I('companyid');
@@ -287,18 +302,20 @@ class UserController extends Controller
         $page->setConfig('theme', '%FIRST% %UP_PAGE% %LINK_PAGE% %DOWN_PAGE% %END% ');
         $show = $page->show();
 
-        //排序
-        if(I("sort")){
-            $mySort = 'accountinfo.'.I("sort").' '.I("way");
+
+//        var_dump($map);
+        //查询用户和账户信息
+
+        if(I("sort") != 'orderSum' && I("sort")){
+            $mySort = I("sort").' '.I("way");
         }else{
-            $mySort = 'accountinfo.balance desc';
+            $mySort = 'utime desc';
         }
 
-        //查询用户和账户信息
         $ulist = $user->Distinct(true)
             ->join($tq . 'accountinfo on ' . $tq . 'userinfo.uid=' . $tq . 'accountinfo.uid', 'left')
             ->join($tq . 'authenticationinfo on ' . $tq . 'userinfo.uid=' . $tq . 'authenticationinfo.useruid', 'left')
-            ->where($map)->field($field)->order($tq . $mySort)
+            ->where($map)->field($field)->order($mySort)
             ->limit($page->firstRow . ',' . $page->listRows)->select();
 
         $cmap['isdelete'] = array('neq', 'Y');
@@ -309,17 +326,31 @@ class UserController extends Controller
         foreach ($ulist as $k => $v) {
             $department = M('department')->where("code={$ulist[$k]['ucode']}")->field('code,huiyuan_name,jigou_name,daili_name,huiyuan_code')->select()[0];
             $ototal['balance'] += $ulist[$k]['balance'];
-            $ulist[$k]['balance'] = number_format($ulist[$k]['balance'], 2);
+//            $ulist[$k]['balance'] = number_format($ulist[$k]['balance'], 2);
             $ulist[$k]['dmjig'] = $department['jigou_name'];
+//            $ulist[$k]['mutime'] = strtotime($ulist[$k]['utime']);
             $ulist[$k]['dmjinj'] = $department['daili_name'];
             $ulist[$k]['dmhuiy'] = $department['huiyuan_code'];
             $ulist[$k]['dmname'] = $department['huiyuan_name'];
             $ulist[$k]['orderSum'] = M('Order')->where(array('uid'=>$v['uid'], 'ostaus'=>1, 'ploss'=>array('neq',0)))->sum('fee');
             $ototal['orderSum'] += $ulist[$k]['orderSum'];
-            $ulist[$k]['orderSum'] = number_format($ulist[$k]['orderSum'], 2);
+//            $ulist[$k]['orderSum'] = number_format($ulist[$k]['orderSum'], 2);
+        }
+//var_dump($ulist);
+        $this->assign('ototal', $ototal);
+
+        //排序
+        if(I("sort")=='orderSum'){
+            $way = I("way");
+            if($way=='desc'){
+                $way = SORT_DESC;
+            }else{
+                $way = SORT_ASC;
+            }
+            $ulist = $this->multi_array_sort($ulist,I("sort"),$way);
         }
 
-        $this->assign('ototal', $ototal);
+//        var_dump($ulist);
 
 
         $this->assign('page', $show);
@@ -341,6 +372,23 @@ class UserController extends Controller
         $this->assign('anumber', $anumber);
         $this->assign('ucount', $userCount);
         $this->display();
+    }
+
+     //排序函数
+    function multi_array_sort($multi_array,$sort_key,$sort=SORT_ASC){
+        if(is_array($multi_array)){
+            foreach ($multi_array as $row_array){
+                if(is_array($row_array)){
+                    $key_array[] = $row_array[$sort_key];
+                }else{
+                    return false;
+                }
+            }
+        }else{
+            return false;
+        }
+        array_multisort($key_array,$sort,$multi_array);
+        return $multi_array;
     }
 
     //代理商申请列表

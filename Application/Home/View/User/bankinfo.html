@@ -1,0 +1,110 @@
+<extend name="Base/footer"/>
+
+
+
+<block name="content">
+
+    <link rel="stylesheet" href="__CSS__/global.css">
+
+    <link rel="stylesheet" href="__CSS__/index.css">
+
+    <link rel="stylesheet" href="__CSS__/pwd.css">
+
+
+
+    <div class="wrap">
+
+        <div class="index" style="min-height: 891px;">
+
+            <header class="list-head">
+
+                <nav class="list-nav clearfix"><a href="javascript:history.go(-1)" class="list-back"></a>
+
+                    <h3 class="list-title">绑定银行卡</h3>
+
+                </nav>
+
+            </header>
+
+            <form id="reviseForm" class="i-form" method="post" action="{:U('User/bankinfo')}">
+
+                <ul class="form-box">
+
+                    <li class="f-line clearfix">
+                        <label class="f-label">银行卡号：</label>
+                        <input id="banknumber" class="f-input text" type="text" maxlength="19" placeholder="请输入银行卡号" name="banknumber" value="{$info.banknumber}">
+                    </li>
+                    <li class="f-line clearfix">
+                        <label class="f-label">预留电话：</label>
+                        <input id="bphone" class="f-input text" type="text" maxlength="18" value="{$info.bphone}" placeholder="请输入银行预留电话" name="bphone">
+                    </li>
+                    <li class="f-line clearfix">
+                        <label class="f-label">收款人姓名：</label>
+                        <input id="busername" class="f-input text" type="text" maxlength="18" value="{$info.busername}" placeholder="请输入收款人姓名" name="busername">
+                    </li>
+                    <li class="f-line clearfix">
+                        <label class="f-label">开户行号：</label>
+                        <input id="bankcode" class="f-input text" type="text" maxlength="18" value="{$info.bankcode}" placeholder="非必填" name="bankcode">
+                    </li>
+                    <li class="f-line clearfix">
+                        <label class="f-label">开户行名称：</label>
+                        <input id="bankname" class="f-input text" type="text" maxlength="18" value="{$info.bankname}" placeholder="请输入开户行名称" name="bankname">
+                    </li>
+
+                    <li class="f-line clearfix">
+
+                        <label class="f-label" for="code" style="font-size: 1.3rem;">验证码</label>
+
+                        <input id="code" class="f-input text" type="text" placeholder="请输入验证码" name="code" style="font-size: 1.3rem;width: 30%" value="">
+
+                        <button type="button" class="f-sub2" style="float: right;margin-top: 10px;" id="btnCodedesu">发送验证码</button>
+
+                    </li>
+
+                </ul>
+
+                <input type="submit" value="{$info[banknumber] == '' ? '确 认':'修 改'}" class="f-sub">
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        $('#btnCodedesu').click(function () {
+
+            $('#btnCodedesu').css('display','none');
+
+            $.ajax({
+
+                cache: true,
+
+                type: "post",
+
+                url: "{:U('User/sendcode')}",
+
+                error: function () {
+
+                    alert('服务器异常');
+
+                },
+
+                success: function (msg) {
+
+                    alert(msg);
+
+                    setTimeout(function(){$('#btnCodedesu').css('display','inline-block');}, 60 * 1000 );
+
+                }
+
+            });
+
+        });
+
+
+
+    </script>
+
+</block>

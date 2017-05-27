@@ -143,6 +143,7 @@ class DetailedController extends CommonController {
 
         $this->display();
     }
+    
      //收支详细页
     public function revenueid(){
         $orderno=I('orderno');
@@ -205,11 +206,14 @@ class DetailedController extends CommonController {
         $maxuseramount = $webconfig['maxuseramount'];
 
         //判断余额
-        $userye=M('accountinfo')->where(array('uid'=>$_SESSION['uid']))->field('balance,frozen')->find();
-        if ($userye['balance'] - $userye['frozen'] < $pay) {
-            $this->ajaxReturn(array("info"=>"余额不足，请充值！","icon"=>4,"href"=>U('/Home/User/deposit')));
+        if($data_p['isquan'] == 0){
+            $userye=M('accountinfo')->where(array('uid'=>$_SESSION['uid']))->field('balance,frozen')->find();
+            if ($userye['balance'] - $userye['frozen'] < $pay) {
+                $this->ajaxReturn(array("info"=>"余额不足，请充值！","icon"=>4,"href"=>U('/Home/User/deposit')));
 //            die("<script>alert('余额不足，请充值！');location.href='".U('/Home/User/deposit')."';</script>");
+            }
         }
+
 
         //判断会员权益
         $companyinfo = D('Admin/companyinfo');
@@ -366,9 +370,9 @@ class DetailedController extends CommonController {
 
         $userinfo = D('userinfo')->where('uid='.$uid)->find();
         $productinfo = D('product_lastprice')->where('pid='.$pid)->find();
-        if(abs($productinfo['ask'] - $rcj) > $userinfo['diancha']){
+/*        if(abs($productinfo['ask'] - $rcj) > $userinfo['diancha']){
             $this->ajaxReturn('超过允许偏离的最大点差，请重新确认行情后下单！');
-        }
+        }*/
         $this->ajaxReturn('');
     }
     //判断是否购买过此类商品

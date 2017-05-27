@@ -247,21 +247,23 @@ class UserController extends Controller
         if (I('utel') <> '') {
             $map['utel'] = array('like', I('utel').'%');
         }
-        if (I('utime') <> '' && !I('utimeEnd')) {
-            $map['utime'] = array('elt', strtotime(urldecode(I('utime'))));
+
+        $startUtime = str_replace('_', ' ', I('utime'));
+        $endUtime = str_replace('_', ' ', I('utimeEnd'));
+
+        if ($startUtime <> '' && !$endUtime) {
+            $map['utime'] = array('elt', strtotime(urldecode($startUtime)));
         }
 
-        if (!I('utime') <> '' && I('utimeEnd')) {
-            $map['utime'] = array('elt', strtotime(urldecode(I('utimeEnd'))));
+        if (!$startUtime <> '' && $endUtime) {
+            $map['utime'] = array('elt', strtotime(urldecode($endUtime)));
         }
 
-//        var_dump(strtotime(urldecode(I('utime'))));
-//        var_dump(strtotime(urldecode(I('utimeEnd'))));
-        if (I('utime') <> '' && I('utimeEnd')) {
-            if(strtotime(I('utime'))>strtotime( I('utimeEnd'))) {
+        if ($startUtime && $endUtime) {
+            if(strtotime($startUtime)>strtotime($endUtime)) {
                 die("<script>alert('开始创建时间不能大于结束创建时间！');history.back(-1);</script>");
             }else{
-                $map['utime'] = array(array('elt', strtotime(urldecode(I('utimeEnd')))),array('egt', strtotime(urldecode(I('utime')))));
+                $map['utime'] = array(array('elt', strtotime(urldecode($endUtime))),array('egt', strtotime(urldecode($startUtime))));
            }
 
         }

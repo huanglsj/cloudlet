@@ -102,7 +102,15 @@
 		initDisplay();
 		
 		if ("{$errMsg}" != "") {
-			myalert("{:urldecode($errMsg)}");
+			if("{:urldecode($errMsg)}" == '请先绑定银行卡' || "{:urldecode($errMsg)}"=='请先绑定收款账号'){
+				layer.alert("{:urldecode($errMsg)}", {
+					closeBtn: 0
+				}, function(){
+					window.location = "{:U('User/bankinfo')}";
+				});
+			}else{
+				myalert("{:urldecode($errMsg)}");
+			}
 		}
 	});
 	
@@ -328,7 +336,7 @@
 <div>
   <form name="payForm" method="post" action="/index.php/Home/Withdraw/doWithdraw.html">
   <p>账户余额：{$balance}元<br></p>
-  <p>出金金额：</p>    
+  <p>提现金额：</p>    
 <!--
   <div style="height:40px;width:80%;margin:0 auto">
       <div style="color:#eee;height:36px;font-size:20px;font-weight:700;margin-top:8px;text-align:right;float:left">￥</div>
@@ -346,9 +354,9 @@
 		});
 	</script>
    <div>
-   <p>出金方式：</p>
+   <p>提现方式：</p>
       <!--<div data-payway="weixin" class="payway amount_select">微信</div>-->
-      <div data-payway="alipay" class="payway amount_select">支付宝</div>
+      <!--<div data-payway="alipay" class="payway amount_select">支付宝</div>-->
       <div data-payway="unionpay" class="payway amount_select">银行卡</div>
       <input type="hidden" name="payway" id="payway" value="{$payway}"/>
   </div> 
@@ -364,19 +372,12 @@
     <div class="label1" style="font-size:12px;float:none;line-height: 24px;">{$weixinTips}</div>
   </div>
   <div class="unionpayInput" style="display:none" id="unionpayInfo">
-    <div id="bankCardNo">
-    <div class="label1">请输入您的银行卡号：</div>
-    <p class='input_p1'>
-    <input type="text" class="input1" name="bankCardNo2" value="{$bankCardNo}"/>
-    </p>
-    </div>
-    <div class="label1" style="font-size:12px;float:none">银行卡持卡人信息必须与实名认证的信息一致</div>
     <div class="label1" style="font-size:12px;float:none">{$unionpayTips}</div>
   </div>
   <div class="alipayInput" style="display:none" id="alipayInfo">
     <div class="label1" style="display: none;">请输入支付宝帐号：</div>
     <p class='input_p1' style="display: none;">
-    <input type="text" class="input1" name="bankCardNo" value="{$aliusername}"/>
+    <input type="text" class="input1" name="" value="{$aliusername}"/>
     </p>
     <div class="label1" style="font-size:12px;float:none">{$alipayTips}</div>
   </div>

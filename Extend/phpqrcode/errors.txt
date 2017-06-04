@@ -1,0 +1,918 @@
+2017-05-23 15:03:33: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-05-23 15:13:02: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-02 15:40:41: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-02 15:40:48: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-02 16:04:22: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 05:23:06: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_30.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_137_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_137_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_137_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_137_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_137_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_137_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_137_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_137_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 05:28:12: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 05:50:29: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 06:34:55: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 07:09:27: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 07:19:24: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 07:23:35: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 07:23:57: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 07:35:55: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 15:18:05: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_29_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_29_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_29_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_29_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_29_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_29_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_29_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_29_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 15:20:12: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_29_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_29_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_29_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_29_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_29_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_29_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_29_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_29_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 15:23:27: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 15:25:22: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_29_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_29_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_29_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_29_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_29_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_29_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_29_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_29_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 16:05:55: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_29_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_29_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_29_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_29_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_29_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_29_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_29_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_29_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 17:14:58: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_29_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_29_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_29_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_29_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_29_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_29_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_29_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_29_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 17:48:39: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_29_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_29_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_29_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_29_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_29_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_29_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_29_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_29_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 18:31:27: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 18:37:29: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 18:38:31: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 18:42:44: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-03 18:43:29: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_33_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_33_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_33_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_33_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_33_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_33_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_33_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_33_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+2017-06-04 09:57:02: <br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\frame_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrspec.php</b> on line <b>1135</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_0\mask_29_0.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_1\mask_29_1.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_2\mask_29_2.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_3\mask_29_3.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_4\mask_29_4.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_5\mask_29_5.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_6\mask_29_6.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />
+<br />
+<b>Warning</b>:  mkdir(): No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>307</b><br />
+<br />
+<b>Warning</b>:  file_put_contents(E:\project\cloudlet\Extend\phpqrcode\cache\mask_7\mask_29_7.dat): failed to open stream: No such file or directory in <b>E:\project\cloudlet\Extend\phpqrcode\qrmask.php</b> on line <b>309</b><br />

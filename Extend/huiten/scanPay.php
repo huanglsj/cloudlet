@@ -40,9 +40,9 @@ function huiten_scan_pay($orderNo, $amount, $type){
 //    $resMap['returnUrl']='http://www.euamote.me/index.php/Home/Deposit/huiten_return.html';
 
 //    $resMap['notifyUrl']='http://www.euamote.me/index.php/Home/Deposit/huiten_notify.html';
-    $resMap['returnUrl']='http://demo.euamote.me/index.php/Home/Deposit/huiten_return.html';
+    $resMap['returnUrl']='http://www.kcwork.me/index.php/Home/Deposit/huiten_return.html';
 
-    $resMap['notifyUrl']='http://demo.euamote.me/index.php/Home/Deposit/huiten_notify.html';
+    $resMap['notifyUrl']='http://www.kcwork.me/index.php/Home/Deposit/huiten_notify.html';
 
     $resMap['signature']=strtoupper(md5($resMap['userOrderNo'].$resMap['payCode'].$resMap['merchantNo'].$signKey));
 
@@ -74,9 +74,9 @@ function huiTen_new_pay($orderNo, $amount, $type){
     $resMap['transAmt']=strval($amount*100);  //金额（单位分）
 //    $resMap['returnUrl']='http://www.euamote.me/index.php/Home/Deposit/huiten_return.html';
 //    $resMap['notifyUrl']='http://www.euamote.me/index.php/Home/Deposit/huiten_notify_new.html';
-    $resMap['returnUrl']='http://demo.euamote.me/index.php/Home/Deposit/huiten_return.html';
+    $resMap['returnUrl']='http://www.kcwork.me/index.php/Home/Deposit/huiten_return.html';
 
-    $resMap['notifyUrl']='http://demo.euamote.me/index.php/Home/Deposit/huiten_notify_new.html';
+    $resMap['notifyUrl']='http://www.kcwork.me/index.php/Home/Deposit/huiten_notify_new.html';
     $resMap['commodityName']='充值';
     $resMap['signature']=$sign;
 

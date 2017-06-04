@@ -1,0 +1,27 @@
+<extend name="Base/common"/>
+<block name="content">
+    <p>正在跳转到银行页面，请稍后</p>
+    <form action="{$formaction}" method="post" id="form">
+        <input type="hidden" name="accessType" value="{$formfield['accessType']}" />
+        <input type="hidden" name="backUrl" value="{$formfield['backUrl']}" />
+        <input type="hidden" name="bizType" value="{$formfield['bizType']}" />
+        <input type="hidden" name="certId" value="{$formfield['certId']}" />
+        <input type="hidden" name="currencyCode" value="{$formfield['currencyCode']}" />
+        <input type="hidden" name="encoding" value="{$formfield['encoding']}" />
+        <input type="hidden" name="frontUrl" value="{$formfield['frontUrl']}" />
+        <input type="hidden" name="merId" value="{$formfield['merId']}" />
+        <input type="hidden" name="merOrderId" value="{$formfield['merOrderId']}" />
+        <input type="hidden" name="merTxnAmt" value="{$formfield['merTxnAmt']}" />
+        <input type="hidden" name="merTxnTime" value="{$formfield['merTxnTime']}" />
+        <input type="hidden" name="payChannelType" value="{$formfield['payChannelType']}" />
+        <input type="hidden" name="payType" value="{$formfield['payType']}" />
+        <input type="hidden" name="signMethod" value="{$formfield['signMethod']}" />
+        <input type="hidden" name="signature" value="{$formfield['signature']}" />
+        <input type="hidden" name="version" value="{$formfield['version']}" />
+    </form>
+    <script>
+        window.onload=function() {
+            document.getElementById("form").submit();
+        }
+    </script>
+</block>

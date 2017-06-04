@@ -1,0 +1,1 @@
+<?phpabstract class PayWayEnumNew {//微信扫码支付const WEIXIN = '0108';//微信刷卡const WEIXIN_CARD = '0113';//支付宝扫码支付const ALIPAY = '0119';//支付宝刷卡const ALIPAY_CARD = '0120';//公众号const WEIXIN_PUBLIC = '0112';//银联const UNIONPAY = '0111';}

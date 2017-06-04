@@ -31,7 +31,7 @@ class DepositController extends Controller
 	{
 		$this->userlogin();
 		$uid = $_SESSION['uid'];
-
+		 
 		$now = time();
 		$amount = $_POST['amount'];
 		$payway = $_POST['payway'];
@@ -42,7 +42,7 @@ class DepositController extends Controller
             $this->error("最低充值100元起!", U("User/deposit"));
             return;
         }
-		
+
         $type = '';
 		if ($payway == "weixin") {
 			$payway = \PayWayEnum::WEIXIN;
@@ -57,11 +57,6 @@ class DepositController extends Controller
 		}
 		else if ($payway == "unionpay") {
 			$payway = \PayWayEnum::UNIONPAY;
-			$type = '0111';
-		}
-		else if($payway == "qqzf"){
-			$payway = \PayWayEnum::QQZF;
-			$type = 'QQZF';
 		}
 		else {
 			$this->display("User/deposit");
@@ -171,48 +166,27 @@ class DepositController extends Controller
 
     private function huiten_qrcode($orderNo, $amount, $type)
     {
-		if($type=='0111'){
-			$result = huiTen_new_pay($orderNo, $amount, $type);
-			if($result->formfield && $result->respCode=='0000' && $result->formaction){
-				$formfield = json_decode($result->formfield,true);
-				$this->assign('formfield',$formfield);
-				$this->assign('formaction',$result->formaction);
-				$this->display("unionpay");
-			}else{
-				Log::error("qrcodePay error:getpayurl failed");
-				$deposit = A("Common/Deposit", "Event");
-				$deposit->onPayFail(array("orderNo"=>$orderNo, 'errMsg'=>'getPayURL failed'));
-				$this->error("系统异常!", U("User/deposit"));
-			}
-		}else{
-			$result = huiten_scan_pay($orderNo, $amount, $type);
-			if($result['payStr']){
-				$url = $result["payStr"];
-				$this->assign('url', urlencode($url));
-				$this->assign('type', $type);
-				if($type == 'ZFBSMZF'){
-					$this->display("huiten_alipay_qrcode");
-				}else if($type == 'QQZF'){
-					$this->display("huiten_qq_qrcode");
-				}else{
-					$this->display("huiten_weipay_qrcode");
-				}
-			}else {
-				Log::error("qrcodePay error:getpayurl failed");
-				$deposit = A("Common/Deposit", "Event");
-				$deposit->onPayFail(array("orderNo"=>$orderNo, 'errMsg'=>'getPayURL failed'));
-				if($type == 'ZFBSMZF'){
-					$this->display("alipay_fail");
-				}else{
-					$this->display("weipay_fail");
-				}
+        $result = huiten_scan_pay($orderNo, $amount, $type);
+        if($result['payStr']){
+            $url = $result["payStr"];
+            $this->assign('url', urlencode($url));
+            $this->assign('type', $type);
+            if($type == 'ZFBSMZF'){
+                $this->display("huiten_alipay_qrcode");
+            }else{
+                $this->display("huiten_weipay_qrcode");
+            }
+        }else {
+            Log::error("qrcodePay error:getpayurl failed");
+            $deposit = A("Common/Deposit", "Event");
+            $deposit->onPayFail(array("orderNo"=>$orderNo, 'errMsg'=>'getPayURL failed'));
+            if($type == 'ZFBSMZF'){
+                $this->display("alipay_fail");
+            }else{
+                $this->display("weipay_fail");
+            }
 
-			}
-		}
-
-
-
-
+        }
     }
 
 
@@ -650,8 +624,6 @@ class DepositController extends Controller
     {
         $huiten_config = $GLOBALS['huiten_config'];
         $arr=$_GET;
-		$file  = 'log.txt';
-		file_put_contents($file, json_encode($arr));
         if($arr['signature'] != strtoupper(md5($arr['orderNo'].$arr['userOrderNo'].$huiten_config['signKey']))){
             Log::error("huiten check error:".json_encode($arr));
             echo '0000';
@@ -712,84 +684,6 @@ class DepositController extends Controller
 
         echo "0000";		//请不要修改或删除
     }
-
-	public function huiten_notify_new()
-	{
-		$huiten_config = $GLOBALS['huiten_config'];
-		$arr=$_GET;
-
-		$file  = 'lognew.txt';
-		file_put_contents($file, json_encode($arr));
-
-		if($arr['signature'] != strtoupper(md5($arr['orderNo'].$arr['productId'].$huiten_config['signKey']))){
-			Log::error("huiten check error:".json_encode($arr));
-			echo '0000';
-			return;
-		}
-
-		//0108微信扫码 0113微信刷卡 0119支付宝扫码 0120支付宝刷卡 0111 银联
-		$productId = $arr['productId'];
-
-		//商户订单号
-		$orderNo = $arr['orderNo'];
-
-		//商户号
-		$merNo = $arr['merNo'];
-
-		//交易类型
-		$transId = $arr['transId'];
-
-		//日期
-		$orderDate = $arr['orderDate'];
-
-		//应答码
-		$respCode = $arr['respCode'];
-
-		//应答码描述
-		$respDesc = $arr['respDesc'];
-
-		//金额
-		$amount = $arr['transAmt'];
-
-		$paydata = M('pay')->where("orderNo='".$orderNo. "'")->find();
-		if (!$paydata) {
-			Log::error('orderNo not exist. orderNo='.$orderNo);
-			echo '0000';
-			return;
-		}
-
-		if ($paydata['amount'] != ($amount/100)) {
-			Log::error('amount mismatch');
-			echo '0000';
-			return;
-		}
-
-		if($paydata['state'] != 1){
-			Log::error('amount is finish');
-			echo '0000';
-			return;
-		}
-
-		if($respCode == '0000') {
-			$deposit = A("Common/Deposit", "Event");
-			if ($deposit->onPaySuccess(array('orderNo'=>$orderNo, 'outTradeNo'=>$merNo)) === false) {
-				echo '0000';
-				return;
-			}else{
-				Log::notice("renotify from huiten received after successfully processed. orderNo=".$orderNo);
-			}
-		}else{
-			$deposit = A("Common/Deposit", "Event");
-			if ($deposit->onPayFail(array('orderNo'=>$orderNo, 'outTradeNo'=>$merNo,'errCode'=>'TRADE_CLOSED', 'errMsg'=>'未付款交易超时关闭')) === false) {
-				echo '0000';
-				return;
-			}else{
-				Log::notice("renotify from huiten received after successfully processed. orderNo=".$orderNo);
-			}
-		}
-
-		echo "0000";		//请不要修改或删除
-	}
 
 }
 
